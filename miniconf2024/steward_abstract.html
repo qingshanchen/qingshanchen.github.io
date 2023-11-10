@@ -1,0 +1,22 @@
+<html>
+In the context of the data assimilation of observations, observation
+operators model the mapping between the model state to observation
+space.  In an operational numerical weather prediction (NWP) setting,
+these operators may be represented by large code-bases such as a
+radiative transfer model.  Such operators may contain inherent
+discontinuities in the derivative of the operator - such is the case
+for data assimilation of satellite data that may include presence of
+clouds - or numerical discontinuities - such as those introduced by
+"on/off" parametrization switches.  The present work addresses the
+challenge of the data assimilation of non-smooth observation operators
+of either type with a shallow water equations model.  Smooth
+optimization techniques - such as conjugate gradient and L-BFGS - are
+compared to the non-smooth optimization Limited Memory Bundle Method
+(LMBM) in both the 4DVar (variational optimal control) and Maximum
+Likelihood Ensemble Filter (sequential, ensemble/variational hybrid)
+data assimilation approaches.  Results show that in the presence of
+strong non-smoothness, the LMBM method has superior performance over
+optimization methods currently used in operational NWP centers.
+
+
+</html>
