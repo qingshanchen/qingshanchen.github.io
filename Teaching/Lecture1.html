@@ -1,0 +1,391 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Advanced Engineering Mathematics</title>
+<!--Generated on Tue Jun 30 14:39:48 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Advanced Engineering Mathematics</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Qingshan Chen
+</span></span>
+</div>
+
+<section id="Ch1" class="ltx_chapter">
+<h2 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 1 </span>Complex Variables</h2>
+
+<section id="Ch1.S1" class="ltx_section">
+<h3 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.1 </span>Complex numbers</h3>
+
+<div id="Ch1.S1.p1" class="ltx_para">
+<p class="ltx_p">Complex numbers are formed using the familiar real numbers and the imaginary unit <math id="Ch1.S1.p1.m1" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>. The imaginary unit <math id="Ch1.S1.p1.m2" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> is a special number with the property that</p>
+<table id="Ch1.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex1.m1" class="ltx_Math" alttext="i^{2}=-1," display="block"><mrow><mrow><msup><mi>i</mi><mn>2</mn></msup><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p2" class="ltx_para">
+<p class="ltx_p">Complex numbers can be written as</p>
+<table id="Ch1.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex2.m1" class="ltx_Math" alttext="z=a+ib." display="block"><mrow><mrow><mi>z</mi><mo>=</mo><mrow><mi>a</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>b</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus every complex number has a real part and an imaginary part,</p>
+<table id="Ch1.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex3.m1" class="ltx_Math" alttext="\operatorname{Re}z=a," display="block"><mrow><mrow><mrow><mi>Re</mi><mo lspace="0.167em">⁡</mo><mi>z</mi></mrow><mo>=</mo><mi>a</mi></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch1.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex4.m1" class="ltx_Math" alttext="\operatorname{Im}z=b." display="block"><mrow><mrow><mrow><mi>Im</mi><mo lspace="0.167em">⁡</mo><mi>z</mi></mrow><mo>=</mo><mi>b</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p3" class="ltx_para">
+<p class="ltx_p">Every real number can be considered a complex number whose imaginary
+part simply equals zero. The conjugate of <math id="Ch1.S1.p3.m1" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> is denoted as <math id="Ch1.S1.p3.m2" class="ltx_Math" alttext="\bar{z}" display="inline"><mover accent="true"><mi>z</mi><mo>¯</mo></mover></math>,</p>
+<table id="Ch1.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex5.m1" class="ltx_Math" alttext="\bar{z}=a-ib." display="block"><mrow><mrow><mover accent="true"><mi>z</mi><mo>¯</mo></mover><mo>=</mo><mrow><mi>a</mi><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>b</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p4" class="ltx_para">
+<p class="ltx_p">Now we consider basic arithmetic operations on complex numbers.</p>
+</div>
+<div id="Ch1.S1.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Addition &amp; subtraction</span></p>
+<table id="Ch1.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex6.m1" class="ltx_Math" alttext="(a+ib)+(c+id)=a+c+i(b+d)," display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>+</mo><mrow><mo stretchy="false">(</mo><mrow><mi>c</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>d</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>a</mi><mo>+</mo><mi>c</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>+</mo><mi>d</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch1.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex7.m1" class="ltx_Math" alttext="(a+ib)-(c+id)=a-c+i(b-d)." display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><mi>c</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>d</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>a</mi><mo>−</mo><mi>c</mi></mrow><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>−</mo><mi>d</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Multiplication</span></p>
+<table id="Ch1.Ex8" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch1.Ex8X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch1.Ex8X.m2" class="ltx_Math" alttext="\displaystyle(a+ib)\cdot(c+id)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mo rspace="0.055em" stretchy="false">)</mo></mrow><mo rspace="0.222em">⋅</mo><mrow><mo stretchy="false">(</mo><mrow><mi>c</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>d</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.Ex8X.m3" class="ltx_Math" alttext="\displaystyle=ac+i\,ad+i\,bc-bd" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>c</mi></mrow><mo>+</mo><mrow><mi>i</mi><mo lspace="0.170em">⁢</mo><mi>a</mi><mo>⁢</mo><mi>d</mi></mrow><mo>+</mo><mrow><mi>i</mi><mo lspace="0.170em">⁢</mo><mi>b</mi><mo>⁢</mo><mi>c</mi></mrow></mrow><mo>−</mo><mrow><mi>b</mi><mo>⁢</mo><mi>d</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch1.Ex8Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.Ex8Xa.m2" class="ltx_Math" alttext="\displaystyle=(ac-bd)+i(ad+bc)." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>c</mi></mrow><mo>−</mo><mrow><mi>b</mi><mo>⁢</mo><mi>d</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>d</mi></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>c</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Note that the fact <math id="Ch1.S1.p6.m1" class="ltx_Math" alttext="i^{2}=-1" display="inline"><mrow><msup><mi>i</mi><mn>2</mn></msup><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> is used in the above, and that
+<math id="Ch1.S1.p6.m2" class="ltx_Math" alttext="(a+ib)\cdot(c+id)\neq ac+bd\,i" display="inline"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mo rspace="0.055em" stretchy="false">)</mo></mrow><mo rspace="0.222em">⋅</mo><mrow><mo stretchy="false">(</mo><mrow><mi>c</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>d</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>≠</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>c</mi></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>d</mi><mo lspace="0.170em">⁢</mo><mi>i</mi></mrow></mrow></mrow></math>!</p>
+</div>
+<div id="Ch1.S1.p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Division</span></p>
+<table id="Ch1.Ex9" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex9.m1" class="ltx_Math" alttext="\frac{a+ib}{c+id}=\frac{a+ib}{c+id}\cdot\frac{c-id}{c-id}=\frac{(ac+bd)+i(bc-%
+ad)}{c^{2}+d^{2}}." display="block"><mrow><mrow><mfrac><mrow><mi>a</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mrow><mi>c</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>d</mi></mrow></mrow></mfrac><mo>=</mo><mrow><mfrac><mrow><mi>a</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mrow><mi>c</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>d</mi></mrow></mrow></mfrac><mo lspace="0.222em" rspace="0.222em">⋅</mo><mfrac><mrow><mi>c</mi><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>d</mi></mrow></mrow><mrow><mi>c</mi><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>d</mi></mrow></mrow></mfrac></mrow><mo>=</mo><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>c</mi></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>d</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>b</mi><mo>⁢</mo><mi>c</mi></mrow><mo>−</mo><mrow><mi>a</mi><mo>⁢</mo><mi>d</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><msup><mi>c</mi><mn>2</mn></msup><mo>+</mo><msup><mi>d</mi><mn>2</mn></msup></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p8" class="ltx_para">
+<p class="ltx_p">If we consider the real part <math id="Ch1.S1.p8.m1" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> of <math id="Ch1.S1.p8.m2" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> as the <math id="Ch1.S1.p8.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>-coordinate, and the
+imaginary part <math id="Ch1.S1.p8.m4" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math> as the <math id="Ch1.S1.p8.m5" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>-coordinate, then the complex number <math id="Ch1.S1.p8.m6" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math>
+can be identified with the point <math id="Ch1.S1.p8.m7" class="ltx_Math" alttext="(a,b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math> on the <math id="Ch1.S1.p8.m8" class="ltx_Math" alttext="xy" display="inline"><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></math>-plane.
+Thus it is customary to depict complex numbers as points on a 2D
+plane, which is then called a <span class="ltx_text ltx_font_italic">complex plane</span> (Figure <a href="#Ch1.F1" title="Figure 1.1 ‣ 1.1 Complex numbers ‣ Chapter 1 Complex Variables ‣ Advanced Engineering Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.1</span></a>).</p>
+</div>
+<figure id="Ch1.F1" class="ltx_figure"><img src="figures/chapter01_modulus_argument.png" id="Ch1.F1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="419" height="237" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 1.1: </span>Representation of a complex number on the complex plane.</figcaption>
+</figure>
+<div id="Ch1.S1.p9" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_font_italic">modulus</span> or absolute value of <math id="Ch1.S1.p9.m1" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> is defined as the distance
+between <math id="Ch1.S1.p9.m2" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> and the origin, and equals</p>
+<table id="Ch1.Ex10" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex10.m1" class="ltx_Math" alttext="|z|=\sqrt{a^{2}+b^{2}}." display="block"><mrow><mrow><mrow><mo stretchy="false">|</mo><mi>z</mi><mo stretchy="false">|</mo></mrow><mo>=</mo><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p10" class="ltx_para">
+<p class="ltx_p">It is trivial to check that</p>
+<table id="Ch1.Ex11" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex11.m1" class="ltx_Math" alttext="|z|^{2}=z\cdot\bar{z}." display="block"><mrow><mrow><msup><mrow><mo stretchy="false">|</mo><mi>z</mi><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><mo>=</mo><mrow><mi>z</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mover accent="true"><mi>z</mi><mo>¯</mo></mover></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p11" class="ltx_para">
+<p class="ltx_p">The phase angle or argument of <math id="Ch1.S1.p11.m1" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> is the angle between <math id="Ch1.S1.p11.m2" class="ltx_Math" alttext="Oz" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mi>z</mi></mrow></math> and the positive <math id="Ch1.S1.p11.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>-axis. The phase angle <math id="Ch1.S1.p11.m4" class="ltx_Math" alttext="\theta" display="inline"><mi>θ</mi></math> satisfies the relation</p>
+<table id="Ch1.Ex12" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex12.m1" class="ltx_Math" alttext="\tan\theta=\frac{b}{a}," display="block"><mrow><mrow><mrow><mi>tan</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow><mo>=</mo><mfrac><mi>b</mi><mi>a</mi></mfrac></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">from which one infers that</p>
+<table id="Ch1.Ex13" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex13.m1" class="ltx_Math" alttext="\theta=\arctan\frac{b}{a}\quad\textrm{or}\quad\theta=\arctan\frac{b}{a}+\pi," display="block"><mrow><mrow><mrow><mi>θ</mi><mo>=</mo><mrow><mrow><mi>arctan</mi><mo lspace="0.167em">⁡</mo><mfrac><mi>b</mi><mi>a</mi></mfrac></mrow><mspace width="1em"></mspace><mtext>or</mtext></mrow></mrow><mspace width="1em"></mspace><mrow><mi>θ</mi><mo>=</mo><mrow><mrow><mi>arctan</mi><mo lspace="0.167em">⁡</mo><mfrac><mi>b</mi><mi>a</mi></mfrac></mrow><mo>+</mo><mi>π</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">depending on which quadrant <math id="Ch1.S1.p11.m5" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> is located.
+The phase angle is not unique, as <math id="Ch1.S1.p11.m6" class="ltx_Math" alttext="\theta\pm 2\pi n" display="inline"><mrow><mi>θ</mi><mo>±</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>n</mi></mrow></mrow></math>, for any integer
+<math id="Ch1.S1.p11.m7" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>, will also qualify as a phase angle for the same complex
+number. We note that the combination of modulus and phase angle
+completely determine the position of a complex number on the complex
+plane, and therefore the complex number itself. Indeed, a complex
+number can be expressed using its modulus and phase angle only,</p>
+<table id="Ch1.Ex14" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex14.m1" class="ltx_Math" alttext="z=|z|(\cos\theta+i\sin\theta)." display="block"><mrow><mrow><mi>z</mi><mo>=</mo><mrow><mrow><mo stretchy="false">|</mo><mi>z</mi><mo stretchy="false">|</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow><mo>+</mo><mrow><mi>i</mi><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p12" class="ltx_para">
+<p class="ltx_p">The real and imaginary parts of <math id="Ch1.S1.p12.m1" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> can also be explicitly given,</p>
+<table id="Ch1.Ex16" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex16.m1" class="ltx_Math" alttext="a=|z|\cos\theta" display="block"><mrow><mi>a</mi><mo>=</mo><mrow><mrow><mo stretchy="false">|</mo><mi>z</mi><mo stretchy="false">|</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch1.Ex17" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex17.m1" class="ltx_Math" alttext="b=|z|\sin\theta." display="block"><mrow><mrow><mi>b</mi><mo>=</mo><mrow><mrow><mo stretchy="false">|</mo><mi>z</mi><mo stretchy="false">|</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p13" class="ltx_para">
+<p class="ltx_p">It was discovered that the unit complex number <math id="Ch1.S1.p13.m1" class="ltx_Math" alttext="\cos\theta+i\sin\theta" display="inline"><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow><mo>+</mo><mrow><mi>i</mi><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow></mrow></mrow></math> can be put in a more compact form,</p>
+<table id="Ch1.Ex18" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex18.m1" class="ltx_Math" alttext="e^{i\theta}=\cos\theta+i\sin\theta." display="block"><mrow><mrow><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>θ</mi></mrow></msup><mo>=</mo><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow><mo>+</mo><mrow><mi>i</mi><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p14" class="ltx_para">
+<p class="ltx_p">This identity was derived by Euler in 1740, and therefore it bears the
+name <span class="ltx_text ltx_font_italic">Euler Identity</span>. It can be established
+using the Taylor series expansion of <math id="Ch1.S1.p14.m1" class="ltx_Math" alttext="e^{i\theta}" display="inline"><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>θ</mi></mrow></msup></math>, <math id="Ch1.S1.p14.m2" class="ltx_Math" alttext="\cos\theta" display="inline"><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow></math> and
+<math id="Ch1.S1.p14.m3" class="ltx_Math" alttext="\sin\theta" display="inline"><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow></math> around <math id="Ch1.S1.p14.m4" class="ltx_Math" alttext="\theta=0" display="inline"><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow></math>.</p>
+</div>
+<div id="Ch1.S1.p15" class="ltx_para">
+<table id="Ch1.Ex20" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch1.Ex20X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch1.Ex20X.m2" class="ltx_Math" alttext="\displaystyle e^{i\theta}" display="inline"><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>θ</mi></mrow></msup></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.Ex20X.m3" class="ltx_Math" alttext="\displaystyle=1+i\theta-\frac{\theta^{2}}{2}-i\frac{\theta^{3}}{3!}+\frac{%
+\theta^{4}}{4!}+i\frac{\theta^{5}}{5!}-\frac{\theta^{6}}{6!}-i\frac{\theta^{7}%
+}{7!}+\cdots" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mrow><mrow><mn>1</mn><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>θ</mi></mrow></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>3</mn></msup><mrow><mn>3</mn><mo>!</mo></mrow></mfrac></mstyle></mrow></mrow><mo>+</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>4</mn></msup><mrow><mn>4</mn><mo>!</mo></mrow></mfrac></mstyle><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>5</mn></msup><mrow><mn>5</mn><mo>!</mo></mrow></mfrac></mstyle></mrow></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>6</mn></msup><mrow><mn>6</mn><mo>!</mo></mrow></mfrac></mstyle><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>7</mn></msup><mrow><mn>7</mn><mo>!</mo></mrow></mfrac></mstyle></mrow></mrow><mo>+</mo><mi mathvariant="normal">⋯</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch1.Ex20Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.Ex20Xa.m2" class="ltx_Math" alttext="\displaystyle=\left(1-\frac{\theta^{2}}{2}+\frac{\theta^{4}}{4!}-\frac{\theta^%
+{6}}{6!}+\cdots\right)+i\left(\theta-\frac{\theta^{3}}{3!}+\frac{\theta^{5}}{5%
+!}-\frac{\theta^{7}}{7!}-\cdots\right)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mo>(</mo><mrow><mrow><mrow><mrow><mn>1</mn><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle></mrow><mo>+</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>4</mn></msup><mrow><mn>4</mn><mo>!</mo></mrow></mfrac></mstyle></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>6</mn></msup><mrow><mn>6</mn><mo>!</mo></mrow></mfrac></mstyle></mrow><mo>+</mo><mi mathvariant="normal">⋯</mi></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><mrow><mi>θ</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>3</mn></msup><mrow><mn>3</mn><mo>!</mo></mrow></mfrac></mstyle></mrow><mo>+</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>5</mn></msup><mrow><mn>5</mn><mo>!</mo></mrow></mfrac></mstyle></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>θ</mi><mn>7</mn></msup><mrow><mn>7</mn><mo>!</mo></mrow></mfrac></mstyle><mo>−</mo><mi mathvariant="normal">⋯</mi></mrow><mo>)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch1.Ex20Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.Ex20Xb.m2" class="ltx_Math" alttext="\displaystyle=\cos\theta+i\sin\theta." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow><mo>+</mo><mrow><mi>i</mi><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p16" class="ltx_para">
+<p class="ltx_p">Thus using the identity (2), a complex number can be succinctly expressed as</p>
+<table id="Ch1.Ex21" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex21.m1" class="ltx_Math" alttext="z=re^{i\theta}," display="block"><mrow><mrow><mi>z</mi><mo>=</mo><mrow><mi>r</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>θ</mi></mrow></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">with <math id="Ch1.S1.p16.m1" class="ltx_Math" alttext="r=|z|" display="inline"><mrow><mi>r</mi><mo>=</mo><mrow><mo stretchy="false">|</mo><mi>z</mi><mo stretchy="false">|</mo></mrow></mrow></math> standing for the modulus of <math id="Ch1.S1.p16.m2" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math>,
+<math id="Ch1.S1.p16.m3" class="ltx_Math" alttext="\theta=\operatorname{phase}(z)" display="inline"><mrow><mi>θ</mi><mo>=</mo><mrow><mi>phase</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> its phase angle. Expression (3) is
+often referred to as the <span class="ltx_text ltx_font_italic">polar form</span> of complex number <math id="Ch1.S1.p16.m4" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math>. The polar form
+makes multiplication of complex numbers a lot easier. We note here
+that, for complex numbers <math id="Ch1.S1.p16.m5" class="ltx_Math" alttext="z_{1}=r_{1}e^{i\theta_{1}}" display="inline"><mrow><msub><mi>z</mi><mn>1</mn></msub><mo>=</mo><mrow><msub><mi>r</mi><mn>1</mn></msub><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><msub><mi>θ</mi><mn>1</mn></msub></mrow></msup></mrow></mrow></math>, <math id="Ch1.S1.p16.m6" class="ltx_Math" alttext="z_{2}=r_{2}e^{i\theta_{2}}" display="inline"><mrow><msub><mi>z</mi><mn>2</mn></msub><mo>=</mo><mrow><msub><mi>r</mi><mn>2</mn></msub><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><msub><mi>θ</mi><mn>2</mn></msub></mrow></msup></mrow></mrow></math>,</p>
+<table id="Ch5.Sx12.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch1.Ex23"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.Ex23.m1" class="ltx_Math" alttext="\displaystyle z_{1}\cdot z_{2}=r_{1}e^{i\theta_{1}}\cdot r_{2}e^{i\theta_{2}}=%
+r_{1}r_{2}e^{i(\theta_{1}+\theta_{2})}," display="inline"><mrow><mrow><mrow><msub><mi>z</mi><mn>1</mn></msub><mo lspace="0.222em" rspace="0.222em">⋅</mo><msub><mi>z</mi><mn>2</mn></msub></mrow><mo>=</mo><mrow><mrow><mrow><msub><mi>r</mi><mn>1</mn></msub><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><msub><mi>θ</mi><mn>1</mn></msub></mrow></msup></mrow><mo lspace="0.222em" rspace="0.222em">⋅</mo><msub><mi>r</mi><mn>2</mn></msub></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><msub><mi>θ</mi><mn>2</mn></msub></mrow></msup></mrow><mo>=</mo><mrow><msub><mi>r</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>r</mi><mn>2</mn></msub><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>+</mo><msub><mi>θ</mi><mn>2</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch1.Ex24"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.Ex24.m1" class="ltx_Math" alttext="\displaystyle z^{n}=\left(re^{i\theta}\right)^{n}=r^{n}\cdot e^{in\theta}%
+\qquad\text{(De Moivre's Thm)}." display="inline"><mrow><mrow><mrow><msup><mi>z</mi><mi>n</mi></msup><mo>=</mo><msup><mrow><mo>(</mo><mrow><mi>r</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>θ</mi></mrow></msup></mrow><mo>)</mo></mrow><mi>n</mi></msup><mo>=</mo><mrow><msup><mi>r</mi><mi>n</mi></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>θ</mi></mrow></msup></mrow></mrow><mspace width="2em"></mspace><mtext>(De Moivre’s Thm)</mtext></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p17" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Example 1.</span> Simplify the following complex number,</p>
+<table id="Ch1.Ex25" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex25.m1" class="ltx_Math" alttext="\frac{3-2i}{-1+i}=\frac{3-2i}{-1+i}\cdot\frac{-1-i}{-1-i}=\frac{-3-3i+2i-2}{1+%
+1}=\frac{-5-i}{2}." display="block"><mrow><mrow><mfrac><mrow><mn>3</mn><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>i</mi></mrow></mrow><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>+</mo><mi>i</mi></mrow></mfrac><mo>=</mo><mrow><mfrac><mrow><mn>3</mn><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>i</mi></mrow></mrow><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>+</mo><mi>i</mi></mrow></mfrac><mo lspace="0.222em" rspace="0.222em">⋅</mo><mfrac><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>−</mo><mi>i</mi></mrow><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>−</mo><mi>i</mi></mrow></mfrac></mrow><mo>=</mo><mfrac><mrow><mrow><mrow><mrow><mo>−</mo><mn>3</mn></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>i</mi></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>i</mi></mrow></mrow><mo>−</mo><mn>2</mn></mrow><mrow><mn>1</mn><mo>+</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mrow><mo>−</mo><mn>5</mn></mrow><mo>−</mo><mi>i</mi></mrow><mn>2</mn></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p18" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Example 2.</span> Express the complex number
+<math id="Ch1.S1.p18.m1" class="ltx_Math" alttext="z=-\sqrt{6}-i\sqrt{2}" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mrow><mo>−</mo><msqrt><mn>6</mn></msqrt></mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><msqrt><mn>2</mn></msqrt></mrow></mrow></mrow></math> in the polar form.</p>
+</div>
+<div id="Ch1.S1.p19" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Solution:</span> This complex number has modulus</p>
+<table id="Ch1.Ex26" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex26.m1" class="ltx_Math" alttext="r=\sqrt{6+2}=2\sqrt{2}." display="block"><mrow><mrow><mi>r</mi><mo>=</mo><msqrt><mrow><mn>6</mn><mo>+</mo><mn>2</mn></mrow></msqrt><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><msqrt><mn>2</mn></msqrt></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Its phase angle satisfies the relation</p>
+<table id="Ch1.Ex27" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex27.m1" class="ltx_Math" alttext="\tan\theta=\frac{-\sqrt{2}}{-\sqrt{6}}=\frac{1}{\sqrt{3}}=\frac{\sqrt{3}}{3}," display="block"><mrow><mrow><mrow><mi>tan</mi><mo lspace="0.167em">⁡</mo><mi>θ</mi></mrow><mo>=</mo><mfrac><mrow><mo>−</mo><msqrt><mn>2</mn></msqrt></mrow><mrow><mo>−</mo><msqrt><mn>6</mn></msqrt></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac><mo>=</mo><mfrac><msqrt><mn>3</mn></msqrt><mn>3</mn></mfrac></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">which means that it is either <math id="Ch1.S1.p19.m1" class="ltx_Math" alttext="\pi/6" display="inline"><mrow><mi>π</mi><mo>/</mo><mn>6</mn></mrow></math>, or <math id="Ch1.S1.p19.m2" class="ltx_Math" alttext="7\pi/6" display="inline"><mrow><mrow><mn>7</mn><mo>⁢</mo><mi>π</mi></mrow><mo>/</mo><mn>6</mn></mrow></math>. Considering that
+<math id="Ch1.S1.p19.m3" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> is located in the third quadrant, we determine that</p>
+<table id="Ch1.Ex28" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex28.m1" class="ltx_Math" alttext="\theta=\frac{7}{6}\pi" display="block"><mrow><mi>θ</mi><mo>=</mo><mrow><mfrac><mn>7</mn><mn>6</mn></mfrac><mo>⁢</mo><mi>π</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">is the correct answer.
+Thus,</p>
+<table id="Ch1.Ex29" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex29.m1" class="ltx_Math" alttext="z=2\sqrt{2}\,e^{i\frac{7}{6}\pi}." display="block"><mrow><mrow><mi>z</mi><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><msqrt><mn>2</mn></msqrt><mo lspace="0.170em">⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mfrac><mn>7</mn><mn>6</mn></mfrac><mo>⁢</mo><mi>π</mi></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p20" class="ltx_para">
+<p class="ltx_p">We note that the polar form is not unique, for <math id="Ch1.S1.p20.m1" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> can also be
+expressed as</p>
+<table id="Ch1.Ex30" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex30.m1" class="ltx_Math" alttext="z=2\sqrt{2}\,e^{i\left(2n\pi+\frac{7}{6}\pi\right)},\qquad\textrm{for
+any integer }n." display="block"><mrow><mrow><mi>z</mi><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msqrt><mn>2</mn></msqrt><mo lspace="0.170em">⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow><mo>+</mo><mrow><mfrac><mn>7</mn><mn>6</mn></mfrac><mo>⁢</mo><mi>π</mi></mrow></mrow><mo>)</mo></mrow></mrow></msup></mrow><mo rspace="2.167em">,</mo><mrow><mtext>for
+any integer </mtext><mo>⁢</mo><mi>n</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p21" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Example 3.</span> Describe the curve given by the equation</p>
+<table id="Ch1.Ex31" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex31.m1" class="ltx_Math" alttext="|z-z_{0}|=a." display="block"><mrow><mrow><mrow><mo stretchy="false">|</mo><mrow><mi>z</mi><mo>−</mo><msub><mi>z</mi><mn>0</mn></msub></mrow><mo stretchy="false">|</mo></mrow><mo>=</mo><mi>a</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch1.S1.p22" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Solution:</span> It is a circle centered at <math id="Ch1.S1.p22.m1" class="ltx_Math" alttext="z_{0}" display="inline"><msub><mi>z</mi><mn>0</mn></msub></math>, with radius <math id="Ch1.S1.p22.m2" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>.</p>
+</div>
+</section>
+
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Tue Jun 30 14:39:48 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
