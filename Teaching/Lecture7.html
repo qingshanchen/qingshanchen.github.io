@@ -1,0 +1,1103 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Advanced Engineering Mathematics</title>
+<!--Generated on Wed Jul 15 21:28:15 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Advanced Engineering Mathematics</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Qingshan Chen
+</span></span>
+</div>
+
+
+<section id="Ch3.S2" class="ltx_section">
+<h3 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.2 </span>Properties of Fourier transforms</h3>
+
+<section id="Ch3.S2.SSx1" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">1. Linearity</h4>
+
+<div id="Ch3.S2.SSx1.p1" class="ltx_para">
+<p class="ltx_p">If <math id="Ch3.S2.SSx1.p1.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Ch3.S2.SSx1.p1.m2" class="ltx_Math" alttext="g(t)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> are functions with Fourier transforms <math id="Ch3.S2.SSx1.p1.m3" class="ltx_Math" alttext="\widehat{f}(\omega)" display="inline"><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Ch3.S2.SSx1.p1.m4" class="ltx_Math" alttext="\widehat{g}(\omega)" display="inline"><mrow><mover accent="true"><mi>g</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math>, then the Fourier transform of <math id="Ch3.S2.SSx1.p1.m5" class="ltx_Math" alttext="c_{1}f(t)+c_{2}g(t)" display="inline"><mrow><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> is a linear combination of <math id="Ch3.S2.SSx1.p1.m6" class="ltx_Math" alttext="\widehat{f}(\omega)" display="inline"><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Ch3.S2.SSx1.p1.m7" class="ltx_Math" alttext="\widehat{g}(\omega)" display="inline"><mrow><mover accent="true"><mi>g</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math>, that is</p>
+<table id="Ch3.Ex22" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex22.m1" class="ltx_Math" alttext="\mathcal{F}\left(c_{1}f(t)+c_{2}g(t)\right)=c_{1}\widehat{f}(\omega)+c_{2}%
+\widehat{g}(\omega)," display="block"><mrow><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℱ</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>⁢</mo><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>⁢</mo><mover accent="true"><mi>g</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="Ch3.S2.SSx1.p1.m8" class="ltx_Math" alttext="c_{1}" display="inline"><msub><mi>c</mi><mn>1</mn></msub></math> and <math id="Ch3.S2.SSx1.p1.m9" class="ltx_Math" alttext="c_{2}" display="inline"><msub><mi>c</mi><mn>2</mn></msub></math> are real or complex constants, and the operator
+<math id="Ch3.S2.SSx1.p1.m10" class="ltx_Math" alttext="\mathcal{F}" display="inline"><mi class="ltx_font_mathcaligraphic">ℱ</mi></math> stands for the Fourier transform.</p>
+</div>
+</section>
+<section id="Ch3.S2.SSx2" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">2. Time shifting</h4>
+
+<div id="Ch3.S2.SSx2.p1" class="ltx_para">
+<p class="ltx_p">Suppose function <math id="Ch3.S2.SSx2.p1.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> has Fourier transform <math id="Ch3.S2.SSx2.p1.m2" class="ltx_Math" alttext="\widehat{f}(\omega)" display="inline"><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Let
+<math id="Ch3.S2.SSx2.p1.m3" class="ltx_Math" alttext="\tau" display="inline"><mi>τ</mi></math> be a non-zero parameter. Then the function <math id="Ch3.S2.SSx2.p1.m4" class="ltx_Math" alttext="f(t-\tau)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>τ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> is a shifting of the
+original function to the right by <math id="Ch3.S2.SSx2.p1.m5" class="ltx_Math" alttext="\tau" display="inline"><mi>τ</mi></math>. Clearly, this new function <math id="Ch3.S2.SSx2.p1.m6" class="ltx_Math" alttext="f(t-\tau)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>τ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> is
+related to the original function <math id="Ch3.S2.SSx2.p1.m7" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>. How are their Fourier
+transforms related? Knowing the Fourier transform of <math id="Ch3.S2.SSx2.p1.m8" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>, is there
+a quick way to determine the Fourier transform of <math id="Ch3.S2.SSx2.p1.m9" class="ltx_Math" alttext="f(t-\tau)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>τ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math>? The
+answer to this quesiton is provided by the <span class="ltx_text ltx_font_italic">time shifting</span>
+property of Fourier transform.</p>
+</div>
+<div id="Ch3.S2.SSx2.p2" class="ltx_para">
+<p class="ltx_p">We start from the definition of Fourier transform,</p>
+<table id="Ch3.Ex23" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex23X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.Ex23X.m2" class="ltx_Math" alttext="\displaystyle\widehat{f(t-\tau)}" display="inline"><mover accent="true"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>τ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex23X.m3" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}f(t-\tau)e^{-i\omega t}\,dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>τ</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex23Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex23Xa.m2" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}f(s)e^{-i\omega(s+\tau)}\,ds\qquad(s=t-%
+\tau,\,ds=dt)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>s</mi><mo>+</mo><mi>τ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>s</mi></mrow></mrow></mrow><mspace width="2em"></mspace><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>s</mi><mo>=</mo><mrow><mi>t</mi><mo>−</mo><mi>τ</mi></mrow></mrow><mo rspace="0.337em">,</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>s</mi></mrow><mo>=</mo><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex23Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex23Xb.m2" class="ltx_Math" alttext="\displaystyle=e^{-i\omega\tau}\int_{-\infty}^{\infty}f(s)e^{-i\omega s}\,ds=e^%
+{-i\omega\tau}\widehat{f}(\omega)," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>τ</mi></mrow></mrow></msup><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>s</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>s</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>τ</mi></mrow></mrow></msup><mo>⁢</mo><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus, we have</p>
+<table id="Ch3.Ex24" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex24.m1" class="ltx_Math" alttext="\widehat{f(t-\tau)}=e^{-i\omega\tau}\widehat{f}(\omega)." display="block"><mrow><mrow><mover accent="true"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>τ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover><mo>=</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>τ</mi></mrow></mrow></msup><mo>⁢</mo><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This formula shows that a shift of <math id="Ch3.S2.SSx2.p2.m1" class="ltx_Math" alttext="\tau" display="inline"><mi>τ</mi></math> to the right in the physical
+space corresponds to
+a clockwise rotation of <math id="Ch3.S2.SSx2.p2.m2" class="ltx_Math" alttext="\omega\tau" display="inline"><mrow><mi>ω</mi><mo>⁢</mo><mi>τ</mi></mrow></math> in the frequency space.</p>
+</div>
+</section>
+<section id="Ch3.S2.SSx3" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">3. Scaling</h4>
+
+<div id="Ch3.S2.SSx3.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="Ch3.S2.SSx3.p1.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> be a function with a Fourier transform <math id="Ch3.S2.SSx3.p1.m2" class="ltx_Math" alttext="\widehat{f}(\omega)" display="inline"><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math> and
+<math id="Ch3.S2.SSx3.p1.m3" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> be a real non-zero constant. Then the new function <math id="Ch3.S2.SSx3.p1.m4" class="ltx_Math" alttext="f(kt)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> is a
+re-scaling of the original function <math id="Ch3.S2.SSx3.p1.m5" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Specifically, the graph of
+<math id="Ch3.S2.SSx3.p1.m6" class="ltx_Math" alttext="f(kt)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> can be obtained by compressing (if <math id="Ch3.S2.SSx3.p1.m7" class="ltx_Math" alttext="|k|&gt;1" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>k</mi><mo stretchy="false">|</mo></mrow><mo>&gt;</mo><mn>1</mn></mrow></math>) or stretching
+(<math id="Ch3.S2.SSx3.p1.m8" class="ltx_math_unparsed" alttext="|k|&lt;1)" display="inline"><mrow><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>k</mi><mo fence="false" stretchy="false">|</mo><mo lspace="0.167em">&lt;</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></math> the graph of <math id="Ch3.S2.SSx3.p1.m9" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>, horizontally, by a factor of
+<math id="Ch3.S2.SSx3.p1.m10" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>. Clearly, <math id="Ch3.S2.SSx3.p1.m11" class="ltx_Math" alttext="f(kt)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> is related to the original function <math id="Ch3.S2.SSx3.p1.m12" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>; how
+are their Fourier transform related? Can knowing the Fourier transform
+of <math id="Ch3.S2.SSx3.p1.m13" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> allow us to quickly obtain the Fourier transform of its
+scaled version, <math id="Ch3.S2.SSx3.p1.m14" class="ltx_Math" alttext="f(kt)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math>?</p>
+</div>
+<div id="Ch3.S2.SSx3.p2" class="ltx_para">
+<p class="ltx_p">We still start from the definition,</p>
+<table id="Ch3.Ex25" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex25X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.Ex25X.m2" class="ltx_Math" alttext="\displaystyle\widehat{f(kt)}" display="inline"><mover accent="true"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex25X.m3" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}f(kt)e^{-i\omega t}\,dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex25Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex25Xa.m2" class="ltx_Math" alttext="\displaystyle=\int_{-k\infty}^{+k\infty}f(s)e^{-i\omega s/k}\frac{1}{k}\,ds%
+\qquad(s=kt,\,ds=k\,dt)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mrow><mi>k</mi><mo>⁢</mo><mi mathvariant="normal">∞</mi></mrow></mrow><mrow><mo>+</mo><mrow><mi>k</mi><mo>⁢</mo><mi mathvariant="normal">∞</mi></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>s</mi></mrow><mo>/</mo><mi>k</mi></mrow></mrow></msup><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>k</mi></mfrac></mstyle><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>s</mi></mrow></mrow></mrow><mspace width="2em"></mspace><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>s</mi><mo>=</mo><mrow><mi>k</mi><mo>⁢</mo><mi>t</mi></mrow></mrow><mo rspace="0.337em">,</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>s</mi></mrow><mo>=</mo><mrow><mi>k</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex25Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex25Xb.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{|k|}\int_{-\infty}^{\infty}f(s)e^{-i(\omega/k)s}\,ds" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mo stretchy="false">|</mo><mi>k</mi><mo stretchy="false">|</mo></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>/</mo><mi>k</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>s</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>s</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex25Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex25Xc.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{|k|}\widehat{f}\left(\frac{\omega}{k}\right)," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mo stretchy="false">|</mo><mi>k</mi><mo stretchy="false">|</mo></mrow></mfrac></mstyle><mo>⁢</mo><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mi>ω</mi><mi>k</mi></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">In conclusion,</p>
+<table id="Ch3.Ex26" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex26.m1" class="ltx_Math" alttext="\widehat{f(kt)}=\frac{\widehat{f}(\omega/k)}{|k|}." display="block"><mrow><mrow><mover accent="true"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover><mo>=</mo><mfrac><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>/</mo><mi>k</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mo stretchy="false">|</mo><mi>k</mi><mo stretchy="false">|</mo></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch3.S2.SSx4" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 1</h4>
+
+<div id="Ch3.S2.SSx4.p1" class="ltx_para">
+<p class="ltx_p">The Fourier transform of <math id="Ch3.S2.SSx4.p1.m1" class="ltx_Math" alttext="f(t)=e^{-t}H(t)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> is</p>
+<table id="Ch3.Ex27" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex27.m1" class="ltx_Math" alttext="\widehat{f}(\omega)=\frac{1}{1+i\omega}." display="block"><mrow><mrow><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi></mrow></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Therefore the Fourier transform for <math id="Ch3.S2.SSx4.p1.m2" class="ltx_Math" alttext="f(at)=e^{-at}H(t)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, <math id="Ch3.S2.SSx4.p1.m3" class="ltx_Math" alttext="a&gt;0" display="inline"><mrow><mi>a</mi><mo>&gt;</mo><mn>0</mn></mrow></math>, is</p>
+<table id="Ch3.Ex28" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex28.m1" class="ltx_Math" alttext="\widehat{f(at)}=\frac{1}{a}\left(\frac{1}{1+i\omega/a}\right)=\frac{1}{a+i%
+\omega}." display="block"><mrow><mrow><mover accent="true"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover><mo>=</mo><mrow><mfrac><mn>1</mn><mi>a</mi></mfrac><mo>⁢</mo><mrow><mo>(</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mrow><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi></mrow><mo>/</mo><mi>a</mi></mrow></mrow></mfrac><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mi>a</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi></mrow></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch3.S2.SSx5" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">4. The symmetry rule</h4>
+
+<div id="Ch3.S2.SSx5.p1" class="ltx_para">
+<p class="ltx_p">Suppose that function <math id="Ch3.S2.SSx5.p1.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> has Fourier transform
+<math id="Ch3.S2.SSx5.p1.m2" class="ltx_Math" alttext="F(\omega)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Viewing <math id="Ch3.S2.SSx5.p1.m3" class="ltx_Math" alttext="F(t)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> now as a function of the physical variable
+<math id="Ch3.S2.SSx5.p1.m4" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>, what can we say about its Fourier transform? Back to the original
+<math id="Ch3.S2.SSx5.p1.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>, as a function of the frequency variable <math id="Ch3.S2.SSx5.p1.m6" class="ltx_Math" alttext="\omega" display="inline"><mi>ω</mi></math>? To find out, we
+start from an operation that connects these two functions, the
+inverse Fourier transform, given by formula
+(1) of the previous section,</p>
+<table id="Ch3.Ex29" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex29.m1" class="ltx_Math" alttext="f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{i\omega t}\,d\omega." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This does look like Fourier transform itself, except for the sign
+in the exponent. To officially bring it into the form of Fourier
+transform, we
+set <math id="Ch3.S2.SSx5.p1.m7" class="ltx_Math" alttext="\omega=s" display="inline"><mrow><mi>ω</mi><mo>=</mo><mi>s</mi></mrow></math> and <math id="Ch3.S2.SSx5.p1.m8" class="ltx_Math" alttext="t=-\eta" display="inline"><mrow><mi>t</mi><mo>=</mo><mrow><mo>−</mo><mi>η</mi></mrow></mrow></math>. Then</p>
+<table id="Ch3.Ex30" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex30.m1" class="ltx_Math" alttext="f(-\eta)=\frac{1}{2\pi}\int_{-\infty}^{\infty}F(s)e^{-i\eta s}\,ds." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>η</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>η</mi><mo>⁢</mo><mi>s</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>s</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">From this, we conclude that</p>
+<table id="Ch3.Ex31" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex31.m1" class="ltx_Math" alttext="\widehat{F}(\eta)=\int_{-\infty}^{\infty}F(s)e^{-i\eta s}\,ds=2\pi f(-\eta)," display="block"><mrow><mrow><mrow><mover accent="true"><mi>F</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>η</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>η</mi><mo>⁢</mo><mi>s</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>s</mi></mrow></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>η</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">with <math id="Ch3.S2.SSx5.p1.m9" class="ltx_Math" alttext="\eta" display="inline"><mi>η</mi></math> being the frequency variable. This derivation reveals to
+us that the Fourier transform of <math id="Ch3.S2.SSx5.p1.m10" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> is merely a symmetric
+reflection of <math id="Ch3.S2.SSx5.p1.m11" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> about the vertical axis. The artificial factor
+<math id="Ch3.S2.SSx5.p1.m12" class="ltx_Math" alttext="2\pi" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></math> results from our choice of the factors in the specifications of
+the Fourier transform and its inverse.</p>
+</div>
+</section>
+<section id="Ch3.S2.SSx6" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 2</h4>
+
+<div id="Ch3.S2.SSx6.p1" class="ltx_para">
+<p class="ltx_p">Find <math id="Ch3.S2.SSx6.p1.m1" class="ltx_Math" alttext="\widehat{1}" display="inline"><mover accent="true"><mn>1</mn><mo>^</mo></mover></math>, the Fourier transform of the constant function <math id="Ch3.S2.SSx6.p1.m2" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>.</p>
+</div>
+<div id="Ch3.S2.SSx6.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Solution:</span> By the symmtry rule above, since</p>
+<table id="Ch3.Ex32" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex32.m1" class="ltx_Math" alttext="\widehat{\delta}(\omega)=1," display="block"><mrow><mrow><mrow><mover accent="true"><mi>δ</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">we have</p>
+<table id="Ch3.Ex33" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex33.m1" class="ltx_Math" alttext="\widehat{1}=2\pi\delta(-\omega)=2\pi\delta(\omega)." display="block"><mrow><mrow><mover accent="true"><mn>1</mn><mo>^</mo></mover><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>ω</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The last equality above is due to the fact that the Dirac delta
+function is even. This is the first example where applying the
+definition of the Fourier transform will run into serious trouble. The
+symmetry rule, on the other hand, leads us to the final answer
+quickly.</p>
+</div>
+<div id="Ch3.S2.SSx6.p3" class="ltx_para">
+<p class="ltx_p">Similarly, since (see <span class="ltx_text ltx_font_bold">Example 4</span> of last section)</p>
+<table id="Ch3.Ex34" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex34.m1" class="ltx_Math" alttext="\widehat{\delta(t-a)}=e^{-i\omega a},\qquad\widehat{\delta(t+a)}=e^{i\omega a}," display="block"><mrow><mrow><mrow><mover accent="true"><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>a</mi></mrow></mrow></msup></mrow><mo rspace="2.167em">,</mo><mrow><mover accent="true"><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>+</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover><mo>=</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>a</mi></mrow></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">by the symmetry rule,</p>
+<table id="Ch3.Ex35" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex35X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.Ex35X.m2" class="ltx_Math" alttext="\displaystyle\widehat{e^{ita}}" display="inline"><mover accent="true"><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>a</mi></mrow></msup><mo>^</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex35X.m3" class="ltx_Math" alttext="\displaystyle=2\pi\delta(-\omega+a)=2\pi\delta(\omega-a)," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo>−</mo><mi>ω</mi></mrow><mo>+</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>−</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex35Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.Ex35Xa.m2" class="ltx_Math" alttext="\displaystyle\widehat{e^{-ita}}" display="inline"><mover accent="true"><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>a</mi></mrow></mrow></msup><mo>^</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex35Xa.m3" class="ltx_Math" alttext="\displaystyle=2\pi\delta(-\omega-a)=2\pi\delta(\omega+a)." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo>−</mo><mi>ω</mi></mrow><mo>−</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>+</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch3.S2.SSx7" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 3</h4>
+
+<div id="Ch3.S2.SSx7.p1" class="ltx_para">
+<p class="ltx_p">Find the Fourier transform of <math id="Ch3.S2.SSx7.p1.m1" class="ltx_Math" alttext="\frac{1}{1+t^{2}}" display="inline"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac></math>.</p>
+</div>
+<div id="Ch3.S2.SSx7.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Solution:</span> This is another example where applying the
+basic definition of Fourier transform only leads us to an integral
+that is very hard to evaluate. Fortunately, the symmetry rule provides
+an easy solution, relatively speaking. In <span class="ltx_text ltx_font_bold">Example 2</span> of last
+section, we saw that function <math id="Ch3.S2.SSx7.p2.m1" class="ltx_Math" alttext="e^{-a|t|}" display="inline"><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">|</mo><mi>t</mi><mo stretchy="false">|</mo></mrow></mrow></mrow></msup></math> has Fourier transform
+<math id="Ch3.S2.SSx7.p2.m2" class="ltx_Math" alttext="\frac{2a}{a^{2}+\omega^{2}}" display="inline"><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup></mrow></mfrac></math>. Thus, in this case,</p>
+<table id="Ch3.Ex36" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex36.m1" class="ltx_Math" alttext="f(t)=e^{-a|t|},\qquad\textrm{and }F(\omega)=\frac{2a}{a^{2}+\omega^{2}}." display="block"><mrow><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">|</mo><mi>t</mi><mo stretchy="false">|</mo></mrow></mrow></mrow></msup></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mtext>and </mtext><mo>⁢</mo><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup></mrow></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">By the symmetry rule,</p>
+<table id="Ch3.Ex37" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex37.m1" class="ltx_Math" alttext="\widehat{\left(\frac{2a}{a^{2}+t^{2}}\right)}=2\pi f(-\omega)=2\pi e^{-a|-%
+\omega|}=2\pi e^{-a|\omega|}." display="block"><mrow><mrow><mover accent="true"><mrow><mo>(</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>)</mo></mrow><mo>^</mo></mover><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>ω</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">|</mo><mrow><mo>−</mo><mi>ω</mi></mrow><mo stretchy="false">|</mo></mrow></mrow></mrow></msup></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">|</mo><mi>ω</mi><mo stretchy="false">|</mo></mrow></mrow></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Taking <math id="Ch3.S2.SSx7.p2.m3" class="ltx_Math" alttext="a=1" display="inline"><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow></math> in the above, we arrive at</p>
+<table id="Ch3.Ex38" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex38.m1" class="ltx_Math" alttext="\widehat{\left(\frac{2}{1^{2}+t^{2}}\right)}=2\pi e^{-|\omega|}." display="block"><mrow><mrow><mover accent="true"><mrow><mo>(</mo><mfrac><mn>2</mn><mrow><msup><mn>1</mn><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>)</mo></mrow><mo>^</mo></mover><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mo stretchy="false">|</mo><mi>ω</mi><mo stretchy="false">|</mo></mrow></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Divide both sides by <math id="Ch3.S2.SSx7.p2.m4" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math>,</p>
+<table id="Ch3.Ex39" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex39.m1" class="ltx_Math" alttext="\widehat{\left(\frac{1}{1^{2}+t^{2}}\right)}=\pi e^{-|\omega|}." display="block"><mrow><mrow><mover accent="true"><mrow><mo>(</mo><mfrac><mn>1</mn><mrow><msup><mn>1</mn><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>)</mo></mrow><mo>^</mo></mover><mo>=</mo><mrow><mi>π</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mo stretchy="false">|</mo><mi>ω</mi><mo stretchy="false">|</mo></mrow></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch3.S2.SSx8" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">5. Differentiation</h4>
+
+<div id="Ch3.S2.SSx8.p1" class="ltx_para">
+<p class="ltx_p">We assume that a function <math id="Ch3.S2.SSx8.p1.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> has Fourier transform <math id="Ch3.S2.SSx8.p1.m2" class="ltx_Math" alttext="\widehat{f}(\omega)" display="inline"><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math>, and <math id="Ch3.S2.SSx8.p1.m3" class="ltx_Math" alttext="|f|" display="inline"><mrow><mo stretchy="false">|</mo><mi>f</mi><mo stretchy="false">|</mo></mrow></math> is integrable, which implies, in particular, that</p>
+<table id="Ch3.Ex40" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex40.m1" class="ltx_Math" alttext="f(-\infty)=f(\infty)=0." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We also assume that <math id="Ch3.S2.SSx8.p1.m4" class="ltx_Math" alttext="f^{\prime}(t)" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> exists. Then the Fourier transform of <math id="Ch3.S2.SSx8.p1.m5" class="ltx_Math" alttext="f^{\prime}(t)" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> is</p>
+<table id="Ch3.Ex41" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex41X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.Ex41X.m2" class="ltx_Math" alttext="\displaystyle\widehat{f^{\prime}(t)}" display="inline"><mover accent="true"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex41X.m3" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}f^{\prime}(t)e^{-i\omega t}\,dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex41Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex41Xa.m2" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}e^{-i\omega t}\,df(t)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex41Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex41Xb.m2" class="ltx_Math" alttext="\displaystyle=e^{-i\omega t}f(t)\Bigg{|}_{-\infty}^{\infty}-\int_{-\infty}^{%
+\infty}f(t)\,d(e^{-i\omega t})" display="inline"><mrow><mi></mi><mo>=</mo><mrow><msubsup><mrow><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo maxsize="260%" minsize="260%">|</mo></mrow><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mo>−</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex41Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex41Xc.m2" class="ltx_Math" alttext="\displaystyle=i\omega\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex41Xd"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex41Xd.m2" class="ltx_Math" alttext="\displaystyle=i\omega\widehat{f}(\omega)." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Derivative in the physical space is translated to multiplication by a factor of <math id="Ch3.S2.SSx8.p1.m6" class="ltx_Math" alttext="i\omega" display="inline"><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi></mrow></math> in the frequency space.</p>
+</div>
+<div id="Ch3.S2.SSx8.p2" class="ltx_para">
+<p class="ltx_p">By induction, and with appropriate assumptions on the higher order
+derivatives <math id="Ch3.S2.SSx8.p2.m1" class="ltx_Math" alttext="f^{(k)}(t)" display="inline"><mrow><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>, <math id="Ch3.S2.SSx8.p2.m2" class="ltx_Math" alttext="k=1,\ldots,n" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>, we derive that</p>
+<table id="Ch3.Ex42" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex42.m1" class="ltx_Math" alttext="\widehat{f^{(k)}(t)}=(i\omega)^{k}\widehat{f}(\omega),\qquad 1\leq k\leq n." display="block"><mrow><mrow><mrow><mover accent="true"><mrow><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi></mrow><mo stretchy="false">)</mo></mrow><mi>k</mi></msup><mo>⁢</mo><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="2.167em">,</mo><mrow><mn>1</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch3.S2.SSx9" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 4</h4>
+
+<div id="Ch3.S2.SSx9.p1" class="ltx_para">
+<p class="ltx_p">The Fourier transform of <math id="Ch3.S2.SSx9.p1.m1" class="ltx_Math" alttext="f(t)=\frac{1}{1+t^{2}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac></mrow></math> is <math id="Ch3.S2.SSx9.p1.m2" class="ltx_Math" alttext="\widehat{f}(\omega)=\pi e^{-|\omega|}" display="inline"><mrow><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>π</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mo stretchy="false">|</mo><mi>ω</mi><mo stretchy="false">|</mo></mrow></mrow></msup></mrow></mrow></math>. Therefore</p>
+<table id="Ch3.Ex43" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex43.m1" class="ltx_Math" alttext="\widehat{\left(\frac{-2t}{(1+t^{2})^{2}}\right)}=\widehat{\left(\frac{1}{1+t^{%
+2}}\right)^{\prime}}=i\omega\pi e^{-|\omega|}." display="block"><mrow><mrow><mover accent="true"><mrow><mo>(</mo><mfrac><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>t</mi></mrow></mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mfrac><mo>)</mo></mrow><mo>^</mo></mover><mo>=</mo><mover accent="true"><msup><mrow><mo>(</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>)</mo></mrow><mo>′</mo></msup><mo>^</mo></mover><mo>=</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mo stretchy="false">|</mo><mi>ω</mi><mo stretchy="false">|</mo></mrow></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch3.S2.SSx10" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 5: the heat equation</h4>
+
+<div id="Ch3.S2.SSx10.p1" class="ltx_para">
+<p class="ltx_p">The heat equations govern the evolution of heat distribution in
+certain medium. In the one-dimensional case with uniform heat
+conductivity, the equations reads</p>
+<table id="Ch3.Ex44" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex44.m1" class="ltx_Math" alttext="\begin{cases}\dfrac{\partial u}{\partial t}-\kappa\dfrac{\partial^{2}u}{%
+\partial x^{2}}=0,\\[6.99997pt]
+u(x,0)=u_{0}(x).\end{cases}" display="block"><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mfrac><mrow><mo rspace="0em">∂</mo><mi>u</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>t</mi></mrow></mfrac><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><mi>u</mi></mrow><mrow><mo rspace="0em">∂</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd><mtd></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>u</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd></mtd></mtr></mtable></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Here, <math id="Ch3.S2.SSx10.p1.m1" class="ltx_Math" alttext="u=u(x,t)" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> represents the heat distribution along a line, and
+the second equation provides the initial heat distribution at <math id="Ch3.S2.SSx10.p1.m2" class="ltx_Math" alttext="t=0" display="inline"><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow></math>.</p>
+</div>
+<div id="Ch3.S2.SSx10.p2" class="ltx_para">
+<p class="ltx_p">There are several analytical and numerical methods for solving the
+heat equations. Here, we demonstrate how Fourier transform can be
+employed to find the solution to this system. We first
+apply Fourier transform with respect to <math id="Ch3.S2.SSx10.p2.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> to the equation,</p>
+<table id="Ch3.Ex45" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex45.m1" class="ltx_Math" alttext="\frac{d}{dt}\widehat{u}-\kappa(i\omega)^{2}\widehat{u}=0\quad\Longrightarrow%
+\quad\frac{d}{dt}\widehat{u}=-\kappa\omega^{2}\widehat{u}," display="block"><mrow><mrow><mrow><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>⁢</mo><mover accent="true"><mi>u</mi><mo>^</mo></mover></mrow><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>⁢</mo><mover accent="true"><mi>u</mi><mo>^</mo></mover></mrow></mrow><mo>=</mo><mrow><mn>0</mn><mspace width="1em"></mspace><mo stretchy="false">⟹</mo></mrow></mrow><mspace width="1em"></mspace><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>⁢</mo><mover accent="true"><mi>u</mi><mo>^</mo></mover></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><msup><mi>ω</mi><mn>2</mn></msup><mo>⁢</mo><mover accent="true"><mi>u</mi><mo>^</mo></mover></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Note Fourier transform eliminates the spatial derivative via the
+differentiation rule. Fourier transform, again with respect to <math id="Ch3.S2.SSx10.p2.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, on
+the second equation yields</p>
+<table id="Ch3.Ex46" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex46.m1" class="ltx_Math" alttext="\widehat{u}(\omega,0)=\widehat{u}_{0}(\omega)." display="block"><mrow><mrow><mrow><mover accent="true"><mi>u</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mover accent="true"><mi>u</mi><mo>^</mo></mover><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus, under Fourier transform, the heat equation, which is a partial
+differential equation, becomes an ordinary
+differential equation, with an initial condition,</p>
+<table id="Ch3.Ex47" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex47X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex47X.m2" class="ltx_Math" alttext="\displaystyle\frac{d}{dt}\widehat{u}=-\kappa\omega^{2}\widehat{u}," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle><mo>⁢</mo><mover accent="true"><mi>u</mi><mo>^</mo></mover></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><msup><mi>ω</mi><mn>2</mn></msup><mo>⁢</mo><mover accent="true"><mi>u</mi><mo>^</mo></mover></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex47Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex47Xa.m2" class="ltx_Math" alttext="\displaystyle\widehat{u}(\omega,0)=\widehat{u}_{0}(\omega)." display="inline"><mrow><mrow><mrow><mover accent="true"><mi>u</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mover accent="true"><mi>u</mi><mo>^</mo></mover><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We can easily write down the solution to this initial value problem,</p>
+<table id="Ch3.Ex48" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex48X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex48X.m2" class="ltx_Math" alttext="\displaystyle\widehat{u}(\omega,t)=\widehat{u}_{0}(\omega)e^{-\kappa\omega^{2}%
+t}." display="inline"><mrow><mrow><mrow><mover accent="true"><mi>u</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mover accent="true"><mi>u</mi><mo>^</mo></mover><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><msup><mi>ω</mi><mn>2</mn></msup><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch3.S2.SSx10.p3" class="ltx_para">
+<p class="ltx_p">This solution is expressed in <math id="Ch3.S2.SSx10.p3.m1" class="ltx_Math" alttext="\omega" display="inline"><mi>ω</mi></math>, the frequency variable. What
+is often wanted, in applications, is solution in the spatial
+variable. To get that, we can appy the inverse Fourier transform. This
+involves the inverse transform on a product of two functions, which we
+haven’t learned how to handle. Hence, we will postpone this last step,
+and instead we will present a few more properties.</p>
+</div>
+</section>
+<section id="Ch3.S2.SSx11" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">6. Parseval’s equality</h4>
+
+<div id="Ch3.S2.SSx11.p1" class="ltx_para">
+<p class="ltx_p">In physics and engineering, there is often a need to compute the
+energy of a system, and the energy is usually expressed by the
+integral of the square of a function <math id="Ch3.S2.SSx11.p1.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>.
+Can we still compute the energy if we only have the
+Fourier transform of the function? The answer is yes, and the result
+we are going to derive is called Parseval equality for non-periodic
+functions.
+</p>
+</div>
+<div id="Ch3.S2.SSx11.p2" class="ltx_para">
+<p class="ltx_p">Let <math id="Ch3.S2.SSx11.p2.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> be a real, non-periodic function. From the definition of inverse Fourier transform,</p>
+<table id="Ch3.Ex49" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex49.m1" class="ltx_Math" alttext="f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\widehat{f}(\omega)e^{i\omega t}\,d\omega." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We then derive that</p>
+<table id="Ch3.Ex50" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex50X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex50X.m2" class="ltx_Math" alttext="\displaystyle\phantom{==}\int_{-\infty}^{\infty}|f(t)|^{2}\,dt=\int_{-\infty}^%
+{\infty}f(t)^{\ast}\cdot f(t)\,dt" display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><msup><mrow><mo stretchy="false">|</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow><mo>∗</mo></msup></mrow><mo rspace="0.222em">⋅</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex50Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex50Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2\pi}\int_{-\infty}^{\infty}f(t)^{\ast}\int_{-\infty}^{%
+\infty}\widehat{f}(\omega)e^{i\omega t}\,d\omega\,dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>∗</mo></msup><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">In above, the asterisk denotes the complex conjugate of a function.
+Exchanging the order of integrations, we continue,</p>
+<table id="Ch3.Ex51" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex51X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex51X.m2" class="ltx_Math" alttext="\displaystyle\phantom{==}\int_{-\infty}^{\infty}|f(t)|^{2}\,dt" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><msup><mrow><mo stretchy="false">|</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex51Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex51Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2\pi}\int_{-\infty}^{\infty}\widehat{f}(\omega)\int_{-%
+\infty}^{\infty}f(t)^{\ast}e^{i\omega t}\,dt\,d\omega" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>∗</mo></msup><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex51Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex51Xb.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2\pi}\int_{-\infty}^{\infty}\widehat{f}(\omega)\left(%
+\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt\right)^{\ast}d\omega" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>)</mo></mrow><mo>∗</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex51Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex51Xc.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2\pi}\int_{-\infty}^{\infty}\widehat{f}(\omega)\widehat%
+{f}^{*}(\omega)\,d\omega" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex51Xd"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex51Xd.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2\pi}\int_{-\infty}^{\infty}|\widehat{f}(\omega)|^{2}\,%
+d\omega." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><msup><mrow><mo stretchy="false">|</mo><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">In the above, we have used the facts that <math id="Ch3.S2.SSx11.p2.m2" class="ltx_Math" alttext="e^{-i\omega t}=(e^{i\omega t})^{\ast}" display="inline"><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo stretchy="false">)</mo></mrow><mo>∗</mo></msup></mrow></math>, and <math id="Ch3.S2.SSx11.p2.m3" class="ltx_Math" alttext="(fg)^{\ast}=f^{\ast}g^{\ast}" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mi>g</mi></mrow><mo stretchy="false">)</mo></mrow><mo>∗</mo></msup><mo>=</mo><mrow><msup><mi>f</mi><mo>∗</mo></msup><mo>⁢</mo><msup><mi>g</mi><mo>∗</mo></msup></mrow></mrow></math> for two
+arbitrary funcitons. To summarize,</p>
+<table id="Ch3.Ex52" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex52.m1" class="ltx_Math" alttext="\int_{-\infty}^{\infty}|f(t)|^{2}\,dt=\frac{1}{2\pi}\int_{-\infty}^{\infty}|%
+\widehat{f}(\omega)|^{2}\,d\omega." display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><msup><mrow><mo lspace="0em" stretchy="false">|</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo rspace="0em">∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><msup><mrow><mo stretchy="false">|</mo><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The square integral of a function <math id="Ch3.S2.SSx11.p2.m4" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> over the real axis equals the
+square integral of its Fourier transform, up to an artificial factor
+of <math id="Ch3.S2.SSx11.p2.m5" class="ltx_Math" alttext="1/2\pi" display="inline"><mrow><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow><mo>⁢</mo><mi>π</mi></mrow></math>.</p>
+</div>
+</section>
+<section id="Ch3.S2.SSx12" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 6</h4>
+
+<div id="Ch3.S2.SSx12.p1" class="ltx_para">
+<p class="ltx_p">Evaluate the integral</p>
+<table id="Ch3.Ex53" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex53.m1" class="ltx_Math" alttext="\int_{-\infty}^{\infty}\left(\frac{\sin x}{x}\right)^{2}dx." display="block"><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><msup><mrow><mo lspace="0em">(</mo><mfrac><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mi>x</mi></mfrac><mo>)</mo></mrow><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch3.S2.SSx12.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Solution:</span> This integral is very difficult to evaluate
+directly. We shall try to take a short cut, and use tools like the
+Parseval equality.
+In a previous example we showed that the Fourier transform of</p>
+<table id="Ch3.Ex54" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex54.m1" class="ltx_Math" alttext="f(t)=\begin{cases}1,&amp;-a&lt;t&lt;a,\\
+0,&amp;|t|&gt;a,\end{cases}" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>1</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mo>−</mo><mi>a</mi></mrow><mo>&lt;</mo><mi>t</mi><mo>&lt;</mo><mi>a</mi></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mo stretchy="false">|</mo><mi>t</mi><mo stretchy="false">|</mo></mrow><mo>&gt;</mo><mi>a</mi></mrow><mo>,</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">is</p>
+<table id="Ch3.Ex55" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex55.m1" class="ltx_Math" alttext="\widehat{f}(\omega)=\frac{2\sin(\omega a)}{\omega}." display="block"><mrow><mrow><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mi>ω</mi></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Hence, by the Parseval Equality for Fourier transforms,</p>
+<table id="Ch3.Ex56" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex56.m1" class="ltx_Math" alttext="\int_{-\infty}^{\infty}|f|^{2}\,dt=\frac{1}{2\pi}\int_{-\infty}^{\infty}\frac{%
+4\sin^{2}(\omega a)}{\omega^{2}}\,d\omega," display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><msup><mrow><mo lspace="0em" stretchy="false">|</mo><mi>f</mi><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mfrac><mrow><mn>4</mn><mo lspace="0.167em">⁢</mo><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><msup><mi>ω</mi><mn>2</mn></msup></mfrac><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch3.Ex57" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex57.m1" class="ltx_Math" alttext="\int_{-a}^{a}1\,dt=2a=\frac{1}{2\pi}\int_{-\infty}^{\infty}\frac{4\sin^{2}(%
+\omega a)}{\omega^{2}}\,d\omega." display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>a</mi></mrow><mi>a</mi></msubsup><mrow><mn>1</mn><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mfrac><mrow><mn>4</mn><mo lspace="0.167em">⁢</mo><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><msup><mi>ω</mi><mn>2</mn></msup></mfrac><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Therefore,</p>
+<table id="Ch3.Ex58" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex58.m1" class="ltx_Math" alttext="\int_{-\infty}^{\infty}\frac{\sin^{2}(\omega a)}{\omega^{2}}\,d\omega=\pi a." display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mfrac><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><msup><mi>ω</mi><mn>2</mn></msup></mfrac><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow></mrow></mrow><mo>=</mo><mrow><mi>π</mi><mo>⁢</mo><mi>a</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Setting <math id="Ch3.S2.SSx12.p2.m1" class="ltx_Math" alttext="a=1" display="inline"><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow></math>, we arrive at</p>
+<table id="Ch3.Ex59" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex59.m1" class="ltx_Math" alttext="\int_{-\infty}^{\infty}\frac{\sin^{2}(\omega)}{\omega^{2}}\,d\omega=\pi." display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mfrac><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><msup><mi>ω</mi><mn>2</mn></msup></mfrac><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>ω</mi></mrow></mrow></mrow><mo>=</mo><mi>π</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch3.S2.SSx13" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">7. Convolution</h4>
+
+<div id="Ch3.S2.SSx13.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="Ch3.S2.SSx13.p1.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Ch3.S2.SSx13.p1.m2" class="ltx_Math" alttext="g(t)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> be two functions. The convolution of <math id="Ch3.S2.SSx13.p1.m3" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Ch3.S2.SSx13.p1.m4" class="ltx_Math" alttext="g(t)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> is another function, which is given by</p>
+<table id="Ch3.Ex60" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex60.m1" class="ltx_Math" alttext="f*g(t)=\int_{-\infty}^{\infty}f(x)g(t-x)\,dx=\int_{-\infty}^{\infty}f(t-x)g(x)%
+\,dx." display="block"><mrow><mrow><mrow><mrow><mi>f</mi><mo lspace="0.222em" rspace="0.222em">∗</mo><mi>g</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The operation of convolution appears often in solving differential equations and in filter designs. Thus Fourier transform on convolutions is an important topic, and also an interesting one.
+We begin with the definition of the Fourier transform and
+convolution,</p>
+<table id="Ch3.Ex61" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex61X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.Ex61X.m2" class="ltx_Math" alttext="\displaystyle\widehat{f*g}(\omega)" display="inline"><mrow><mover accent="true"><mrow><mi>f</mi><mo lspace="0.222em" rspace="0.222em">∗</mo><mi>g</mi></mrow><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex61X.m3" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}f*g(t)e^{-i\omega t}\,dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mrow><mi>f</mi><mo lspace="0.222em" rspace="0.222em">∗</mo><mi>g</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex61Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex61Xa.m2" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x)g(t-x)\,dx\;e^%
+{-i\omega t}\,dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow><mo lspace="0.280em">⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex61Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex61Xb.m2" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x)g(t-x)e^{-i%
+\omega x}e^{-i\omega(t-x)}\,dx\,dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></msup><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex61Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex61Xc.m2" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}f(x)e^{-i\omega x}\left(\int_{-\infty}^{%
+\infty}g(t-x)e^{-i\omega(t-x)}\,dt\right)dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></msup><mo>⁢</mo><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex61Xd"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex61Xd.m2" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}f(x)e^{-i\omega x}\,dx\int_{-\infty}^{%
+\infty}g(s)e^{-i\omega s}\,ds\qquad(s=t-x)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>s</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>s</mi></mrow></mrow></mrow></mrow></mrow><mspace width="2em"></mspace><mrow><mo stretchy="false">(</mo><mrow><mi>s</mi><mo>=</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex61Xe"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex61Xe.m2" class="ltx_Math" alttext="\displaystyle=\widehat{f}(\omega)\widehat{g}(\omega)." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mover accent="true"><mi>g</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus, the Fourier transform of the convolution of two functions equals
+the product of their respective Fourier transforms,</p>
+<table id="Ch3.Ex62" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex62.m1" class="ltx_Math" alttext="\widehat{f*g}(\omega)=\widehat{f}(\omega)\widehat{g}(\omega)." display="block"><mrow><mrow><mrow><mover accent="true"><mrow><mi>f</mi><mo lspace="0.222em" rspace="0.222em">∗</mo><mi>g</mi></mrow><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mover accent="true"><mi>g</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Convolution in physical space corresponds to multiplication in frequency space!</p>
+</div>
+<div id="Ch3.S2.SSx13.p2" class="ltx_para">
+<p class="ltx_p">The convolution operation can also be applied to Fourier transforms, in what is commonly referred to as frequency convolution. We now prove that</p>
+<table id="Ch3.Ex63" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex63.m1" class="ltx_Math" alttext="\widehat{f(t)g(t)}=\frac{1}{2\pi}\widehat{f}(\omega)*\widehat{g}(\omega)," display="block"><mrow><mrow><mover accent="true"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover><mo>=</mo><mrow><mrow><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">∗</mo><mover accent="true"><mi>g</mi><mo>^</mo></mover></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where</p>
+<table id="Ch3.Ex64" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex64.m1" class="ltx_Math" alttext="\widehat{f}(\omega)*\widehat{g}(\omega)=\int_{-\infty}^{\infty}\widehat{f}(%
+\tau)\widehat{g}(\omega-\tau)\,d\tau." display="block"><mrow><mrow><mrow><mrow><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">∗</mo><mover accent="true"><mi>g</mi><mo>^</mo></mover></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mover accent="true"><mi>g</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>−</mo><mi>τ</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We start with the inverse transform of <math id="Ch3.S2.SSx13.p2.m1" class="ltx_Math" alttext="\widehat{f}(\omega)" display="inline"><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math>:</p>
+<table id="Ch3.Ex65" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex65.m1" class="ltx_Math" alttext="f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\widehat{f}(\tau)e^{i\tau t}\,d\tau." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>τ</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Multiply both sides by <math id="Ch3.S2.SSx13.p2.m2" class="ltx_Math" alttext="g(t)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>,</p>
+<table id="Ch3.Ex66" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex66.m1" class="ltx_Math" alttext="f(t)g(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\widehat{f}(\tau)e^{i\tau t}g(t)%
+\,d\tau." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>τ</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Then</p>
+<table id="Ch3.Ex67" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex67X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.Ex67X.m2" class="ltx_Math" alttext="\displaystyle\widehat{f(t)g(t)}" display="inline"><mover accent="true"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex67X.m3" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}\frac{1}{2\pi}\int_{-\infty}^{\infty}%
+\widehat{f}(\tau)e^{i\tau t}g(t)\,d\tau\;e^{-i\omega t}\,dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>τ</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow><mo lspace="0.280em">⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex67Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex67Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2\pi}\int_{-\infty}^{\infty}\widehat{f}(\tau)\int_{-%
+\infty}^{\infty}g(t)e^{-i(\omega-\tau)t}\,dt\,d\tau" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>−</mo><mi>τ</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex67Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex67Xb.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2\pi}\int_{-\infty}^{\infty}\widehat{f}(\tau)\widehat{g%
+}(\omega-\tau)\,d\tau" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mover accent="true"><mi>g</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>−</mo><mi>τ</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex67Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex67Xc.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2\pi}\widehat{f}(\omega)*\widehat{g}(\omega)." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">∗</mo><mover accent="true"><mi>g</mi><mo>^</mo></mover></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus, the Fourier transform of the product of two functions, as it
+turns out, equals the convolution of the their respective Fourier
+transforms,</p>
+<table id="Ch3.Ex68" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex68.m1" class="ltx_Math" alttext="\widehat{f(t)g(t)}=\frac{1}{2\pi}\widehat{f}(\omega)*\widehat{g}(\omega)." display="block"><mrow><mrow><mover accent="true"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover><mo>=</mo><mrow><mrow><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">∗</mo><mover accent="true"><mi>g</mi><mo>^</mo></mover></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Multiplication in the physical space  corresponds to  convolution in
+the frequency space!</p>
+</div>
+</section>
+<section id="Ch3.S2.SSx14" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 7</h4>
+
+<div id="Ch3.S2.SSx14.p1" class="ltx_para">
+<p class="ltx_p">Show that</p>
+<table id="Ch3.Ex69" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex69.m1" class="ltx_Math" alttext="e^{-t}H(t)*e^{-t}H(t)=te^{-t}H(t)." display="block"><mrow><mrow><mrow><mrow><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">∗</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup></mrow><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>t</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch3.S2.SSx14.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Proof:</span>
+Indeed, from the definition of convolution of functions, we have</p>
+<table id="Ch3.Ex70" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex70X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.Ex70X.m2" class="ltx_Math" alttext="\displaystyle e^{-t}H(t)*e^{-t}H(t)" display="inline"><mrow><mrow><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">∗</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup></mrow><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex70X.m3" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}e^{-x}H(x)e^{-(t-x)}H(t-x)\,dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></msup><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex70Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex70Xa.m2" class="ltx_Math" alttext="\displaystyle=\int_{0}^{\infty}e^{-x}e^{-(t-x)}H(t-x)\,dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></msup><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex70Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex70Xb.m2" class="ltx_Math" alttext="\displaystyle=\int_{0}^{t}e^{-x}e^{-(t-x)}\,dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>t</mi></msubsup></mstyle><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex70Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex70Xc.m2" class="ltx_Math" alttext="\displaystyle=\int_{0}^{t}e^{-t}\,dx=e^{-t}x\Big{|}_{0}^{t}=te^{-t}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>t</mi></msubsup></mstyle><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><msubsup><mrow><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup><mo>⁢</mo><mi>x</mi></mrow><mo maxsize="160%" minsize="160%">|</mo></mrow><mn>0</mn><mi>t</mi></msubsup><mo>=</mo><mrow><mi>t</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Hence</p>
+<table id="Ch3.Ex71" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex71.m1" class="ltx_Math" alttext="e^{-t}H(t)*e^{-t}H(t)=te^{-t}H(t)." display="block"><mrow><mrow><mrow><mrow><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">∗</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup></mrow><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>t</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch3.S2.SSx15" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 8</h4>
+
+<div id="Ch3.S2.SSx15.p1" class="ltx_para">
+<p class="ltx_p">Show that the convolution of the Dirac delta function <math id="Ch3.S2.SSx15.p1.m1" class="ltx_Math" alttext="\delta(t)" display="inline"><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> with
+any function equals the function itself.</p>
+</div>
+<div id="Ch3.S2.SSx15.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Proof:</span></p>
+<table id="Ch3.Ex72" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex72X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.Ex72X.m2" class="ltx_Math" alttext="\displaystyle f*\delta(t)" display="inline"><mrow><mrow><mi>f</mi><mo lspace="0.222em" rspace="0.222em">∗</mo><mi>δ</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex72X.m3" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}f(x)\delta(t-x)\,dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex72Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex72Xa.m2" class="ltx_Math" alttext="\displaystyle=\int_{+\infty}^{-\infty}f(t-s)\delta(s)(-1)\,ds\qquad(s=t-x,\,dx%
+=-ds)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>s</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>s</mi></mrow></mrow></mrow><mspace width="2em"></mspace><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>s</mi><mo>=</mo><mrow><mi>t</mi><mo>−</mo><mi>x</mi></mrow></mrow><mo rspace="0.337em">,</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mi>d</mi><mo>⁢</mo><mi>s</mi></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex72Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex72Xb.m2" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}f(t-s)\delta(s)\,ds" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mi>s</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>s</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex72Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex72Xc.m2" class="ltx_Math" alttext="\displaystyle=f(t-0)=f(t)," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch3.S2.SSx16" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 9 (solution of the heat equation)</h4>
+
+<div id="Ch3.S2.SSx16.p1" class="ltx_para">
+<p class="ltx_p">In <span class="ltx_text ltx_font_bold">Example 5</span> in the above, we showed that the heat equation</p>
+<table id="Ch3.Ex73" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex73.m1" class="ltx_Math" alttext="\begin{cases}\dfrac{\partial u}{\partial t}-\kappa\dfrac{\partial^{2}u}{%
+\partial x^{2}}=0,\\[6.99997pt]
+u(x,0)=u_{0}(x).\end{cases}" display="block"><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mfrac><mrow><mo rspace="0em">∂</mo><mi>u</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>t</mi></mrow></mfrac><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><mi>u</mi></mrow><mrow><mo rspace="0em">∂</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd><mtd></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>u</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd></mtd></mtr></mtable></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">has solution</p>
+<table id="Ch3.Ex74" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex74.m1" class="ltx_Math" alttext="\widehat{u}(\omega,t)=\widehat{u}_{0}(\omega)e^{-\kappa\omega^{2}t}," display="block"><mrow><mrow><mrow><mover accent="true"><mi>u</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mover accent="true"><mi>u</mi><mo>^</mo></mover><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><msup><mi>ω</mi><mn>2</mn></msup><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">expressed in the frequency space. Now, we want to complete this
+example, and find the solution to this problem in the physical space.</p>
+</div>
+<div id="Ch3.S2.SSx16.p2" class="ltx_para">
+<p class="ltx_p">To that end, we need to find a function whose Fourier transform equals
+the right-hand side of (3). But the right-hand side is the product of
+two functions in the frequency space, and from the above, we know that
+the Fourier transform of a convolution of two functions equals the
+product of their respective Fourier transforms. Therefore, the
+function we are looking for should be expressible as the convoluton of
+two functions, whose Fourier transforms are <math id="Ch3.S2.SSx16.p2.m1" class="ltx_Math" alttext="\widehat{u}_{0}(\omega)" display="inline"><mrow><msub><mover accent="true"><mi>u</mi><mo>^</mo></mover><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math> and
+<math id="Ch3.S2.SSx16.p2.m2" class="ltx_Math" alttext="e^{-\kappa\omega^{2}t}" display="inline"><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><msup><mi>ω</mi><mn>2</mn></msup><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></math>, respectively.</p>
+</div>
+<div id="Ch3.S2.SSx16.p3" class="ltx_para">
+<p class="ltx_p">We note that, of course, <math id="Ch3.S2.SSx16.p3.m1" class="ltx_Math" alttext="\widehat{u}_{0}" display="inline"><msub><mover accent="true"><mi>u</mi><mo>^</mo></mover><mn>0</mn></msub></math> is the Fourier transform of
+<math id="Ch3.S2.SSx16.p3.m2" class="ltx_Math" alttext="u_{0}" display="inline"><msub><mi>u</mi><mn>0</mn></msub></math>. On the other hand, according to <span class="ltx_text ltx_font_bold">Example 3</span> of the last
+section,</p>
+<table id="Ch3.Ex75" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex75.m1" class="ltx_Math" alttext="\left(\frac{1}{\sqrt{4\pi\kappa t}}e^{-x^{2}/(4\kappa t)}\right)^{\wedge}=e^{-%
+\kappa\omega^{2}t}." display="block"><mrow><mrow><msup><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><msqrt><mrow><mn>4</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>κ</mi><mo>⁢</mo><mi>t</mi></mrow></msqrt></mfrac><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><mn>4</mn><mo>⁢</mo><mi>κ</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></msup></mrow><mo>)</mo></mrow><mo>∧</mo></msup><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><msup><mi>ω</mi><mn>2</mn></msup><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Finally, combining these two functions via convolution, we obtain the
+solution of the heat equation in the physical space,</p>
+<table id="Ch3.Ex76" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex76X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.Ex76X.m2" class="ltx_Math" alttext="\displaystyle u(x,t)" display="inline"><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex76X.m3" class="ltx_Math" alttext="\displaystyle=u_{0}(x)*\frac{1}{\sqrt{4\pi\kappa t}}e^{-x^{2}/(4\kappa t)}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><msub><mi>u</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">∗</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mrow><mn>4</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>κ</mi><mo>⁢</mo><mi>t</mi></mrow></msqrt></mfrac></mstyle></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><mn>4</mn><mo>⁢</mo><mi>κ</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex76Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex76Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{\sqrt{4\pi\kappa t}}\int_{-\infty}^{\infty}u_{0}(y)e^{-%
+\frac{(x-y)^{2}}{4\kappa t}}\,dy." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mrow><mn>4</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>κ</mi><mo>⁢</mo><mi>t</mi></mrow></msqrt></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><msub><mi>u</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mrow><mn>4</mn><mo>⁢</mo><mi>κ</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch3.S2.SSx16.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_rule" style="width:100%;height:1px;background:black;display:inline-block;"> </span>
+For the remainder of this section, we want to explore the relation
+between Fourier transform with Fourier series, and we will show that
+they are actually
+the same thing, manifest differently on different functions.
+We accomplish this mission by doing two examples.</p>
+</div>
+</section>
+<section id="Ch3.S2.SSx17" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection"> Example 6</h4>
+
+<div id="Ch3.S2.SSx17.p1" class="ltx_para">
+<p class="ltx_p">Find Fourier transforms for <math id="Ch3.S2.SSx17.p1.m1" class="ltx_Math" alttext="\sin at" display="inline"><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></math> and <math id="Ch3.S2.SSx17.p1.m2" class="ltx_Math" alttext="\cos at" display="inline"><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></math>.</p>
+</div>
+<div id="Ch3.S2.SSx17.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Solution:</span> We note that</p>
+<table id="Ch3.Ex77" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex77.m1" class="ltx_Math" alttext="\cos at=\frac{1}{2}\left[e^{iat}+e^{-iat}\right]." display="block"><mrow><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><mrow><mo>[</mo><mrow><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mrow><mo>]</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Using results from <span class="ltx_text ltx_font_bold">Example 2</span> in the above,</p>
+<table id="Ch3.Ex78" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex78.m1" class="ltx_Math" alttext="\widehat{\cos at}=\frac{1}{2}\left[\widehat{e^{iat}}+\widehat{e^{-iat}}\right]%
+=\pi\left[\delta(\omega-a)+\delta(\omega+a)\right]," display="block"><mrow><mrow><mover accent="true"><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></mrow><mo>^</mo></mover><mo>=</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><mrow><mo>[</mo><mrow><mover accent="true"><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo>^</mo></mover><mo>+</mo><mover accent="true"><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo>^</mo></mover></mrow><mo>]</mo></mrow></mrow><mo>=</mo><mrow><mi>π</mi><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>−</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>+</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">which represents two pulses at <math id="Ch3.S2.SSx17.p2.m1" class="ltx_Math" alttext="\omega=a" display="inline"><mrow><mi>ω</mi><mo>=</mo><mi>a</mi></mrow></math> and <math id="Ch3.S2.SSx17.p2.m2" class="ltx_Math" alttext="\omega=-a" display="inline"><mrow><mi>ω</mi><mo>=</mo><mrow><mo>−</mo><mi>a</mi></mrow></mrow></math>, each with weight <math id="Ch3.S2.SSx17.p2.m3" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math>.</p>
+</div>
+<div id="Ch3.S2.SSx17.p3" class="ltx_para">
+<p class="ltx_p">Similarly, for <math id="Ch3.S2.SSx17.p3.m1" class="ltx_Math" alttext="\sin at" display="inline"><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></math>,</p>
+<table id="Ch3.Ex79" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex79.m1" class="ltx_Math" alttext="\sin(at)=\frac{1}{2i}\left(e^{iat}-e^{-iat}\right)," display="block"><mrow><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>i</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>(</mo><mrow><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mrow><mo>)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch3.Ex80" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex80.m1" class="ltx_Math" alttext="\widehat{\sin(at)}=\frac{1}{2i}\left(\widehat{e^{iat}}-\widehat{e^{-iat}}%
+\right)=-i\pi\left[\delta(\omega-a)-\delta(\omega+a)\right]." display="block"><mrow><mrow><mover accent="true"><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>^</mo></mover><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>i</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>(</mo><mrow><mover accent="true"><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></msup><mo>^</mo></mover><mo>−</mo><mover accent="true"><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo>^</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>−</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>+</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Again, this represents two pulses at <math id="Ch3.S2.SSx17.p3.m2" class="ltx_Math" alttext="\omega=a" display="inline"><mrow><mi>ω</mi><mo>=</mo><mi>a</mi></mrow></math> and <math id="Ch3.S2.SSx17.p3.m3" class="ltx_Math" alttext="\omega=-a" display="inline"><mrow><mi>ω</mi><mo>=</mo><mrow><mo>−</mo><mi>a</mi></mrow></mrow></math>,
+with weight <math id="Ch3.S2.SSx17.p3.m4" class="ltx_Math" alttext="-i\pi" display="inline"><mrow><mo>−</mo><mrow><mi>i</mi><mo>⁢</mo><mi>π</mi></mrow></mrow></math> and <math id="Ch3.S2.SSx17.p3.m5" class="ltx_Math" alttext="i\pi" display="inline"><mrow><mi>i</mi><mo>⁢</mo><mi>π</mi></mrow></math>, respectively.</p>
+</div>
+</section>
+<section id="Ch3.S2.SSx18" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 7</h4>
+
+<div id="Ch3.S2.SSx18.p1" class="ltx_para">
+<p class="ltx_p">Suppose <math id="Ch3.S2.SSx18.p1.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> is a periodic function with period <math id="Ch3.S2.SSx18.p1.m2" class="ltx_Math" alttext="2L" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></math>. Find its
+Fourier transform.</p>
+</div>
+<div id="Ch3.S2.SSx18.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Solution:
+<br class="ltx_break"></span>We write its Fourier series (complex form) as</p>
+<table id="Ch3.Ex81" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex81.m1" class="ltx_Math" alttext="f(t)=\sum_{n=-\infty}^{\infty}c_{n}e^{i\frac{n\pi}{L}t}=\sum_{n=-\infty}^{%
+\infty}c_{n}e^{i\omega_{n}t},\qquad\textrm{with }\omega_{n}=\frac{n\pi}{L}." display="block"><mrow><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>c</mi><mi>n</mi></msub><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow><mi>L</mi></mfrac><mo>⁢</mo><mi>t</mi></mrow></msup></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>c</mi><mi>n</mi></msub><mo>⁢</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><msub><mi>ω</mi><mi>n</mi></msub><mo>⁢</mo><mi>t</mi></mrow></msup></mrow></mrow></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mtext>with </mtext><mo>⁢</mo><msub><mi>ω</mi><mi>n</mi></msub></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow><mi>L</mi></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Then, taking Fourier transform on both sides and using conclusions
+from the last example, we have</p>
+<table id="Ch3.Ex82" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch3.Ex82X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.Ex82X.m2" class="ltx_Math" alttext="\displaystyle\widehat{f}(\omega)" display="inline"><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex82X.m3" class="ltx_Math" alttext="\displaystyle=\sum_{n=-\infty}^{\infty}c_{n}\widehat{e^{i\omega_{n}t}}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><msub><mi>c</mi><mi>n</mi></msub><mo>⁢</mo><mover accent="true"><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><msub><mi>ω</mi><mi>n</mi></msub><mo>⁢</mo><mi>t</mi></mrow></msup><mo>^</mo></mover></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex82Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex82Xa.m2" class="ltx_Math" alttext="\displaystyle=\sum_{n=-\infty}^{\infty}2\pi c_{n}\delta(\omega-\omega_{n})." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><msub><mi>c</mi><mi>n</mi></msub><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ω</mi><mo>−</mo><msub><mi>ω</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus, the Fourier transform of an arbitrary periodic function is a
+sequence of impulses with weights <math id="Ch3.S2.SSx18.p2.m1" class="ltx_Math" alttext="2\pi c_{n}" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><msub><mi>c</mi><mi>n</mi></msub></mrow></math> at
+<math id="Ch3.S2.SSx18.p2.m2" class="ltx_Math" alttext="\omega=\omega_{n}" display="inline"><mrow><mi>ω</mi><mo>=</mo><msub><mi>ω</mi><mi>n</mi></msub></mrow></math>. Those weights are the coefficients in the complex
+Fourier series expansion of the function!</p>
+</div>
+</section>
+</section>
+</section>
+
+
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Wed Jul 15 21:28:15 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
