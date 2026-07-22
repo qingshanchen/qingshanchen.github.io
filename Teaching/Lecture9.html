@@ -1,0 +1,1345 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Advanced Engineering Mathematics</title>
+<!--Generated on Wed Jul 22 15:22:41 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Advanced Engineering Mathematics</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Qingshan Chen
+</span></span>
+</div>
+
+
+<section id="Ch4.S2" class="ltx_section">
+<h3 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.2 </span>Orthogonality of eigenfunctions</h3>
+
+<div id="Ch4.S2.p1" class="ltx_para">
+<p class="ltx_p">In this section, we turn to the orthogonality between the eigenfunctions
+of a given Sturm-Liouville problems.
+In a Euclidean space, two vectors <math id="Ch4.S2.p1.m1" class="ltx_Math" alttext="\boldsymbol{v}" display="inline"><mi>𝒗</mi></math> and <math id="Ch4.S2.p1.m2" class="ltx_Math" alttext="\boldsymbol{w}" display="inline"><mi>𝒘</mi></math> are said to be
+orthogonal when</p>
+<table id="Ch4.Ex61" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex61.m1" class="ltx_math_unparsed" alttext="\boldsymbol{v}\cdot\boldsymbol{w}=0,\qquad\bullet\textrm{ denotes inner
+product between vectors.}" display="block"><mrow><mi>𝒗</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝒘</mi><mo>=</mo><mn>0</mn><mo rspace="1.833em">,</mo><mo rspace="0.222em">∙</mo><mtext> denotes inner
+product between vectors.</mtext></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Viewing functions as “vector”’s in a certain function space, we can
+define their inner products, and the condition for the orthogonality
+between them.</p>
+</div>
+<div id="Ch4.S2.p2" class="ltx_para">
+<p class="ltx_p">Orthogonality of eigenfunctions is a fundamental property, just as the
+orthogonality of the unit base vectors of a Cartesian coordinate
+system. With orthogonality, eigenfunctions of a given Sturm-Liouville
+problem can also be used as a basis, on which, other functions can be
+expanded, just as they can be expanded as a Fourier series of
+sine and cosine functions.</p>
+</div>
+<div id="Ch4.S2.p3" class="ltx_para">
+<p class="ltx_p">For convenience, we repeat the general form of the Sturm-Liouville
+problems of the last section,</p>
+<table id="Ch4.Ex62" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex62.m1" class="ltx_Math" alttext="\frac{d}{dx}\left[p(x)\frac{dy}{dx}\right]+\bigl{[}q(x)+\lambda r(x)\bigr{]}y=%
+0,\qquad a\leq x\leq b," display="block"><mrow><mrow><mrow><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>[</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mrow><mo>]</mo></mrow></mrow><mo>+</mo><mrow><mrow><mo maxsize="120%" minsize="120%">[</mo><mrow><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>λ</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo maxsize="120%" minsize="120%">]</mo></mrow><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><mi>a</mi><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>b</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex63" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex63.m1" class="ltx_Math" alttext="\alpha y(a)+\beta y^{\prime}(a)=0," display="block"><mrow><mrow><mrow><mrow><mi>α</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><msup><mi>y</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex64" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex64.m1" class="ltx_Math" alttext="\gamma y(b)+\delta y^{\prime}(b)=0." display="block"><mrow><mrow><mrow><mrow><mi>γ</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><msup><mi>y</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Regarding the orthogonality of the eigenfucntions of Sturm-Liouville
+problems of this form, we have</p>
+</div>
+<div id="Thmtheorem3" class="ltx_theorem ltx_theorem_theorem">
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Theorem 3</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Let the coefficient functions <math id="Thmtheorem3.p1.m1" class="ltx_Math" alttext="p(x)&gt;0" display="inline"><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math>, <math id="Thmtheorem3.p1.m2" class="ltx_Math" alttext="q(x)" display="inline"><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Thmtheorem3.p1.m3" class="ltx_Math" alttext="r(x)&gt;0" display="inline"><mrow><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math> of the regular
+Sturm–Liouville problem above be real and continuous on the
+interval <math id="Thmtheorem3.p1.m4" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>. If <math id="Thmtheorem3.p1.m5" class="ltx_Math" alttext="y_{n}(x)" display="inline"><mrow><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Thmtheorem3.p1.m6" class="ltx_Math" alttext="y_{m}(x)" display="inline"><mrow><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> are continuously
+differentiable eigenfunctions corresponding to distinct eigenvalues
+<math id="Thmtheorem3.p1.m7" class="ltx_Math" alttext="\lambda_{n}" display="inline"><msub><mi>λ</mi><mi>n</mi></msub></math> and <math id="Thmtheorem3.p1.m8" class="ltx_Math" alttext="\lambda_{m}" display="inline"><msub><mi>λ</mi><mi>m</mi></msub></math>, respectively, then <math id="Thmtheorem3.p1.m9" class="ltx_Math" alttext="y_{n}(x)" display="inline"><mrow><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Thmtheorem3.p1.m10" class="ltx_Math" alttext="y_{m}(x)" display="inline"><mrow><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>
+satisfy the orthogonality condition</span></p>
+<table id="Ch4.Ex65" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex65.m1" class="ltx_Math" alttext="\int_{a}^{b}r(x)y_{n}(x)y_{m}(x)\,dx=0." display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">When Eq. (1) is satisfied, the eigenfunctions <math id="Thmtheorem3.p1.m11" class="ltx_Math" alttext="y_{n}(x)" display="inline"><mrow><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Thmtheorem3.p1.m12" class="ltx_Math" alttext="y_{m}(x)" display="inline"><mrow><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>
+are said to be orthogonal to each other with respect to the weight
+function <math id="Thmtheorem3.p1.m13" class="ltx_Math" alttext="r(x)" display="inline"><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</span></p>
+</div>
+</div>
+<div id="Ch4.S2.p4" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Proof:</span> Since <math id="Ch4.S2.p4.m1" class="ltx_Math" alttext="y_{n}(x)" display="inline"><mrow><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Ch4.S2.p4.m2" class="ltx_Math" alttext="y_{m}(x)" display="inline"><mrow><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> are eigenfunctions
+associated with eigenvalues <math id="Ch4.S2.p4.m3" class="ltx_Math" alttext="\lambda_{n}" display="inline"><msub><mi>λ</mi><mi>n</mi></msub></math> and <math id="Ch4.S2.p4.m4" class="ltx_Math" alttext="\lambda_{m}" display="inline"><msub><mi>λ</mi><mi>m</mi></msub></math> respectively, the following
+relations hold:</p>
+<table id="Ch4.Ex66" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex66.m1" class="ltx_Math" alttext="\frac{d}{dx}\left(p(x)y_{n}^{\prime}(x)\right)+\left(q(x)+\lambda_{n}r(x)%
+\right)y_{n}(x)=0," display="block"><mrow><mrow><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mrow><mo>(</mo><mrow><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>λ</mi><mi>n</mi></msub><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex67" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex67.m1" class="ltx_Math" alttext="\frac{d}{dx}\left(p(x)y_{m}^{\prime}(x)\right)+\left(q(x)+\lambda_{m}r(x)%
+\right)y_{m}(x)=0." display="block"><mrow><mrow><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mrow><mo>(</mo><mrow><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>λ</mi><mi>m</mi></msub><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Multiplying (2) by <math id="Ch4.S2.p4.m5" class="ltx_Math" alttext="y_{m}" display="inline"><msub><mi>y</mi><mi>m</mi></msub></math>, and Eq. (3) by <math id="Ch4.S2.p4.m6" class="ltx_Math" alttext="y_{n}" display="inline"><msub><mi>y</mi><mi>n</mi></msub></math>, and subtracting, we have</p>
+<table id="Ch4.Ex68" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex68.m1" class="ltx_Math" alttext="\frac{d}{dx}\left(p(x)y_{n}^{\prime}(x)\right)y_{m}-\frac{d}{dx}\left(p(x)y_{m%
+}^{\prime}(x)\right)y_{n}+\lambda_{n}r(x)y_{m}(x)y_{n}(x)-\lambda_{m}r(x)y_{m}%
+(x)y_{n}(x)=0." display="block"><mrow><mrow><mrow><mrow><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub></mrow><mo>−</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub></mrow></mrow><mo>+</mo><mrow><msub><mi>λ</mi><mi>n</mi></msub><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>−</mo><mrow><msub><mi>λ</mi><mi>m</mi></msub><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">After some rearrangements, we arrive at</p>
+<table id="Ch4.Ex69" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex69.m1" class="ltx_Math" alttext="(\lambda_{m}-\lambda_{n})r(x)y_{m}(x)y_{n}(x)=\left(p(x)y_{n}^{\prime}(x)%
+\right)^{\prime}y_{m}(x)-\left(p(x)y_{m}^{\prime}(x)\right)^{\prime}y_{n}(x)." display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>λ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>λ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mrow><mo>(</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow><mo>′</mo></msup><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msup><mrow><mo>(</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow><mo>′</mo></msup><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Integrating Eq. (4) from <math id="Ch4.S2.p4.m7" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> to <math id="Ch4.S2.p4.m8" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math> yields</p>
+<table id="Ch4.Ex70" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex70.m1" class="ltx_Math" alttext="(\lambda_{m}-\lambda_{n})\int_{a}^{b}r(x)y_{m}(x)y_{n}(x)\,dx=\int_{a}^{b}%
+\left[\frac{d}{dx}(py_{n}^{\prime})y_{m}-\frac{d}{dx}(py_{m}^{\prime})y_{n}%
+\right]\,dx." display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>λ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>λ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo rspace="0em">∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mrow><mo>[</mo><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>p</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub></mrow><mo>−</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>p</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub></mrow></mrow><mo>]</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch4.S2.p5" class="ltx_para">
+<p class="ltx_p">In order to establishing the orthogonality between the eigenfunctions,
+it is clear that we need to show the right-hand side of equation (5)
+vanishes. We proceed with integration by parts,</p>
+<table id="Ch4.Ex71" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex71X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex71X.m2" class="ltx_Math" alttext="\displaystyle\int_{a}^{b}\left[\frac{d}{dx}(py_{n}^{\prime})y_{m}-\frac{d}{dx}%
+(py_{m}^{\prime})y_{n}\right]\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mrow><mo>[</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>p</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>p</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub></mrow></mrow><mo>]</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex71Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex71Xa.m2" class="ltx_Math" alttext="\displaystyle=py_{n}^{\prime}y_{m}\Big{|}_{a}^{b}-\int_{a}^{b}py_{n}^{\prime}y%
+_{m}^{\prime}\,dx-py_{m}^{\prime}y_{n}\Big{|}_{a}^{b}+\int_{a}^{b}py_{m}^{%
+\prime}y_{n}^{\prime}\,dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><msubsup><mrow><mrow><mi>p</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub></mrow><mo maxsize="160%" minsize="160%">|</mo></mrow><mi>a</mi><mi>b</mi></msubsup><mo>−</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>p</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>−</mo><msubsup><mrow><mrow><mi>p</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub></mrow><mo maxsize="160%" minsize="160%">|</mo></mrow><mi>a</mi><mi>b</mi></msubsup></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>p</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex71Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex71Xb.m2" class="ltx_Math" alttext="\displaystyle=\left(py_{n}^{\prime}y_{m}-py_{m}^{\prime}y_{n}\right)\Big{|}_{a%
+}^{b}" display="inline"><mrow><mi></mi><mo>=</mo><msubsup><mrow><mrow><mo>(</mo><mrow><mrow><mi>p</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub></mrow><mo>−</mo><mrow><mi>p</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub></mrow></mrow><mo>)</mo></mrow><mo maxsize="160%" minsize="160%">|</mo></mrow><mi>a</mi><mi>b</mi></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex71Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex71Xc.m2" class="ltx_Math" alttext="\displaystyle=p(b)y_{n}^{\prime}(b)y_{m}(b)-p(b)y_{m}^{\prime}(b)y_{n}(b)-p(a)%
+y_{n}^{\prime}(a)y_{m}(a)+p(a)y_{m}^{\prime}(a)y_{n}(a)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex71Xd"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex71Xd.m2" class="ltx_Math" alttext="\displaystyle=p(b)\left[y_{n}^{\prime}(b)y_{m}(b)-y_{m}^{\prime}(b)y_{n}(b)%
+\right]-p(a)\left[y_{n}^{\prime}(a)y_{m}(a)-y_{m}^{\prime}(a)y_{n}(a)\right]." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>]</mo></mrow></mrow><mo>−</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Let’s focus on the point <math id="Ch4.S2.p5.m1" class="ltx_Math" alttext="x=b" display="inline"><mrow><mi>x</mi><mo>=</mo><mi>b</mi></mrow></math> first. Here both <math id="Ch4.S2.p5.m2" class="ltx_Math" alttext="y_{m},y_{n}" display="inline"><mrow><msub><mi>y</mi><mi>m</mi></msub><mo>,</mo><msub><mi>y</mi><mi>n</mi></msub></mrow></math> satisfy the BC’s</p>
+<table id="Ch4.Ex72" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex72.m1" class="ltx_Math" alttext="\gamma y_{m}(b)+\delta y_{m}^{\prime}(b)=0," display="block"><mrow><mrow><mrow><mrow><mi>γ</mi><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex73" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex73.m1" class="ltx_Math" alttext="\gamma y_{n}(b)+\delta y_{n}^{\prime}(b)=0." display="block"><mrow><mrow><mrow><mrow><mi>γ</mi><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This can be viewed as a linear system of <math id="Ch4.S2.p5.m3" class="ltx_Math" alttext="\gamma" display="inline"><mi>γ</mi></math> and <math id="Ch4.S2.p5.m4" class="ltx_Math" alttext="\delta" display="inline"><mi>δ</mi></math>. Since <math id="Ch4.S2.p5.m5" class="ltx_Math" alttext="\gamma" display="inline"><mi>γ</mi></math> and <math id="Ch4.S2.p5.m6" class="ltx_Math" alttext="\delta" display="inline"><mi>δ</mi></math> are not identically zero, the coefficient matrix</p>
+<table id="Ch4.Ex74" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex74.m1" class="ltx_Math" alttext="\begin{pmatrix}y_{m}(b)&amp;y_{m}^{\prime}(b)\\
+y_{n}(b)&amp;y_{n}^{\prime}(b)\end{pmatrix}" display="block"><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mrow><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd><mrow><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd><mrow><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">must be singular, i.e. its determinant vanishes,</p>
+<table id="Ch4.Ex75" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex75.m1" class="ltx_Math" alttext="y_{m}(b)y_{n}^{\prime}(b)-y_{m}^{\prime}(b)y_{n}(b)=0." display="block"><mrow><mrow><mrow><mrow><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Similarly, we can argue that</p>
+<table id="Ch4.Ex76" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex76.m1" class="ltx_Math" alttext="y_{m}(a)y_{n}^{\prime}(a)-y_{m}^{\prime}(a)y_{n}(a)=0." display="block"><mrow><mrow><mrow><mrow><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Therefore, the right-hand side of Eq. (5) indeed vanishes, and we do have</p>
+<table id="Ch4.Ex77" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex77.m1" class="ltx_Math" alttext="\int_{a}^{b}r(x)y_{m}(x)y_{n}(x)\,dx=0,\qquad\text{provided }\lambda_{m}\neq%
+\lambda_{n}." display="block"><mrow><mrow><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mtext>provided </mtext><mo>⁢</mo><msub><mi>λ</mi><mi>m</mi></msub></mrow><mo>≠</mo><msub><mi>λ</mi><mi>n</mi></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This completes the proof that the eigenfunctions associated with
+distinct eigenvalues are orthogonal with respect to the weight
+function <math id="Ch4.S2.p5.m7" class="ltx_Math" alttext="r(x)" display="inline"><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<section id="Ch4.S2.SSx1" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 1</h4>
+
+<div id="Ch4.S2.SSx1.p1" class="ltx_para">
+<p class="ltx_p">The Sturm–Liouville problem</p>
+<table id="Ch4.Ex78" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex78.m1" class="ltx_Math" alttext="\left\{\begin{array}[]{l}y^{\prime\prime}+\lambda y=0,\\
+y(0)=y(\pi)=0\end{array}\right." display="block"><mrow><mo>{</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><msup><mi>y</mi><mo>′′</mo></msup><mo>+</mo><mrow><mi>λ</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mtd></mtr></mtable><mi></mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">has</p>
+<table id="Ch4.Ex79" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex79.m1" class="ltx_Math" alttext="\begin{array}[]{rcll}\text{eigenvalues}&amp;:&amp;\lambda_{k}=k^{2},&amp;k\geq 1,\\[3.0000%
+3pt]
+\text{eigenfunctions}&amp;:&amp;y_{k}=\sin(kx).&amp;\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_right" columnalign="right"><mtext>eigenvalues</mtext></mtd><mtd><mo>:</mo></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><msub><mi>λ</mi><mi>k</mi></msub><mo>=</mo><msup><mi>k</mi><mn>2</mn></msup></mrow><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mtext>eigenfunctions</mtext></mtd><mtd><mo>:</mo></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><msub><mi>y</mi><mi>k</mi></msub><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">In this case, <math id="Ch4.S2.SSx1.p1.m1" class="ltx_Math" alttext="r(x)\equiv 1" display="inline"><mrow><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≡</mo><mn>1</mn></mrow></math>.
+It can be easily verified that</p>
+<table id="Ch4.Ex80" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex80.m1" class="ltx_Math" alttext="\int_{0}^{\pi}\sin(mx)\sin(nx)\,dx=0\qquad\text{if }m\neq n." display="block"><mrow><mrow><mrow><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>m</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mspace width="2em"></mspace><mrow><mrow><mtext>if </mtext><mo>⁢</mo><mi>m</mi></mrow><mo>≠</mo><mi>n</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Recall that sine functions are the primary elements of the half-range
+expansion of odd funtions in <span class="ltx_text ltx_font_bold">Chapter 2</span>. There, the orthogonality
+property between these functions played a decisive role in the
+calculations of the coefficients.</p>
+</div>
+</section>
+<section id="Ch4.S2.SSx2" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 2</h4>
+
+<div id="Ch4.S2.SSx2.p1" class="ltx_para">
+<p class="ltx_p">The Sturm–Liouville problem</p>
+<table id="Ch4.Ex81" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex81.m1" class="ltx_Math" alttext="\left\{\begin{array}[]{l}y^{\prime\prime}+\lambda y=0,\qquad 0&lt;x&lt;\pi,\\
+y(0)=0,\qquad y(\pi)+y^{\prime}(\pi)=0\end{array}\right." display="block"><mrow><mo>{</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mrow><msup><mi>y</mi><mo>′′</mo></msup><mo>+</mo><mrow><mi>λ</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mi>π</mi></mrow></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow></mtd></mtr></mtable><mi></mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">has, for <math id="Ch4.S2.SSx2.p1.m1" class="ltx_Math" alttext="k\geq 1" display="inline"><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow></math>,</p>
+<table id="Ch4.Ex82" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex82.m1" class="ltx_Math" alttext="\begin{array}[]{rcl}\text{eigenvalues}&amp;:&amp;\lambda_{k}=\xi_{k}^{2},\qquad\xi_{k}%
+&gt;0\text{ the }k^{\text{th}}\text{ root of }\xi=-\tan(\xi\pi),\\[5.0pt]
+\text{eigenfunctions}&amp;:&amp;y_{k}=\sin(\xi_{k}x).\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_right" columnalign="right"><mtext>eigenvalues</mtext></mtd><mtd><mo>:</mo></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><msub><mi>λ</mi><mi>k</mi></msub><mo>=</mo><msubsup><mi>ξ</mi><mi>k</mi><mn>2</mn></msubsup></mrow><mo rspace="2.167em">,</mo><mrow><msub><mi>ξ</mi><mi>k</mi></msub><mo>&gt;</mo><mrow><mn>0</mn><mo>⁢</mo><mtext> the </mtext><mo>⁢</mo><msup><mi>k</mi><mtext>th</mtext></msup><mo>⁢</mo><mtext> root of </mtext><mo>⁢</mo><mi>ξ</mi></mrow><mo>=</mo><mrow><mo rspace="0.167em">−</mo><mrow><mi>tan</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ξ</mi><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mtext>eigenfunctions</mtext></mtd><mtd><mo>:</mo></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><msub><mi>y</mi><mi>k</mi></msub><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>k</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We now verify via direct calculations that <math id="Ch4.S2.SSx2.p1.m2" class="ltx_Math" alttext="y_{m}" display="inline"><msub><mi>y</mi><mi>m</mi></msub></math> and <math id="Ch4.S2.SSx2.p1.m3" class="ltx_Math" alttext="y_{n}" display="inline"><msub><mi>y</mi><mi>n</mi></msub></math> are
+orthogonal, provided <math id="Ch4.S2.SSx2.p1.m4" class="ltx_Math" alttext="m\neq n" display="inline"><mrow><mi>m</mi><mo>≠</mo><mi>n</mi></mrow></math>.</p>
+<table id="Ch4.Ex83" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex83X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex83X.m2" class="ltx_Math" alttext="\displaystyle\int_{0}^{\pi}\sin(\xi_{m}x)\sin(\xi_{n}x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex83X.m3" class="ltx_Math" alttext="\displaystyle=\int_{0}^{\pi}\frac{1}{2}\left(\cos((\xi_{m}-\xi_{n})x)-\cos((%
+\xi_{m}+\xi_{n})x)\right)\,dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>+</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex83Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex83Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2}\left[\frac{\sin((\xi_{m}-\xi_{n})x)}{\xi_{m}-\xi_{n}%
+}\Big{|}_{0}^{\pi}-\frac{\sin((\xi_{m}+\xi_{n})x)}{\xi_{m}+\xi_{n}}\Big{|}_{0}%
+^{\pi}\right]" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo>[</mo><mrow><msubsup><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow></mfrac></mstyle><mo maxsize="160%" minsize="160%">|</mo></mrow><mn>0</mn><mi>π</mi></msubsup><mo>−</mo><msubsup><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>+</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>+</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow></mfrac></mstyle><mo maxsize="160%" minsize="160%">|</mo></mrow><mn>0</mn><mi>π</mi></msubsup></mrow><mo>]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex83Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex83Xb.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2}\left[\frac{\sin((\xi_{m}-\xi_{n})\pi)}{\xi_{m}-\xi_{%
+n}}-\frac{\sin((\xi_{m}+\xi_{n})\pi)}{\xi_{m}+\xi_{n}}\right]" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo>[</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>+</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>+</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow></mfrac></mstyle></mrow><mo>]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex83Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex83Xc.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2(\xi_{m}-\xi_{n})(\xi_{m}+\xi_{n})}\left[(\xi_{m}+\xi_%
+{n})\sin((\xi_{m}-\xi_{n})\pi)-(\xi_{m}-\xi_{n})\sin((\xi_{m}+\xi_{n})\pi)%
+\right]." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>+</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>+</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>−</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>+</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Using the sine sum and difference formulas,</p>
+<table id="Ch4.Ex84" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex84X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex84X.m2" class="ltx_math_unparsed" alttext="\displaystyle\frac{1}{2(\xi_{m}-\xi_{n})(\xi_{m}+\xi_{n})}\Big{[}(\xi_{m}+\xi_%
+{n})(\sin\xi_{m}\pi\cos\xi_{n}\pi-\cos\xi_{m}\pi\sin\xi_{n}\pi)" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>+</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle><mrow><mo maxsize="160%" minsize="160%">[</mo><mrow><mo stretchy="false">(</mo><msub><mi>ξ</mi><mi>m</mi></msub><mo>+</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mi>sin</mi><msub><mi>ξ</mi><mi>m</mi></msub><mi>π</mi><mi>cos</mi><msub><mi>ξ</mi><mi>n</mi></msub><mi>π</mi><mo>−</mo><mi>cos</mi><msub><mi>ξ</mi><mi>m</mi></msub><mi>π</mi><mi>sin</mi><msub><mi>ξ</mi><mi>n</mi></msub><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex84Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex84Xa.m2" class="ltx_math_unparsed" alttext="\displaystyle\hskip 80.00012pt-(\xi_{m}-\xi_{n})(\sin\xi_{m}\pi\cos\xi_{n}\pi+%
+\cos\xi_{m}\pi\sin\xi_{n}\pi)\Big{]}" display="inline"><mrow><mo>−</mo><mrow><mo stretchy="false">(</mo><msub><mi>ξ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mi>sin</mi><msub><mi>ξ</mi><mi>m</mi></msub><mi>π</mi><mi>cos</mi><msub><mi>ξ</mi><mi>n</mi></msub><mi>π</mi><mo>+</mo><mi>cos</mi><msub><mi>ξ</mi><mi>m</mi></msub><mi>π</mi><mi>sin</mi><msub><mi>ξ</mi><mi>n</mi></msub><mi>π</mi><mo stretchy="false">)</mo></mrow><mo maxsize="160%" minsize="160%">]</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex84Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex84Xb.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2(\xi_{m}-\xi_{n})(\xi_{m}+\xi_{n})}\left[2\xi_{n}\sin%
+\xi_{m}\pi\cos\xi_{n}\pi-2\xi_{m}\cos\xi_{m}\pi\sin\xi_{n}\pi\right]." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>+</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>m</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We note that</p>
+<table id="Ch4.Ex85" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex85.m1" class="ltx_Math" alttext="\xi_{m}=-\tan(\xi_{m}\pi),\qquad\xi_{n}=-\tan(\xi_{n}\pi)." display="block"><mrow><mrow><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>=</mo><mrow><mo rspace="0.167em">−</mo><mrow><mi>tan</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo rspace="2.167em">,</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>=</mo><mrow><mo rspace="0.167em">−</mo><mrow><mi>tan</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Hence</p>
+<table id="Ch4.Ex86" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex86.m1" class="ltx_Math" alttext="\xi_{n}\sin\xi_{m}\pi\cos\xi_{n}\pi-\xi_{m}\cos\xi_{m}\pi\sin\xi_{n}\pi=-\sin%
+\xi_{m}\pi\sin\xi_{n}\pi+\sin\xi_{m}\pi\sin\xi_{n}\pi=0." display="block"><mrow><mrow><mrow><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow></mrow><mo>−</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mo rspace="0.167em">−</mo><mrow><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus</p>
+<table id="Ch4.Ex87" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex87.m1" class="ltx_Math" alttext="\int_{0}^{\pi}y_{m}(x)y_{n}(x)\,dx=\int_{0}^{\pi}\sin(\xi_{m}x)\sin(\xi_{n}x)%
+\,dx=0,\qquad\text{provided }m\neq n." display="block"><mrow><mrow><mrow><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup><mrow><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mtext>provided </mtext><mo>⁢</mo><mi>m</mi></mrow><mo>≠</mo><mi>n</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch4.S2.SSx3" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Expansions in series of eigenfunctions</h4>
+
+<div id="Ch4.S2.SSx3.p1" class="ltx_para">
+<p class="ltx_p">Sturm–Liouville problems often appear when we use separation of
+variables method to solve partial differential equations. There, the
+only way to explicitly express the solutions of the PDEs is to write
+them as series involving the eigenfunctions of the associated
+Sturm–Liouville problems. In this section we explore the expansion of
+functions in terms of the eigenfunctions of regular Sturm–Liouville
+problems.</p>
+</div>
+<div id="Ch4.S2.SSx3.p2" class="ltx_para">
+<p class="ltx_p">Let <math id="Ch4.S2.SSx3.p2.m1" class="ltx_Math" alttext="y_{n}(x)" display="inline"><mrow><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>, <math id="Ch4.S2.SSx3.p2.m2" class="ltx_Math" alttext="n\geq 0" display="inline"><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow></math>, be eigenfunctions of a regular Sturm–Liouville problem</p>
+<table id="Ch4.Ex88" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex88.m1" class="ltx_Math" alttext="\left\{\begin{array}[]{l}\dfrac{d}{dx}\left(p(x)y^{\prime}(x)\right)+\bigl{(}q%
+(x)+\lambda r(x)\bigr{)}y=0,\qquad a&lt;x&lt;b,\\[6.00006pt]
+\text{BC's}.\end{array}\right." display="block"><mrow><mo>{</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>y</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mrow><mo maxsize="120%" minsize="120%">(</mo><mrow><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>λ</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo maxsize="120%" minsize="120%">)</mo></mrow><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><mi>a</mi><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mi>b</mi></mrow></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>BC’s</mtext><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mi></mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Let <math id="Ch4.S2.SSx3.p2.m3" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> be defined in the interval <math id="Ch4.S2.SSx3.p2.m4" class="ltx_Math" alttext="a&lt;x&lt;b" display="inline"><mrow><mi>a</mi><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mi>b</mi></mrow></math>. Under most circumstances, the function can be expressed as a series of <math id="Ch4.S2.SSx3.p2.m5" class="ltx_Math" alttext="y_{n}(x)" display="inline"><mrow><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>, that is, we can write</p>
+<table id="Ch4.Ex89" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex89.m1" class="ltx_Math" alttext="f(x)=\sum_{n=0}^{\infty}c_{n}y_{n}(x)." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>c</mi><mi>n</mi></msub><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The orthogonality relations, introduced in the above, can be employed
+to compute the coefficients. For a certain <math id="Ch4.S2.SSx3.p2.m6" class="ltx_Math" alttext="m\geq 0" display="inline"><mrow><mi>m</mi><mo>≥</mo><mn>0</mn></mrow></math>, we multiply (2) by <math id="Ch4.S2.SSx3.p2.m7" class="ltx_Math" alttext="r(x)y_{m}(x)" display="inline"><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>, and
+integrate over <math id="Ch4.S2.SSx3.p2.m8" class="ltx_Math" alttext="(a,b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math>,</p>
+<table id="Ch4.Ex90" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex90.m1" class="ltx_Math" alttext="\int_{a}^{b}r(x)f(x)y_{m}(x)\,dx=\sum_{n=0}^{\infty}c_{n}\int_{a}^{b}r(x)y_{n}%
+(x)y_{m}(x)\,dx." display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>c</mi><mi>n</mi></msub><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(7)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We note that</p>
+<table id="Ch4.Ex91" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex91.m1" class="ltx_Math" alttext="\int_{a}^{b}r(x)y_{n}(x)y_{m}(x)\,dx=0\qquad\text{if }n\neq m." display="block"><mrow><mrow><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mspace width="2em"></mspace><mrow><mrow><mtext>if </mtext><mo>⁢</mo><mi>n</mi></mrow><mo>≠</mo><mi>m</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Hence the right-hand side of (7) collapses into one single term,</p>
+<table id="Ch4.Ex92" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex92.m1" class="ltx_Math" alttext="\int_{a}^{b}r(x)f(x)y_{m}(x)\,dx=c_{m}\int_{a}^{b}r(x)y_{m}^{2}(x)\,dx," display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><msub><mi>c</mi><mi>m</mi></msub><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mn>2</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">from which we derive a formula for the coefficient <math id="Ch4.S2.SSx3.p2.m9" class="ltx_Math" alttext="c_{m}" display="inline"><msub><mi>c</mi><mi>m</mi></msub></math>,</p>
+<table id="Ch4.Ex93" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex93.m1" class="ltx_Math" alttext="c_{m}=\frac{\displaystyle\int_{a}^{b}r(x)f(x)y_{m}(x)\,dx}{\displaystyle\int_{%
+a}^{b}r(x)y_{m}^{2}(x)\,dx}." display="block"><mrow><mrow><msub><mi>c</mi><mi>m</mi></msub><mo>=</mo><mfrac><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mn>2</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch4.S2.SSx4" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 3</h4>
+
+<div id="Ch4.S2.SSx4.p1" class="ltx_para">
+<p class="ltx_p">Find the expansion of <math id="Ch4.S2.SSx4.p1.m1" class="ltx_Math" alttext="f(x)=x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>x</mi></mrow></math> over the interval <math id="Ch4.S2.SSx4.p1.m2" class="ltx_Math" alttext="[0,\pi]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></math>, using the
+eigenfunctions of the Sturm–Liouville problem</p>
+<table id="Ch4.Ex95" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex95.m1" class="ltx_Math" alttext="\left\{\begin{array}[]{l}y^{\prime\prime}+\lambda y=0,\\
+y(0)=0,\qquad y(\pi)+y^{\prime}(\pi)=0.\end{array}\right." display="block"><mrow><mo>{</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><msup><mi>y</mi><mo>′′</mo></msup><mo>+</mo><mrow><mi>λ</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mi></mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(9)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch4.S2.SSx4.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Solution:</span> Recall that
+the Sturm–Liouville problem has eigenvalues <math id="Ch4.S2.SSx4.p2.m1" class="ltx_Math" alttext="\lambda_{n}=\xi_{n}^{2}" display="inline"><mrow><msub><mi>λ</mi><mi>n</mi></msub><mo>=</mo><msubsup><mi>ξ</mi><mi>n</mi><mn>2</mn></msubsup></mrow></math>,
+<math id="Ch4.S2.SSx4.p2.m2" class="ltx_Math" alttext="\xi_{n}&gt;0" display="inline"><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>&gt;</mo><mn>0</mn></mrow></math> being <math id="Ch4.S2.SSx4.p2.m3" class="ltx_Math" alttext="n^{\mathrm{th}}" display="inline"><msup><mi>n</mi><mi>th</mi></msup></math> root of <math id="Ch4.S2.SSx4.p2.m4" class="ltx_Math" alttext="\xi=-\tan(\xi\pi)" display="inline"><mrow><mi>ξ</mi><mo>=</mo><mrow><mo rspace="0.167em">−</mo><mrow><mi>tan</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ξ</mi><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>, and eigenfunctions</p>
+<table id="Ch4.Ex96" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex96.m1" class="ltx_Math" alttext="y_{n}(x)=\sin(\xi_{n}x)." display="block"><mrow><mrow><mrow><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">These eigenfunctions provide a basis, on which the function <math id="Ch4.S2.SSx4.p2.m5" class="ltx_Math" alttext="f(x)=x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>x</mi></mrow></math>
+can be expanded,</p>
+<table id="Ch4.Ex97" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex97.m1" class="ltx_Math" alttext="x=\sum_{n=1}^{\infty}c_{n}\sin(\xi_{n}x)." display="block"><mrow><mrow><mi>x</mi><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>c</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">With <math id="Ch4.S2.SSx4.p2.m6" class="ltx_Math" alttext="r(x)\equiv 1" display="inline"><mrow><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≡</mo><mn>1</mn></mrow></math> in this case, and by (8), the coefficient <math id="Ch4.S2.SSx4.p2.m7" class="ltx_Math" alttext="c_{n}" display="inline"><msub><mi>c</mi><mi>n</mi></msub></math> is given by</p>
+<table id="Ch4.Ex98" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex98.m1" class="ltx_Math" alttext="c_{n}=\frac{\displaystyle\int_{0}^{\pi}x\sin(\xi_{n}x)\,dx}{\displaystyle\int_%
+{0}^{\pi}\sin^{2}(\xi_{n}x)\,dx}." display="block"><mrow><mrow><msub><mi>c</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle><mrow><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We note that</p>
+<table id="Ch4.Ex99" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex99X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex99X.m2" class="ltx_Math" alttext="\displaystyle\int_{0}^{\pi}x\sin(\xi_{n}x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex99X.m3" class="ltx_Math" alttext="\displaystyle=\int_{0}^{\pi}x\,d\left(\frac{\cos(\xi_{n}x)}{-\xi_{n}}\right)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex99Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex99Xa.m2" class="ltx_Math" alttext="\displaystyle=x\frac{\cos(\xi_{n}x)}{-\xi_{n}}\Big{|}_{0}^{\pi}+\int_{0}^{\pi}%
+\frac{\cos(\xi_{n}x)}{\xi_{n}}\,dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><msubsup><mrow><mrow><mi>x</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow></mfrac></mstyle></mrow><mo maxsize="160%" minsize="160%">|</mo></mrow><mn>0</mn><mi>π</mi></msubsup><mo>+</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><msub><mi>ξ</mi><mi>n</mi></msub></mfrac></mstyle><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex99Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex99Xb.m2" class="ltx_Math" alttext="\displaystyle=\pi\frac{\cos(\pi\xi_{n})}{-\xi_{n}}+\frac{\sin(\xi_{n}x)}{\xi_{%
+n}^{2}}\Big{|}_{0}^{\pi}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>π</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mo>−</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow></mfrac></mstyle></mrow><mo>+</mo><msubsup><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><msubsup><mi>ξ</mi><mi>n</mi><mn>2</mn></msubsup></mfrac></mstyle><mo maxsize="160%" minsize="160%">|</mo></mrow><mn>0</mn><mi>π</mi></msubsup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex99Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex99Xc.m2" class="ltx_Math" alttext="\displaystyle=\frac{\sin(\xi_{n}\pi)-\pi\xi_{n}\cos(\xi_{n}\pi)}{\xi_{n}^{2}}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>π</mi><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><msubsup><mi>ξ</mi><mi>n</mi><mn>2</mn></msubsup></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Also</p>
+<table id="Ch4.Ex100" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex100X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex100X.m2" class="ltx_Math" alttext="\displaystyle\int_{0}^{\pi}\sin^{2}(\xi_{n}x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle><mrow><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex100X.m3" class="ltx_Math" alttext="\displaystyle=\int_{0}^{\pi}\frac{1}{2}\left(1-\cos(2\xi_{n}x)\right)\,dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex100Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex100Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2}x-\frac{\sin(2\xi_{n}x)}{4\xi_{n}}\Big{|}_{0}^{\pi}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><msubsup><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>4</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow></mfrac></mstyle><mo maxsize="160%" minsize="160%">|</mo></mrow><mn>0</mn><mi>π</mi></msubsup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex100Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex100Xb.m2" class="ltx_Math" alttext="\displaystyle=\frac{\pi}{2}-\frac{\sin(2\xi_{n}\pi)}{4\xi_{n}}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mi>π</mi><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>4</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow></mfrac></mstyle></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Hence</p>
+<table id="Ch4.Ex101" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex101X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex101X.m2" class="ltx_Math" alttext="\displaystyle c_{n}" display="inline"><msub><mi>c</mi><mi>n</mi></msub></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex101X.m3" class="ltx_Math" alttext="\displaystyle=\frac{\displaystyle\frac{\sin(\xi_{n}\pi)-\pi\xi_{n}\cos(\xi_{n}%
+\pi)}{\xi_{n}^{2}}}{\displaystyle\frac{\pi}{2}-\frac{\sin(2\xi_{n}\pi)}{4\xi_{%
+n}}}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>π</mi><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><msubsup><mi>ξ</mi><mi>n</mi><mn>2</mn></msubsup></mfrac></mstyle><mrow><mstyle displaystyle="true"><mfrac><mi>π</mi><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>4</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub></mrow></mfrac></mstyle></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex101Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex101Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{\sin(\xi_{n}\pi)-\xi_{n}\pi\cos(\xi_{n}\pi)}{\displaystyle%
+\frac{\pi}{2}\xi_{n}^{2}-\frac{\xi_{n}}{4}\sin(2\xi_{n}\pi)}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><mi>π</mi><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msubsup><mi>ξ</mi><mi>n</mi><mn>2</mn></msubsup></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><msub><mi>ξ</mi><mi>n</mi></msub><mn>4</mn></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This expression is already acceptable. For further simplification, we
+note that</p>
+<table id="Ch4.Ex102" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex102X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex102X.m2" class="ltx_Math" alttext="\displaystyle\sin(\xi_{n}\pi)=-\xi_{n}\cos(\xi_{n}\pi)," display="inline"><mrow><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex102Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex102Xa.m2" class="ltx_Math" alttext="\displaystyle\sin(2\xi_{n}\pi)=2\sin(\xi_{n}\pi)\cos(\xi_{n}\pi)=-2\xi_{n}\cos%
+^{2}(\xi_{n}\pi)." display="inline"><mrow><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><msup><mi>cos</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Hence, we have</p>
+<table id="Ch4.Ex103" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex103X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex103X.m2" class="ltx_Math" alttext="\displaystyle c_{n}" display="inline"><msub><mi>c</mi><mi>n</mi></msub></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex103X.m3" class="ltx_Math" alttext="\displaystyle=\frac{-\xi_{n}\cos(\xi_{n}\pi)-\xi_{n}\pi\cos(\xi_{n}\pi)}{%
+\displaystyle\frac{\pi}{2}\xi_{n}^{2}+\frac{\xi_{n}^{2}}{4}\,2\cos^{2}(\xi_{n}%
+\pi)}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo>−</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>−</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><mi>π</mi><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msubsup><mi>ξ</mi><mi>n</mi><mn>2</mn></msubsup></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><msubsup><mi>ξ</mi><mi>n</mi><mn>2</mn></msubsup><mn>4</mn></mfrac></mstyle><mo>⁢</mo><mn> 2</mn><mo lspace="0.167em">⁢</mo><mrow><msup><mi>cos</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex103Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex103Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{-\xi_{n}(1+\pi)\cos(\xi_{n}\pi)}{\displaystyle\frac{\xi_{n%
+}^{2}}{2}\left(\pi+\cos^{2}(\xi_{n}\pi)\right)}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mo>−</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mrow><mstyle displaystyle="true"><mfrac><msubsup><mi>ξ</mi><mi>n</mi><mn>2</mn></msubsup><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>π</mi><mo>+</mo><mrow><msup><mi>cos</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex103Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex103Xb.m2" class="ltx_Math" alttext="\displaystyle=\frac{-2(1+\pi)\cos(\xi_{n}\pi)}{\xi_{n}\left(\pi+\cos^{2}(\xi_{%
+n}\pi)\right)}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>π</mi><mo>+</mo><mrow><msup><mi>cos</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>ξ</mi><mi>n</mi></msub><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch4.S2.SSx4.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_rule" style="width:100%;height:1px;background:black;display:inline-block;"> </span></p>
+</div>
+<div id="Ch4.S2.SSx4.p4" class="ltx_para">
+<p class="ltx_p">We conclude this section with a theorem, which provides a theoretical
+foundation for what we did in the above, namely it guarantees that
+the eigenfunctions of a regular Sturm-Liouville problem form a proper
+basis on which a general function, subject to certain regularity
+assumptions, can be expanded, and the expansion converges to the
+underlying function in the Dirichlet’s sense, just like the Fourier
+series (c.f. <span class="ltx_text ltx_font_bold">Theorem 1</span> of <span class="ltx_text ltx_font_bold">Chapter 2</span>).</p>
+</div>
+<div id="Thmtheorem4" class="ltx_theorem ltx_theorem_theorem">
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Theorem 4</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">If both <math id="Thmtheorem4.p1.m1" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Thmtheorem4.p1.m2" class="ltx_Math" alttext="f^{\prime}(x)" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> are piecewise continuous
+in <math id="Thmtheorem4.p1.m3" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>, then <math id="Thmtheorem4.p1.m4" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> can be expanded in a uniformly convergent
+Fourier series involving eigenfunctions of a regular Sturm–Liouville
+problem on the same interval. The series converges to
+<math id="Thmtheorem4.p1.m5" class="ltx_Math" alttext="[f(x^{+})+f(x^{-})]/2" display="inline"><mrow><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>x</mi><mo>+</mo></msup><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>x</mi><mo>−</mo></msup><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow><mo>/</mo><mn>2</mn></mrow></math> at any point <math id="Thmtheorem4.p1.m6" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in the open interval <math id="Thmtheorem4.p1.m7" class="ltx_Math" alttext="a&lt;x&lt;b" display="inline"><mrow><mi>a</mi><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mi>b</mi></mrow></math>.</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="Ch4.S3" class="ltx_section">
+<h3 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.3 </span>A singular Sturm–Liouville problem: Legendre’s
+equation</h3>
+
+<div id="Ch4.S3.p1" class="ltx_para">
+<p class="ltx_p">So far we have only considered regular Sturm–Liouville problems,
+where both <math id="Ch4.S3.p1.m1" class="ltx_Math" alttext="p(x)" display="inline"><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="Ch4.S3.p1.m2" class="ltx_Math" alttext="r(x)" display="inline"><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> are strictly positive. But singular
+Sturm–Liouville problems do arise in practice. It is important to
+know whether these singular Sturm-Liouville problems have any
+eigenvalues/eigenfunctions, and whether these eigenfunctions form a
+base for series expansion of other functions. There is not a general
+strategy that can treat all singular Sturm–Liouville problems. Instead, in this
+section, we will consider a special case, the
+Legendre’s equation.</p>
+</div>
+<div id="Ch4.S3.p2" class="ltx_para">
+<p class="ltx_p">We start with the general form of Sturm–Liouville:</p>
+<table id="Ch4.Ex104" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex104.m1" class="ltx_Math" alttext="\frac{d}{dx}\left(p(x)y^{\prime}(x)\right)+\left(q(x)+\lambda r(x)\right)y(x)=%
+0,\qquad a\leq x\leq b." display="block"><mrow><mrow><mrow><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>y</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mrow><mo>(</mo><mrow><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>λ</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><mi>a</mi><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>b</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Here, <math id="Ch4.S3.p2.m1" class="ltx_Math" alttext="p(x)" display="inline"><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> &amp; <math id="Ch4.S3.p2.m2" class="ltx_Math" alttext="r(x)" display="inline"><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> may be zero or negative, and no BC’s are
+specified.
+As we have seen in last section, othogonality is a crucial property
+for the eigenfunctions of a Sturm-Liouville problem; it is what makes
+them useful in applications. Here, we would like to know what
+conditions are needed in order to preserve the orthogonality of
+the eigenfunctions, even when the Sturm–Liouville problem itself may
+be singular.
+Previously, we showed that, if <math id="Ch4.S3.p2.m3" class="ltx_Math" alttext="(\lambda_{m},y_{m})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>λ</mi><mi>m</mi></msub><mo>,</mo><msub><mi>y</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow></math> and
+<math id="Ch4.S3.p2.m4" class="ltx_Math" alttext="(\lambda_{n},y_{n})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>λ</mi><mi>n</mi></msub><mo>,</mo><msub><mi>y</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></math> are two eigen-pairs to (1), then we have</p>
+<table id="Ch4.E1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E1.m1" class="ltx_Math" alttext="(\lambda_{n}-\lambda_{m})\int_{a}^{b}r(x)y_{n}(x)y_{m}(x)\,dx={}\\
+\left[p(b)y_{m}^{\prime}(b)y_{n}(b)-p(b)y_{n}^{\prime}(b)y_{m}(b)\right]-\left%
+[p(a)y_{m}^{\prime}(a)y_{n}(a)-p(a)y_{n}^{\prime}(a)y_{m}(a)\right]." display="block"><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>λ</mi><mi>n</mi></msub><mo>−</mo><msub><mi>λ</mi><mi>m</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>=</mo><mi></mi></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><mrow><mo>[</mo><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>]</mo></mrow><mo>−</mo><mrow><mo>[</mo><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>m</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msubsup><mi>y</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>y</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We observe that, as long as</p>
+<table id="Ch4.Ex106" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex106.m1" class="ltx_Math" alttext="y(x)\text{ remains finite at }x=a,b," display="block"><mrow><mrow><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mtext> remains finite at </mtext><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex107" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex107.m1" class="ltx_Math" alttext="p(x)y^{\prime}(x)=0\quad\text{at }x=a,b," display="block"><mrow><mrow><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>y</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mspace width="1em"></mspace><mrow><mrow><mtext>at </mtext><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">then the right-hand side of (2) vanishes, and the orthogonality is preserved. We will use (3)+(4) as criteria to accept or reject possible solutions to the singular Sturm–Liouville problem.</p>
+</div>
+<div id="Ch4.S3.p3" class="ltx_para">
+<p class="ltx_p">Let’s now consider the Legendre’s equation,</p>
+<table id="Ch4.Ex108" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex108.m1" class="ltx_Math" alttext="\frac{d}{dx}\left[(1-x^{2})y^{\prime}(x)\right]+n(n+1)y(x)=0,\qquad-1\leq x%
+\leq 1," display="block"><mrow><mrow><mrow><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>y</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>]</mo></mrow></mrow><mo>+</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5a)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">or, equivalently,</p>
+<table id="Ch4.Ex109" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex109.m1" class="ltx_Math" alttext="\qquad(1-x^{2})\frac{d^{2}y}{dx^{2}}-2xy^{\prime}(x)+n(n+1)y(x)=0." display="block"><mrow><mrow><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mfrac><mrow><msup><mi>d</mi><mn>2</mn></msup><mo>⁢</mo><mi>y</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5b)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Because <math id="Ch4.S3.p3.m1" class="ltx_Math" alttext="p(x)\equiv 1-x^{2}=0" display="inline"><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≡</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>=</mo><mn>0</mn></mrow></math> at <math id="Ch4.S3.p3.m2" class="ltx_Math" alttext="x=\pm 1" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo>±</mo><mn>1</mn></mrow></mrow></math>, this is a singular Sturm–Liouville problem. A general form for the solutions of (5) is not known. The polynomial coefficient suggests that a power series may be used to solve (5). We assume that the solution takes the form</p>
+<table id="Ch4.Ex110" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex110.m1" class="ltx_Math" alttext="y(x)=\sum_{k=0}^{\infty}A_{k}x^{k}." display="block"><mrow><mrow><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mi>k</mi></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We proceed with term-by-term differentiation,</p>
+<table id="Ch5.Sx12.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.Ex111"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex111.m1" class="ltx_Math" alttext="\displaystyle y^{\prime}(x)=\sum_{k=0}^{\infty}kA_{k}x^{k-1}," display="inline"><mrow><mrow><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mi>k</mi><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(7)</span></td>
+</tr></tbody>
+<tbody id="Ch4.Ex112"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex112.m1" class="ltx_Math" alttext="\displaystyle y^{\prime\prime}(x)=\sum_{k=0}^{\infty}k(k-1)A_{k}x^{k-2}." display="inline"><mrow><mrow><mrow><msup><mi>y</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(8)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Substituting (6), (7) &amp; (8) into (5b) yields</p>
+<table id="Ch4.Ex113" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex113X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex113X.m2" class="ltx_Math" alttext="\displaystyle(1-x^{2})\sum_{k=0}^{\infty}k(k-1)A_{k}x^{k-2}-2x\sum_{k=0}^{%
+\infty}kA_{k}x^{k-1}+n(n+1)\sum_{k=0}^{\infty}A_{k}x^{k}=0," display="inline"><mrow><mrow><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mi>k</mi><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mi>k</mi></msup></mrow></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex113Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex113Xa.m2" class="ltx_Math" alttext="\displaystyle\sum_{k=0}^{\infty}k(k-1)A_{k}x^{k-2}-\sum_{k=0}^{\infty}k(k-1)A_%
+{k}x^{k}-2\sum_{k=0}^{\infty}kA_{k}x^{k}+n(n+1)\sum_{k=0}^{\infty}A_{k}x^{k}=0," display="inline"><mrow><mrow><mrow><mrow><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mi>k</mi></msup></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mi>k</mi><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mi>k</mi></msup></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mi>k</mi></msup></mrow></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex113Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex113Xb.m2" class="ltx_Math" alttext="\displaystyle\sum_{k=2}^{\infty}k(k-1)A_{k}x^{k-2}+\sum_{k=0}^{\infty}\left(n(%
+n+1)-k(k-1)-2k\right)A_{k}x^{k}=0," display="inline"><mrow><mrow><mrow><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>2</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mrow><mo>(</mo><mrow><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></mrow><mo>)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mi>k</mi></msup></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">In the first summation, we make the change of variable <math id="Ch4.S3.p3.m3" class="ltx_Math" alttext="m=k-2" display="inline"><mrow><mi>m</mi><mo>=</mo><mrow><mi>k</mi><mo>−</mo><mn>2</mn></mrow></mrow></math> so
+that the new index starts from zero as well,</p>
+<table id="Ch4.Ex114" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex114.m1" class="ltx_Math" alttext="\sum_{m=0}^{\infty}(m+2)(m+1)A_{m+2}x^{m}+\sum_{k=0}^{\infty}\left(n(n+1)-k(k-%
+1)-2k\right)A_{k}x^{k}=0." display="block"><mrow><mrow><mrow><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mrow><mo lspace="0em" stretchy="false">(</mo><mrow><mi>m</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mrow><mi>m</mi><mo>+</mo><mn>2</mn></mrow></msub><mo>⁢</mo><msup><mi>x</mi><mi>m</mi></msup></mrow></mrow><mo rspace="0.055em">+</mo><mrow><munderover><mo movablelimits="false" rspace="0em">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mrow><mo>(</mo><mrow><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></mrow><mo>)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mi>k</mi></msup></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Now, we switch <math id="Ch4.S3.p3.m4" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math> back to <math id="Ch4.S3.p3.m5" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> to combine the two summations,</p>
+<table id="Ch4.Ex115" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex115.m1" class="ltx_Math" alttext="\sum_{k=0}^{\infty}(k+2)(k+1)A_{k+2}x^{k}+\sum_{k=0}^{\infty}\left(n(n+1)-k(k-%
+1)-2k\right)A_{k}x^{k}=0," display="block"><mrow><mrow><mrow><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mrow><mo lspace="0em" stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow></msub><mo>⁢</mo><msup><mi>x</mi><mi>k</mi></msup></mrow></mrow><mo rspace="0.055em">+</mo><mrow><munderover><mo movablelimits="false" rspace="0em">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mrow><mo>(</mo><mrow><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></mrow><mo>)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>x</mi><mi>k</mi></msup></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex116" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex116.m1" class="ltx_Math" alttext="\sum_{k=0}^{\infty}\left[(k+2)(k+1)A_{k+2}+\bigl{(}n(n+1)-k(k+1)\bigr{)}A_{k}%
+\right]x^{k}=0." display="block"><mrow><mrow><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mrow><mo lspace="0em">[</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mo maxsize="120%" minsize="120%">(</mo><mrow><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo maxsize="120%" minsize="120%">)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub></mrow></mrow><mo>]</mo></mrow><mo>⁢</mo><msup><mi>x</mi><mi>k</mi></msup></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">For this series to vanish for arbitrary <math id="Ch4.S3.p3.m6" class="ltx_Math" alttext="x\in[-1,1]" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></mrow></math>, the coefficients must vanish identically. Hence</p>
+<table id="Ch4.Ex117" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex117.m1" class="ltx_Math" alttext="(k+2)(k+1)A_{k+2}=\left[k(k+1)-n(n+1)\right]A_{k}," display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow></msub></mrow><mo>=</mo><mrow><mrow><mo>[</mo><mrow><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>]</mo></mrow><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(9)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">or</p>
+<table id="Ch4.Ex118" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex118.m1" class="ltx_Math" alttext="A_{k+2}=\frac{k(k+1)-n(n+1)}{(k+2)(k+1)}A_{k}=(-1)\frac{(n+k+1)(n-k)}{(k+2)(k+%
+1)}A_{k}." display="block"><mrow><mrow><msub><mi>A</mi><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow></msub><mo>=</mo><mrow><mfrac><mrow><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub></mrow><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(10)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This is a recursive relation, and it needs <math id="Ch4.S3.p3.m7" class="ltx_Math" alttext="A_{0}" display="inline"><msub><mi>A</mi><mn>0</mn></msub></math> and <math id="Ch4.S3.p3.m8" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math> in order to generate all the subsequent coefficients <math id="Ch4.S3.p3.m9" class="ltx_Math" alttext="A_{k}" display="inline"><msub><mi>A</mi><mi>k</mi></msub></math>, <math id="Ch4.S3.p3.m10" class="ltx_Math" alttext="k\geq 2" display="inline"><mrow><mi>k</mi><mo>≥</mo><mn>2</mn></mrow></math>.</p>
+</div>
+<div id="Ch4.S3.p4" class="ltx_para">
+<p class="ltx_p">If <math id="Ch4.S3.p4.m1" class="ltx_Math" alttext="A_{0}=1" display="inline"><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow></math>, relation (10) generates a sequence</p>
+<table id="Ch4.Ex119" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex119.m1" class="ltx_Math" alttext="A_{0}=1," display="block"><mrow><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex120" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex120.m1" class="ltx_Math" alttext="A_{2}=-\frac{n(n+1)}{2}," display="block"><mrow><mrow><msub><mi>A</mi><mn>2</mn></msub><mo>=</mo><mrow><mo>−</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mn>2</mn></mfrac></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex121" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex121.m1" class="ltx_Math" alttext="A_{4}=\frac{3\cdot 2-n(n+1)}{4\cdot 3}A_{2}=\frac{3\cdot 2-n(n+1)}{4\cdot 3}%
+\cdot\frac{-n(n+1)}{2}=\frac{(n-2)n(n+1)(n+3)}{4!}," display="block"><mrow><mrow><msub><mi>A</mi><mn>4</mn></msub><mo>=</mo><mrow><mfrac><mrow><mrow><mn>3</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>2</mn></mrow><mo>−</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mn>4</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>3</mn></mrow></mfrac><mo>⁢</mo><msub><mi>A</mi><mn>2</mn></msub></mrow><mo>=</mo><mrow><mfrac><mrow><mrow><mn>3</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>2</mn></mrow><mo>−</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mn>4</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>3</mn></mrow></mfrac><mo lspace="0.222em" rspace="0.222em">⋅</mo><mfrac><mrow><mo>−</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mn>2</mn></mfrac></mrow><mo>=</mo><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>4</mn><mo>!</mo></mrow></mfrac></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex122" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex122.m1" class="ltx_Math" alttext="A_{6}=\frac{5\cdot 4-n(n+1)}{6\cdot 5}A_{4}=-\frac{(n+5)(n-4)}{6\cdot 5}\cdot%
+\frac{(n-2)n(n+1)(n+3)}{4!}=-\frac{(n-4)(n-2)n(n+1)(n+3)(n+5)}{6!}," display="block"><mrow><mrow><msub><mi>A</mi><mn>6</mn></msub><mo>=</mo><mrow><mfrac><mrow><mrow><mn>5</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>4</mn></mrow><mo>−</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mn>6</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>5</mn></mrow></mfrac><mo>⁢</mo><msub><mi>A</mi><mn>4</mn></msub></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>5</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>6</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>5</mn></mrow></mfrac><mo lspace="0.222em" rspace="0.222em">⋅</mo><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>4</mn><mo>!</mo></mrow></mfrac></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>5</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>6</mn><mo>!</mo></mrow></mfrac></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex123" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex123.m1" class="ltx_Math" alttext="A_{2k}=(-1)^{k}\frac{(n-2k+2)(n-4)\cdots(n-2)n(n+1)(n+3)\cdots(n+2k-1)}{(2k)!}." display="block"><mrow><mrow><msub><mi>A</mi><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></msub><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>k</mi></msup><mo>⁢</mo><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>n</mi><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></mrow><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>n</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow><mo stretchy="false">)</mo></mrow><mo>!</mo></mrow></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">If <math id="Ch4.S3.p4.m2" class="ltx_Math" alttext="A_{1}=1" display="inline"><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow></math>, then relation (10) produces the following sequence</p>
+<table id="Ch4.Ex124" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex124.m1" class="ltx_Math" alttext="A_{1}=1," display="block"><mrow><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex125" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex125.m1" class="ltx_Math" alttext="A_{3}=-\frac{(n-1)(n+2)}{3\times 2}," display="block"><mrow><mrow><msub><mi>A</mi><mn>3</mn></msub><mo>=</mo><mrow><mo>−</mo><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>3</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>2</mn></mrow></mfrac></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex126" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex126.m1" class="ltx_Math" alttext="A_{5}=(-1)\frac{(n-3)(n+4)}{5\times 4}A_{3}=\frac{(n-3)(n-1)(n+2)(n+4)}{5%
+\times 4\times 3\times 2}," display="block"><mrow><mrow><msub><mi>A</mi><mn>5</mn></msub><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>5</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>4</mn></mrow></mfrac><mo>⁢</mo><msub><mi>A</mi><mn>3</mn></msub></mrow><mo>=</mo><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>5</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>4</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>3</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>2</mn></mrow></mfrac></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex127" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex127.m1" class="ltx_Math" alttext="A_{2k+1}=(-1)^{k}\frac{(n-2k+1)(n-2k+3)\cdots(n-1)(n+2)(n+4)\cdots(n+2k)}{(2k+%
+1)!}." display="block"><mrow><mrow><msub><mi>A</mi><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>k</mi></msup><mo>⁢</mo><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>n</mi><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></mrow><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>n</mi><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></mrow><mo>+</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>!</mo></mrow></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch4.S3.p5" class="ltx_para">
+<p class="ltx_p">We observe that if <math id="Ch4.S3.p5.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> is an even positive integer, then the sequence
+<math id="Ch4.S3.p5.m2" class="ltx_Math" alttext="A_{0},A_{2},A_{4},\ldots" display="inline"><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>,</mo><msub><mi>A</mi><mn>2</mn></msub><mo>,</mo><msub><mi>A</mi><mn>4</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi></mrow></math> will terminate (i.e. becomes zero) for <math id="Ch4.S3.p5.m3" class="ltx_Math" alttext="k\geq(n+2)/2" display="inline"><mrow><mi>k</mi><mo>≥</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mn>2</mn></mrow></mrow></math>. In this case, we get a polynomial of finite order if we take
+<math id="Ch4.S3.p5.m4" class="ltx_Math" alttext="A_{0}=1" display="inline"><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow></math> but <math id="Ch4.S3.p5.m5" class="ltx_Math" alttext="A_{1}=0" display="inline"><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow></math>. Similarly, if <math id="Ch4.S3.p5.m6" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> is an odd positive integer,
+then the sequence <math id="Ch4.S3.p5.m7" class="ltx_Math" alttext="A_{1},A_{3},A_{5},\ldots" display="inline"><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><msub><mi>A</mi><mn>3</mn></msub><mo>,</mo><msub><mi>A</mi><mn>5</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi></mrow></math> will terminate (i.e. becomes
+zero) for <math id="Ch4.S3.p5.m8" class="ltx_Math" alttext="k\geq(n+1)/2" display="inline"><mrow><mi>k</mi><mo>≥</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mn>2</mn></mrow></mrow></math>. In this case, with the choices <math id="Ch4.S3.p5.m9" class="ltx_Math" alttext="A_{0}=0" display="inline"><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow></math>,
+<math id="Ch4.S3.p5.m10" class="ltx_Math" alttext="A_{1}=1" display="inline"><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow></math>, we obtain a polynomial of finite order as the solution of (5).</p>
+</div>
+<div id="Ch4.S3.p6" class="ltx_para">
+<p class="ltx_p">Finite-order polynomials that are solutions of the Legendre’s equation
+are called Legendre’s functions of the first kind, and denoted by
+<math id="Ch4.S3.p6.m1" class="ltx_Math" alttext="P_{n}(x)" display="inline"><mrow><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Infinite-order polynomials that are solutions of the
+Legendre’s equation are called Legendre’s functions of the second
+kind, and are denoted by <math id="Ch4.S3.p6.m2" class="ltx_Math" alttext="Q_{n}(x)" display="inline"><mrow><msub><mi>Q</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>. We are interested in finite-order
+polynomials, because they satisfy the conditions (3)+(4) for
+orthogonality; that is, Legendre’s functions of the first kind are
+orthogonal to each other.</p>
+</div>
+<div id="Ch4.S3.p7" class="ltx_para">
+<p class="ltx_p">We have just derived polynomials of finite order as solutons to
+the Legendre’s equation. The forms in which they are given are not
+very convenient to use, unfortunately. We need a form that allows us
+to quickly compute the polynomial of an arbitrary order.
+Below, we introduce two new forms for Legendre’s polynomials.</p>
+</div>
+<section id="Ch4.S3.SSx1" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Rodrigue’s formula for <math id="Ch4.S3.SSx1.m1" class="ltx_Math" alttext="P_{n}(x)" display="inline"><mrow><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>
+</h4>
+
+<div id="Ch4.S3.SSx1.p1" class="ltx_para">
+<table id="Ch4.Ex128" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex128.m1" class="ltx_Math" alttext="P_{n}(x)=\frac{1}{2^{n}n!}\frac{d^{n}}{dx^{n}}\left(x^{2}-1\right)^{n}." display="block"><mrow><mrow><mrow><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>⁢</mo><mrow><mi>n</mi><mo>!</mo></mrow></mrow></mfrac><mo>⁢</mo><mfrac><msup><mi>d</mi><mi>n</mi></msup><mrow><mi>d</mi><mo>⁢</mo><msup><mi>x</mi><mi>n</mi></msup></mrow></mfrac><mo>⁢</mo><msup><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>n</mi></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(11)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">By (11),</p>
+<table id="Ch4.Ex129" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex129.m1" class="ltx_Math" alttext="P_{0}(x)=1," display="block"><mrow><mrow><mrow><msub><mi>P</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex130" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex130.m1" class="ltx_Math" alttext="P_{1}(x)=\frac{1}{2}\frac{d}{dx}(x^{2}-1)=x," display="block"><mrow><mrow><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>x</mi></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex131" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex131X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex131X.m2" class="ltx_Math" alttext="\displaystyle P_{2}(x)" display="inline"><mrow><msub><mi>P</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex131X.m3" class="ltx_Math" alttext="\displaystyle=\frac{1}{4\times 2}\frac{d^{2}}{dx^{2}}(x^{2}-1)^{2}=\frac{1}{8}%
+\frac{d^{2}}{dx^{2}}(x^{4}-2x^{2}+1)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>4</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>2</mn></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><msup><mi>d</mi><mn>2</mn></msup><mrow><mi>d</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><msup><mi>d</mi><mn>2</mn></msup><mrow><mi>d</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex131Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex131Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{8}\frac{d}{dx}(4x^{3}-4x)=\frac{1}{8}(12x^{2}-4)=\frac{%
+3}{2}x^{2}-\frac{1}{2}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>4</mn><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>12</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>3</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The calculations get long and tedious as <math id="Ch4.S3.SSx1.p1.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> goes up, and so this
+formula is not very useful either for large <math id="Ch4.S3.SSx1.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>’s.</p>
+</div>
+</section>
+<section id="Ch4.S3.SSx2" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">A recurrence formula</h4>
+
+<div id="Ch4.S3.SSx2.p1" class="ltx_para">
+<p class="ltx_p">Legendre’s polynomials of consecutive orders (<math id="Ch4.S3.SSx2.p1.m1" class="ltx_Math" alttext="n-1" display="inline"><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></math>, <math id="Ch4.S3.SSx2.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>, and <math id="Ch4.S3.SSx2.p1.m3" class="ltx_Math" alttext="n+1" display="inline"><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></math>)
+satisfy the relation</p>
+<table id="Ch4.Ex132" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex132.m1" class="ltx_Math" alttext="(n+1)P_{n+1}(x)=(2n+1)xP_{n}(x)-nP_{n-1}(x),\qquad\text{for }n\geq 1." display="block"><mrow><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>P</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>n</mi><mo>⁢</mo><msub><mi>P</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mtext>for </mtext><mo>⁢</mo><mi>n</mi></mrow><mo>≥</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(12)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Knowing that <math id="Ch4.S3.SSx2.p1.m4" class="ltx_Math" alttext="P_{0}(x)=1" display="inline"><mrow><mrow><msub><mi>P</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math>, <math id="Ch4.S3.SSx2.p1.m5" class="ltx_Math" alttext="P_{1}(x)=x" display="inline"><mrow><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>x</mi></mrow></math>, we use (12) to calculate <math id="Ch4.S3.SSx2.p1.m6" class="ltx_Math" alttext="P_{2}(x)" display="inline"><mrow><msub><mi>P</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>
+by setting <math id="Ch4.S3.SSx2.p1.m7" class="ltx_Math" alttext="n=1" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow></math> in (12),</p>
+<table id="Ch4.Ex133" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex133.m1" class="ltx_Math" alttext="2P_{2}(x)=3xP_{1}(x)-P_{0}(x)=3x^{2}-1," display="block"><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><msub><mi>P</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msub><mi>P</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>P</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex134" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex134.m1" class="ltx_Math" alttext="P_{2}(x)=\frac{3}{2}x^{2}-\frac{1}{2}." display="block"><mrow><mrow><mrow><msub><mi>P</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">With <math id="Ch4.S3.SSx2.p1.m8" class="ltx_Math" alttext="P_{1}" display="inline"><msub><mi>P</mi><mn>1</mn></msub></math> and <math id="Ch4.S3.SSx2.p1.m9" class="ltx_Math" alttext="P_{2}" display="inline"><msub><mi>P</mi><mn>2</mn></msub></math> now at hand, we can use (12) again to find <math id="Ch4.S3.SSx2.p1.m10" class="ltx_Math" alttext="P_{3}" display="inline"><msub><mi>P</mi><mn>3</mn></msub></math>,</p>
+<table id="Ch4.Ex135" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex135X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex135X.m2" class="ltx_Math" alttext="\displaystyle 3P_{3}(x)" display="inline"><mrow><mn>3</mn><mo>⁢</mo><msub><mi>P</mi><mn>3</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex135X.m3" class="ltx_Math" alttext="\displaystyle=5xP_{2}(x)-2P_{1}(x)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mn>5</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msub><mi>P</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>P</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex135Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex135Xa.m2" class="ltx_Math" alttext="\displaystyle=5x\left(\frac{3}{2}x^{2}-\frac{1}{2}\right)-2x" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mn>5</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>3</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex135Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex135Xb.m2" class="ltx_Math" alttext="\displaystyle=\frac{15}{2}x^{3}-\frac{9}{2}x," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>15</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>9</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex136" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex136.m1" class="ltx_Math" alttext="P_{3}(x)=\frac{5}{2}x^{3}-\frac{3}{2}x." display="block"><mrow><mrow><mrow><msub><mi>P</mi><mn>3</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mfrac><mn>5</mn><mn>2</mn></mfrac><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>−</mo><mrow><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The process can be repeated to find Legendre’s polynomials of
+arbitrary orders.</p>
+</div>
+</section>
+<section id="Ch4.S3.SSx3" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Orthogonal relation</h4>
+
+<div id="Ch4.S3.SSx3.p1" class="ltx_para">
+<p class="ltx_p">Legendre’s polynomials are orthogonal by design, with respect to the
+weight function <math id="Ch4.S3.SSx3.p1.m1" class="ltx_math_unparsed" alttext="r(x)\equiv=1" display="inline"><mrow><mi>r</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo rspace="0em">≡</mo><mo lspace="0em">=</mo><mn>1</mn></mrow></math>. Specifically, we have the following
+integral relation,</p>
+<table id="Ch4.Ex137" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex137.m1" class="ltx_Math" alttext="\int_{-1}^{1}P_{n}(x)P_{m}(x)\,dx=\begin{cases}0,&amp;m\neq n,\\[3.99994pt]
+\dfrac{2}{2n+1},&amp;m=n.\end{cases}" display="block"><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>P</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>≠</mo><mi>n</mi></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mfrac><mn>2</mn><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow></mfrac><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>=</mo><mi>n</mi></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(13)</span></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="Ch4.Sx1" class="ltx_section">
+<h3 class="ltx_title ltx_title_section">Series expansion in terms of Legendre’s polynomials</h3>
+
+<div id="Ch4.Sx1.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="Ch4.Sx1.p1.m1" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> be an arbitrary piecewise differentiable function in <math id="Ch4.Sx1.p1.m2" class="ltx_Math" alttext="(-1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></math>. We write <math id="Ch4.Sx1.p1.m3" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> as a series in terms of <math id="Ch4.Sx1.p1.m4" class="ltx_Math" alttext="P_{n}(x)" display="inline"><mrow><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>,</p>
+<table id="Ch4.Ex138" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex138.m1" class="ltx_Math" alttext="f(x)=\sum_{n=0}^{\infty}a_{n}P_{n}(x)." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>⁢</mo><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(14)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">To determine the coefficients <math id="Ch4.Sx1.p1.m5" class="ltx_Math" alttext="a_{n}" display="inline"><msub><mi>a</mi><mi>n</mi></msub></math>, we multiply (14) by <math id="Ch4.Sx1.p1.m6" class="ltx_Math" alttext="P_{m}(x)" display="inline"><mrow><msub><mi>P</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>, and integrate over <math id="Ch4.Sx1.p1.m7" class="ltx_Math" alttext="(-1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></math>,</p>
+<table id="Ch4.Ex139" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex139.m1" class="ltx_Math" alttext="\int_{-1}^{1}f(x)P_{m}(x)\,dx=\sum_{n=0}^{\infty}a_{n}\int_{-1}^{1}P_{m}(x)P_{%
+n}(x)\,dx." display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>P</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><msub><mi>P</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Using the orthogonal relation,</p>
+<table id="Ch4.Ex140" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex140.m1" class="ltx_Math" alttext="\int_{-1}^{1}f(x)P_{n}(x)\,dx=a_{n}\int_{-1}^{1}P_{n}^{2}(x)\,dx=a_{n}\frac{2}%
+{2n+1}." display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><msubsup><mi>P</mi><mi>n</mi><mn>2</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>⁢</mo><mfrac><mn>2</mn><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus</p>
+<table id="Ch4.Ex141" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex141.m1" class="ltx_Math" alttext="a_{n}=\frac{2n+1}{2}\int_{-1}^{1}f(x)P_{n}(x)\,dx." display="block"><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mrow><mfrac><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(15)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">If <math id="Ch4.Sx1.p1.m8" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> and its first <math id="Ch4.Sx1.p1.m9" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> derivatives are continuous on <math id="Ch4.Sx1.p1.m10" class="ltx_Math" alttext="(-1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></math>, then <math id="Ch4.Sx1.p1.m11" class="ltx_Math" alttext="a_{n}" display="inline"><msub><mi>a</mi><mi>n</mi></msub></math> can be evaluated by using Rodrigue’s formula for <math id="Ch4.Sx1.p1.m12" class="ltx_Math" alttext="P_{n}(x)" display="inline"><mrow><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>,</p>
+<table id="Ch4.Ex142" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch4.Ex142X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex142X.m2" class="ltx_Math" alttext="\displaystyle a_{n}" display="inline"><msub><mi>a</mi><mi>n</mi></msub></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex142X.m3" class="ltx_Math" alttext="\displaystyle=\frac{2n+1}{2}\frac{1}{2^{n}n!}\int_{-1}^{1}f(x)\frac{d^{n}(x^{2%
+}-1)^{n}}{dx^{n}}\,dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>⁢</mo><mrow><mi>n</mi><mo>!</mo></mrow></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>d</mi><mi>n</mi></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup></mrow><mrow><mi>d</mi><mo>⁢</mo><msup><mi>x</mi><mi>n</mi></msup></mrow></mfrac></mstyle><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch4.Ex142Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.Ex142Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{2n+1}{2}\frac{1}{2^{n}n!}(-1)^{n}\int_{-1}^{1}f^{(n)}(x)(x%
+^{2}-1)^{n}\,dx." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>⁢</mo><mrow><mi>n</mi><mo>!</mo></mrow></mrow></mfrac></mstyle><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mstyle><mrow><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Hence</p>
+<table id="Ch4.Ex143" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex143.m1" class="ltx_Math" alttext="a_{n}=\frac{2n+1}{2^{n+1}n!}\int_{-1}^{1}f^{(n)}(x)(1-x^{2})^{n}\,dx." display="block"><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mrow><mfrac><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow><mrow><msup><mn>2</mn><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mi>n</mi><mo>!</mo></mrow></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(16)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch4.Sx1.p2" class="ltx_para">
+<p class="ltx_p">A particularly useful result follows from (16). Notice that if <math id="Ch4.Sx1.p2.m1" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> is itself a polynomial of degree <math id="Ch4.Sx1.p2.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>, then <math id="Ch4.Sx1.p2.m3" class="ltx_Math" alttext="a_{n}=0" display="inline"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>0</mn></mrow></math> if <math id="Ch4.Sx1.p2.m4" class="ltx_Math" alttext="n&gt;k" display="inline"><mrow><mi>n</mi><mo>&gt;</mo><mi>k</mi></mrow></math>. Consequently, a polynomial of degree <math id="Ch4.Sx1.p2.m5" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> can be expressed as a linear combination of the first <math id="Ch4.Sx1.p2.m6" class="ltx_Math" alttext="k+1" display="inline"><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></math> Legendre’s polynomials</p>
+<table id="Ch4.Ex144" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex144.m1" class="ltx_Math" alttext="\left[P_{0}(x),P_{1}(x),\ldots,P_{k}(x)\right]." display="block"><mrow><mrow><mo>[</mo><mrow><msub><mi>P</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>P</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>]</mo></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<section id="Ch4.Sx1.SSx1" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 1</h4>
+
+<div id="Ch4.Sx1.SSx1.p1" class="ltx_para">
+<p class="ltx_p">Express <math id="Ch4.Sx1.SSx1.p1.m1" class="ltx_Math" alttext="f(x)=x^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math> in terms of Legendre’s polynomials.</p>
+</div>
+<div id="Ch4.Sx1.SSx1.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Solution:</span>
+According to the discussion above, we only need to consider Legendre’s
+polynomials up to degree 2.</p>
+<table id="Ch4.Ex145" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex145.m1" class="ltx_Math" alttext="x^{2}=A_{0}P_{0}+A_{1}P_{1}+A_{2}P_{2}," display="block"><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mrow><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>P</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>P</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><msub><mi>A</mi><mn>2</mn></msub><mo>⁢</mo><msub><mi>P</mi><mn>2</mn></msub></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex146" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex146.m1" class="ltx_Math" alttext="=A_{0}+A_{1}x+A_{2}\left(\frac{3}{2}x^{2}-\frac{1}{2}\right)." display="block"><mrow><mrow><mi></mi><mo>=</mo><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>+</mo><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><msub><mi>A</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">It is clear that</p>
+<table id="Ch4.Ex147" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex147.m1" class="ltx_Math" alttext="A_{0}=\frac{1}{3},\qquad A_{1}=0,\qquad A_{2}=\frac{2}{3}." display="block"><mrow><mrow><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><mo rspace="2.167em">,</mo><mrow><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><msub><mi>A</mi><mn>2</mn></msub><mo>=</mo><mfrac><mn>2</mn><mn>3</mn></mfrac></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch4.Sx1.SSx2" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 2</h4>
+
+<div id="Ch4.Sx1.SSx2.p1" class="ltx_para">
+<p class="ltx_p">Find the expansion of the following function</p>
+<table id="Ch4.Ex148" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex148.m1" class="ltx_Math" alttext="f(x)=\begin{cases}0,&amp;-1&lt;x&lt;0,\\
+1,&amp;0&lt;x&lt;1,\end{cases}" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>1</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn></mrow><mo>,</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">in terms of Legendre’s polynomials.</p>
+<table id="Ch4.Ex149" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex149.m1" class="ltx_Math" alttext="f(x)=\sum_{n=0}^{\infty}a_{n}P_{n}(x)." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>⁢</mo><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch4.Sx1.SSx2.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Solution:</span>
+We recall that</p>
+<table id="Ch4.Ex150" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex150.m1" class="ltx_Math" alttext="a_{n}=\frac{2n+1}{2}\int_{-1}^{1}f(x)P_{n}(x)\,dx=\frac{2n+1}{2}\int_{0}^{1}P_%
+{n}(x)\,dx." display="block"><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mrow><mfrac><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mfrac><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mrow><msub><mi>P</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The first four coefficients are</p>
+<table id="Ch4.Ex151" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex151.m1" class="ltx_Math" alttext="a_{0}=\frac{1}{2}," display="block"><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex152" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex152.m1" class="ltx_Math" alttext="a_{1}=\frac{3}{4}," display="block"><mrow><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex153" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex153.m1" class="ltx_Math" alttext="a_{2}=0," display="block"><mrow><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch4.Ex154" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.Ex154.m1" class="ltx_Math" alttext="a_{3}=-\frac{7}{16}." display="block"><mrow><mrow><msub><mi>a</mi><mn>3</mn></msub><mo>=</mo><mrow><mo>−</mo><mfrac><mn>7</mn><mn>16</mn></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch4.Sx1.SSx2.p3" class="ltx_para">
+<p class="ltx_p">The function <math id="Ch4.Sx1.SSx2.p3.m1" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>, as simple as it is, can not be expressed as a
+finite series of either Legendre’s polynomials, or sine/cosine
+functions (see <span class="ltx_text ltx_font_bold">Chapter 2</span>).</p>
+</div>
+</section>
+</section>
+</section>
+
+
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Wed Jul 22 15:22:41 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
