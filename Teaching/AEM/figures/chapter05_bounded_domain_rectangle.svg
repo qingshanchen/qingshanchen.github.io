@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1095" height="660" viewBox="0 0 1095 660">
+  <rect width="1095" height="660" fill="white"/>
+  <g fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Rectangle -->
+    <path d="M 162 106 L 812 106 L 812 444 L 162 444 Z"/>
+    <!-- Vertical dimension line and arrows -->
+    <path d="M 104 134 L 104 214 M 104 134 L 84 163 M 104 134 L 121 161"/>
+    <path d="M 99 350 L 93 425 M 93 425 L 84 397 M 93 425 L 109 400"/>
+    <path d="M 76 108 L 131 108 M 62 447 L 121 447"/>
+    <!-- Horizontal dimension line and end marks -->
+    <path d="M 162 466 L 158 522 M 811 458 L 807 520"/>
+    <path d="M 170 487 L 334 489 M 170 487 L 197 471 M 170 487 L 198 504"/>
+    <path d="M 459 484 L 774 482"/>
+  </g>
+  <g fill="#111" font-family="Comic Sans MS, Bradley Hand, cursive" font-style="italic">
+    <text x="407" y="75" font-size="48">u = g(x)</text>
+    <text x="88" y="304" font-size="50">D</text>
+    <text x="199" y="292" font-size="37">u = 0</text>
+    <text x="865" y="289" font-size="40">u = 0</text>
+    <text x="405" y="514" font-size="47">L</text>
+    <text x="442" y="615" font-size="48">u = f(x)</text>
+  </g>
+</svg>
