@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Lecture 1</title>
+<!--Generated on Wed Aug 26 13:29:55 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on August 26, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">Lecture 1</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold" style="font-size:207%;">Introduction</span></p>
+</div>
+  
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Numerical methods are procedures by which computer solve application
+problems. For most real-world problems there are no formulas and no
+analytical solutions. Numerical approximations by computers are often
+the only option available. To obtain these numerical approximations,
+various numerical methods are needed.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Main attributes of numerical methods:</p>
+<ul id="Ch0.S0.I1" class="ltx_itemize">
+<li id="Ch0.S0.I1.ix1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.S0.I1.ix1.p1" class="ltx_para">
+<p class="ltx_p">Accuracy (errors)</p>
+</div>
+</li>
+<li id="Ch0.S0.I1.ix2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.S0.I1.ix2.p1" class="ltx_para">
+<p class="ltx_p">Efficiency (cost)</p>
+</div>
+</li>
+<li id="Ch0.S0.I1.ix3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.S0.I1.ix3.p1" class="ltx_para">
+<p class="ltx_p">Robustness/stability</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Sources of errors:</p>
+<ul id="Ch0.S0.I2" class="ltx_itemize">
+<li id="Ch0.S0.I2.ix1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.S0.I2.ix1.p1" class="ltx_para">
+<p class="ltx_p">Errors in the problem to be solved</p>
+<ul id="Ch0.S0.I2.ix1.I1" class="ltx_itemize">
+<li id="Ch0.S0.I2.ix1.I1.ix1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">*</span> 
+<div id="Ch0.S0.I2.ix1.I1.ix1.p1" class="ltx_para">
+<p class="ltx_p">Errors (inaccuracies) in the mathematical model</p>
+</div>
+</li>
+<li id="Ch0.S0.I2.ix1.I1.ix2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">*</span> 
+<div id="Ch0.S0.I2.ix1.I1.ix2.p1" class="ltx_para">
+<p class="ltx_p">Errors in the input data</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="Ch0.S0.I2.ix2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.S0.I2.ix2.p1" class="ltx_para">
+<p class="ltx_p">Approximation errors. Such errors arise when approximation formulae are used in place of actual functions</p>
+</div>
+</li>
+<li id="Ch0.S0.I2.ix3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.S0.I2.ix3.p1" class="ltx_para">
+<p class="ltx_p">Round-off errors. They arise because modern computers can only represent real numbers to finite precisions. (More late)</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">In this course, we mainly deal with approximation errors and round-off errors. Of these two, the round-off errors are usually small, and are dominated by the approximation errors.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">There are generally two basic types of measured errors. Given a
+quantity <math id="p7.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> and its approximation <math id="p7.m2" class="ltx_Math" alttext="\tilde{u}" display="inline"><mover accent="true"><mi>u</mi><mo>~</mo></mover></math>:</p>
+</div>
+<div id="p8" class="ltx_para">
+<ul id="Ch0.S0.I3" class="ltx_itemize">
+<li id="Ch0.S0.I3.ix1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.S0.I3.ix1.p1" class="ltx_para">
+<p class="ltx_p">The absolute error in <math id="Ch0.S0.I3.ix1.p1.m1" class="ltx_Math" alttext="\tilde{u}" display="inline"><mover accent="true"><mi>u</mi><mo>~</mo></mover></math> is <math id="Ch0.S0.I3.ix1.p1.m2" class="ltx_Math" alttext="|u-\tilde{u}|" display="inline"><mrow><mo stretchy="false">|</mo><mrow><mi>u</mi><mo>−</mo><mover accent="true"><mi>u</mi><mo>~</mo></mover></mrow><mo stretchy="false">|</mo></mrow></math>.</p>
+</div>
+</li>
+<li id="Ch0.S0.I3.ix2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.S0.I3.ix2.p1" class="ltx_para">
+<p class="ltx_p">The relative error in <math id="Ch0.S0.I3.ix2.p1.m1" class="ltx_Math" alttext="\tilde{u}" display="inline"><mover accent="true"><mi>u</mi><mo>~</mo></mover></math> is <math id="Ch0.S0.I3.ix2.p1.m2" class="ltx_Math" alttext="\displaystyle\frac{|u-\tilde{u}|}{|u|}" display="inline"><mstyle displaystyle="true"><mfrac><mrow><mo stretchy="false">|</mo><mrow><mi>u</mi><mo>−</mo><mover accent="true"><mi>u</mi><mo>~</mo></mover></mrow><mo stretchy="false">|</mo></mrow><mrow><mo stretchy="false">|</mo><mi>u</mi><mo stretchy="false">|</mo></mrow></mfrac></mstyle></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p9" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Order of accuracy
+<br class="ltx_break"></span>Suppose a numerical method has error <math id="p9.m1" class="ltx_Math" alttext="e" display="inline"><mi>e</mi></math> corresponding to a parameter
+<math id="p9.m2" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> used in the approximation. The method is said to be
+<math id="p9.m3" class="ltx_Math" alttext="k^{\mathrm{th}}" display="inline"><msup><mi>k</mi><mi>th</mi></msup></math>-order accurate if there exists a constant <math id="p9.m4" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math>,
+independent of <math id="p9.m5" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>, such that</p>
+<table id="Ch0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex1.m1" class="ltx_Math" alttext="|e|\leq C\cdot h^{k}." display="block"><mrow><mrow><mrow><mo stretchy="false">|</mo><mi>e</mi><mo stretchy="false">|</mo></mrow><mo>≤</mo><mrow><mi>C</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>h</mi><mi>k</mi></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This relation is often written using the <span class="ltx_text ltx_font_italic">big-O notation</span>,</p>
+<table id="Ch0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex2.m1" class="ltx_Math" alttext="e=O(h^{k})." display="block"><mrow><mrow><mi>e</mi><mo>=</mo><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mi>k</mi></msup><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p10" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Example 1.</span> Suppose we have an algorithm where the error
+depends on the parameter <math id="p10.m1" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> only, and for a sequence of <math id="p10.m2" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>’s
+<math id="p10.m3" class="ltx_Math" alttext="\{1,\,1/2,\,1/4,\,1/8,\,1/16,\,1/32\}" display="inline"><mrow><mo stretchy="false">{</mo><mn>1</mn><mo>,</mo><mrow><mn> 1</mn><mo>/</mo><mn>2</mn></mrow><mo>,</mo><mrow><mn> 1</mn><mo>/</mo><mn>4</mn></mrow><mo>,</mo><mrow><mn> 1</mn><mo>/</mo><mn>8</mn></mrow><mo>,</mo><mrow><mn> 1</mn><mo>/</mo><mn>16</mn></mrow><mo>,</mo><mrow><mn> 1</mn><mo>/</mo><mn>32</mn></mrow><mo stretchy="false">}</mo></mrow></math>, the sequence of
+errors <math id="p10.m4" class="ltx_Math" alttext="\{10,\,5,\,2.5,\,1.25,\,0.625,\,0.3125\}" display="inline"><mrow><mo stretchy="false">{</mo><mn>10</mn><mo>,</mo><mn> 5</mn><mo>,</mo><mn> 2.5</mn><mo>,</mo><mn> 1.25</mn><mo>,</mo><mn> 0.625</mn><mo>,</mo><mn> 0.3125</mn><mo stretchy="false">}</mo></mrow></math> results. Find the
+order of accuracy. What if the sequence of errors is
+<math id="p10.m5" class="ltx_Math" alttext="\{100,\,25,\,6.25,\,1.5625,\,0.390625,\,0.09765625\}" display="inline"><mrow><mo stretchy="false">{</mo><mn>100</mn><mo>,</mo><mn> 25</mn><mo>,</mo><mn> 6.25</mn><mo>,</mo><mn> 1.5625</mn><mo>,</mo><mn> 0.390625</mn><mo>,</mo><mn> 0.09765625</mn><mo stretchy="false">}</mo></mrow></math> instead?</p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="p11" class="ltx_para">
+<p class="ltx_p">In the first case, since the error reduces by
+half whenever the parameter <math id="p11.m1" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> reduces by half, the order of accuracy
+is <math id="p11.m2" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> (linear). In the second case, the error is quartered whenever the
+parameter <math id="p11.m3" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> is halved, the order of accuracy is <math id="p11.m4" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math> (quadratic).
+∎</p>
+</div>
+</div>
+<div id="p12" class="ltx_para">
+<p class="ltx_p">The efficiency of a numerical method is measured in terms of costs in</p>
+<ul id="Ch0.S0.I4" class="ltx_itemize">
+<li id="Ch0.S0.I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.S0.I4.i1.p1" class="ltx_para">
+<p class="ltx_p">number of calculations that have to be performed;</p>
+</div>
+</li>
+<li id="Ch0.S0.I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.S0.I4.i2.p1" class="ltx_para">
+<p class="ltx_p">memory space required.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_logical-block">
+    
+<div id="p13" class="ltx_para">
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Wed Aug 26 13:29:55 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
