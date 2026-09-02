@@ -1,0 +1,753 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Lecture 2</title>
+<!--Generated on Wed Sep  2 13:55:55 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on September 2, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">Lecture 2</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold" style="font-size:207%;">Representation of Numbers in Computers</span></p>
+</div>
+  
+</div>
+<section id="Ch0.Sx1" class="ltx_section">
+<h3 class="ltx_title ltx_title_section">The binary format</h3>
+
+<div id="Ch0.Sx1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">As is well known, modern electrical computers use a binary format to
+store numbers, whether they are integers or decimals. Thus, any number
+is just a sequence of zeros and ones,</p>
+<table id="Ch0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><svg id="Ch0.Ex3.m1.pic1" class="ltx_picture ltx_markedasmath" height="21.68" overflow="visible" version="1.1" width="216.45"><g fill="#000000" stroke="#000000" stroke-width="0.5pt" transform="translate(0,21.68) matrix(1 0 0 -1 0 0) translate(19.64,0) translate(0,1)"><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -15.03 6.38)"><foreignObject height="12.45" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="10.38"><math id="Ch0.Ex3.m1.pic1.m1" class="ltx_Math" alttext="\cdots" display="inline"><mi mathvariant="normal">⋯</mi></math></foreignObject></g><path d="M 0 0 M 0 0 L 0 19.69 L 19.69 19.69 L 19.69 0 Z M 19.69 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 6.38 5.38)"><foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92">1</foreignObject></g><path d="M 19.69 0 M 19.69 0 L 19.69 19.69 L 39.37 19.69 L 39.37 0 Z M 39.37 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 26.07 5.38)"><foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92">0</foreignObject></g><path d="M 39.37 0 M 39.37 0 L 39.37 19.69 L 59.06 19.69 L 59.06 0 Z M 59.06 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 45.75 5.38)"><foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92">1</foreignObject></g><path d="M 59.06 0 M 59.06 0 L 59.06 19.69 L 78.74 19.69 L 78.74 0 Z M 78.74 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 65.44 5.38)"><foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92">1</foreignObject></g><path d="M 78.74 0 M 78.74 0 L 78.74 19.69 L 98.43 19.69 L 98.43 0 Z M 98.43 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 85.12 5.38)"><foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92">1</foreignObject></g><path d="M 98.43 0 M 98.43 0 L 98.43 19.69 L 118.11 19.69 L 118.11 0 Z M 118.11 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 104.81 5.38)"><foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92">0</foreignObject></g><path d="M 118.11 0 M 118.11 0 L 118.11 19.69 L 137.8 19.69 L 137.8 0 Z M 137.8 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 124.49 5.38)"><foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92">0</foreignObject></g><path d="M 137.8 0 M 137.8 0 L 137.8 19.69 L 157.48 19.69 L 157.48 0 Z M 157.48 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 144.18 5.38)"><foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92">1</foreignObject></g><path d="M 157.48 0 M 157.48 0 L 157.48 19.69 L 177.17 19.69 L 177.17 0 Z M 177.17 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 163.86 5.38)"><foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92">0</foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 181.82 6.38)"><foreignObject height="12.45" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="10.38"><math id="Ch0.Ex3.m1.pic1.m2" class="ltx_Math" alttext="\cdots" display="inline"><mi mathvariant="normal">⋯</mi></math></foreignObject></g></g></svg></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Due to the limitations on the amount of resources available, each and every number, be it an integer or a real number, can only be represented by a finite number of binary digits, and this fact has profound implications:</p>
+<ul id="Ch0.Sx1.I5" class="ltx_itemize">
+<li id="Ch0.Sx1.I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.Sx1.I5.i1.p1" class="ltx_para">
+<p class="ltx_p">Each number can be represented with only finite precision;</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.Sx1.I5.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">The number of numbers representable on a computer is actually finite.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch0.Sx1.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">On the second point, it can be noted that, in a system where 32-bit is used for one integer, the largest integer representable within this system is about</p>
+<table id="Ch0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex4.m1" class="ltx_Math" alttext="2^{32}\approx 1000^{3}\approx 10^{9}." display="block"><mrow><mrow><msup><mn>2</mn><mn>32</mn></msup><mo>≈</mo><msup><mn>1000</mn><mn>3</mn></msup><mo>≈</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx1.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">The first point is well illustrated by the following two examples.</p>
+</div>
+<section id="Ch0.Sx1.SSx1" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 1 (The peril of adding numbers of disparaging magnitudes)</h4>
+
+<div id="Ch0.Sx1.SSx1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Try <math id="Ch0.Sx1.SSx1.p1.m1" class="ltx_Math" alttext="1+10^{-16}" display="inline"><mrow><mn>1</mn><mo>+</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></mrow></math> and <math id="Ch0.Sx1.SSx1.p1.m2" class="ltx_Math" alttext="10^{-14}+10^{-16}" display="inline"><mrow><msup><mn>10</mn><mrow><mo>−</mo><mn>14</mn></mrow></msup><mo>+</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></mrow></math> on Matlab.</p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="Ch0.Sx1.SSx1.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Matlab store real numbers up to the 16th digit <span class="ltx_text ltx_font_italic">(significant decimal)</span>. Thus, in Matlab,</p>
+<table id="Chx1.Sx3.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex5.m1" class="ltx_Math" alttext="\displaystyle 1" display="inline"><mn>1</mn></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex5.m2" class="ltx_Math" alttext="\displaystyle=1.000\,000\,000\,000\,000" display="inline"><mrow><mi></mi><mo>=</mo><mn>1.000 000 000 000 000</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex6.m1" class="ltx_Math" alttext="\displaystyle 10^{-16}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex6.m2" class="ltx_Math" alttext="\displaystyle=0.000\,000\,000\,000\,000\,1\underbrace{0\cdots 0}_{15\text{ %
+more}}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mn>0.000 000 000 000 000 1</mn><mo>⁢</mo><munder><munder accentunder="true"><mrow><mn>0</mn><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mn>0</mn></mrow><mo>⏟</mo></munder><mrow><mn>15</mn><mo>⁢</mo><mtext> more</mtext></mrow></munder></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx1.SSx1.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">Thus, Matlab has no difficulty in representing these numbers, but it really struggles in adding them together, because it can’t properly store the result</p>
+<table id="Ch0.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex7.m1" class="ltx_Math" alttext="1.000\,000\,000\,000\,000\,1" display="block"><mn>1.000 000 000 000 000 1</mn></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">within its 16-digit limit. To fit in the limit, it has no choice but to drop the last digit from the result, resulting in <math id="Ch0.Sx1.SSx1.p3.m1" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> as the final answer.</p>
+</div>
+<div id="Ch0.Sx1.SSx1.p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">On the other hand,</p>
+</div>
+<div id="Ch0.Sx1.SSx1.p5" class="ltx_para ltx_noindent">
+<table id="Chx1.Sx3.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex8"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex8.m1" class="ltx_Math" alttext="\displaystyle 10^{-14}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>14</mn></mrow></msup></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex8.m2" class="ltx_Math" alttext="\displaystyle=0.000\,000\,000\,000\,010\underbrace{0\cdots 0}_{14\text{ more}}," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mn>0.000 000 000 000 010</mn><mo>⁢</mo><munder><munder accentunder="true"><mrow><mn>0</mn><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mn>0</mn></mrow><mo>⏟</mo></munder><mrow><mn>14</mn><mo>⁢</mo><mtext> more</mtext></mrow></munder></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex9"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex9.m1" class="ltx_Math" alttext="\displaystyle 10^{-16}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex9.m2" class="ltx_Math" alttext="\displaystyle=0.000\,000\,000\,000\,000\,1\underbrace{0\cdots 0}_{15\text{ %
+more}}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mn>0.000 000 000 000 000 1</mn><mo>⁢</mo><munder><munder accentunder="true"><mrow><mn>0</mn><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mn>0</mn></mrow><mo>⏟</mo></munder><mrow><mn>15</mn><mo>⁢</mo><mtext> more</mtext></mrow></munder></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx1.SSx1.p6" class="ltx_para">
+<p class="ltx_p">Again, Matlab has no difficulty in representing these numbers individually. It can also safely add them together, for the result</p>
+<table id="Ch0.Ex10" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex10.m1" class="ltx_Math" alttext="10^{-14}+10^{-16}=0.000\,000\,000\,000\,010\,10\cdots 0" display="block"><mrow><mrow><msup><mn>10</mn><mrow><mo>−</mo><mn>14</mn></mrow></msup><mo>+</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></mrow><mo>=</mo><mrow><mn>0.000 000 000 000 010 10</mn><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mn>0</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">can be adequately stored within its 16-digit limit.
+∎</p>
+</div>
+</div>
+</section>
+<section id="Ch0.Sx1.SSx2" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 2 (The peril of subtracting two almost equal numbers)</h4>
+
+<div id="Ch0.Sx1.SSx2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">By L’Hopital’s rule,</p>
+<table id="Ch0.Ex11" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex11.m1" class="ltx_Math" alttext="\lim_{x\to 0}\frac{e^{x}-e^{-x}}{x}=2." display="block"><mrow><mrow><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>x</mi><mo stretchy="false">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow><mi>x</mi></mfrac></mrow><mo>=</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Try to approximate the limit on Matlab.</p>
+</div>
+</section>
+<section id="Ch0.Sx1.SSx3" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Base 10 (decimal) number system</h4>
+
+<div id="Ch0.Sx1.SSx3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Power base: <math id="Ch0.Sx1.SSx3.p1.m1" class="ltx_Math" alttext="10" display="inline"><mn>10</mn></math>.
+<br class="ltx_break">Digits: <math id="Ch0.Sx1.SSx3.p1.m2" class="ltx_Math" alttext="d" display="inline"><mi>d</mi></math>,  <math id="Ch0.Sx1.SSx3.p1.m3" class="ltx_Math" alttext="0\leq d\leq 9" display="inline"><mrow><mn>0</mn><mo>≤</mo><mi>d</mi><mo>≤</mo><mn>9</mn></mrow></math>.</p>
+</div>
+</section>
+<section id="Ch0.Sx1.SSx4" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 3.</h4>
+
+<div id="Ch0.Sx1.SSx4.p1" class="ltx_para ltx_noindent">
+<table id="Ch0.Ex12" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex12.m1" class="ltx_Math" alttext="(134.0728)_{10}=1\times 10^{2}+3\times 10^{1}+4\times 10^{0}+0\times 10^{-1}+7%
+\times 10^{-2}+2\times 10^{-3}+8\times 10^{-4}." display="block"><mrow><mrow><msub><mrow><mo stretchy="false">(</mo><mn>134.0728</mn><mo stretchy="false">)</mo></mrow><mn>10</mn></msub><mo>=</mo><mrow><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mn>2</mn></msup></mrow><mo>+</mo><mrow><mn>3</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mn>1</mn></msup></mrow><mo>+</mo><mrow><mn>4</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mn>0</mn></msup></mrow><mo>+</mo><mrow><mn>0</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>+</mo><mrow><mn>7</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow><mo>+</mo><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><mo>+</mo><mrow><mn>8</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch0.Sx1.SSx5" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Base 2 (binary) number system</h4>
+
+<div id="Ch0.Sx1.SSx5.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Power base: <math id="Ch0.Sx1.SSx5.p1.m1" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math>.
+<br class="ltx_break">Digits: <math id="Ch0.Sx1.SSx5.p1.m2" class="ltx_Math" alttext="d=0,1" display="inline"><mrow><mi>d</mi><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow></mrow></math>.</p>
+</div>
+</section>
+<section id="Ch0.Sx1.SSx6" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 4.</h4>
+
+<div id="Ch0.Sx1.SSx6.p1" class="ltx_para ltx_noindent">
+<table id="Chx1.Sx3.EGx3" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex13"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex13.m1" class="ltx_Math" alttext="\displaystyle(1010.1101)_{2}={}" display="inline"><mrow><msub><mrow><mo stretchy="false">(</mo><mn>1010.1101</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msub><mo>=</mo><mi></mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex13.m2" class="ltx_Math" alttext="\displaystyle 1\times 2^{3}+0\times 2^{2}+1\times 2^{1}+0\times 2^{0}" display="inline"><mrow><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mn>3</mn></msup></mrow><mo>+</mo><mrow><mn>0</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mn>2</mn></msup></mrow><mo>+</mo><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mn>1</mn></msup></mrow><mo>+</mo><mrow><mn>0</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mn>0</mn></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex14"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex14.m1" class="ltx_Math" alttext="\displaystyle+1\times 2^{-1}+1\times 2^{-2}+0\times 2^{-3}+1\times 2^{-4}" display="inline"><mrow><mrow><mo>+</mo><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><mo>+</mo><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow><mo>+</mo><mrow><mn>0</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><mo>+</mo><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex15"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex15.m1" class="ltx_Math" alttext="\displaystyle={}" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex15.m2" class="ltx_Math" alttext="\displaystyle(10.8125)_{10}." display="inline"><mrow><msub><mrow><mo stretchy="false">(</mo><mn>10.8125</mn><mo stretchy="false">)</mo></mrow><mn>10</mn></msub><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch0.Sx1.SSx7" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Conversion between binary and decimal numbers</h4>
+
+<div id="Ch0.Sx1.SSx7.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Binary <math id="Ch0.Sx1.SSx7.p1.m1" class="ltx_Math" alttext="\to" display="inline"><mo stretchy="false">→</mo></math> decimal: easy, just done it.</p>
+</div>
+<div id="Ch0.Sx1.SSx7.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">The following is a procedure for converting decimals <math id="Ch0.Sx1.SSx7.p2.m1" class="ltx_Math" alttext="\to" display="inline"><mo stretchy="false">→</mo></math> binaries,
+<math id="Ch0.Sx1.SSx7.p2.m2" class="ltx_Math" alttext="d" display="inline"><mi>d</mi></math> denoting a positive decimal number:</p>
+<ol id="Ch0.Sx1.I6" class="ltx_enumerate">
+<li id="Ch0.Sx1.I6.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch0.Sx1.I6.i1.p1" class="ltx_para">
+<p class="ltx_p">Find the biggest power <math id="Ch0.Sx1.I6.i1.p1.m1" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> of 2 such that <math id="Ch0.Sx1.I6.i1.p1.m2" class="ltx_Math" alttext="2^{p}\leq d" display="inline"><mrow><msup><mn>2</mn><mi>p</mi></msup><mo>≤</mo><mi>d</mi></mrow></math> (<math id="Ch0.Sx1.I6.i1.p1.m3" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> may be negative). Save the index number <math id="Ch0.Sx1.I6.i1.p1.m4" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math>.</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I6.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch0.Sx1.I6.i2.p1" class="ltx_para">
+<p class="ltx_p">Set <math id="Ch0.Sx1.I6.i2.p1.m1" class="ltx_Math" alttext="d=d-2^{p}" display="inline"><mrow><mi>d</mi><mo>=</mo><mrow><mi>d</mi><mo>−</mo><msup><mn>2</mn><mi>p</mi></msup></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I6.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="Ch0.Sx1.I6.i3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">If <math id="Ch0.Sx1.I6.i3.p1.m1" class="ltx_Math" alttext="d=0" display="inline"><mrow><mi>d</mi><mo>=</mo><mn>0</mn></mrow></math> or smaller than a preset tolerance, stop. Otherwise repeat steps 1 &amp; 2.</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p">For the binary number, put 1’s where you save the index numbers, and put 0’s elsewhere.</p>
+</div>
+</section>
+<section id="Ch0.Sx1.SSx8" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 5.</h4>
+
+<div id="Ch0.Sx1.SSx8.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Convert the base 10 number <math id="Ch0.Sx1.SSx8.p1.m1" class="ltx_Math" alttext="d=11.5625" display="inline"><mrow><mi>d</mi><mo>=</mo><mn>11.5625</mn></mrow></math> to base 2.</p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="Ch0.Sx1.SSx8.p2" class="ltx_para">
+<p class="ltx_p">Following the procedure from the above,</p>
+<ol id="Ch0.Sx1.I7" class="ltx_enumerate">
+<li id="Ch0.Sx1.I7.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch0.Sx1.I7.i1.p1" class="ltx_para">
+<p class="ltx_p">Find the biggest power <math id="Ch0.Sx1.I7.i1.p1.m1" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> such that <math id="Ch0.Sx1.I7.i1.p1.m2" class="ltx_Math" alttext="2^{p}\leq 11.5625" display="inline"><mrow><msup><mn>2</mn><mi>p</mi></msup><mo>≤</mo><mn>11.5625</mn></mrow></math>: <math id="Ch0.Sx1.I7.i1.p1.m3" class="ltx_Math" alttext="p=3" display="inline"><mrow><mi>p</mi><mo>=</mo><mn>3</mn></mrow></math>,
+for (<math id="Ch0.Sx1.I7.i1.p1.m4" class="ltx_Math" alttext="2^{4}&gt;11.5625" display="inline"><mrow><msup><mn>2</mn><mn>4</mn></msup><mo>&gt;</mo><mn>11.5625</mn></mrow></math>).</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I7.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch0.Sx1.I7.i2.p1" class="ltx_para">
+<p class="ltx_p">Update <math id="Ch0.Sx1.I7.i2.p1.m1" class="ltx_Math" alttext="d=11.5625-2^{3}=3.5625" display="inline"><mrow><mi>d</mi><mo>=</mo><mrow><mn>11.5625</mn><mo>−</mo><msup><mn>2</mn><mn>3</mn></msup></mrow><mo>=</mo><mn>3.5625</mn></mrow></math>.</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I7.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="Ch0.Sx1.I7.i3.p1" class="ltx_para">
+<p class="ltx_p">Find the biggest power <math id="Ch0.Sx1.I7.i3.p1.m1" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> s.t. <math id="Ch0.Sx1.I7.i3.p1.m2" class="ltx_Math" alttext="2^{p}\leq 3.5625" display="inline"><mrow><msup><mn>2</mn><mi>p</mi></msup><mo>≤</mo><mn>3.5625</mn></mrow></math>: <math id="Ch0.Sx1.I7.i3.p1.m3" class="ltx_Math" alttext="p=1" display="inline"><mrow><mi>p</mi><mo>=</mo><mn>1</mn></mrow></math>.</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I7.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.</span> 
+<div id="Ch0.Sx1.I7.i4.p1" class="ltx_para">
+<p class="ltx_p">Update <math id="Ch0.Sx1.I7.i4.p1.m1" class="ltx_Math" alttext="d=3.5625-2^{1}=1.5625" display="inline"><mrow><mi>d</mi><mo>=</mo><mrow><mn>3.5625</mn><mo>−</mo><msup><mn>2</mn><mn>1</mn></msup></mrow><mo>=</mo><mn>1.5625</mn></mrow></math>.</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I7.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">5.</span> 
+<div id="Ch0.Sx1.I7.i5.p1" class="ltx_para">
+<p class="ltx_p">Find the biggest power <math id="Ch0.Sx1.I7.i5.p1.m1" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> s.t.  <math id="Ch0.Sx1.I7.i5.p1.m2" class="ltx_Math" alttext="2^{p}\leq 1.5625" display="inline"><mrow><msup><mn>2</mn><mi>p</mi></msup><mo>≤</mo><mn>1.5625</mn></mrow></math>: <math id="Ch0.Sx1.I7.i5.p1.m3" class="ltx_Math" alttext="p=0" display="inline"><mrow><mi>p</mi><mo>=</mo><mn>0</mn></mrow></math>.</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I7.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">6.</span> 
+<div id="Ch0.Sx1.I7.i6.p1" class="ltx_para">
+<p class="ltx_p">Update <math id="Ch0.Sx1.I7.i6.p1.m1" class="ltx_Math" alttext="d=1.5625-2^{0}=.5625" display="inline"><mrow><mi>d</mi><mo>=</mo><mrow><mn>1.5625</mn><mo>−</mo><msup><mn>2</mn><mn>0</mn></msup></mrow><mo>=</mo><mn>.5625</mn></mrow></math>.</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I7.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">7.</span> 
+<div id="Ch0.Sx1.I7.i7.p1" class="ltx_para">
+<p class="ltx_p">Find <math id="Ch0.Sx1.I7.i7.p1.m1" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> s.t. <math id="Ch0.Sx1.I7.i7.p1.m2" class="ltx_Math" alttext="2^{p}\leq 0.5625" display="inline"><mrow><msup><mn>2</mn><mi>p</mi></msup><mo>≤</mo><mn>0.5625</mn></mrow></math>: <math id="Ch0.Sx1.I7.i7.p1.m3" class="ltx_Math" alttext="p=-1" display="inline"><mrow><mi>p</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I7.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">8.</span> 
+<div id="Ch0.Sx1.I7.i8.p1" class="ltx_para">
+<p class="ltx_p"><math id="Ch0.Sx1.I7.i8.p1.m1" class="ltx_Math" alttext="d=.5625-2^{-1}=.0625" display="inline"><mrow><mi>d</mi><mo>=</mo><mrow><mn>.5625</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>=</mo><mn>.0625</mn></mrow></math>.</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I7.i9" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">9.</span> 
+<div id="Ch0.Sx1.I7.i9.p1" class="ltx_para">
+<p class="ltx_p">Find <math id="Ch0.Sx1.I7.i9.p1.m1" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math>: <math id="Ch0.Sx1.I7.i9.p1.m2" class="ltx_Math" alttext="p=-4" display="inline"><mrow><mi>p</mi><mo>=</mo><mrow><mo>−</mo><mn>4</mn></mrow></mrow></math>, <math id="Ch0.Sx1.I7.i9.p1.m3" class="ltx_Math" alttext="2^{-4}=.0625" display="inline"><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup><mo>=</mo><mn>.0625</mn></mrow></math>.</p>
+</div>
+</li>
+<li id="Ch0.Sx1.I7.i10" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">10.</span> 
+<div id="Ch0.Sx1.I7.i10.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><math id="Ch0.Sx1.I7.i10.p1.m1" class="ltx_Math" alttext="d=.0625-.0625=0" display="inline"><mrow><mi>d</mi><mo>=</mo><mrow><mn>.0625</mn><mo>−</mo><mn>.0625</mn></mrow><mo>=</mo><mn>0</mn></mrow></math>. STOP.</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p">To finish up, we list all the indices, with those saved in the above
+marked by an underline, and put 1’s at their places,</p>
+<table id="Ch0.Ex16" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex16.m1" class="ltx_Math" alttext="\begin{array}[]{c|rrrrrrrrr}\text{Index}&amp;\underline{3}&amp;2&amp;\underline{1}&amp;%
+\underline{0}&amp;&amp;\underline{-1}&amp;-2&amp;-3&amp;\underline{-4}\\
+\text{Digits}&amp;1&amp;0&amp;1&amp;1&amp;.&amp;1&amp;0&amp;0&amp;1\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_border_r"><mtext>Index</mtext></mtd><mtd class="ltx_align_right" columnalign="right"><munder accentunder="true"><mn>3</mn><mo>¯</mo></munder></mtd><mtd class="ltx_align_right" columnalign="right"><mn>2</mn></mtd><mtd class="ltx_align_right" columnalign="right"><munder accentunder="true"><mn>1</mn><mo>¯</mo></munder></mtd><mtd class="ltx_align_right" columnalign="right"><munder accentunder="true"><mn>0</mn><mo>¯</mo></munder></mtd><mtd></mtd><mtd class="ltx_align_right" columnalign="right"><munder accentunder="true"><mrow><mo>−</mo><mn>1</mn></mrow><mo>¯</mo></munder></mtd><mtd class="ltx_align_right" columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd class="ltx_align_right" columnalign="right"><mrow><mo>−</mo><mn>3</mn></mrow></mtd><mtd class="ltx_align_right" columnalign="right"><munder accentunder="true"><mrow><mo>−</mo><mn>4</mn></mrow><mo>¯</mo></munder></mtd></mtr><mtr><mtd class="ltx_border_r"><mtext>Digits</mtext></mtd><mtd class="ltx_align_right" columnalign="right"><mn>1</mn></mtd><mtd class="ltx_align_right" columnalign="right"><mn>0</mn></mtd><mtd class="ltx_align_right" columnalign="right"><mn>1</mn></mtd><mtd class="ltx_align_right" columnalign="right"><mn>1</mn></mtd><mtd class="ltx_align_right" columnalign="right"><mrow><mi></mi><mo lspace="0em">.</mo></mrow></mtd><mtd class="ltx_align_right" columnalign="right"><mn>1</mn></mtd><mtd class="ltx_align_right" columnalign="right"><mn>0</mn></mtd><mtd class="ltx_align_right" columnalign="right"><mn>0</mn></mtd><mtd class="ltx_align_right" columnalign="right"><mn>1</mn></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Hence the number in the binary format is</p>
+<table id="Ch0.Ex17" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex17.m1" class="ltx_Math" alttext="(1011.1001)_{2}." display="block"><mrow><msub><mrow><mo stretchy="false">(</mo><mn>1011.1001</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msub><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">∎</p>
+</div>
+</div>
+</section>
+</section>
+<section id="Ch0.Sx2" class="ltx_section">
+<h3 class="ltx_title ltx_title_section">Standard binary form</h3>
+
+<div id="Ch0.Sx2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Every binary number can be put in the standard binary form,</p>
+<table id="Ch0.Ex18" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex18.m1" class="ltx_Math" alttext="x=\pm 1.b_{1}b_{2}b_{3}\cdots\times 2^{p}" display="block"><mrow><mrow><mi>x</mi><mo>=</mo><mrow><mo>±</mo><mn>1</mn></mrow></mrow><mo lspace="0em" rspace="0.167em">.</mo><mrow><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>b</mi><mn>2</mn></msub><mo>⁢</mo><msub><mi>b</mi><mn>3</mn></msub><mo>⁢</mo><mi mathvariant="normal">⋯</mi></mrow><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mi>p</mi></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Here, <math id="Ch0.Sx2.p1.m1" class="ltx_Math" alttext="b_{1},b_{2},b_{3},\ldots" display="inline"><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>2</mn></msub><mo>,</mo><msub><mi>b</mi><mn>3</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi></mrow></math> are binary digits <math id="Ch0.Sx2.p1.m2" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> or <math id="Ch0.Sx2.p1.m3" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>;
+<math id="Ch0.Sx2.p1.m4" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> is an integer (positive or negative).</p>
+</div>
+<section id="Ch0.Sx2.SSx1" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 6.</h4>
+
+<div id="Ch0.Sx2.SSx1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Here we conver several numbers in the binary format (on the left) to
+the standard binary format (on the right):</p>
+<table id="Chx1.Sx3.EGx4" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex19"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex19.m1" class="ltx_Math" alttext="\displaystyle 1.101" display="inline"><mn>1.101</mn></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex19.m2" class="ltx_Math" alttext="\displaystyle=1.101\times 2^{0}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mn>1.101</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mn>0</mn></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex20"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex20.m1" class="ltx_Math" alttext="\displaystyle 1011.1101" display="inline"><mn>1011.1101</mn></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex20.m2" class="ltx_Math" alttext="\displaystyle=1.011101\times 2^{3}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mn>1.011101</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mn>3</mn></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex21"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex21.m1" class="ltx_Math" alttext="\displaystyle 0.00001101" display="inline"><mn>0.00001101</mn></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex21.m2" class="ltx_Math" alttext="\displaystyle=1.101\times 2^{-5}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mn>1.101</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>5</mn></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="Ch0.Sx3" class="ltx_section">
+<h3 class="ltx_title ltx_title_section"> The IEEE double-precision standard</h3>
+
+<div id="Ch0.Sx3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">The <math id="Ch0.Sx3.p1.m1" class="ltx_Math" alttext="1985" display="inline"><mn>1985</mn></math> IEEE standard specifies the formats for double-precision,
+single-precision and extended-precision representation of real number
+by computers. The double-precision uses <math id="Ch0.Sx3.p1.m2" class="ltx_Math" alttext="64" display="inline"><mn>64</mn></math> bits; single-precision
+uses <math id="Ch0.Sx3.p1.m3" class="ltx_Math" alttext="32" display="inline"><mn>32</mn></math> bits.</p>
+</div>
+<div id="Ch0.Sx3.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">In the double-precision representation</p>
+<svg id="Ch0.Sx3.p2.pic1" class="ltx_picture ltx_centering" height="55.13" overflow="visible" version="1.1" width="414.08"><g fill="#000000" stroke="#000000" stroke-width="0.5pt" transform="translate(0,55.13) matrix(1 0 0 -1 0 0) translate(0.35,0) translate(0,34.45)"><g fill="#F0F0F0"><path d="M 0 0 M 0 0 L 0 19.69 L 19.69 19.69 L 19.69 0 Z M 19.69 19.69"></path></g><g fill="#E6E6FF"><path d="M 19.69 0 M 19.69 0 L 19.69 19.69 L 39.37 19.69 L 39.37 0 Z M 39.37 19.69"></path></g><g fill="#E6E6FF"><path d="M 39.37 0 M 39.37 0 L 39.37 19.69 L 59.06 19.69 L 59.06 0 Z M 59.06 19.69"></path></g><g fill="#E6E6FF"><path d="M 59.06 0 M 59.06 0 L 59.06 19.69 L 78.74 19.69 L 78.74 0 Z M 78.74 19.69"></path></g><g fill="#E6E6FF"><path d="M 78.74 0 M 78.74 0 L 78.74 19.69 L 98.43 19.69 L 98.43 0 Z M 98.43 19.69"></path></g><g fill="#E6E6FF"><path d="M 98.43 0 M 98.43 0 L 98.43 19.69 L 118.11 19.69 L 118.11 0 Z M 118.11 19.69"></path></g><g fill="#E6E6FF"><path d="M 118.11 0 M 118.11 0 L 118.11 19.69 L 137.8 19.69 L 137.8 0 Z M 137.8 19.69"></path></g><g fill="#E6E6FF"><path d="M 137.8 0 M 137.8 0 L 137.8 19.69 L 157.48 19.69 L 157.48 0 Z M 157.48 19.69"></path></g><g fill="#E6E6FF"><path d="M 157.48 0 M 157.48 0 L 157.48 19.69 L 177.17 19.69 L 177.17 0 Z M 177.17 19.69"></path></g><g fill="#E6E6FF"><path d="M 177.17 0 M 177.17 0 L 177.17 19.69 L 196.85 19.69 L 196.85 0 Z M 196.85 19.69"></path></g><g fill="#E6E6FF"><path d="M 196.85 0 M 196.85 0 L 196.85 19.69 L 216.54 19.69 L 216.54 0 Z M 216.54 19.69"></path></g><g fill="#E6E6FF"><path d="M 216.54 0 M 216.54 0 L 216.54 19.69 L 236.22 19.69 L 236.22 0 Z M 236.22 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 7.57 7.76)"><foreignObject height="4.17" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.54"><math id="Ch0.Sx3.p2.pic1.m1" class="ltx_Math" alttext="s" display="inline"><mi mathsize="70%">s</mi></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 26.08 8.63)"><foreignObject height="5.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.9"><math id="Ch0.Sx3.p2.pic1.m2" class="ltx_Math" alttext="c_{1}" display="inline"><msub><mi mathsize="70%">c</mi><mn mathsize="70%">1</mn></msub></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 45.76 8.63)"><foreignObject height="5.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.9"><math id="Ch0.Sx3.p2.pic1.m3" class="ltx_Math" alttext="c_{2}" display="inline"><msub><mi mathsize="70%">c</mi><mn mathsize="70%">2</mn></msub></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 122.76 6.38)"><foreignObject height="12.45" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="10.38"><math id="Ch0.Sx3.p2.pic1.m4" class="ltx_Math" alttext="\cdots" display="inline"><mi mathvariant="normal">⋯</mi></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 221.57 8.63)"><foreignObject height="5.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="9.62"><math id="Ch0.Sx3.p2.pic1.m5" class="ltx_Math" alttext="c_{11}" display="inline"><msub><mi mathsize="70%">c</mi><mn mathsize="70%">11</mn></msub></math></foreignObject></g><g color="#E6FFE6" fill="#E6FFE6" stroke="#E6FFE6"><path d="M 295.28 0 M 295.28 0 L 295.28 19.69 L 354.33 19.69 L 354.33 0 Z M 354.33 19.69" style="stroke:none"></path></g><g fill="#E6FFE6"><path d="M 236.22 0 M 236.22 0 L 236.22 19.69 L 255.91 19.69 L 255.91 0 Z M 255.91 19.69"></path></g><g fill="#E6FFE6"><path d="M 255.91 0 M 255.91 0 L 255.91 19.69 L 275.59 19.69 L 275.59 0 Z M 275.59 19.69"></path></g><g fill="#E6FFE6"><path d="M 275.59 0 M 275.59 0 L 275.59 19.69 L 295.28 19.69 L 295.28 0 Z M 295.28 19.69"></path></g><g fill="#E6FFE6"><path d="M 354.33 0 M 354.33 0 L 354.33 19.69 L 374.02 19.69 L 374.02 0 Z M 374.02 19.69"></path></g><g fill="#E6FFE6"><path d="M 374.02 0 M 374.02 0 L 374.02 19.69 L 393.7 19.69 L 393.7 0 Z M 393.7 19.69"></path></g><g fill="#E6FFE6"><path d="M 393.7 0 M 393.7 0 L 393.7 19.69 L 413.39 19.69 L 413.39 0 Z M 413.39 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 242.63 7.35)"><foreignObject height="8.47" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.87"><math id="Ch0.Sx3.p2.pic1.m6" class="ltx_Math" alttext="b_{1}" display="inline"><msub><mi mathsize="70%">b</mi><mn mathsize="70%">1</mn></msub></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 262.31 7.35)"><foreignObject height="8.47" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.87"><math id="Ch0.Sx3.p2.pic1.m7" class="ltx_Math" alttext="b_{2}" display="inline"><msub><mi mathsize="70%">b</mi><mn mathsize="70%">2</mn></msub></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 282 7.35)"><foreignObject height="8.47" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.87"><math id="Ch0.Sx3.p2.pic1.m8" class="ltx_Math" alttext="b_{3}" display="inline"><msub><mi mathsize="70%">b</mi><mn mathsize="70%">3</mn></msub></math></foreignObject></g><path d="M 295.28 0 L 354.33 0 M 295.28 19.69 L 354.33 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 319.61 6.38)"><foreignObject height="12.45" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="10.38"><math id="Ch0.Sx3.p2.pic1.m9" class="ltx_Math" alttext="\cdots" display="inline"><mi mathvariant="normal">⋯</mi></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 359.38 7.35)"><foreignObject height="8.47" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="9.58"><math id="Ch0.Sx3.p2.pic1.m10" class="ltx_Math" alttext="b_{50}" display="inline"><msub><mi mathsize="70%">b</mi><mn mathsize="70%">50</mn></msub></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 379.07 7.35)"><foreignObject height="8.47" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="9.58"><math id="Ch0.Sx3.p2.pic1.m11" class="ltx_Math" alttext="b_{51}" display="inline"><msub><mi mathsize="70%">b</mi><mn mathsize="70%">51</mn></msub></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 398.75 7.35)"><foreignObject height="8.47" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="9.58"><math id="Ch0.Sx3.p2.pic1.m12" class="ltx_Math" alttext="b_{52}" display="inline"><msub><mi mathsize="70%">b</mi><mn mathsize="70%">52</mn></msub></math></foreignObject></g><path d="M 0 -6.89 M 0 -6.89 C 0.74 -8.97 2.46 -10.35 4.92 -10.35 L 4.92 -10.35 C 7.38 -10.35 9.1 -11.73 9.84 -13.81 C 10.58 -11.73 12.3 -10.35 14.76 -10.35 L 14.76 -10.35 C 17.22 -10.35 18.95 -8.97 19.69 -6.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 7.57 -24.32)"><foreignObject height="4.17" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.54"><math id="Ch0.Sx3.p2.pic1.m13" class="ltx_Math" alttext="s" display="inline"><mi mathsize="70%">s</mi></math></foreignObject></g><path d="M 19.69 -6.89 M 19.69 -6.89 C 20.72 -8.97 23.14 -10.35 26.6 -10.35 L 121.03 -10.35 C 124.49 -10.35 126.92 -11.73 127.95 -13.81 C 128.99 -11.73 131.41 -10.35 134.87 -10.35 L 229.3 -10.35 C 232.76 -10.35 235.18 -8.97 236.22 -6.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 106.19 -27.41)"><foreignObject height="4.17" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="7.42"><math id="Ch0.Sx3.p2.pic1.m14" class="ltx_Math" alttext="c" display="inline"><mi mathsize="70%">c</mi></math><span class="ltx_text" style="font-size:70%;"> (11 bits)</span></foreignObject></g><path d="M 236.22 -6.89 M 236.22 -6.89 C 237.26 -8.97 239.68 -10.35 243.14 -10.35 L 317.88 -10.35 C 321.34 -10.35 323.77 -11.73 324.8 -13.81 C 325.84 -11.73 328.26 -10.35 331.72 -10.35 L 406.47 -10.35 C 409.93 -10.35 412.35 -8.97 413.39 -6.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 302.24 -27.41)"><foreignObject height="8.61" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="9.01"><math id="Ch0.Sx3.p2.pic1.m15" class="ltx_Math" alttext="f" display="inline"><mi mathsize="70%">f</mi></math><span class="ltx_text" style="font-size:70%;"> (52 bits)</span></foreignObject></g></g></svg>
+<p class="ltx_p">Here,</p>
+<table id="Ch0.Ex22" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex22X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex22X.m2" class="ltx_Math" alttext="\displaystyle s:" display="inline"><mrow><mi>s</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mi></mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex22X.m3" class="ltx_Math" alttext="\displaystyle\,\text{sign, }0\text{ for positive, }1\text{ for negative};" display="inline"><mrow><mrow><mtext>sign, </mtext><mo>⁢</mo><mn>0</mn><mo>⁢</mo><mtext> for positive, </mtext><mo>⁢</mo><mn>1</mn><mo>⁢</mo><mtext> for negative</mtext></mrow><mo>;</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex22Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex22Xa.m2" class="ltx_Math" alttext="\displaystyle c:" display="inline"><mrow><mi>c</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mi></mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex22Xa.m3" class="ltx_Math" alttext="\displaystyle\,\text{exponent, }0\leq c\leq 2^{11}-1=2047," display="inline"><mrow><mrow><mrow><mtext>exponent, </mtext><mo>⁢</mo><mn>0</mn></mrow><mo>≤</mo><mi>c</mi><mo>≤</mo><mrow><msup><mn>2</mn><mn>11</mn></msup><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mn>2047</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex22Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex22Xb.m2" class="ltx_Math" alttext="\displaystyle\,c=0,\,2047\text{ reserved for special values like $0$, $\inf$, %
+NaN}," display="inline"><mrow><mrow><mi>c</mi><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mrow><mn> 2047</mn><mo>⁢</mo><mrow><mtext> reserved for special values like </mtext><mn>0</mn><mtext>, </mtext><mo lspace="0.167em" rspace="0.167em">inf</mo><mtext>, NaN</mtext></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex22Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex22Xc.m2" class="ltx_Math" alttext="\displaystyle\,p=c-1023\text{ when}1\leq c\leq 2046,\textit{the shifted
+exponent}\text{ for normalized reals};" display="inline"><mrow><mrow><mrow><mi>p</mi><mo>=</mo><mrow><mi>c</mi><mo>−</mo><mrow><mn>1023</mn><mo>⁢</mo><mtext> when</mtext><mo>⁢</mo><mn>1</mn></mrow></mrow><mo>≤</mo><mi>c</mi><mo>≤</mo><mn>2046</mn></mrow><mo>,</mo><mrow><mtext class="ltx_mathvariant_italic">the shifted
+exponent</mtext><mtext> for normalized reals</mtext></mrow></mrow><mo>;</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex22Xd"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex22Xd.m2" class="ltx_Math" alttext="\displaystyle f:" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mi></mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex22Xd.m3" class="ltx_math_unparsed" alttext="\displaystyle\,\text{the mantissa},\equiv\frac{b_{1}}{2}+\frac{b_{2}}{2^{2}}+%
+\cdots+\frac{b_{52}}{2^{52}}." display="inline"><mrow><mtext>the mantissa</mtext><mo>,</mo><mo lspace="0em">≡</mo><mstyle displaystyle="true"><mfrac><msub><mi>b</mi><mn>1</mn></msub><mn>2</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><msub><mi>b</mi><mn>2</mn></msub><msup><mn>2</mn><mn>2</mn></msup></mfrac></mstyle><mo>+</mo><mi mathvariant="normal">⋯</mi><mo>+</mo><mstyle displaystyle="true"><mfrac><msub><mi>b</mi><mn>52</mn></msub><msup><mn>2</mn><mn>52</mn></msup></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx3.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">The normalized real number represented by these 64 binary digits is given by the formula</p>
+<table id="Ch0.Ex23" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex23.m1" class="ltx_Math" alttext="r=(-1)^{s}(1+f)2^{c-1023}." display="block"><mrow><mrow><mi>r</mi><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>s</mi></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mi>f</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mn>2</mn><mrow><mi>c</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<section id="Ch0.Sx3.SSx1" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 7</h4>
+
+<div id="Ch0.Sx3.SSx1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Convert the base 10 number <math id="Ch0.Sx3.SSx1.p1.m1" class="ltx_Math" alttext="d=11.5625" display="inline"><mrow><mi>d</mi><mo>=</mo><mn>11.5625</mn></mrow></math> to the 64-bit floating point representation.</p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="Ch0.Sx3.SSx1.p2" class="ltx_para">
+<p class="ltx_p">From last time, we know that <math id="Ch0.Sx3.SSx1.p2.m1" class="ltx_Math" alttext="(11.5625)_{10}" display="inline"><msub><mrow><mo stretchy="false">(</mo><mn>11.5625</mn><mo stretchy="false">)</mo></mrow><mn>10</mn></msub></math> has standard binary representation</p>
+<table id="Ch0.Ex24" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex24.m1" class="ltx_Math" alttext="(1.0111001)_{2}\times 2^{3}." display="block"><mrow><mrow><msub><mrow><mo stretchy="false">(</mo><mn>1.0111001</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msub><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mn>3</mn></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus,</p>
+<table id="Ch0.Ex25" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex25.m1" class="ltx_Math" alttext="p=3\quad\Longrightarrow\quad c=p+1023=1026=2^{10}+2^{1}," display="block"><mrow><mrow><mrow><mi>p</mi><mo>=</mo><mrow><mn>3</mn><mspace width="1em"></mspace><mo stretchy="false">⟹</mo></mrow></mrow><mspace width="1em"></mspace><mrow><mi>c</mi><mo>=</mo><mrow><mi>p</mi><mo>+</mo><mn>1023</mn></mrow><mo>=</mo><mn>1026</mn><mo>=</mo><mrow><msup><mn>2</mn><mn>10</mn></msup><mo>+</mo><msup><mn>2</mn><mn>1</mn></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">and</p>
+<table id="Ch0.Ex26" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex26.m1" class="ltx_Math" alttext="f=(0.0111001)_{2}=2^{-2}+2^{-3}+2^{-4}+2^{-7}." display="block"><mrow><mrow><mi>f</mi><mo>=</mo><msub><mrow><mo stretchy="false">(</mo><mn>0.0111001</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msub><mo>=</mo><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>+</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup><mo>+</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup><mo>+</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>7</mn></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This number is then represented under the IEEE 64-bit standard as</p>
+<svg id="Ch0.Sx3.SSx1.p2.pic1" class="ltx_picture ltx_centering" height="52.67" overflow="visible" version="1.1" width="512.5"><g fill="#000000" stroke="#000000" stroke-width="0.5pt" transform="translate(0,52.67) matrix(1 0 0 -1 0 0) translate(0.35,0) translate(0,31.99)"><g fill="#F0F0F0"><path d="M 0 0 M 0 0 L 0 19.69 L 19.69 19.69 L 19.69 0 Z M 19.69 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 7.42 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 19.69 0 M 19.69 0 L 19.69 19.69 L 39.37 19.69 L 39.37 0 Z M 39.37 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 27.11 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">1</span></foreignObject></g><g fill="#E6E6FF"><path d="M 39.37 0 M 39.37 0 L 39.37 19.69 L 59.06 19.69 L 59.06 0 Z M 59.06 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 46.79 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 59.06 0 M 59.06 0 L 59.06 19.69 L 78.74 19.69 L 78.74 0 Z M 78.74 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 66.48 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 78.74 0 M 78.74 0 L 78.74 19.69 L 98.43 19.69 L 98.43 0 Z M 98.43 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 86.16 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 98.43 0 M 98.43 0 L 98.43 19.69 L 118.11 19.69 L 118.11 0 Z M 118.11 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 105.85 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 118.11 0 M 118.11 0 L 118.11 19.69 L 137.8 19.69 L 137.8 0 Z M 137.8 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 125.53 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 137.8 0 M 137.8 0 L 137.8 19.69 L 157.48 19.69 L 157.48 0 Z M 157.48 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 145.22 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 157.48 0 M 157.48 0 L 157.48 19.69 L 177.17 19.69 L 177.17 0 Z M 177.17 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 164.9 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 177.17 0 M 177.17 0 L 177.17 19.69 L 196.85 19.69 L 196.85 0 Z M 196.85 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 184.59 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 196.85 0 M 196.85 0 L 196.85 19.69 L 216.54 19.69 L 216.54 0 Z M 216.54 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 204.27 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">1</span></foreignObject></g><g fill="#E6E6FF"><path d="M 216.54 0 M 216.54 0 L 216.54 19.69 L 236.22 19.69 L 236.22 0 Z M 236.22 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 223.96 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6FFE6"><path d="M 236.22 0 M 236.22 0 L 236.22 19.69 L 255.91 19.69 L 255.91 0 Z M 255.91 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 243.64 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6FFE6"><path d="M 255.91 0 M 255.91 0 L 255.91 19.69 L 275.59 19.69 L 275.59 0 Z M 275.59 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 263.33 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">1</span></foreignObject></g><g fill="#E6FFE6"><path d="M 275.59 0 M 275.59 0 L 275.59 19.69 L 295.28 19.69 L 295.28 0 Z M 295.28 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 283.01 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">1</span></foreignObject></g><g fill="#E6FFE6"><path d="M 295.28 0 M 295.28 0 L 295.28 19.69 L 314.96 19.69 L 314.96 0 Z M 314.96 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 302.7 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">1</span></foreignObject></g><g fill="#E6FFE6"><path d="M 314.96 0 M 314.96 0 L 314.96 19.69 L 334.65 19.69 L 334.65 0 Z M 334.65 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 322.38 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6FFE6"><path d="M 334.65 0 M 334.65 0 L 334.65 19.69 L 354.33 19.69 L 354.33 0 Z M 354.33 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 342.07 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6FFE6"><path d="M 354.33 0 M 354.33 0 L 354.33 19.69 L 374.02 19.69 L 374.02 0 Z M 374.02 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 361.75 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">1</span></foreignObject></g><g fill="#E6FFE6"><path d="M 374.02 0 M 374.02 0 L 374.02 19.69 L 393.7 19.69 L 393.7 0 Z M 393.7 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 381.44 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><path d="M 393.7 0 L 452.76 0 M 393.7 19.69 L 452.76 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 408.2 6.38)"><foreignObject height="12.45" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="10.38"><math id="Ch0.Sx3.SSx1.p2.pic1.m1" class="ltx_Math" alttext="\cdots" display="inline"><mi mathvariant="normal">⋯</mi></math></foreignObject></g><g fill="#E6FFE6"><path d="M 452.76 0 M 452.76 0 L 452.76 19.69 L 472.44 19.69 L 472.44 0 Z M 472.44 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 460.18 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6FFE6"><path d="M 472.44 0 M 472.44 0 L 472.44 19.69 L 492.13 19.69 L 492.13 0 Z M 492.13 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 479.86 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6FFE6"><path d="M 492.13 0 M 492.13 0 L 492.13 19.69 L 511.81 19.69 L 511.81 0 Z M 511.81 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 499.55 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><path d="M 0 -6.89 M 0 -6.89 C 0.74 -8.55 2.46 -9.66 4.92 -9.66 L 4.92 -9.66 C 7.38 -9.66 9.1 -10.76 9.84 -12.42 C 10.58 -10.76 12.3 -9.66 14.76 -9.66 L 14.76 -9.66 C 17.22 -9.66 18.95 -8.55 19.69 -6.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 7.57 -22.94)"><foreignObject height="4.17" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.54"><math id="Ch0.Sx3.SSx1.p2.pic1.m2" class="ltx_Math" alttext="s" display="inline"><mi mathsize="70%">s</mi></math></foreignObject></g><path d="M 19.69 -6.89 M 19.69 -6.89 C 20.52 -8.55 22.45 -9.66 25.22 -9.66 L 122.42 -9.66 C 125.19 -9.66 127.12 -10.76 127.95 -12.42 C 128.78 -10.76 130.72 -9.66 133.49 -9.66 L 230.69 -9.66 C 233.45 -9.66 235.39 -8.55 236.22 -6.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 125.86 -22.94)"><foreignObject height="4.17" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.19"><math id="Ch0.Sx3.SSx1.p2.pic1.m3" class="ltx_Math" alttext="c" display="inline"><mi mathsize="70%">c</mi></math></foreignObject></g><path d="M 236.22 -6.89 M 236.22 -6.89 C 237.05 -8.55 238.99 -9.66 241.76 -9.66 L 368.48 -9.66 C 371.25 -9.66 373.19 -10.76 374.02 -12.42 C 374.85 -10.76 376.78 -9.66 379.55 -9.66 L 506.28 -9.66 C 509.04 -9.66 510.98 -8.55 511.81 -6.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 371.12 -25.49)"><foreignObject height="8.61" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="5.78"><math id="Ch0.Sx3.SSx1.p2.pic1.m4" class="ltx_Math" alttext="f" display="inline"><mi mathsize="70%">f</mi></math></foreignObject></g></g></svg>
+<p class="ltx_p">∎</p>
+</div>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx2" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Consequences of this representation system</h4>
+
+<div id="Ch0.Sx3.SSx2.p1" class="ltx_para ltx_noindent">
+<ul id="Ch0.Sx3.I8" class="ltx_itemize">
+<li id="Ch0.Sx3.I8.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><math id="Ch0.Sx3.I8.i1.m1" class="ltx_Math" alttext="\ast" display="inline"><mo>∗</mo></math></span> 
+<div id="Ch0.Sx3.I8.i1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">There are biggest and smallest representable positive numbers:</p>
+<table id="Ch0.Ex27" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex27X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath ltx_font_italic">Biggest positive number</span></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex27X.m3" class="ltx_Math" alttext="\displaystyle=\left(2-2^{-52}\right)\times 2^{2046-1023}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>52</mn></mrow></msup></mrow><mo rspace="0.055em">)</mo></mrow><mo rspace="0.222em">×</mo><msup><mn>2</mn><mrow><mn>2046</mn><mo>−</mo><mn>1023</mn></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex27Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex27Xa.m2" class="ltx_Math" alttext="\displaystyle\approx 2\times 2^{1023}\approx 10^{308}," display="inline"><mrow><mrow><mi></mi><mo>≈</mo><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mn>1023</mn></msup></mrow><mo>≈</mo><msup><mn>10</mn><mn>308</mn></msup></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex27Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath ltx_font_italic">Smallest positive number</span></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex27Xb.m3" class="ltx_Math" alttext="\displaystyle=1\times 2^{1-1023}=2^{-1022}\approx 10^{-308}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mrow><mn>1</mn><mo>−</mo><mn>1023</mn></mrow></msup></mrow><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>1022</mn></mrow></msup><mo>≈</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>308</mn></mrow></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+<li id="Ch0.Sx3.I8.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><math id="Ch0.Sx3.I8.i2.m1" class="ltx_Math" alttext="\ast" display="inline"><mo>∗</mo></math></span> 
+<div id="Ch0.Sx3.I8.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">There are gaps between numbers. Given a number</p>
+<table id="Ch0.Ex28" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex28.m1" class="ltx_Math" alttext="1.b_{1}b_{2}\cdots b_{52}\times 2^{\text{exponent}}," display="block"><mrow><mrow><mn>1</mn><mo lspace="0em" rspace="0.167em">.</mo><mrow><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>b</mi><mn>2</mn></msub><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><msub><mi>b</mi><mn>52</mn></msub></mrow><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mtext>exponent</mtext></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">the smallest increment you can add to it is on the 52nd digit of the mantissa, which is</p>
+<table id="Ch0.Ex29" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex29.m1" class="ltx_Math" alttext="2^{-52}\times 2^{\text{exponent}}." display="block"><mrow><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>52</mn></mrow></msup><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mtext>exponent</mtext></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_logical-block">
+              
+<div id="Ch0.Sx3.I8.i2.p2" class="ltx_para">
+<svg id="Ch0.Sx3.I8.i2.pic1" class="ltx_picture ltx_centering" height="59.55" overflow="visible" version="1.1" width="397.35"><g fill="#000000" stroke="#000000" stroke-width="0.5pt" transform="translate(0,59.55) matrix(1 0 0 -1 0 0) translate(0.35,0) translate(0,33.61)"><path d="M 0 0 M 0 0 L 0 25.59 L 25.59 25.59 L 25.59 0 Z M 25.59 25.59" style="fill:none"></path><path d="M 25.59 0 M 25.59 0 L 25.59 25.59 L 51.18 25.59 L 51.18 0 Z M 51.18 25.59" style="fill:none"></path><path d="M 127.95 0 M 127.95 0 L 127.95 25.59 L 153.54 25.59 L 153.54 0 Z M 153.54 25.59" style="fill:none"></path><path d="M 153.54 0 M 153.54 0 L 153.54 25.59 L 179.13 25.59 L 179.13 0 Z M 179.13 25.59" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 9.36 10.31)"><foreignObject height="8.47" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.87"><math id="Ch0.Sx3.I8.i2.pic1.m1" class="ltx_Math" alttext="b_{1}" display="inline"><msub><mi mathsize="70%">b</mi><mn mathsize="70%">1</mn></msub></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 34.95 10.31)"><foreignObject height="8.47" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.87"><math id="Ch0.Sx3.I8.i2.pic1.m2" class="ltx_Math" alttext="b_{2}" display="inline"><msub><mi mathsize="70%">b</mi><mn mathsize="70%">2</mn></msub></math></foreignObject></g><path d="M 51.18 0 L 127.95 0 M 51.18 25.59 L 127.95 25.59" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 84.38 9.34)"><foreignObject height="12.45" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="10.38"><math id="Ch0.Sx3.I8.i2.pic1.m3" class="ltx_Math" alttext="\cdots" display="inline"><mi mathvariant="normal">⋯</mi></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 135.96 10.31)"><foreignObject height="8.47" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="9.58"><math id="Ch0.Sx3.I8.i2.pic1.m4" class="ltx_Math" alttext="b_{51}" display="inline"><msub><mi mathsize="70%">b</mi><mn mathsize="70%">51</mn></msub></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 161.55 10.31)"><foreignObject height="8.47" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="9.58"><math id="Ch0.Sx3.I8.i2.pic1.m5" class="ltx_Math" alttext="b_{52}" display="inline"><msub><mi mathsize="70%">b</mi><mn mathsize="70%">52</mn></msub></math></foreignObject></g><path d="M 166.34 -33.27 L 166.34 -15.3" style="fill:none"></path><g stroke-dasharray="none" stroke-dashoffset="0.0pt" stroke-linejoin="miter" transform="matrix(0.0 1.0 -1.0 0.0 166.34 -15.3)"><path d="M 10.08 0 C 8.84 0.3 3.4 1.99 0 3.83 L 0 -3.83 C 3.4 -1.99 8.84 -0.3 10.08 0 Z"></path></g><path d="M 230.31 12.8 L 396.65 12.8" style="fill:none"></path><path d="M 263.58 12.8 M 265.94 12.8 C 265.94 14.09 264.88 15.15 263.58 15.15 C 262.28 15.15 261.23 14.09 261.23 12.8 C 261.23 11.5 262.28 10.44 263.58 10.44 C 264.88 10.44 265.94 11.5 265.94 12.8 Z M 263.58 12.8" style="stroke:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 259.93 -5.04)"><foreignObject height="5.96" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="7.31"><math id="Ch0.Sx3.I8.i2.pic1.m6" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math></foreignObject></g><path d="M 350.59 12.8 M 352.94 12.8 C 352.94 14.09 351.89 15.15 350.59 15.15 C 349.29 15.15 348.24 14.09 348.24 12.8 C 348.24 11.5 349.29 10.44 350.59 10.44 C 351.89 10.44 352.94 11.5 352.94 12.8 Z M 350.59 12.8" style="stroke:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 317.53 -18.57)"><g class="ltx_tikzmatrix" transform="matrix(1 0 0 -1 0 13.205)"><g class="ltx_tikzmatrix_row" transform="matrix(1 0 0 1 0 18.33)"><g class="ltx_tikzmatrix_col ltx_nopad_l ltx_nopad_r" transform="matrix(1 0 0 -1 0 0)"><foreignObject height="12.57" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="66.13"><math id="Ch0.Sx3.I8.i2.pic1.m7" class="ltx_Math" alttext="a+2^{-52}\times 2^{p}" display="inline"><mrow><mi>a</mi><mo>+</mo><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>52</mn></mrow></msup><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mi>p</mi></msup></mrow></mrow></math></foreignObject></g></g></g></g></g></svg>
+</div>
+            
+</div>
+</li>
+<li id="Ch0.Sx3.I8.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><math id="Ch0.Sx3.I8.i3.m1" class="ltx_Math" alttext="\ast" display="inline"><mo>∗</mo></math></span> 
+<div id="Ch0.Sx3.I8.i3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Gaps normalized by the magnitudes are called the <span class="ltx_text ltx_font_italic">relative
+spacing</span>, also called the <span class="ltx_text ltx_font_italic">machine precision</span>, and it is denoted as</p>
+<table id="Ch0.Ex30" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex30.m1" class="ltx_Math" alttext="\varepsilon_{\mathrm{mach}}=2^{-52}\approx 2.22\times 10^{-16}." display="block"><mrow><mrow><msub><mi>ε</mi><mi>mach</mi></msub><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>52</mn></mrow></msup><mo>≈</mo><mrow><mn>2.22</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The relative spacing is uniform across the real axis, and the fact
+that it is on the order of <math id="Ch0.Sx3.I8.i3.p1.m1" class="ltx_Math" alttext="10^{-16}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></math> indicates that 52 binary digits
+of the mantissa correspond to roughly 16 decimal digits. This is why
+Matlab, or pretty much any modern computer softwares, can only print
+out a real number up to the 16th digit!</p>
+</div>
+</li>
+<li id="Ch0.Sx3.I8.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><math id="Ch0.Sx3.I8.i4.m1" class="ltx_Math" alttext="\ast" display="inline"><mo>∗</mo></math></span> 
+<div id="Ch0.Sx3.I8.i4.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Any numbers between two adjacent computer numbers are not representable under this system, and must be rounded.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx3" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 8</h4>
+
+<div id="Ch0.Sx3.SSx3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Find the 64-bit representation of <math id="Ch0.Sx3.SSx3.p1.m1" class="ltx_Math" alttext="(3.0)_{10}" display="inline"><msub><mrow><mo stretchy="false">(</mo><mn>3.0</mn><mo stretchy="false">)</mo></mrow><mn>10</mn></msub></math>.</p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="Ch0.Sx3.SSx3.p2" class="ltx_para">
+<svg id="Ch0.Sx3.SSx3.pic1" class="ltx_picture ltx_centering" height="47.99" overflow="visible" version="1.1" width="421.01"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,47.99) matrix(1 0 0 -1 0 0) translate(26.66,0) translate(0,37.84)"><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -22.05 -4.32)"><foreignObject height="8.65" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="44.11"><span class="ltx_text" style="font-size:90%;">Decimal</span></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 81.04 -3.04)"><foreignObject height="10.93" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="36.88"><span class="ltx_text" style="font-size:90%;">Binary</span></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 176.91 -3.11)"><foreignObject height="11.07" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="90.87"><span class="ltx_text" style="font-size:90%;">Standard Binary</span></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 326.77 -3.04)"><foreignObject height="10.93" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="62.96"><span class="ltx_text" style="font-size:90%;">64-Bit Rep.</span></foreignObject></g><path d="M 26.94 0 L 69.79 0" style="fill:none"></path><g stroke-dasharray="none" stroke-dashoffset="0.0pt" stroke-linejoin="miter" transform="matrix(1.0 0.0 0.0 1.0 69.79 0)"><path d="M 5.26 0 C 4.61 0.16 1.77 1.04 0 2.01 L 0 -2.01 C 1.77 -1.04 4.61 -0.16 5.26 0 Z"></path></g><path d="M 122.81 0 L 165.65 0" style="fill:none"></path><g stroke-dasharray="none" stroke-dashoffset="0.0pt" stroke-linejoin="miter" transform="matrix(1.0 0.0 0.0 1.0 165.65 0)"><path d="M 5.26 0 C 4.61 0.16 1.77 1.04 0 2.01 L 0 -2.01 C 1.77 -1.04 4.61 -0.16 5.26 0 Z"></path></g><path d="M 272.67 0 L 315.52 0" style="fill:none"></path><g stroke-dasharray="none" stroke-dashoffset="0.0pt" stroke-linejoin="miter" transform="matrix(1.0 0.0 0.0 1.0 315.52 0)"><path d="M 5.26 0 C 4.61 0.16 1.77 1.04 0 2.01 L 0 -2.01 C 1.77 -1.04 4.61 -0.16 5.26 0 Z"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 80.67 -30.12)"><foreignObject height="12.45" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="37.62"><math id="Ch0.Sx3.SSx3.pic1.m1" class="ltx_Math" alttext="(11.0)_{2}" display="inline"><msub><mrow><mo maxsize="90%" minsize="90%">(</mo><mn mathsize="90%">11.0</mn><mo maxsize="90%" minsize="90%">)</mo></mrow><mn mathsize="90%">2</mn></msub></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 200.46 -31.12)"><foreignObject height="11.31" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="43.77"><math id="Ch0.Sx3.SSx3.pic1.m2" class="ltx_Math" alttext="1.1\times 2^{1}" display="inline"><mrow><mn mathsize="90%">1.1</mn><mo lspace="0.222em" mathsize="90%" rspace="0.222em">×</mo><msup><mn mathsize="90%">2</mn><mn mathsize="90%">1</mn></msup></mrow></math></foreignObject></g></g></svg>
+</div>
+<div id="Ch0.Sx3.SSx3.p3" class="ltx_para ltx_noindent">
+<table id="Ch0.Ex31" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex31.m1" class="ltx_Math" alttext="(3.0)_{10}=(1.1000\cdots 0)_{2}\times 2^{1}." display="block"><mrow><mrow><msub><mrow><mo stretchy="false">(</mo><mn>3.0</mn><mo stretchy="false">)</mo></mrow><mn>10</mn></msub><mo>=</mo><mrow><msub><mrow><mo stretchy="false">(</mo><mrow><mn>1.1000</mn><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mn>0</mn></mrow><mo rspace="0.055em" stretchy="false">)</mo></mrow><mn>2</mn></msub><mo rspace="0.222em">×</mo><msup><mn>2</mn><mn>1</mn></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Hence,</p>
+<table id="Ch0.Ex32" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex32.m1" class="ltx_Math" alttext="p=1,\qquad c=p+1023=1024=2^{10}," display="block"><mrow><mrow><mrow><mi>p</mi><mo>=</mo><mn>1</mn></mrow><mo rspace="2.167em">,</mo><mrow><mi>c</mi><mo>=</mo><mrow><mi>p</mi><mo>+</mo><mn>1023</mn></mrow><mo>=</mo><mn>1024</mn><mo>=</mo><msup><mn>2</mn><mn>10</mn></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">and</p>
+<table id="Ch0.Ex33" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex33.m1" class="ltx_Math" alttext="f=(.1)_{2}=\frac{1}{2}+\frac{0}{2^{2}}+\frac{0}{2^{3}}+\cdots+\frac{0}{2^{52}}." display="block"><mrow><mrow><mi>f</mi><mo>=</mo><msub><mrow><mo stretchy="false">(</mo><mn>.1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msub><mo>=</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>0</mn><msup><mn>2</mn><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><mn>0</mn><msup><mn>2</mn><mn>3</mn></msup></mfrac><mo>+</mo><mi mathvariant="normal">⋯</mi><mo>+</mo><mfrac><mn>0</mn><msup><mn>2</mn><mn>52</mn></msup></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx3.SSx3.p4" class="ltx_para">
+<svg id="Ch0.Sx3.SSx3.pic2" class="ltx_picture ltx_centering" height="52.67" overflow="visible" version="1.1" width="433.76"><g fill="#000000" stroke="#000000" stroke-width="0.5pt" transform="translate(0,52.67) matrix(1 0 0 -1 0 0) translate(0.35,0) translate(0,31.99)"><g fill="#F0F0F0"><path d="M 0 0 M 0 0 L 0 19.69 L 19.69 19.69 L 19.69 0 Z M 19.69 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 7.42 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 19.69 0 M 19.69 0 L 19.69 19.69 L 39.37 19.69 L 39.37 0 Z M 39.37 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 27.11 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">1</span></foreignObject></g><g fill="#E6E6FF"><path d="M 39.37 0 M 39.37 0 L 39.37 19.69 L 59.06 19.69 L 59.06 0 Z M 59.06 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 46.79 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 59.06 0 M 59.06 0 L 59.06 19.69 L 78.74 19.69 L 78.74 0 Z M 78.74 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 66.48 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 78.74 0 M 78.74 0 L 78.74 19.69 L 98.43 19.69 L 98.43 0 Z M 98.43 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 86.16 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 98.43 0 M 98.43 0 L 98.43 19.69 L 118.11 19.69 L 118.11 0 Z M 118.11 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 105.85 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 118.11 0 M 118.11 0 L 118.11 19.69 L 137.8 19.69 L 137.8 0 Z M 137.8 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 125.53 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 137.8 0 M 137.8 0 L 137.8 19.69 L 157.48 19.69 L 157.48 0 Z M 157.48 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 145.22 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 157.48 0 M 157.48 0 L 157.48 19.69 L 177.17 19.69 L 177.17 0 Z M 177.17 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 164.9 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 177.17 0 M 177.17 0 L 177.17 19.69 L 196.85 19.69 L 196.85 0 Z M 196.85 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 184.59 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 196.85 0 M 196.85 0 L 196.85 19.69 L 216.54 19.69 L 216.54 0 Z M 216.54 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 204.27 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6E6FF"><path d="M 216.54 0 M 216.54 0 L 216.54 19.69 L 236.22 19.69 L 236.22 0 Z M 236.22 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 223.96 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6FFE6"><path d="M 236.22 0 M 236.22 0 L 236.22 19.69 L 255.91 19.69 L 255.91 0 Z M 255.91 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 243.64 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">1</span></foreignObject></g><g fill="#E6FFE6"><path d="M 255.91 0 M 255.91 0 L 255.91 19.69 L 275.59 19.69 L 275.59 0 Z M 275.59 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 263.33 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6FFE6"><path d="M 275.59 0 M 275.59 0 L 275.59 19.69 L 295.28 19.69 L 295.28 0 Z M 295.28 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 283.01 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6FFE6"><path d="M 295.28 0 M 295.28 0 L 295.28 19.69 L 314.96 19.69 L 314.96 0 Z M 314.96 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 302.7 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><path d="M 314.96 0 L 374.02 0 M 314.96 19.69 L 374.02 19.69" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 339.3 6.38)"><foreignObject height="12.45" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="10.38"><math id="Ch0.Sx3.SSx3.pic2.m1" class="ltx_Math" alttext="\cdots" display="inline"><mi mathvariant="normal">⋯</mi></math></foreignObject></g><g fill="#E6FFE6"><path d="M 374.02 0 M 374.02 0 L 374.02 19.69 L 393.7 19.69 L 393.7 0 Z M 393.7 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 381.44 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6FFE6"><path d="M 393.7 0 M 393.7 0 L 393.7 19.69 L 413.39 19.69 L 413.39 0 Z M 413.39 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 401.12 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><g fill="#E6FFE6"><path d="M 413.39 0 M 413.39 0 L 413.39 19.69 L 433.07 19.69 L 433.07 0 Z M 433.07 19.69"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 420.81 6.72)"><foreignObject height="6.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.84"><span class="ltx_text ltx_font_typewriter" style="font-size:70%;">0</span></foreignObject></g><path d="M 0 -6.89 M 0 -6.89 C 0.74 -8.55 2.46 -9.66 4.92 -9.66 L 4.92 -9.66 C 7.38 -9.66 9.1 -10.76 9.84 -12.42 C 10.58 -10.76 12.3 -9.66 14.76 -9.66 L 14.76 -9.66 C 17.22 -9.66 18.95 -8.55 19.69 -6.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 7.57 -22.94)"><foreignObject height="4.17" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.54"><math id="Ch0.Sx3.SSx3.pic2.m2" class="ltx_Math" alttext="s" display="inline"><mi mathsize="70%">s</mi></math></foreignObject></g><path d="M 19.69 -6.89 M 19.69 -6.89 C 20.52 -8.55 22.45 -9.66 25.22 -9.66 L 122.42 -9.66 C 125.19 -9.66 127.12 -10.76 127.95 -12.42 C 128.78 -10.76 130.72 -9.66 133.49 -9.66 L 230.69 -9.66 C 233.45 -9.66 235.39 -8.55 236.22 -6.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 125.86 -22.94)"><foreignObject height="4.17" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="4.19"><math id="Ch0.Sx3.SSx3.pic2.m3" class="ltx_Math" alttext="c" display="inline"><mi mathsize="70%">c</mi></math></foreignObject></g><path d="M 236.22 -6.89 M 236.22 -6.89 C 237.05 -8.55 238.99 -9.66 241.76 -9.66 L 329.11 -9.66 C 331.88 -9.66 333.82 -10.76 334.65 -12.42 C 335.48 -10.76 337.41 -9.66 340.18 -9.66 L 427.54 -9.66 C 430.3 -9.66 432.24 -8.55 433.07 -6.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 331.75 -25.49)"><foreignObject height="8.61" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="5.78"><math id="Ch0.Sx3.SSx3.pic2.m4" class="ltx_Math" alttext="f" display="inline"><mi mathsize="70%">f</mi></math></foreignObject></g></g></svg>
+</div>
+<div id="Ch0.Sx3.SSx3.p5" class="ltx_para">
+<p class="ltx_p">∎</p>
+</div>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx4" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Examples with Matlab</h4>
+
+<div id="Ch0.Sx3.SSx4.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Try the following calculations on Matlab, and explain the results you get:</p>
+<ol id="Ch0.Sx3.I9" class="ltx_enumerate">
+<li id="Ch0.Sx3.I9.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch0.Sx3.I9.i1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">The peril of adding two numbers of disparaging
+magnitudes
+<br class="ltx_break"></span></p>
+<table id="Ch0.Ex34" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex34.m1" class="ltx_Math" alttext="1+10^{-16}\qquad\text{in Matlabs (any modern math softwares)}." display="block"><mrow><mrow><mrow><mn>1</mn><mo>+</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></mrow><mspace width="2em"></mspace><mtext>in Matlabs (any modern math softwares)</mtext></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="Ch0.Sx3.I9.i1.p2" class="ltx_para">
+<p class="ltx_p">Around 1, the gaps between representable numbers are</p>
+<table id="Ch0.Ex35" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex35.m1" class="ltx_Math" alttext="2^{-52}\times 2^{0}=2^{-52}=2.2\times 10^{-16}." display="block"><mrow><mrow><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>52</mn></mrow></msup><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>2</mn><mn>0</mn></msup></mrow><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>52</mn></mrow></msup><mo>=</mo><mrow><mn>2.2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Since</p>
+<table id="Ch0.Ex36" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex36.m1" class="ltx_Math" alttext="10^{-16}&lt;2.2\times 10^{-16}," display="block"><mrow><mrow><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup><mo>&lt;</mo><mrow><mn>2.2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">the result is simply rounded back to 1.
+∎</p>
+</div>
+</div>
+</li>
+<li id="Ch0.Sx3.I9.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch0.Sx3.I9.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">The peril of subtracting two nearly equal numbers
+<br class="ltx_break"></span></p>
+<table id="Ch0.Ex37" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex37.m1" class="ltx_Math" alttext="1+10^{-15}-1\qquad\text{(in Matlabs or Python)}." display="block"><mrow><mrow><mrow><mrow><mn>1</mn><mo>+</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>15</mn></mrow></msup></mrow><mo>−</mo><mn>1</mn></mrow><mspace width="2em"></mspace><mtext>(in Matlabs or Python)</mtext></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="Ch0.Sx3.I9.i2.p2" class="ltx_para">
+<table id="Ch0.Ex38" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex38X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath ltx_font_italic">Mathematically, result</span></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex38X.m3" class="ltx_Math" alttext="\displaystyle=10^{-15}," display="inline"><mrow><mrow><mi></mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>15</mn></mrow></msup></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex38Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath ltx_font_italic">Matlab result</span></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex38Xa.m3" class="ltx_Math" alttext="\displaystyle=1.11\times 10^{-15}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mn>1.11</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>15</mn></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The relative error in this case is <math id="Ch0.Sx3.I9.i2.p2.m1" class="ltx_Math" alttext="\approx 10\%" display="inline"><mrow><mi></mi><mo>≈</mo><mrow><mn>10</mn><mo>%</mo></mrow></mrow></math>.
+The error results from the cancellation of significant digits when
+subtracting two numbers that are almost equal!
+∎</p>
+</div>
+</div>
+</li>
+<li id="Ch0.Sx3.I9.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="Ch0.Sx3.I9.i3.p1" class="ltx_para ltx_noindent">
+<table id="Ch0.Ex39" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex39.m1" class="ltx_Math" alttext="\begin{array}[]{rcl}.25\times 2&amp;==&amp;.5,\\
+.2\times 2&amp;==&amp;.4,\\
+.2\times 3&amp;==&amp;.6.\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mn>.25</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>2</mn></mrow></mtd><mtd><mrow><mi></mi><mo rspace="0em">=</mo><mo lspace="0em">=</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mn>.5</mn><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mn>.2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>2</mn></mrow></mtd><mtd><mrow><mi></mi><mo rspace="0em">=</mo><mo lspace="0em">=</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mn>.4</mn><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mn>.2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>3</mn></mrow></mtd><mtd><mrow><mi></mi><mo rspace="0em">=</mo><mo lspace="0em">=</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mn>.6</mn><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx3.I9.i3.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Floating point representations are not exact, and therefore they
+should not be used in “<span class="ltx_text ltx_font_typewriter">==</span>” comparison.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_logical-block">
+        
+<div id="Ch0.Sx3.SSx4.p2" class="ltx_para">
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Wed Sep  2 13:55:55 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
