@@ -1,0 +1,322 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Lecture 3</title>
+<!--Generated on Wed Sep  9 15:26:40 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on September 9, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">Lecture 3</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold" style="font-size:207%;">Solvability of linear systems</span></p>
+</div>
+      
+</div>
+<div id="Ch0.Sx3.SSx4.p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">We consider the following system of equations,</p>
+<table id="Ch0.Ex40" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex40.m1" class="ltx_math_unparsed" alttext="\left\{\begin{aligned} a_{11}x_{1}+a_{12}x_{2}+\cdots\cdots+a_{1n}x_{n}&amp;=b_{1}%
+,\\
+a_{21}x_{1}+a_{22}x_{2}+\cdots\cdots+a_{2n}x_{n}&amp;=b_{2},\\
+\cdots\quad\cdots\qquad&amp;\\
+a_{n1}x_{1}+a_{n2}x_{2}+\cdots\cdots+a_{nn}x_{n}&amp;=b_{n}.\end{aligned}\right." display="block"><mrow><mo>{</mo><mtable columnspacing="0pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><msub><mi>a</mi><mn>11</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><msub><mi>a</mi><mn>12</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>+</mo><mrow><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mi mathvariant="normal">⋯</mi></mrow><mo>+</mo><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>⁢</mo><mi>n</mi></mrow></msub><mo>⁢</mo><msub><mi>x</mi><mi>n</mi></msub></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><msub><mi>b</mi><mn>1</mn></msub></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><msub><mi>a</mi><mn>21</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><msub><mi>a</mi><mn>22</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>+</mo><mrow><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mi mathvariant="normal">⋯</mi></mrow><mo>+</mo><mrow><msub><mi>a</mi><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow></msub><mo>⁢</mo><msub><mi>x</mi><mi>n</mi></msub></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><msub><mi>b</mi><mn>2</mn></msub></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><mi mathvariant="normal">⋯</mi><mspace width="1em"></mspace><mi mathvariant="normal">⋯</mi></mrow><mspace width="2em"></mspace></mrow></mtd><mtd></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><msub><mi>a</mi><mrow><mi>n</mi><mo>⁢</mo><mn>1</mn></mrow></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><msub><mi>a</mi><mrow><mi>n</mi><mo>⁢</mo><mn>2</mn></mrow></msub><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>+</mo><mrow><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mi mathvariant="normal">⋯</mi></mrow><mo>+</mo><mrow><msub><mi>a</mi><mrow><mi>n</mi><mo>⁢</mo><mi>n</mi></mrow></msub><mo>⁢</mo><msub><mi>x</mi><mi>n</mi></msub></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><msub><mi>b</mi><mi>n</mi></msub></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Here <math id="Ch0.Sx3.SSx4.p4.m1" class="ltx_Math" alttext="x_{1}" display="inline"><msub><mi>x</mi><mn>1</mn></msub></math>, <math id="Ch0.Sx3.SSx4.p4.m2" class="ltx_Math" alttext="x_{2}" display="inline"><msub><mi>x</mi><mn>2</mn></msub></math>, etc. are the unknown variables, <math id="Ch0.Sx3.SSx4.p4.m3" class="ltx_Math" alttext="a_{ij}" display="inline"><msub><mi>a</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math>’s are the
+known coefficients, and <math id="Ch0.Sx3.SSx4.p4.m4" class="ltx_Math" alttext="b_{i}" display="inline"><msub><mi>b</mi><mi>i</mi></msub></math>’s are the known right-hand side data. In
+this system, the number of equations equal the number of unknowns, and
+system is called a <span class="ltx_text ltx_font_italic">square linear system</span>. If we put all the
+coefficients into a matrix <math id="Ch0.Sx3.SSx4.p4.m5" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, and all the unknowns and the
+right-hand side data into separate column vectors, <math id="Ch0.Sx3.SSx4.p4.m6" class="ltx_Math" alttext="\boldsymbol{x}" display="inline"><mi>𝒙</mi></math> and
+<math id="Ch0.Sx3.SSx4.p4.m7" class="ltx_Math" alttext="\boldsymbol{b}" display="inline"><mi>𝒃</mi></math>, respectively, then the system can
+written in a compact matrix-vector form,</p>
+<table id="Ch0.Ex41" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex41.m1" class="ltx_Math" alttext="A\boldsymbol{x}=\boldsymbol{b}." display="block"><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx3.SSx4.p5" class="ltx_para ltx_noindent">
+<p class="ltx_p">For this system, before we start to solve it, it is important to have
+some qualitative information about it, such as whether it has any
+solution, and whether the solution is unique.
+We explore these issues through some illustrative examples.</p>
+</div>
+<section id="Ch0.Sx3.SSx4.SSS0.Px1" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Example 1.</h5>
+
+<div id="Ch0.Sx3.SSx4.SSS0.Px1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Solve the following system of equations,</p>
+<table id="Ch0.Ex42" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex42.m1" class="ltx_math_unparsed" alttext="\left\{\begin{aligned} x_{1}+x_{2}&amp;=1,\\
+x_{1}-x_{2}&amp;=2.\end{aligned}\right." display="block"><mrow><mo>{</mo><mtable columnspacing="0pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="Ch0.Sx3.SSx4.SSS0.Px1.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Add the two equations,</p>
+<table id="Ch0.Ex43" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex43.m1" class="ltx_Math" alttext="2x_{1}=3\quad\Longrightarrow\quad x_{1}=\frac{3}{2}." display="block"><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>=</mo><mrow><mn>3</mn><mspace width="1em"></mspace><mo stretchy="false">⟹</mo></mrow></mrow><mspace width="1em"></mspace><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Sub. <math id="Ch0.Sx3.SSx4.SSS0.Px1.p2.m1" class="ltx_Math" alttext="x_{1}" display="inline"><msub><mi>x</mi><mn>1</mn></msub></math> back to the 1st eqn,</p>
+<table id="Ch0.Ex44" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex44.m1" class="ltx_Math" alttext="x_{2}+\frac{3}{2}=1\quad\Longrightarrow\quad x_{2}=-\frac{1}{2}." display="block"><mrow><mrow><mrow><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow><mo>=</mo><mrow><mn>1</mn><mspace width="1em"></mspace><mo stretchy="false">⟹</mo></mrow></mrow><mspace width="1em"></mspace><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This system has a unique set of solns. The system is uniquely solvable.</p>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px1.p3" class="ltx_para">
+<p class="ltx_p">∎</p>
+</div>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx4.SSS0.Px2" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Example 2.</h5>
+
+<div id="Ch0.Sx3.SSx4.SSS0.Px2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Solve the following system of equations,</p>
+<table id="Ch0.Ex45" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex45.m1" class="ltx_math_unparsed" alttext="\left\{\begin{aligned} 2x_{1}+x_{2}&amp;=0,\\
+2x_{1}+x_{2}&amp;=1.\end{aligned}\right." display="block"><mrow><mo>{</mo><mtable columnspacing="0pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px2.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">The same expression can’t be equal to different values, and hence
+this system admits no solution at all.</p>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx4.SSS0.Px3" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Example 3.</h5>
+
+<div id="Ch0.Sx3.SSx4.SSS0.Px3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Solve the following system of equaitons,</p>
+<table id="Ch0.Ex46" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex46.m1" class="ltx_math_unparsed" alttext="\left\{\begin{aligned} 2x_{1}+x_{2}&amp;=0,\\
+4x_{1}+2x_{2}&amp;=0.\end{aligned}\right." display="block"><mrow><mo>{</mo><mtable columnspacing="0pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><mn>4</mn><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="Ch0.Sx3.SSx4.SSS0.Px3.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">We note that <math id="Ch0.Sx3.SSx4.SSS0.Px3.p2.m1" class="ltx_Math" alttext="x_{1}=0" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow></math>, <math id="Ch0.Sx3.SSx4.SSS0.Px3.p2.m2" class="ltx_Math" alttext="x_{2}=0" display="inline"><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></mrow></math> solves both 1st &amp; 2nd equations, and so
+do</p>
+<table id="Ch0.Ex47" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex47.m1" class="ltx_math_unparsed" alttext="\begin{array}[]{cc}(1,&amp;-2)\\
+(2,&amp;-4)\\
+\cdots&amp;\cdots\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo></mrow></mtd><mtd><mrow><mo>−</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mtd></mtr><mtr><mtd><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo></mrow></mtd><mtd><mrow><mo>−</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mtd></mtr><mtr><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This system has infinitely many solns.</p>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px3.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">The second eqn is a multiple of the first. The two eqns are actually
+linearly dependent.</p>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px3.p4" class="ltx_para">
+<p class="ltx_p">∎</p>
+</div>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px3.p5" class="ltx_para ltx_noindent">
+<p class="ltx_p">For large systems, it is often difficult to tell whether the system is uniquely solvable.</p>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx4.SSS0.Px4" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Example 4.</h5>
+
+<div id="Ch0.Sx3.SSx4.SSS0.Px4.p1" class="ltx_para ltx_noindent">
+<table id="Ch0.Ex48" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex48.m1" class="ltx_math_unparsed" alttext="\left\{\begin{aligned} 2x_{1}+x_{2}&amp;=0,\\
+4x_{2}+2x_{3}&amp;=1,\\
+2x_{1}+5x_{2}+2x_{3}&amp;=1.\end{aligned}\right." display="block"><mrow><mo>{</mo><mtable columnspacing="0pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><mn>4</mn><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>3</mn></msub></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><mn>5</mn><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>3</mn></msub></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">3 Eqns. for 3 Vars.</p>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px4.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">First Eqn + Second Eqn <math id="Ch0.Sx3.SSx4.SSS0.Px4.p2.m1" class="ltx_Math" alttext="=" display="inline"><mo>=</mo></math> Third Eqn.</p>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px4.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">Likely: Infinitely many solns.</p>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px4.p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">Written in the matrix-vector form,</p>
+<table id="Ch0.Ex49" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex49.m1" class="ltx_Math" alttext="\underbrace{\begin{pmatrix}2&amp;1&amp;0\\
+0&amp;4&amp;2\\
+2&amp;5&amp;2\end{pmatrix}}_{A}\underbrace{\begin{pmatrix}x_{1}\\
+x_{2}\\
+x_{3}\end{pmatrix}}_{x}=\underbrace{\begin{pmatrix}0\\
+1\\
+1\end{pmatrix}}_{b}." display="block"><mrow><mrow><mrow><munder><munder accentunder="true"><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>2</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>⏟</mo></munder><mi>A</mi></munder><mo>⁢</mo><munder><munder accentunder="true"><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr></mtable><mo>)</mo></mrow><mo>⏟</mo></munder><mi>x</mi></munder></mrow><mo>=</mo><munder><munder accentunder="true"><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>⏟</mo></munder><mi>b</mi></munder></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch0.Ex50" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex50.m1" class="ltx_Math" alttext="A=\begin{pmatrix}2&amp;1&amp;0\\
+0&amp;4&amp;2\\
+2&amp;5&amp;2\end{pmatrix}." display="block"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>2</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px4.p5" class="ltx_para ltx_noindent">
+<table id="Chx1.Sx3.EGx5" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex51"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex51.m1" class="ltx_Math" alttext="\displaystyle\det(A)" display="inline"><mrow><mo movablelimits="false" rspace="0em">det</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex51.m2" class="ltx_Math" alttext="\displaystyle=\begin{vmatrix}2&amp;1&amp;0\\
+0&amp;4&amp;2\\
+2&amp;5&amp;2\end{vmatrix}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>|</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>2</mn></mtd></mtr></mtable><mo>|</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex52"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex52.m1" class="ltx_Math" alttext="\displaystyle=2\begin{vmatrix}4&amp;2\\
+5&amp;2\end{vmatrix}+(-1)(0)\begin{vmatrix}1&amp;0\\
+5&amp;2\end{vmatrix}+2\begin{vmatrix}1&amp;0\\
+4&amp;2\end{vmatrix}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mrow><mo>|</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>4</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>5</mn></mtd><mtd><mn>2</mn></mtd></mtr></mtable><mo>|</mo></mrow></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>|</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>5</mn></mtd><mtd><mn>2</mn></mtd></mtr></mtable><mo>|</mo></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mo>|</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>4</mn></mtd><mtd><mn>2</mn></mtd></mtr></mtable><mo>|</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex53"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex53.m1" class="ltx_Math" alttext="\displaystyle=2(8-10)-0+2(2-0)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>8</mn><mo>−</mo><mn>10</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mn>0</mn></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>−</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex54"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex54.m1" class="ltx_Math" alttext="\displaystyle=2\times(-2)+2\times 2" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>2</mn></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex55"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex55.m1" class="ltx_Math" alttext="\displaystyle=0." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px4.p6" class="ltx_para ltx_noindent">
+<p class="ltx_p">The matrix is singular! See Math 3110.</p>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px4.p7" class="ltx_para ltx_noindent">
+<p class="ltx_p">The consequence of the coefficient matrix <math id="Ch0.Sx3.SSx4.SSS0.Px4.p7.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> being singular is</p>
+<table id="Ch0.Ex56" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex56.m1" class="ltx_Math" alttext="Ax=b\quad\text{has no solns,}" display="block"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mrow><mi>b</mi><mspace width="1em"></mspace><mtext>has no solns,</mtext></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">or</p>
+<table id="Ch0.Ex57" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex57.m1" class="ltx_Math" alttext="Ax=b\quad\text{has infinitely many solns.}" display="block"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mrow><mi>b</mi><mspace width="1em"></mspace><mtext>has infinitely many solns.</mtext></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx4.SSS0.Px5" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Theorem.</h5>
+
+<div id="Ch0.Sx3.SSx4.SSS0.Px5.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">A square linear system <math id="Ch0.Sx3.SSx4.SSS0.Px5.p1.m1" class="ltx_Math" alttext="Ax=b" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mi>b</mi></mrow></math> is uniquely solvable if any of the following is true.</p>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px5.p2" class="ltx_para ltx_noindent">
+<ul id="Ch0.Sx3.I10" class="ltx_itemize">
+<li id="Ch0.Sx3.I10.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.Sx3.I10.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="Ch0.Sx3.I10.i1.p1.m1" class="ltx_Math" alttext="\det(A)\neq 0" display="inline"><mrow><mrow><mo rspace="0em">det</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≠</mo><mn>0</mn></mrow></math></p>
+</div>
+</li>
+<li id="Ch0.Sx3.I10.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.Sx3.I10.i2.p1" class="ltx_para">
+<p class="ltx_p">The rows of <math id="Ch0.Sx3.I10.i2.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> are linearly independent.</p>
+</div>
+</li>
+<li id="Ch0.Sx3.I10.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.Sx3.I10.i3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">The columns of <math id="Ch0.Sx3.I10.i3.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> are linearly independent.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch0.Sx3.SSx4.SSS0.Px5.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">These conditions are actually equivalent.</p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_logical-block">
+          
+<div id="Ch0.Sx3.SSx4.SSS0.Px5.p4" class="ltx_para">
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Wed Sep  9 15:26:40 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
