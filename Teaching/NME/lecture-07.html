@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Lecture 7</title>
+<!--Generated on Fri Sep 18 11:40:50 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on September 18, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">Lecture 7</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold" style="font-size:207%;">Coding exercise</span></p>
+</div>
+        
+</div>
+</section>
+</section>
+<section id="Ch0.Sx3.SSx12" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Exercise</h4>
+
+<div id="Ch0.Sx3.SSx12.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Adapt the Gaussian elimination program (available on Canvas)
+to allow pivoting when one of the diagonal terms is too close to zero. Apply your
+enhanced program to the folowing two test cases:</p>
+<ol id="Ch0.Sx3.I14" class="ltx_enumerate">
+<li id="Ch0.Sx3.I14.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch0.Sx3.I14.i1.p1" class="ltx_para ltx_noindent">
+<table id="Ch0.Ex130" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex130X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex130X.m2" class="ltx_Math" alttext="\displaystyle x_{2}+4x_{3}" display="inline"><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><msub><mi>x</mi><mn>3</mn></msub></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex130X.m3" class="ltx_Math" alttext="\displaystyle=9," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mn>9</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex130Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex130Xa.m2" class="ltx_Math" alttext="\displaystyle 2x_{1}+4x_{2}+6x_{3}" display="inline"><mrow><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>+</mo><mrow><mn>6</mn><mo>⁢</mo><msub><mi>x</mi><mn>3</mn></msub></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex130Xa.m3" class="ltx_Math" alttext="\displaystyle=16," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mn>16</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex130Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex130Xb.m2" class="ltx_Math" alttext="\displaystyle 5x_{1}+6x_{2}" display="inline"><mrow><mrow><mn>5</mn><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><mn>6</mn><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex130Xb.m3" class="ltx_Math" alttext="\displaystyle=6." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mn>6</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+<li id="Ch0.Sx3.I14.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch0.Sx3.I14.i2.p1" class="ltx_para ltx_noindent">
+<table id="Ch0.Ex131" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex131.m1" class="ltx_Math" alttext="\begin{pmatrix}2&amp;2&amp;3&amp;-1\\
+1&amp;1&amp;-1&amp;0\\
+-1&amp;1&amp;4&amp;3\\
+0&amp;1&amp;-1&amp;0\end{pmatrix}\begin{pmatrix}x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}\end{pmatrix}=\begin{pmatrix}1\\
+-1\\
+1\\
+-1\end{pmatrix}" display="block"><mrow><mrow><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>1</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mn>4</mn></msub></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx13" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Pivoting strategy</h4>
+
+<div id="Ch0.Sx3.SSx13.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Algorithm 12 (Gaussian elimination (without row swapping))</span></p>
+<table id="Ch0.Ex132" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex132.m1" class="ltx_Math" alttext="\begin{array}[]{ll}\mathit{for}\ k=1\ \mathit{to}\ n-1&amp;\\
+\quad\mathit{if}\ a_{kk}=0\ \mathit{then\ stop}&amp;\text{--- Check the diagonal}%
+\\
+\quad\mathit{for}\ i=k+1\ \mathit{to}\ n&amp;\\
+\qquad m=a_{ik}/a_{kk}&amp;\text{--- Find the multiplication factor}\\
+\qquad\left.\begin{array}[]{l}\mathit{for}\ j=k+1\ \mathit{to}\ n\\
+\quad a_{ij}=a_{ij}-m\cdot a_{kj}\\
+\mathit{end}\end{array}\right\}&amp;\begin{array}[]{l}\text{--- Gaussian %
+elimination,}\\
+\phantom{\text{--- }}\text{update the row}\end{array}\\
+\qquad b_{i}=b_{i}-m\cdot b_{k}&amp;\text{--- update the right-hand side}\\
+\quad\mathit{end}&amp;\\
+\mathit{end}&amp;\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>𝑓𝑜𝑟</mi><mo lspace="0.500em">⁢</mo><mi>k</mi></mrow><mo>=</mo><mrow><mrow><mn>1</mn><mo lspace="0.500em">⁢</mo><mi>𝑡𝑜</mi><mo lspace="0.500em">⁢</mo><mi>n</mi></mrow><mo>−</mo><mn>1</mn></mrow></mrow></mtd><mtd></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>𝑖𝑓</mi><mo lspace="0.500em">⁢</mo><msub><mi>a</mi><mrow><mi>k</mi><mo>⁢</mo><mi>k</mi></mrow></msub></mrow><mo>=</mo><mrow><mn>0</mn><mo lspace="0.500em">⁢</mo><mi>𝑡ℎ𝑒𝑛</mi><mo lspace="0.500em">⁢</mo><mi>𝑠𝑡𝑜𝑝</mi></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mtext>— Check the diagonal</mtext></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>𝑓𝑜𝑟</mi><mo lspace="0.500em">⁢</mo><mi>i</mi></mrow><mo>=</mo><mrow><mi>k</mi><mo>+</mo><mrow><mn>1</mn><mo lspace="0.500em">⁢</mo><mi>𝑡𝑜</mi><mo lspace="0.500em">⁢</mo><mi>n</mi></mrow></mrow></mrow></mtd><mtd></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi>m</mi><mo>=</mo><mrow><msub><mi>a</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub><mo>/</mo><msub><mi>a</mi><mrow><mi>k</mi><mo>⁢</mo><mi>k</mi></mrow></msub></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mtext>— Find the multiplication factor</mtext></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi></mi><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>𝑓𝑜𝑟</mi><mo lspace="0.500em">⁢</mo><mi>j</mi></mrow><mo>=</mo><mrow><mi>k</mi><mo>+</mo><mrow><mn>1</mn><mo lspace="0.500em">⁢</mo><mi>𝑡𝑜</mi><mo lspace="0.500em">⁢</mo><mi>n</mi></mrow></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><msub><mi>a</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>=</mo><mrow><msub><mi>a</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>−</mo><mrow><mi>m</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><msub><mi>a</mi><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub></mrow></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mi>𝑒𝑛𝑑</mi></mtd></mtr></mtable><mo>}</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mtext>— Gaussian elimination,</mtext></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mtext>update the row</mtext></mtd></mtr></mtable></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><msub><mi>b</mi><mi>i</mi></msub><mo>=</mo><mrow><msub><mi>b</mi><mi>i</mi></msub><mo>−</mo><mrow><mi>m</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><msub><mi>b</mi><mi>k</mi></msub></mrow></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mtext>— update the right-hand side</mtext></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mi>𝑒𝑛𝑑</mi></mtd><mtd></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mi>𝑒𝑛𝑑</mi></mtd><mtd></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx3.SSx13.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">At the checking stage in the above, if a singular (small) diagonal entry is encountered, there are two
+strategies for the pivoting:
+</p>
+<ol id="Ch0.Sx3.I15" class="ltx_enumerate">
+<li id="Ch0.Sx3.I15.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch0.Sx3.I15.i1.p1" class="ltx_para">
+<p class="ltx_p">Go down the list, and do a swapping with the first row whose leading entry is above the threshold.</p>
+</div>
+</li>
+<li id="Ch0.Sx3.I15.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch0.Sx3.I15.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Find the row whose leading entry has the largest abs. value. Do the swapping.</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p">The second strategy is generally perferred, because it brings the
+largest possible values to the diagonal, leading to smaller
+multiplication factors, and an overall more stable algorithm. Below is
+a pseudocode for the second strategy.</p>
+</div>
+</section>
+</section>
+<section id="Ch0.Sx4" class="ltx_section">
+<h3 class="ltx_title ltx_title_section">Pseudocode for pivoting</h3>
+
+<div id="Ch0.Sx4.p1" class="ltx_para ltx_noindent">
+<table id="Ch0.Ex133" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex133.m1" class="ltx_Math" alttext="\begin{array}[]{l}\mathit{if}\ |a_{kk}|&lt;\mathrm{TOL}\\
+\quad\text{Find the row with largest}\\
+\quad\text{leading entry; say }i\in[k+1,n]\\
+\quad\mathit{if}\ |a_{ik}|&lt;\mathrm{TOL}\\
+\qquad\text{Error}\\
+\quad\mathit{else}\\
+\qquad\text{Swap row }k\ \&amp;\ \text{row }i\\
+\quad\mathit{end\ if}\\
+\mathit{end\ if}\end{array}" display="block"><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>𝑖𝑓</mi><mo lspace="0.500em">⁢</mo><mrow><mo stretchy="false">|</mo><msub><mi>a</mi><mrow><mi>k</mi><mo>⁢</mo><mi>k</mi></mrow></msub><mo stretchy="false">|</mo></mrow></mrow><mo>&lt;</mo><mi>TOL</mi></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mtext>Find the row with largest</mtext></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext>leading entry; say </mtext><mo>⁢</mo><mi>i</mi></mrow><mo>∈</mo><mrow><mo stretchy="false">[</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mi>n</mi><mo stretchy="false">]</mo></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>𝑖𝑓</mi><mo lspace="0.500em">⁢</mo><mrow><mo stretchy="false">|</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub><mo stretchy="false">|</mo></mrow></mrow><mo>&lt;</mo><mi>TOL</mi></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mtext>Error</mtext></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mi>𝑒𝑙𝑠𝑒</mi></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext>Swap row </mtext><mo>⁢</mo><mi>k</mi></mrow><mo lspace="0.722em" rspace="0.722em">&amp;</mo><mrow><mtext>row </mtext><mo>⁢</mo><mi>i</mi></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi>𝑒𝑛𝑑</mi><mo lspace="0.500em">⁢</mo><mi>𝑖𝑓</mi></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi>𝑒𝑛𝑑</mi><mo lspace="0.500em">⁢</mo><mi>𝑖𝑓</mi></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<section id="Ch0.Sx4.SSx1" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Some tips on Matlab coding</h4>
+
+<div id="Ch0.Sx4.SSx1.p1" class="ltx_para ltx_noindent">
+<ol id="Ch0.Sx4.I16" class="ltx_enumerate">
+<li id="Ch0.Sx4.I16.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch0.Sx4.I16.i1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">How to find the largest value in a vector, together with its index?
+Suppose <math id="Ch0.Sx4.I16.i1.p1.m1" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> is a vector.</p>
+<div class="ltx_listing ltx_lstlisting ltx_framed ltx_framed_rectangle ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bWF4KGEpClttLGldID0gbWF4KGEp" download="">⬇</a></div>
+<div id="lstnumberx42" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">max</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx43" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">m</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">max</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<p class="ltx_p"><math id="Ch0.Sx4.I16.i1.p1.m2" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math> stores the max value, and
+<math id="Ch0.Sx4.I16.i1.p1.m3" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> the index of the entry of max val.</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I16.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch0.Sx4.I16.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Once a candidate row has been found, how to do a swapping?</p>
+</div>
+<div id="Ch0.Sx4.I16.i2.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Suppose <math id="Ch0.Sx4.I16.i2.p2.m1" class="ltx_Math" alttext="a,\ b" display="inline"><mrow><mi>a</mi><mo rspace="0.667em">,</mo><mi>b</mi></mrow></math> are two variables (scalar or vectorial).
+Bring in another temporary variable <math id="Ch0.Sx4.I16.i2.p2.m2" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math>,</p>
+<div class="ltx_listing ltx_lstlisting ltx_framed ltx_framed_rectangle ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Yz1hOwphPWI7CmI9Yzs=" download="">⬇</a></div>
+<div id="lstnumberx44" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">c</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx45" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx46" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">c</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+</div>
+</div>
+<div id="Ch0.Sx4.I16.i2.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">If the two vectors to be swapped are part of a matrix <math id="Ch0.Sx4.I16.i2.p3.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, with row
+indices <math id="Ch0.Sx4.I16.i2.p3.m2" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> and <math id="Ch0.Sx4.I16.i2.p3.m3" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math>, to swap these two rows, Matlab allows the
+following coding style,</p>
+<div class="ltx_listing ltx_lstlisting ltx_framed ltx_framed_rectangle ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICBBKFtpLGpdLDopID0gQShbaixpXSw6KTs=" download="">⬇</a></div>
+<div id="lstnumberx47" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">],:)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">],:);</span>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_logical-block">
+        
+<div id="Ch0.Sx4.SSx1.p2" class="ltx_para">
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Sep 18 11:40:50 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

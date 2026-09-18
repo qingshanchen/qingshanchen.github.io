@@ -1,0 +1,458 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Lecture 6</title>
+<!--Generated on Fri Sep 18 11:40:50 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on September 18, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">Lecture 6</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold" style="font-size:207%;">LU Factorization</span></p>
+<p class="ltx_p">We consider a general linear system of equations,</p>
+<table id="Ch0.Ex108" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex108.m1" class="ltx_Math" alttext="Ax=b." display="block"><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mi>b</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Here</p>
+<table id="Ch0.Ex109" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex109X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex109X.m2" class="ltx_Math" alttext="\displaystyle A" display="inline"><mi>A</mi></math></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex109X.m4" class="ltx_Math" alttext="\displaystyle n\times n\textrm{ matrix}," display="inline"><mrow><mrow><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow><mo>⁢</mo><mtext> matrix</mtext></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex109Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex109Xa.m2" class="ltx_Math" alttext="\displaystyle b,x" display="inline"><mrow><mi>b</mi><mo>,</mo><mi>x</mi></mrow></math></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex109Xa.m4" class="ltx_Math" alttext="\displaystyle\textrm{length}-n\textrm{ column vector.}" display="inline"><mrow><mtext>length</mtext><mo>−</mo><mrow><mi>n</mi><mo>⁢</mo><mtext> column vector.</mtext></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx3.SSx11.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">Gaussian elimination can be applied, the cost of which is</p>
+<table id="Ch0.Ex110" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex110.m1" class="ltx_Math" alttext="\text{\# of FLOPs}=O(n^{3})." display="block"><mrow><mrow><mtext># of FLOPs</mtext><mo>=</mo><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">When <math id="Ch0.Sx3.SSx11.p3.m1" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math> changes, the whole process needs to be repeated, step by step,
+which seems wasteful and unnecessary.</p>
+</div>
+<section id="Ch0.Sx3.SSx11.SSS0.Px1" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">LU Factorization (What &amp; Why)</h5>
+
+<div id="Ch0.Sx3.SSx11.SSS0.Px1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">The LU factorization technique seeks to write the coefficient matrix as the
+product of two matrices, one lower-triangular, and the other
+upper-triangular, that is,</p>
+<table id="Ch0.Ex111" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex111.m1" class="ltx_Math" alttext="A=\underset{\begin{subarray}{c}\text{Lower triangular}\\
+n\times n\end{subarray}}{L}\qquad\underset{\begin{subarray}{c}\text{Upper %
+triangular}\\
+n\times n\end{subarray}}{U}" display="block"><mrow><mi>A</mi><mo>=</mo><mrow><munder accentunder="true"><mi>L</mi><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><mtext mathsize="70%">Lower triangular</mtext></mtd></mtr><mtr><mtd><mrow><mi mathsize="70%">n</mi><mo lspace="0.222em" mathsize="70%" rspace="0.222em">×</mo><mi mathsize="70%">n</mi></mrow></mtd></mtr></mtable></munder><mspace width="2em"></mspace><munder accentunder="true"><mi>U</mi><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><mtext mathsize="70%">Upper triangular</mtext></mtd></mtr><mtr><mtd><mrow><mi mathsize="70%">n</mi><mo lspace="0.222em" mathsize="70%" rspace="0.222em">×</mo><mi mathsize="70%">n</mi></mrow></mtd></mtr></mtable></munder></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Replacing <math id="Ch0.Sx3.SSx11.SSS0.Px1.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> by <math id="Ch0.Sx3.SSx11.SSS0.Px1.p1.m2" class="ltx_Math" alttext="LU" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mi>U</mi></mrow></math> in the equation,</p>
+<table id="Ch0.Ex112" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex112.m1" class="ltx_Math" alttext="L\underbrace{Ux}_{y}=b." display="block"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><munder><munder accentunder="true"><mrow><mi>U</mi><mo>⁢</mo><mi>x</mi></mrow><mo>⏟</mo></munder><mi>y</mi></munder></mrow><mo>=</mo><mi>b</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Denote the column vector <math id="Ch0.Sx3.SSx11.SSS0.Px1.p1.m3" class="ltx_Math" alttext="Ux" display="inline"><mrow><mi>U</mi><mo>⁢</mo><mi>x</mi></mrow></math> by <math id="Ch0.Sx3.SSx11.SSS0.Px1.p1.m4" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> for now. The above equation
+then can be written as</p>
+<table id="Ch0.Ex113" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex113.m1" class="ltx_Math" alttext="Ly=b." display="block"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mi>y</mi></mrow><mo>=</mo><mi>b</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This is a lower triangular system, and the Forward Substitution algorithm can be applied to find <math id="Ch0.Sx3.SSx11.SSS0.Px1.p1.m5" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>.
+Once <math id="Ch0.Sx3.SSx11.SSS0.Px1.p1.m6" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> is known, the equaiton</p>
+<table id="Ch0.Ex114" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex114.m1" class="ltx_Math" alttext="Ux=y" display="block"><mrow><mrow><mi>U</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mi>y</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">can be solved for <math id="Ch0.Sx3.SSx11.SSS0.Px1.p1.m7" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>. This is an upper triangular system, and the backward substitution,
+the first algorithm learned in this chapter, applies.</p>
+</div>
+<div id="Ch0.Sx3.SSx11.SSS0.Px1.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">The main advantage of the LU factorziation technique is that once <math id="Ch0.Sx3.SSx11.SSS0.Px1.p2.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> and <math id="Ch0.Sx3.SSx11.SSS0.Px1.p2.m2" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> factors have
+been found for a given coefficient matrix <math id="Ch0.Sx3.SSx11.SSS0.Px1.p2.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, they can be re-used again and again,
+for any given right-hand side vector <math id="Ch0.Sx3.SSx11.SSS0.Px1.p2.m4" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math>.</p>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx11.SSS0.Px2" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">LU Factorization (How)</h5>
+
+<div id="Ch0.Sx3.SSx11.SSS0.Px2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Here we will only consider the case where no swapping (pivoting) is needed.
+GE reduces the coef. matrix <math id="Ch0.Sx3.SSx11.SSS0.Px2.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> into an upper triangular matrix.
+We call this upper-triangular matrix <math id="Ch0.Sx3.SSx11.SSS0.Px2.p1.m2" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math>.
+What about <math id="Ch0.Sx3.SSx11.SSS0.Px2.p1.m3" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>?
+We form <math id="Ch0.Sx3.SSx11.SSS0.Px2.p1.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> matrix from GE. The lower-triangular matrix <math id="Ch0.Sx3.SSx11.SSS0.Px2.p1.m5" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, by
+convention, has ones on the diagonal, with each of its sub-diagonal
+entry equal to the negative of the corresponding factor used in the
+Gaussian elimination, that is,</p>
+<table id="Ch0.Ex115" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex115.m1" class="ltx_Math" alttext="L=\leavevmode\hbox to143.14pt{\vbox to71.53pt{\pgfpicture\makeatletter\hbox{%
+\hskip 19.6462pt\lower-64.2187pt\hbox to0.0pt{\pgfsys@beginscope\pgfsys@invoke%
+{ }\definecolor{pgfstrokecolor}{rgb}{0,0,0}\pgfsys@color@rgb@stroke{0}{0}{0}%
+\pgfsys@invoke{ }\pgfsys@color@rgb@fill{0}{0}{0}\pgfsys@invoke{ }%
+\pgfsys@setlinewidth{0.4pt}\pgfsys@invoke{ }\nullfont\hbox to0.0pt{%
+\pgfsys@beginscope\pgfsys@invoke{ }
+{{}}\hbox{\hbox{{\pgfsys@beginscope\pgfsys@invoke{ }{{}{}{{
+{}{}}}{
+{}{}}
+{{}{{}}}{{}{}}{}{{}{}}
+{
+}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%
+.0}{-2.5pt}{-3.22221pt}\pgfsys@invoke{ }\hbox{{\definecolor{pgfstrokecolor}{%
+rgb}{0,0,0}\pgfsys@color@rgb@stroke{0}{0}{0}\pgfsys@invoke{ }%
+\pgfsys@color@rgb@fill{0}{0}{0}\pgfsys@invoke{ }\hbox{{$1$}}
+}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}
+\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}
+{{}}\hbox{\hbox{{\pgfsys@beginscope\pgfsys@invoke{ }{{}{}{{
+{}{}}}{
+{}{}}
+{{}{{}}}{{}{}}{}{{}{}}
+{
+}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%
+.0}{25.95276pt}{-18.8713pt}\pgfsys@invoke{ }\hbox{{\definecolor{pgfstrokecolor%
+}{rgb}{0,0,0}\pgfsys@color@rgb@stroke{0}{0}{0}\pgfsys@invoke{ }%
+\pgfsys@color@rgb@fill{0}{0}{0}\pgfsys@invoke{ }\hbox{{$1$}}
+}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}
+\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}
+{{}}\hbox{\hbox{{\pgfsys@beginscope\pgfsys@invoke{ }{{}{}{{
+{}{}}}{
+{}{}}
+{{}{{}}}{{}{}}{}{{}{}}
+{
+}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%
+.0}{99.9301pt}{-60.12773pt}\pgfsys@invoke{ }\hbox{{\definecolor{pgfstrokecolor%
+}{rgb}{0,0,0}\pgfsys@color@rgb@stroke{0}{0}{0}\pgfsys@invoke{ }%
+\pgfsys@color@rgb@fill{0}{0}{0}\pgfsys@invoke{ }\hbox{{$1$}}
+}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}
+\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}
+{{}}\hbox{\hbox{{\pgfsys@beginscope\pgfsys@invoke{ }{{}{}{{
+{}{}}}{
+{}{}}
+{{}{{}}}{{}{}}{}{{}{}}
+{
+}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%
+.0}{77.1678pt}{-16.02586pt}\pgfsys@invoke{ }\hbox{{\definecolor{pgfstrokecolor%
+}{rgb}{0,0,0}\pgfsys@color@rgb@stroke{0}{0}{0}\pgfsys@invoke{ }%
+\pgfsys@color@rgb@fill{0}{0}{0}\pgfsys@invoke{ }\hbox{{$0$}}
+}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}
+\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}
+{}{{}}{}
+{}{}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@setdash{3.0pt,3.0pt}{0.0pt}%
+\pgfsys@invoke{ }{}\pgfsys@moveto{51.21504pt}{-19.91684pt}\pgfsys@lineto{92.47%
+147pt}{-51.21504pt}\pgfsys@stroke\pgfsys@invoke{ }
+\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope{{}}\hbox{\hbox{{%
+\pgfsys@beginscope\pgfsys@invoke{ }{{}{}{{
+}}{
+}
+{{}{{}}}{{}{}}{}{{}{}}
+{
+}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%
+.0}{0.68756pt}{-45.96175pt}\pgfsys@invoke{ }\hbox{{\definecolor{pgfstrokecolor%
+}{rgb}{0,0,0}\pgfsys@color@rgb@stroke{0}{0}{0}\pgfsys@invoke{ }%
+\pgfsys@color@rgb@fill{0}{0}{0}\pgfsys@invoke{ }\hbox{{\vbox{\halign{#\hfil\cr%
+\vbox{\halign{#\hfil\cr\vbox{\halign{#\hfil\cr\cr\vskip-0.7pt\cr\hbox{{%
+negative}}\cr}}\cr\vskip 0.0pt\cr\hbox{{of the factors}}\cr}}\cr\vskip 0.0pt%
+\cr\hbox{{from GE}}\cr}}}}
+}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}
+\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}
+{}{{}}{}
+{{}{}}{{}}
+{{{}}{{}}}{{}}{{{}}{{}}}{}{{}}{}{}{}{}\pgfsys@moveto{-9.95863pt}{7.11319pt}%
+\pgfsys@curveto{-19.4462pt}{-18.9534pt}{-19.4462pt}{-37.95212pt}{-9.95863pt}{-%
+64.0187pt}\pgfsys@stroke\pgfsys@invoke{ }
+{}{{}}{}
+{{}{}}{{}}
+{{{}}{{}}}{{}}{{{}}{{}}}{}{{}}{}{}{}{}\pgfsys@moveto{113.81104pt}{7.11319pt}%
+\pgfsys@curveto{123.2986pt}{-18.9534pt}{123.2986pt}{-37.95212pt}{113.81104pt}{%
+-64.0187pt}\pgfsys@stroke\pgfsys@invoke{ }
+\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope{}{}{}\hss}%
+\pgfsys@discardpath\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope\hss}}%
+\lxSVG@closescope\endpgfpicture}}" display="block"><mrow><mi>L</mi><mo>=</mo><mtext><svg class="ltx_picture" height="98.98" overflow="visible" version="1.1" width="198.07"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,98.98) matrix(1 0 0 -1 0 0) translate(27.18,0) translate(0,88.86)"> <g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -3.46 -4.46)"> <foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92"><math class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></foreignObject> </g> <g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 35.91 -26.11)"> <foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92"><math class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></foreignObject> </g> <g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 138.27 -83.2)"> <foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92"><math class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></foreignObject> </g> <g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 106.78 -22.17)"> <foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92"><math class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math></foreignObject> </g> <g stroke-dasharray="3.0pt,3.0pt" stroke-dashoffset="0.0pt"> <path d="M 70.87 -27.56 L 127.95 -70.87" style="fill:none"></path> </g> <g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 0.95 -63.6)"> <g class="ltx_tikzmatrix" transform="matrix(1 0 0 -1 0 26.345)"> <g class="ltx_tikzmatrix_row" transform="matrix(1 0 0 1 0 21.54)"> <g class="ltx_tikzmatrix_col ltx_nopad_l ltx_nopad_r" transform="matrix(1 0 0 -1 0 0)"> <g class="ltx_tikzmatrix" transform="matrix(1 0 0 -1 0 16.735)"> <g class="ltx_tikzmatrix_row" transform="matrix(1 0 0 1 0 11.93)"> <g class="ltx_tikzmatrix_col ltx_nopad_l ltx_nopad_r" transform="matrix(1 0 0 -1 0 0)"> <g class="ltx_tikzmatrix" transform="matrix(1 0 0 -1 0 5.965)"> <g class="ltx_tikzmatrix_row" transform="matrix(1 0 0 1 0 9.24)"> <g class="ltx_tikzmatrix_col ltx_nopad_l ltx_nopad_r" transform="matrix(1 0 0 -1 0 0)"> <text transform="matrix(1 0 0 -1 0 0)">negative</text> </g> </g> </g> </g> </g> <g class="ltx_tikzmatrix_row" transform="matrix(1 0 0 1 0 21.54)"> <g class="ltx_tikzmatrix_col ltx_nopad_l ltx_nopad_r" transform="matrix(1 0 0 -1 0 0)"> <text transform="matrix(1 0 0 -1 0 0)">of the factors</text> </g> </g> </g> </g> </g> <g class="ltx_tikzmatrix_row" transform="matrix(1 0 0 1 0 31.15)"> <g class="ltx_tikzmatrix_col ltx_nopad_l ltx_nopad_r" transform="matrix(1 0 0 -1 0 0)"> <text transform="matrix(1 0 0 -1 0 0)">from GE</text> </g> </g> </g> </g> <path d="M -13.78 9.84 C -26.91 -26.23 -26.91 -52.51 -13.78 -88.58" style="fill:none"></path> <path d="M 157.48 9.84 C 170.61 -26.23 170.61 -52.51 157.48 -88.58" style="fill:none"></path> </g></svg></mtext></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx11.SSS0.Px3" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Example 1.</h5>
+
+<div id="Ch0.Sx3.SSx11.SSS0.Px3.p1" class="ltx_para">
+<p class="ltx_p">Compute the LU factorization of</p>
+<table id="Ch0.Ex116" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex116.m1" class="ltx_Math" alttext="A=\begin{pmatrix}1&amp;2\\
+3&amp;4\end{pmatrix}" display="block"><mrow><mi>A</mi><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="Ch0.Sx3.SSx11.SSS0.Px3.p2" class="ltx_para">
+<p class="ltx_p">Applying Gaussian elimination to the matrix to transform it into an
+upper-triangular matrix,</p>
+<table id="Ch0.Ex117" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex117.m1" class="ltx_Math" alttext="\begin{pmatrix}1&amp;2\\
+3&amp;4\end{pmatrix}\xrightarrow{R_{2}\leftarrow R_{2}+(-3)R_{1}}\underbrace{%
+\begin{pmatrix}1&amp;2\\
+0&amp;-2\end{pmatrix}}_{U}" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable><mo>)</mo></mrow><mover accent="true"><mo stretchy="false">→</mo><mrow><msub><mi>R</mi><mn>2</mn></msub><mo stretchy="false">←</mo><mrow><msub><mi>R</mi><mn>2</mn></msub><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>R</mi><mn>1</mn></msub></mrow></mrow></mrow></mover><munder><munder accentunder="true"><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>2</mn></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>⏟</mo></munder><mi>U</mi></munder></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The resulting upper-triangular matrix is the <math id="Ch0.Sx3.SSx11.SSS0.Px3.p2.m1" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> matrix. The <math id="Ch0.Sx3.SSx11.SSS0.Px3.p2.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>
+matrix is given by</p>
+<table id="Ch0.Ex118" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex118.m1" class="ltx_Math" alttext="L=\begin{pmatrix}1&amp;0\\
+3&amp;1\end{pmatrix}." display="block"><mrow><mrow><mi>L</mi><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">To verify that the <math id="Ch0.Sx3.SSx11.SSS0.Px3.p2.m3" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> and <math id="Ch0.Sx3.SSx11.SSS0.Px3.p2.m4" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> do form a factorization of the matrix
+A, we can carry out the multiplication,</p>
+<table id="Ch0.Ex119" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex119.m1" class="ltx_Math" alttext="LU=\begin{pmatrix}1&amp;0\\
+3&amp;1\end{pmatrix}\begin{pmatrix}1&amp;2\\
+0&amp;-2\end{pmatrix}=\begin{pmatrix}1&amp;2\\
+3&amp;4\end{pmatrix}=A" display="block"><mrow><mrow><mi>L</mi><mo>⁢</mo><mi>U</mi></mrow><mo>=</mo><mrow><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>2</mn></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mi>A</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Verified.
+∎</p>
+</div>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx11.SSS0.Px4" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Example 2.</h5>
+
+<div id="Ch0.Sx3.SSx11.SSS0.Px4.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Compute the LU factorization of</p>
+<table id="Ch0.Ex120" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex120.m1" class="ltx_Math" alttext="A=\begin{pmatrix}2&amp;-1&amp;1\\
+1&amp;1&amp;-1\\
+2&amp;0&amp;1\end{pmatrix}." display="block"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="Ch0.Sx3.SSx11.SSS0.Px4.p2" class="ltx_para">
+<p class="ltx_p">By the Gaussian elimination,</p>
+<table id="Chx1.Sx4.EGx11" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex121"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex121.m1" class="ltx_Math" alttext="\displaystyle\begin{pmatrix}2&amp;-1&amp;1\\
+1&amp;1&amp;-1\\
+2&amp;0&amp;1\end{pmatrix}\xrightarrow[R_{3}\leftarrow R_{3}+(-1)R_{1}]{R_{2}%
+\leftarrow R_{2}+(-\frac{1}{2})R_{1}}\begin{pmatrix}2&amp;-1&amp;1\\
+0&amp;\frac{3}{2}&amp;-\frac{3}{2}\\
+0&amp;1&amp;0\end{pmatrix}\xrightarrow{R_{3}\leftarrow R_{3}+(-\frac{2}{3})R_{2}}%
+\underbrace{\begin{pmatrix}2&amp;-1&amp;1\\
+0&amp;\frac{3}{2}&amp;-\frac{3}{2}\\
+0&amp;0&amp;1\end{pmatrix}}_{U}" display="inline"><mrow><mrow><mo>(</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><munderover accent="true" accentunder="true"><mo stretchy="false">→</mo><mrow><msub><mi mathsize="142%">R</mi><mn mathsize="140%">3</mn></msub><mo mathsize="142%" stretchy="false">←</mo><mrow><msub><mi mathsize="142%">R</mi><mn mathsize="140%">3</mn></msub><mo mathsize="142%">+</mo><mrow><mrow><mo maxsize="142%" minsize="142%">(</mo><mrow><mo mathsize="142%">−</mo><mn mathsize="142%">1</mn></mrow><mo maxsize="142%" minsize="142%">)</mo></mrow><mo>⁢</mo><msub><mi mathsize="142%">R</mi><mn mathsize="140%">1</mn></msub></mrow></mrow></mrow><mrow><msub><mi>R</mi><mn>2</mn></msub><mo stretchy="false">←</mo><mrow><msub><mi>R</mi><mn>2</mn></msub><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>R</mi><mn>1</mn></msub></mrow></mrow></mrow></munderover><mrow><mo>(</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mfrac><mn>3</mn><mn>2</mn></mfrac></mtd><mtd><mrow><mo>−</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mover accent="true"><mo stretchy="false">→</mo><mrow><msub><mi>R</mi><mn>3</mn></msub><mo stretchy="false">←</mo><mrow><msub><mi>R</mi><mn>3</mn></msub><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>2</mn><mn>3</mn></mfrac></mstyle></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>R</mi><mn>2</mn></msub></mrow></mrow></mrow></mover><munder><munder accentunder="true"><mrow><mo>(</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mfrac><mn>3</mn><mn>2</mn></mfrac></mtd><mtd><mrow><mo>−</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>⏟</mo></munder><mi>U</mi></munder></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The lower-triangular matrix <math id="Ch0.Sx3.SSx11.SSS0.Px4.p2.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is thus formed as</p>
+<table id="Ch0.Ex122" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex122.m1" class="ltx_Math" alttext="L=\begin{pmatrix}1&amp;0&amp;0\\
+\frac{1}{2}&amp;1&amp;0\\
+1&amp;\frac{2}{3}&amp;1\end{pmatrix}" display="block"><mrow><mi>L</mi><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mtd><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mstyle displaystyle="false"><mfrac><mn>2</mn><mn>3</mn></mfrac></mstyle></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">∎</p>
+</div>
+</div>
+</section>
+<section id="Ch0.Sx3.SSx11.SSS0.Px5" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Cost consideration</h5>
+
+<div id="Ch0.Sx3.SSx11.SSS0.Px5.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Solving a <math id="Ch0.Sx3.SSx11.SSS0.Px5.p1.m1" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></math> linear system of equations using the LU
+factorization involves one factorization step, one forward
+substitution, and one backward substitution, with each step costing</p>
+<table id="Ch0.Ex123" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex123.m1" class="ltx_Math" alttext="\begin{array}[]{ll}\text{LU factorization, same as for GE:}&amp;O(n^{3})\\[6.00006%
+pt]
+\text{Forward sub.:}&amp;O(n^{2})\\[6.00006pt]
+\text{Backward sub.:}&amp;O(n^{2})\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mtext>LU factorization, same as for GE:</mtext></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mtext>Forward sub.:</mtext></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mtext>Backward sub.:</mtext></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">For <math id="Ch0.Sx3.SSx11.SSS0.Px5.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> large, the LU step is the most expensive, and is the dominant
+portion of the computational cost. Thus, solving an <math id="Ch0.Sx3.SSx11.SSS0.Px5.p1.m3" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></math> linear
+system using the LU factorzation costs <math id="Ch0.Sx3.SSx11.SSS0.Px5.p1.m4" class="ltx_Math" alttext="O(n^{3})" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math> FLOPs, the same as
+Gaussian Elimination.</p>
+</div>
+<div id="Ch0.Sx3.SSx11.SSS0.Px5.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">What about finding the inverse <math id="Ch0.Sx3.SSx11.SSS0.Px5.p2.m1" class="ltx_Math" alttext="A^{-1}" display="inline"><msup><mi>A</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math> of the matrix <math id="Ch0.Sx3.SSx11.SSS0.Px5.p2.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>?
+How about using the neat Crammer’s rule
+<math id="Ch0.Sx3.SSx11.SSS0.Px5.p2.m3" class="ltx_Math" alttext="A^{-1}=\dfrac{adj(A)}{\det(A)}" display="inline"><mrow><msup><mi>A</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>a</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>j</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><mo rspace="0em">det</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow></math>?
+This formula requires <math id="Ch0.Sx3.SSx11.SSS0.Px5.p2.m4" class="ltx_Math" alttext="O((n+1)!)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>!</mo></mrow><mo stretchy="false">)</mo></mrow></mrow></math> operations. For <math id="Ch0.Sx3.SSx11.SSS0.Px5.p2.m5" class="ltx_Math" alttext="n=10" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>10</mn></mrow></math>,</p>
+<ul id="Ch0.Sx3.I13" class="ltx_itemize">
+<li id="Ch0.Sx3.I13.ix1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"></span>
+<div id="Ch0.Sx3.I13.ix1.p1" class="ltx_para">
+<p class="ltx_p">LU: <math id="Ch0.Sx3.I13.ix1.p1.m1" class="ltx_Math" alttext="\approx 860" display="inline"><mrow><mi></mi><mo>≈</mo><mn>860</mn></mrow></math> FLOPs</p>
+</div>
+</li>
+<li id="Ch0.Sx3.I13.ix2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"></span>
+<div id="Ch0.Sx3.I13.ix2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Crammer’s: <math id="Ch0.Sx3.I13.ix2.p1.m1" class="ltx_Math" alttext="39,916,800" display="inline"><mrow><mn>39</mn><mo>,</mo><mn>916</mn><mo>,</mo><mn>800</mn></mrow></math> FLOPs</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch0.Sx3.SSx11.SSS0.Px5.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">There is a better way to find the inverse, one that is possible to do,
+but still offers no advantage at all compared with the LU factorization.
+Finding the inverse is the same as solving the matrix equations</p>
+<table id="Ch0.Ex124" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex124.m1" class="ltx_Math" alttext="AX=I," display="block"><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>X</mi></mrow><mo>=</mo><mi>I</mi></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> is a <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m2" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></math> matrix to be found, and <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m3" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math> is the <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m4" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></math> identity matrix. Write both <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m5" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math> and <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m6" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> as vectors of column
+vectors,</p>
+<table id="Ch0.Ex125" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex125X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex125X.m2" class="ltx_Math" alttext="\displaystyle I=[e^{1},\,e^{2},\,\cdots,e^{n}]" display="inline"><mrow><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><msup><mi>e</mi><mn>1</mn></msup><mo rspace="0.337em">,</mo><msup><mi>e</mi><mn>2</mn></msup><mo rspace="0.337em">,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msup><mi>e</mi><mi>n</mi></msup><mo stretchy="false">]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex125Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex125Xa.m2" class="ltx_Math" alttext="\displaystyle X=[x^{1},\,x^{2},\,\cdots,x^{n}]." display="inline"><mrow><mrow><mi>X</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><msup><mi>x</mi><mn>1</mn></msup><mo rspace="0.337em">,</mo><msup><mi>x</mi><mn>2</mn></msup><mo rspace="0.337em">,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msup><mi>x</mi><mi>n</mi></msup><mo stretchy="false">]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Then finding the inverse <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m7" class="ltx_Math" alttext="X=A^{-1}" display="inline"><mrow><mi>X</mi><mo>=</mo><msup><mi>A</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math> of <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m8" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is the same as solving a
+sequence of <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m9" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> systems of <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m10" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></math> linear systems of equations,</p>
+<table id="Ch0.Ex126" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex126.m1" class="ltx_Math" alttext="Ax^{k}=e^{k},\qquad 1\leq k\leq n." display="block"><mrow><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><msup><mi>x</mi><mi>k</mi></msup></mrow><mo>=</mo><msup><mi>e</mi><mi>k</mi></msup></mrow><mo rspace="2.167em">,</mo><mrow><mn>1</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Assuming that the LU factorization is used to solve these systems. The
+LU factorization of matrix <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m11" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> only needs to be done once, which takes
+<math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m12" class="ltx_Math" alttext="O(n^{3})" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math> FLOPs. Since there are <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m13" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> systems, each with a different
+right-hand side vector <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m14" class="ltx_Math" alttext="e^{k}" display="inline"><msup><mi>e</mi><mi>k</mi></msup></math>, both the forward substitution and
+backward substitution have to be repeated <math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m15" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> times. Hence, for finding
+<math id="Ch0.Sx3.SSx11.SSS0.Px5.p3.m16" class="ltx_Math" alttext="A^{-1}" display="inline"><msup><mi>A</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math>,</p>
+<table id="Chx1.Sx4.EGx12" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex127"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath">Total number FLOPs</span></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex127.m2" class="ltx_Math" alttext="\displaystyle=\text{``LU''}+n\times\text{``Forward
+sub.''}+n\times\text{``Backward sub.''}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mtext>“LU”</mtext><mo>+</mo><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mtext>“Forward
+sub.”</mtext></mrow><mo>+</mo><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mtext>“Backward sub.”</mtext></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex128"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex128.m1" class="ltx_Math" alttext="\displaystyle\approx O(n^{3})+n\times{n^{2}}+n\times{n^{2}}" display="inline"><mrow><mi></mi><mo>≈</mo><mrow><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mi>n</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mi>n</mi><mn>2</mn></msup></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex129"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex129.m1" class="ltx_Math" alttext="\displaystyle\approx O(n^{3})\qquad\textrm{with a {\bf bigger} coefficient}." display="inline"><mrow><mrow><mi></mi><mo>≈</mo><mrow><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow></mrow><mspace width="2em"></mspace><mrow><mtext>with a </mtext><mtext class="ltx_mathvariant_bold">bigger</mtext><mtext> coefficient</mtext></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx3.SSx11.SSS0.Px5.p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">The above explains why it is almost never a good idea to find <math id="Ch0.Sx3.SSx11.SSS0.Px5.p4.m1" class="ltx_Math" alttext="A^{-1}" display="inline"><msup><mi>A</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math>
+in numerical computations.</p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_logical-block">
+          
+<div id="Ch0.Sx3.SSx11.SSS0.Px5.p5" class="ltx_para">
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Sep 18 11:40:50 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
