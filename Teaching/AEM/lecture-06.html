@@ -1,0 +1,803 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Lecture 6</title>
+<!--Generated on Mon Aug 24 14:25:17 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on August 24, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">Lecture 6</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold" style="font-size:207%;">Properties of Fourier series</span></p>
+</div>
+    
+</div>
+<section id="Ch0.Sx1.SSx1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">1. Term-by-term differentiation</h3>
+
+<div id="Ch0.Sx1.SSx1.p1" class="ltx_para">
+<p class="ltx_p">If <math id="Ch0.Sx1.SSx1.p1.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> is a continuous function on the real line with a period of <math id="Ch0.Sx1.SSx1.p1.m2" class="ltx_Math" alttext="2L" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></math> and if its derivative <math id="Ch0.Sx1.SSx1.p1.m3" class="ltx_Math" alttext="f^{\prime}(t)" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> is continuous except for a finite number of discontinuities, then the Fourier series of <math id="Ch0.Sx1.SSx1.p1.m4" class="ltx_Math" alttext="f^{\prime}(t)" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> is given by a term-by-term differentiation of the Fourier series of <math id="Ch0.Sx1.SSx1.p1.m5" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="Ch0.Sx1.SSx1.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Example 1.</span>
+Consider a periodic function <math id="Ch0.Sx1.SSx1.p2.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> with a period of <math id="Ch0.Sx1.SSx1.p2.m2" class="ltx_Math" alttext="2\pi" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></math> and</p>
+<table id="Ch0.Ex161" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex161.m1" class="ltx_Math" alttext="f(t)=|t|\qquad\text{for }|t|&lt;2\pi." display="block"><mrow><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">|</mo><mi>t</mi><mo stretchy="false">|</mo></mrow></mrow><mspace width="2em"></mspace><mrow><mrow><mtext>for </mtext><mo>⁢</mo><mrow><mo stretchy="false">|</mo><mi>t</mi><mo stretchy="false">|</mo></mrow></mrow><mo>&lt;</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The Fourier series expansion for <math id="Ch0.Sx1.SSx1.p2.m3" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> is given by</p>
+<table id="Ch0.Ex162" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex162.m1" class="ltx_Math" alttext="f(t)=\frac{\pi}{2}-\frac{4}{\pi}\sum_{m=1}^{\infty}\frac{\cos((2m-1)t)}{(2m-1)%
+^{2}}." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>−</mo><mrow><mfrac><mn>4</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>m</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>m</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mfrac></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The function <math id="Ch0.Sx1.SSx1.p2.m4" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> has derivative</p>
+<table id="Ch0.Ex163" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex163.m1" class="ltx_Math" alttext="f^{\prime}(t)=\begin{cases}-1,&amp;-\pi\leq t&lt;0,\\
+1,&amp;0\leq t&lt;\pi.\end{cases}" display="block"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mo>−</mo><mi>π</mi></mrow><mo>≤</mo><mi>t</mi><mo>&lt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>1</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>&lt;</mo><mi>π</mi></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><math id="Ch0.Sx1.SSx1.p2.m5" class="ltx_Math" alttext="f^{\prime}(t)" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> has only one discontinuity within the interval <math id="Ch0.Sx1.SSx1.p2.m6" class="ltx_Math" alttext="[-\pi,\pi]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mi>π</mi></mrow><mo>,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></math>,
+and also meets other criteria set forth in Dirichlet theorem, and
+therefore it has a Fourier series expansion. Its Fourier series can be
+obtained through direct calculations:</p>
+<table id="Ch0.Ex164" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex164.m1" class="ltx_Math" alttext="a_{0}=\frac{1}{\pi}\int_{-\pi}^{\pi}f^{\prime}(t)dt=\frac{1}{\pi}\left(\int_{-%
+\pi}^{0}(-1)dt+\int_{0}^{\pi}1dt\right)=0," display="block"><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mrow><mfrac><mn>1</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>π</mi></mrow><mi>π</mi></msubsup><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><msubsup><mo lspace="0em" rspace="0em">∫</mo><mrow><mo>−</mo><mi>π</mi></mrow><mn>0</mn></msubsup><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo rspace="0.055em">+</mo><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup><mrow><mn>1</mn><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch0.Ex165" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex165.m1" class="ltx_Math" alttext="a_{n}=\frac{1}{\pi}\int_{-\pi}^{\pi}f^{\prime}(t)\cos\left(\frac{n\pi t}{\pi}%
+\right)dt=0," display="block"><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mrow><mfrac><mn>1</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>π</mi></mrow><mi>π</mi></msubsup><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>π</mi></mfrac><mo>)</mo></mrow></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch0.Ex166" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex166X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex166X.m2" class="ltx_Math" alttext="\displaystyle b_{n}" display="inline"><msub><mi>b</mi><mi>n</mi></msub></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex166X.m3" class="ltx_Math" alttext="\displaystyle=\frac{1}{\pi}\int_{-\pi}^{\pi}f^{\prime}(t)\sin\left(\frac{n\pi t%
+}{\pi}\right)dt=\frac{1}{\pi}\left(\int_{-\pi}^{0}(-1)\sin nt\,dt+\int_{0}^{%
+\pi}\sin nt\,dt\right)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>π</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>π</mi></mrow><mi>π</mi></msubsup></mstyle><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>π</mi></mfrac></mstyle><mo>)</mo></mrow></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>π</mi></mfrac></mstyle><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>π</mi></mrow><mn>0</mn></msubsup></mstyle><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex166Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex166Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{\pi}\left(\frac{\cos nt}{n}\Big{|}_{-\pi}^{0}-\frac{%
+\cos nt}{n}\Big{|}_{0}^{\pi}\right)=\frac{2(1-(-1)^{n})}{n\pi}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>π</mi></mfrac></mstyle><mo>⁢</mo><mrow><mo>(</mo><mrow><msubsup><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow></mrow><mi>n</mi></mfrac></mstyle><mo maxsize="160%" minsize="160%">|</mo></mrow><mrow><mo>−</mo><mi>π</mi></mrow><mn>0</mn></msubsup><mo>−</mo><msubsup><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow></mrow><mi>n</mi></mfrac></mstyle><mo maxsize="160%" minsize="160%">|</mo></mrow><mn>0</mn><mi>π</mi></msubsup></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Then</p>
+<table id="Ch0.Ex167" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex167.m1" class="ltx_Math" alttext="f^{\prime}(t)=\sum_{n=1}^{\infty}\frac{2(1-(-1)^{n})}{n\pi}\sin\left(\frac{n%
+\pi t}{\pi}\right)=\sum_{m=1}^{\infty}\frac{4}{(2m-1)\pi}\sin((2m-1)t)=\frac{4%
+}{\pi}\sum_{m=1}^{\infty}\frac{\sin((2m-1)t)}{2m-1}." display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mfrac><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>π</mi></mfrac><mo>)</mo></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mfrac><mn>4</mn><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>m</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>m</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mfrac><mn>4</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>m</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>m</mi></mrow><mo>−</mo><mn>1</mn></mrow></mfrac></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A term-by-term differentiation of the Fourier series of <math id="Ch0.Sx1.SSx1.p2.m7" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> will yield the same series as the above.</p>
+</div>
+</section>
+<section id="Ch0.Sx1.SSx2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">2. Term-by-term integration</h3>
+
+<div id="Ch0.Sx1.SSx2.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="Ch0.Sx1.SSx2.p1.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> has Fourier series</p>
+<table id="Ch0.Ex168" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex168.m1" class="ltx_Math" alttext="f(t)=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left[a_{n}\cos\left(\frac{n\pi t}{L}%
+\right)+b_{n}\sin\left(\frac{n\pi t}{L}\right)\right]." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac><mo rspace="0.055em">+</mo><mrow><munderover><mo movablelimits="false" rspace="0em">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mo>[</mo><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>b</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Let <math id="Ch0.Sx1.SSx2.p1.m2" class="ltx_Math" alttext="F(t)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> be a form of the antiderivative of <math id="Ch0.Sx1.SSx2.p1.m3" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Then what does the Fourier series of <math id="Ch0.Sx1.SSx2.p1.m4" class="ltx_Math" alttext="F(t)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> look like?</p>
+</div>
+<div id="Ch0.Sx1.SSx2.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Example 2.</span> Consider</p>
+<table id="Ch0.Ex169" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex169.m1" class="ltx_Math" alttext="f(t)=t,\qquad-\pi&lt;t&lt;\pi." display="block"><mrow><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>t</mi></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mo>−</mo><mi>π</mi></mrow><mo>&lt;</mo><mi>t</mi><mo>&lt;</mo><mi>π</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This function <math id="Ch0.Sx1.SSx2.p2.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> has Fourier series</p>
+<table id="Ch0.Ex170" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex170.m1" class="ltx_Math" alttext="f(t)=-2\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n}\sin nt." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup><mi>n</mi></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">How to compute the Fourier series of <math id="Ch0.Sx1.SSx2.p2.m2" class="ltx_Math" alttext="t^{2}" display="inline"><msup><mi>t</mi><mn>2</mn></msup></math>?</p>
+</div>
+<div id="Ch0.Sx1.SSx2.p3" class="ltx_para">
+<p class="ltx_p">We note that</p>
+<table id="Ch0.Ex171" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex171.m1" class="ltx_Math" alttext="t^{2}=2\times\frac{1}{2}t^{2}=2\times\int t\,dt." display="block"><mrow><mrow><msup><mi>t</mi><mn>2</mn></msup><mo>=</mo><mrow><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>⁢</mo><msup><mi>t</mi><mn>2</mn></msup></mrow><mo>=</mo><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.055em">×</mo><mrow><mo>∫</mo><mrow><mi>t</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Does this help?</p>
+</div>
+<div id="Ch0.Sx1.SSx2.p4" class="ltx_para">
+<p class="ltx_p">Back to the general question. Consider a form of integral of <math id="Ch0.Sx1.SSx2.p4.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>,</p>
+<table id="Ch0.Ex172" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex172.m1" class="ltx_Math" alttext="F(t)=\int_{0}^{t}\left(f(\tau)-\frac{a_{0}}{2}\right)d\tau," display="block"><mrow><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo rspace="0em">∫</mo><mn>0</mn><mi>t</mi></msubsup><mrow><mrow><mo>(</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="Ch0.Sx1.SSx2.p4.m2" class="ltx_Math" alttext="a_{0}" display="inline"><msub><mi>a</mi><mn>0</mn></msub></math> is the constant term in the Fourier series expansion of <math id="Ch0.Sx1.SSx2.p4.m3" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>.
+It is easy to see that</p>
+<table id="Ch0.Ex173" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex173.m1" class="ltx_Math" alttext="F^{\prime}(t)=f(t)-\frac{a_{0}}{2}." display="block"><mrow><mrow><mrow><msup><mi>F</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The newly constructed function <math id="Ch0.Sx1.SSx2.p4.m4" class="ltx_Math" alttext="F(t)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> is also periodic, with a period
+<math id="Ch0.Sx1.SSx2.p4.m5" class="ltx_Math" alttext="=2L" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></math>, because</p>
+<table id="Ch0.Ex174" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex174X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex174X.m2" class="ltx_Math" alttext="\displaystyle F(t+2L)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex174X.m3" class="ltx_Math" alttext="\displaystyle=\int_{0}^{t+2L}\left(f(\tau)-\frac{a_{0}}{2}\right)d\tau" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mi>t</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></msubsup></mstyle><mrow><mrow><mo>(</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex174Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex174Xa.m2" class="ltx_Math" alttext="\displaystyle=\int_{0}^{t}\left(f(\tau)-\frac{a_{0}}{2}\right)d\tau+\int_{t}^{%
+t+2L}\left(f(\tau)-\frac{a_{0}}{2}\right)d\tau" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi>t</mi></msubsup></mstyle><mrow><mrow><mo>(</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>t</mi><mrow><mi>t</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></msubsup></mstyle><mrow><mrow><mo>(</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex174Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex174Xb.m2" class="ltx_Math" alttext="\displaystyle=F(t)+\left[\int_{t}^{t+2L}f(\tau)d\tau-La_{0}\right]" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mo>[</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>t</mi><mrow><mi>t</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow><mo>−</mo><mrow><mi>L</mi><mo>⁢</mo><msub><mi>a</mi><mn>0</mn></msub></mrow></mrow><mo>]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex174Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex174Xc.m2" class="ltx_Math" alttext="\displaystyle=F(t)." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Based on the last observation,
+the function <math id="Ch0.Sx1.SSx2.p4.m6" class="ltx_Math" alttext="F(t)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> has a Fourier series expansion, which we write
+as</p>
+<table id="Ch0.Ex175" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex175.m1" class="ltx_Math" alttext="F(t)=\frac{A_{0}}{2}+\sum_{n=1}^{\infty}\left[A_{n}\cos\left(\frac{n\pi t}{L}%
+\right)+B_{n}\sin\left(\frac{n\pi t}{L}\right)\right]." display="block"><mrow><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><msub><mi>A</mi><mn>0</mn></msub><mn>2</mn></mfrac><mo rspace="0.055em">+</mo><mrow><munderover><mo movablelimits="false" rspace="0em">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mo>[</mo><mrow><mrow><msub><mi>A</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>B</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The constant coefficient <math id="Ch0.Sx1.SSx2.p4.m7" class="ltx_Math" alttext="A_{0}" display="inline"><msub><mi>A</mi><mn>0</mn></msub></math> can be found via direct calculations,</p>
+<table id="Ch0.Ex176" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex176.m1" class="ltx_Math" alttext="A_{0}=\frac{1}{L}\int_{-L}^{L}F(t)\,dt," display="block"><mrow><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>=</mo><mrow><mfrac><mn>1</mn><mi>L</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>L</mi></mrow><mi>L</mi></msubsup><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">as <math id="Ch0.Sx1.SSx2.p4.m8" class="ltx_Math" alttext="F(t)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> is known to us. We
+determine the other coefficients by applying the formulas derived in
+the previous sections, with</p>
+<table id="Ch0.Ex177" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex177X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex177X.m2" class="ltx_Math" alttext="\displaystyle A_{n}" display="inline"><msub><mi>A</mi><mi>n</mi></msub></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex177X.m3" class="ltx_Math" alttext="\displaystyle=\frac{1}{L}\int_{-L}^{L}F(t)\cos\left(\frac{n\pi t}{L}\right)dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>L</mi></mrow><mi>L</mi></msubsup></mstyle><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex177Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex177Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{L}\left\{\left.F(t)\frac{\sin\left(\frac{n\pi t}{L}%
+\right)}{\frac{n\pi}{L}}\right|_{-L}^{L}-\int_{-L}^{L}\frac{\sin\left(\frac{n%
+\pi t}{L}\right)}{\frac{n\pi}{L}}F^{\prime}(t)\,dt\right\}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo>⁢</mo><mrow><mo>{</mo><mrow><msubsup><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow><mi>L</mi></mfrac></mfrac></mstyle></mrow><mo>|</mo></mrow><mrow><mo>−</mo><mi>L</mi></mrow><mi>L</mi></msubsup><mo>−</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>L</mi></mrow><mi>L</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow><mi>L</mi></mfrac></mfrac></mstyle><mo>⁢</mo><msup><mi>F</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>}</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex177Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex177Xb.m2" class="ltx_Math" alttext="\displaystyle=-\frac{1}{L}\cdot\frac{L}{n\pi}\int_{-L}^{L}\sin\left(\frac{n\pi
+t%
+}{L}\right)\left(f(t)-\frac{a_{0}}{2}\right)dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>−</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo lspace="0.222em" rspace="0.222em">⋅</mo><mstyle displaystyle="true"><mfrac><mi>L</mi><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle></mrow><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>L</mi></mrow><mi>L</mi></msubsup></mstyle><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex177Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex177Xc.m2" class="ltx_Math" alttext="\displaystyle=-\frac{L}{n\pi}b_{n}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mi>L</mi><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><msub><mi>b</mi><mi>n</mi></msub></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">In the above, integration by parts has been carried, and <math id="Ch0.Sx1.SSx2.p4.m9" class="ltx_Math" alttext="b_{n}" display="inline"><msub><mi>b</mi><mi>n</mi></msub></math>’s are
+coefficients of the Fourier series expansion of the original function
+<math id="Ch0.Sx1.SSx2.p4.m10" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>. The other coefficients <math id="Ch0.Sx1.SSx2.p4.m11" class="ltx_Math" alttext="B_{n}" display="inline"><msub><mi>B</mi><mi>n</mi></msub></math> are calcualted in a similar way,</p>
+<table id="Ch0.Ex178" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex178X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex178X.m2" class="ltx_Math" alttext="\displaystyle B_{n}" display="inline"><msub><mi>B</mi><mi>n</mi></msub></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex178X.m3" class="ltx_Math" alttext="\displaystyle=\frac{1}{L}\int_{-L}^{L}F(t)\sin\left(\frac{n\pi t}{L}\right)dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>L</mi></mrow><mi>L</mi></msubsup></mstyle><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex178Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex178Xa.m2" class="ltx_Math" alttext="\displaystyle=-\frac{1}{L}\left[F(t)\frac{\cos\left(\frac{n\pi t}{L}\right)}{-%
+\frac{n\pi}{L}}\right]_{-L}^{L}+\frac{1}{L}\int_{-L}^{L}\frac{\cos\left(\frac{%
+n\pi t}{L}\right)}{\frac{n\pi}{L}}F^{\prime}(t)\,dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo>⁢</mo><msubsup><mrow><mo>[</mo><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow><mrow><mo>−</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow><mi>L</mi></mfrac></mrow></mfrac></mstyle></mrow><mo>]</mo></mrow><mrow><mo>−</mo><mi>L</mi></mrow><mi>L</mi></msubsup></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>L</mi></mrow><mi>L</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow><mi>L</mi></mfrac></mfrac></mstyle><mo>⁢</mo><msup><mi>F</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex178Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex178Xb.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{L}\cdot\frac{L}{n\pi}\int_{-L}^{L}\left(f(t)-\frac{a_{0%
+}}{2}\right)\cos\left(\frac{n\pi t}{L}\right)dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo lspace="0.222em" rspace="0.222em">⋅</mo><mstyle displaystyle="true"><mfrac><mi>L</mi><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle></mrow><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>L</mi></mrow><mi>L</mi></msubsup></mstyle><mrow><mrow><mo>(</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex178Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex178Xc.m2" class="ltx_Math" alttext="\displaystyle=\frac{L}{n\pi}a_{n}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mi>L</mi><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><msub><mi>a</mi><mi>n</mi></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx1.SSx2.p5" class="ltx_para">
+<p class="ltx_p">We now turn back to our <span class="ltx_text ltx_font_bold">Example 2</span> in the above.</p>
+</div>
+<div id="Ch0.Sx1.SSx2.p6" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Solution (of Example 2):</span> The function <math id="Ch0.Sx1.SSx2.p6.m1" class="ltx_Math" alttext="f(t)=t" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>t</mi></mrow></math> over
+<math id="Ch0.Sx1.SSx2.p6.m2" class="ltx_Math" alttext="[-\pi,\,\pi]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mi>π</mi></mrow><mo rspace="0.337em">,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></math> has Fourier series expansion</p>
+<table id="Ch0.Ex179" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex179.m1" class="ltx_Math" alttext="f(t)=-2\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n}\sin nt." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup><mi>n</mi></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo lspace="0.167em">⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">In this series expansion,</p>
+</div>
+<div id="Ch0.Sx1.SSx2.p7" class="ltx_para">
+<table id="Ch0.Ex180" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex180.m1" class="ltx_Math" alttext="L=\pi," display="block"><mrow><mrow><mi>L</mi><mo>=</mo><mi>π</mi></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">and</p>
+<table id="Ch0.Ex181" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex181.m1" class="ltx_Math" alttext="a_{0}=0,\qquad a_{n}=0,\qquad b_{n}=-\frac{2(-1)^{n}}{n}=\frac{2(-1)^{n+1}}{n}." display="block"><mrow><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>0</mn></mrow><mo rspace="2.167em">,</mo><mrow><msub><mi>b</mi><mi>n</mi></msub><mo>=</mo><mrow><mo>−</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup></mrow><mi>n</mi></mfrac></mrow><mo>=</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mi>n</mi></mfrac></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We construct the integral according to the formula given in the above,</p>
+<table id="Ch0.Ex182" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex182.m1" class="ltx_Math" alttext="F(t)=\int_{0}^{t}\left(f(\tau)-\frac{a_{0}}{2}\right)d\tau=\int_{0}^{t}\tau\,d%
+\tau=\frac{t^{2}}{2}." display="block"><mrow><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo rspace="0em">∫</mo><mn>0</mn><mi>t</mi></msubsup><mrow><mrow><mo>(</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>t</mi></msubsup><mrow><mi>τ</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>τ</mi></mrow></mrow></mrow><mo>=</mo><mfrac><msup><mi>t</mi><mn>2</mn></msup><mn>2</mn></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The coefficients of the Fourier series expansion of this function can
+be computed using the formulas that have just been derived in the
+above,</p>
+<table id="Ch0.Ex183" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex183.m1" class="ltx_Math" alttext="A_{0}=\frac{1}{\pi}\int_{-\pi}^{\pi}\frac{t^{2}}{2}\,dt=\frac{1}{\pi}\left.%
+\frac{t^{3}}{6}\right|_{-\pi}^{\pi}=\frac{2\pi^{3}}{\pi\times 6}=\frac{\pi^{2}%
+}{3}." display="block"><mrow><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>=</mo><mrow><mfrac><mn>1</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>π</mi></mrow><mi>π</mi></msubsup><mrow><mfrac><msup><mi>t</mi><mn>2</mn></msup><mn>2</mn></mfrac><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>=</mo><msubsup><mrow><mrow><mfrac><mn>1</mn><mi>π</mi></mfrac><mo>⁢</mo><mfrac><msup><mi>t</mi><mn>3</mn></msup><mn>6</mn></mfrac></mrow><mo>|</mo></mrow><mrow><mo>−</mo><mi>π</mi></mrow><mi>π</mi></msubsup><mo>=</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><msup><mi>π</mi><mn>3</mn></msup></mrow><mrow><mi>π</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mn>6</mn></mrow></mfrac><mo>=</mo><mfrac><msup><mi>π</mi><mn>2</mn></msup><mn>3</mn></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx1.SSx2.p8" class="ltx_para">
+<table id="Ch0.Ex184" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex184.m1" class="ltx_Math" alttext="A_{n}=-\frac{L}{n\pi}b_{n}=-\frac{\pi}{n\pi}\cdot\frac{2(-1)^{n+1}}{n}=\frac{2%
+(-1)^{n}}{n^{2}}." display="block"><mrow><mrow><msub><mi>A</mi><mi>n</mi></msub><mo>=</mo><mrow><mo>−</mo><mrow><mfrac><mi>L</mi><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><msub><mi>b</mi><mi>n</mi></msub></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mfrac><mi>π</mi><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo lspace="0.222em" rspace="0.222em">⋅</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mi>n</mi></mfrac></mrow></mrow><mo>=</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup></mrow><msup><mi>n</mi><mn>2</mn></msup></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx1.SSx2.p9" class="ltx_para">
+<table id="Ch0.Ex185" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex185.m1" class="ltx_Math" alttext="B_{n}=0." display="block"><mrow><mrow><msub><mi>B</mi><mi>n</mi></msub><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus, the function <math id="Ch0.Sx1.SSx2.p9.m1" class="ltx_Math" alttext="F(t)=\frac{t^{2}}{2}" display="inline"><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><msup><mi>t</mi><mn>2</mn></msup><mn>2</mn></mfrac></mrow></math> has Fourier series expansion</p>
+<table id="Ch0.Ex186" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex186.m1" class="ltx_Math" alttext="\frac{t^{2}}{2}=\frac{\pi^{2}}{6}+\sum_{n=1}^{\infty}\frac{2(-1)^{n}}{n^{2}}%
+\cos nt." display="block"><mrow><mrow><mfrac><msup><mi>t</mi><mn>2</mn></msup><mn>2</mn></mfrac><mo>=</mo><mrow><mfrac><msup><mi>π</mi><mn>2</mn></msup><mn>6</mn></mfrac><mo rspace="0.055em">+</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mfrac><mrow><mn>2</mn><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup></mrow><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Multiplying both sides by a factor of <math id="Ch0.Sx1.SSx2.p9.m2" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math>, we obtain the Fourier
+series expansion that this example asks for <math id="Ch0.Sx1.SSx2.p9.m3" class="ltx_Math" alttext="t^{2}" display="inline"><msup><mi>t</mi><mn>2</mn></msup></math>,</p>
+<table id="Ch0.Ex187" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex187.m1" class="ltx_Math" alttext="t^{2}=\frac{\pi^{2}}{3}+4\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{2}}\cos nt." display="block"><mrow><mrow><msup><mi>t</mi><mn>2</mn></msup><mo>=</mo><mrow><mfrac><msup><mi>π</mi><mn>2</mn></msup><mn>3</mn></mfrac><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx1.SSx2.p10" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p"><span class="ltx_rule" style="width:100%;height:1px;background:black;display:inline-block;"> </span></p>
+</div>
+<div id="Ch0.Sx1.SSx2.p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="font-size:90%;">We note that this property of Fourier series is called term-by-term
+integration, because</span></p>
+<table id="Ch0.Ex188" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex188.m1" class="ltx_Math" alttext="A_{n}=-\frac{L}{n\pi}b_{n}" display="block"><mrow><msub><mi mathsize="90%">A</mi><mi mathsize="90%">n</mi></msub><mo mathsize="90%">=</mo><mrow><mo mathsize="90%">−</mo><mrow><mfrac><mi mathsize="90%">L</mi><mrow><mi mathsize="90%">n</mi><mo>⁢</mo><mi mathsize="90%">π</mi></mrow></mfrac><mo>⁢</mo><msub><mi mathsize="90%">b</mi><mi mathsize="90%">n</mi></msub></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="font-size:90%;">results from an integration of the term</span></p>
+<table id="Ch0.Ex189" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex189.m1" class="ltx_Math" alttext="b_{n}\sin\left(\frac{n\pi t}{L}\right)," display="block"><mrow><mrow><msub><mi mathsize="90%">b</mi><mi mathsize="90%">n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi mathsize="90%">sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi mathsize="90%">n</mi><mo>⁢</mo><mi mathsize="90%">π</mi><mo>⁢</mo><mi mathsize="90%">t</mi></mrow><mi mathsize="90%">L</mi></mfrac><mo>)</mo></mrow></mrow></mrow><mo mathsize="90%">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="font-size:90%;">and</span></p>
+<table id="Ch0.Ex190" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex190.m1" class="ltx_Math" alttext="B_{n}=\frac{L}{n\pi}a_{n}" display="block"><mrow><msub><mi mathsize="90%">B</mi><mi mathsize="90%">n</mi></msub><mo mathsize="90%">=</mo><mrow><mfrac><mi mathsize="90%">L</mi><mrow><mi mathsize="90%">n</mi><mo>⁢</mo><mi mathsize="90%">π</mi></mrow></mfrac><mo>⁢</mo><msub><mi mathsize="90%">a</mi><mi mathsize="90%">n</mi></msub></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="font-size:90%;">results from an integration of the term</span></p>
+<table id="Ch0.Ex191" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex191.m1" class="ltx_Math" alttext="a_{n}\cos\left(\frac{n\pi t}{L}\right)." display="block"><mrow><mrow><msub><mi mathsize="90%">a</mi><mi mathsize="90%">n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi mathsize="90%">cos</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi mathsize="90%">n</mi><mo>⁢</mo><mi mathsize="90%">π</mi><mo>⁢</mo><mi mathsize="90%">t</mi></mrow><mi mathsize="90%">L</mi></mfrac><mo>)</mo></mrow></mrow></mrow><mo lspace="0em" mathsize="90%">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="font-size:90%;">In fact, if we integrate</span></p>
+<table id="Ch0.Ex192" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex192.m1" class="ltx_Math" alttext="f(t)-\frac{a_{0}}{2}=\sum_{n=1}^{\infty}\left[a_{n}\cos\left(\frac{n\pi t}{L}%
+\right)+b_{n}\sin\left(\frac{n\pi t}{L}\right)\right]" display="block"><mrow><mrow><mrow><mi mathsize="90%">f</mi><mo>⁢</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">t</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow><mo mathsize="90%">−</mo><mfrac><msub><mi mathsize="90%">a</mi><mn mathsize="90%">0</mn></msub><mn mathsize="90%">2</mn></mfrac></mrow><mo mathsize="90%" rspace="0.111em">=</mo><mrow><munderover><mo maxsize="90%" minsize="90%" movablelimits="false" rspace="0em" stretchy="true">∑</mo><mrow><mi mathsize="90%">n</mi><mo mathsize="90%">=</mo><mn mathsize="90%">1</mn></mrow><mi mathsize="90%" mathvariant="normal">∞</mi></munderover><mrow><mo>[</mo><mrow><mrow><msub><mi mathsize="90%">a</mi><mi mathsize="90%">n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi mathsize="90%">cos</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi mathsize="90%">n</mi><mo>⁢</mo><mi mathsize="90%">π</mi><mo>⁢</mo><mi mathsize="90%">t</mi></mrow><mi mathsize="90%">L</mi></mfrac><mo>)</mo></mrow></mrow></mrow><mo mathsize="90%">+</mo><mrow><msub><mi mathsize="90%">b</mi><mi mathsize="90%">n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi mathsize="90%">sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi mathsize="90%">n</mi><mo>⁢</mo><mi mathsize="90%">π</mi><mo>⁢</mo><mi mathsize="90%">t</mi></mrow><mi mathsize="90%">L</mi></mfrac><mo>)</mo></mrow></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="font-size:90%;">over <math id="Ch0.Sx1.SSx2.p11.m1" class="ltx_Math" alttext="[0,\,t]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo rspace="0.337em">,</mo><mi>t</mi><mo stretchy="false">]</mo></mrow></math>, we have</span></p>
+<table id="Ch0.Ex193" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex193X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex193X.m2" class="ltx_Math" alttext="\displaystyle\int_{0}^{t}\left(f(\tau)-\frac{a_{0}}{2}\right)d\tau" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mn mathsize="90%">0</mn><mi mathsize="90%">t</mi></msubsup></mstyle><mrow><mrow><mo>(</mo><mrow><mrow><mi mathsize="90%">f</mi><mo>⁢</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">τ</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow><mo mathsize="90%">−</mo><mstyle displaystyle="true"><mfrac><msub><mi mathsize="90%">a</mi><mn mathsize="90%">0</mn></msub><mn mathsize="90%">2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">τ</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex193X.m3" class="ltx_Math" alttext="\displaystyle=\sum_{n=1}^{\infty}\underbrace{a_{n}\left(\frac{L}{n\pi}\right)}%
+_{B_{n}}\sin\left(\frac{n\pi t}{L}\right)" display="inline"><mrow><mi></mi><mo mathsize="90%">=</mo><mrow><mstyle displaystyle="true"><munderover><mo maxsize="90%" minsize="90%" movablelimits="false" stretchy="true">∑</mo><mrow><mi mathsize="90%">n</mi><mo mathsize="90%">=</mo><mn mathsize="90%">1</mn></mrow><mi mathsize="90%" mathvariant="normal">∞</mi></munderover></mstyle><mrow><munder><munder accentunder="true"><mrow><msub><mi mathsize="90%">a</mi><mi mathsize="90%">n</mi></msub><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mi mathsize="90%">L</mi><mrow><mi mathsize="90%">n</mi><mo>⁢</mo><mi mathsize="90%">π</mi></mrow></mfrac></mstyle><mo>)</mo></mrow></mrow><mo mathsize="90%">⏟</mo></munder><msub><mi mathsize="90%">B</mi><mi mathsize="90%">n</mi></msub></munder><mo lspace="0.167em">⁢</mo><mrow><mi mathsize="90%">sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathsize="90%">n</mi><mo>⁢</mo><mi mathsize="90%">π</mi><mo>⁢</mo><mi mathsize="90%">t</mi></mrow><mi mathsize="90%">L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex193Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex193Xa.m2" class="ltx_Math" alttext="\displaystyle\quad-\sum_{n=1}^{\infty}\underbrace{b_{n}\left(\frac{L}{n\pi}%
+\right)}_{-A_{n}}\cos\left(\frac{n\pi t}{L}\right)+\underbrace{\sum_{n=1}^{%
+\infty}b_{n}\left(\frac{L}{n\pi}\right)}_{A_{0}/2}," display="inline"><mrow><mrow><mrow><mo mathsize="90%">−</mo><mrow><mstyle displaystyle="true"><munderover><mo maxsize="90%" minsize="90%" movablelimits="false" stretchy="true">∑</mo><mrow><mi mathsize="90%">n</mi><mo mathsize="90%">=</mo><mn mathsize="90%">1</mn></mrow><mi mathsize="90%" mathvariant="normal">∞</mi></munderover></mstyle><mrow><munder><munder accentunder="true"><mrow><msub><mi mathsize="90%">b</mi><mi mathsize="90%">n</mi></msub><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mi mathsize="90%">L</mi><mrow><mi mathsize="90%">n</mi><mo>⁢</mo><mi mathsize="90%">π</mi></mrow></mfrac></mstyle><mo>)</mo></mrow></mrow><mo mathsize="90%">⏟</mo></munder><mrow><mo mathsize="90%">−</mo><msub><mi mathsize="90%">A</mi><mi mathsize="90%">n</mi></msub></mrow></munder><mo lspace="0.167em">⁢</mo><mrow><mi mathsize="90%">cos</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathsize="90%">n</mi><mo>⁢</mo><mi mathsize="90%">π</mi><mo>⁢</mo><mi mathsize="90%">t</mi></mrow><mi mathsize="90%">L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow></mrow></mrow><mo mathsize="90%">+</mo><munder><munder accentunder="true"><mrow><mstyle displaystyle="true"><munderover><mo maxsize="90%" minsize="90%" movablelimits="false" stretchy="true">∑</mo><mrow><mi mathsize="90%">n</mi><mo mathsize="90%">=</mo><mn mathsize="90%">1</mn></mrow><mi mathsize="90%" mathvariant="normal">∞</mi></munderover></mstyle><mrow><msub><mi mathsize="90%">b</mi><mi mathsize="90%">n</mi></msub><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mi mathsize="90%">L</mi><mrow><mi mathsize="90%">n</mi><mo>⁢</mo><mi mathsize="90%">π</mi></mrow></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow><mo mathsize="90%">⏟</mo></munder><mrow><msub><mi mathsize="90%">A</mi><mn mathsize="90%">0</mn></msub><mo maxsize="90%" minsize="90%" stretchy="true" symmetric="true">/</mo><mn mathsize="90%">2</mn></mrow></munder></mrow><mo mathsize="90%">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="font-size:90%;">and the same set of formulas result. </span></p>
+</div>
+</section>
+<section id="Ch0.Sx1.SSx3" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">3. Parseval’s equality</h3>
+
+<div id="Ch0.Sx1.SSx3.p1" class="ltx_para">
+<p class="ltx_p">Many quantities in physics or engineering take the quadratic power forms,
+such as kinetic energy, which is a quadratic of velocity. Here, we
+study how quadratic quantities can be calculated from their Fourier
+series expansions. The quadratic
+power of a periodic function <math id="Ch0.Sx1.SSx3.p1.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> on <math id="Ch0.Sx1.SSx3.p1.m2" class="ltx_Math" alttext="[\tau,\tau+2L]" display="inline"><mrow><mo stretchy="false">[</mo><mi>τ</mi><mo>,</mo><mrow><mi>τ</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow><mo stretchy="false">]</mo></mrow></math> is defined as</p>
+<table id="Ch0.Ex194" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex194.m1" class="ltx_Math" alttext="\frac{1}{L}\int_{\tau}^{\tau+2L}|f(t)|^{2}\,dt." display="block"><mrow><mrow><mfrac><mn>1</mn><mi>L</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo rspace="0em">∫</mo><mi>τ</mi><mrow><mi>τ</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></msubsup><mrow><msup><mrow><mo stretchy="false">|</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This mathematical expression mirrors the definition for kinetic energy, <math id="Ch0.Sx1.SSx3.p1.m3" class="ltx_Math" alttext="\frac{1}{2}mv^{2}" display="inline"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><mi>m</mi><mo>⁢</mo><msup><mi>v</mi><mn>2</mn></msup></mrow></math>, in physics.</p>
+</div>
+<div id="Ch0.Sx1.SSx3.p2" class="ltx_para">
+<p class="ltx_p">Assume that the function <math id="Ch0.Sx1.SSx3.p2.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> has Fourier expansion</p>
+<table id="Ch0.Ex195" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex195.m1" class="ltx_Math" alttext="f(t)=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left(a_{n}\cos\left(\frac{n\pi t}{L}%
+\right)+b_{n}\sin\left(\frac{n\pi t}{L}\right)\right)." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac><mo rspace="0.055em">+</mo><mrow><munderover><mo movablelimits="false" rspace="0em">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mo>(</mo><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>b</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Then the power of <math id="Ch0.Sx1.SSx3.p2.m2" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> on <math id="Ch0.Sx1.SSx3.p2.m3" class="ltx_Math" alttext="[\tau,\tau+2L]" display="inline"><mrow><mo stretchy="false">[</mo><mi>τ</mi><mo>,</mo><mrow><mi>τ</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow><mo stretchy="false">]</mo></mrow></math> can be calculated as</p>
+<table id="Ch0.Ex196" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex196X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex196X.m2" class="ltx_Math" alttext="\displaystyle\frac{1}{L}\int_{\tau}^{\tau+2L}|f(t)|^{2}dt" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>τ</mi><mrow><mi>τ</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></msubsup></mstyle><mrow><msup><mrow><mo stretchy="false">|</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex196Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex196Xa.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex196Xa.m3" class="ltx_Math" alttext="\displaystyle\frac{1}{L}\int_{\tau}^{\tau+2L}f(t)\cdot f(t)dt" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>τ</mi><mrow><mi>τ</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></msubsup></mstyle><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex196Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex196Xb.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex196Xb.m3" class="ltx_Math" alttext="\displaystyle\frac{1}{L}\int_{\tau}^{\tau+2L}f(t)\left(\frac{a_{0}}{2}+\sum_{n%
+=1}^{\infty}\left(a_{n}\cos\left(\frac{n\pi t}{L}\right)+b_{n}\sin\left(\frac{%
+n\pi t}{L}\right)\right)\right)dt" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>τ</mi><mrow><mi>τ</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac></mstyle><mo>+</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mo>(</mo><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>b</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex196Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex196Xc.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex196Xc.m3" class="ltx_Math" alttext="\displaystyle\frac{a_{0}}{2}\frac{1}{L}\int_{\tau}^{\tau+2L}f(t)dt+\sum_{n=1}^%
+{\infty}\left(a_{n}\frac{1}{L}\int_{\tau}^{\tau+2L}f(t)\cos\left(\frac{n\pi t}%
+{L}\right)dt+b_{n}\frac{1}{L}\int_{\tau}^{\tau+2L}f(t)\sin\left(\frac{n\pi t}{%
+L}\right)dt\right)." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>τ</mi><mrow><mi>τ</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mo>(</mo><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>τ</mi><mrow><mi>τ</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>b</mi><mi>n</mi></msub><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>L</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>τ</mi><mrow><mi>τ</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>t</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We note that the integrals on the right-hand side turn out to be the
+formulas for the Fourier series coefficients themselves! Hence, we end
+up with the relation that</p>
+<table id="Ch0.Ex197" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex197.m1" class="ltx_Math" alttext="\frac{1}{L}\int_{\tau}^{\tau+2L}|f(t)|^{2}dt=\frac{a_{0}^{2}}{2}+\sum_{n=1}^{%
+\infty}(a_{n}^{2}+b_{n}^{2})." display="block"><mrow><mrow><mrow><mfrac><mn>1</mn><mi>L</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo rspace="0em">∫</mo><mi>τ</mi><mrow><mi>τ</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow></mrow></msubsup><mrow><msup><mrow><mo stretchy="false">|</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mfrac><msubsup><mi>a</mi><mn>0</mn><mn>2</mn></msubsup><mn>2</mn></mfrac><mo rspace="0.055em">+</mo><mrow><munderover><mo movablelimits="false" rspace="0em">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>a</mi><mi>n</mi><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>b</mi><mi>n</mi><mn>2</mn></msubsup></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This is Parseval’s equality. It allows us to calculate the power of a function by summing up the squares of its Fourier coefficients.</p>
+</div>
+<div id="Ch0.Sx1.SSx3.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Example 3.</span>
+The Fourier series for</p>
+<table id="Ch0.Ex198" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex198.m1" class="ltx_Math" alttext="f(t)=t,\qquad t\in[-\pi,\pi]" display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>t</mi></mrow><mo rspace="2.167em">,</mo><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mi>π</mi></mrow><mo>,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">is</p>
+<table id="Ch0.Ex199" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex199.m1" class="ltx_Math" alttext="f(t)=\sum_{n=1}^{\infty}\frac{2(-1)^{n+1}}{n}\sin(nt)." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mfrac><mrow><mn>2</mn><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mi>n</mi></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">By Parseval’s equality,</p>
+<table id="Ch0.Ex200" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex200.m1" class="ltx_Math" alttext="\frac{1}{\pi}\int_{-\pi}^{\pi}t^{2}dt=\sum_{n=1}^{\infty}\frac{4}{n^{2}}." display="block"><mrow><mrow><mrow><mfrac><mn>1</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>π</mi></mrow><mi>π</mi></msubsup><mrow><msup><mi>t</mi><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mfrac><mn>4</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The left-hand side of this equation can be evaluated easily,</p>
+<table id="Ch0.Ex201" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex201.m1" class="ltx_Math" alttext="\frac{1}{\pi}\int_{-\pi}^{\pi}t^{2}dt=\frac{1}{\pi}\frac{t^{3}}{3}\Big{|}_{-%
+\pi}^{\pi}=\frac{2}{3}\pi^{2}." display="block"><mrow><mrow><mrow><mfrac><mn>1</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>π</mi></mrow><mi>π</mi></msubsup><mrow><msup><mi>t</mi><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>=</mo><msubsup><mrow><mrow><mfrac><mn>1</mn><mi>π</mi></mfrac><mo>⁢</mo><mfrac><msup><mi>t</mi><mn>3</mn></msup><mn>3</mn></mfrac></mrow><mo maxsize="160%" minsize="160%">|</mo></mrow><mrow><mo>−</mo><mi>π</mi></mrow><mi>π</mi></msubsup><mo>=</mo><mrow><mfrac><mn>2</mn><mn>3</mn></mfrac><mo>⁢</mo><msup><mi>π</mi><mn>2</mn></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus we have reached an identity that is quite unusual,</p>
+<table id="Ch0.Ex202" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex202.m1" class="ltx_Math" alttext="\frac{2}{3}\pi^{2}=\sum_{n=1}^{\infty}\frac{4}{n^{2}}\quad\Longrightarrow\quad%
+\sum_{n=1}^{\infty}\frac{1}{n^{2}}=\frac{\pi^{2}}{6}." display="block"><mrow><mrow><mrow><mrow><mfrac><mn>2</mn><mn>3</mn></mfrac><mo>⁢</mo><msup><mi>π</mi><mn>2</mn></msup></mrow><mo rspace="0.111em">=</mo><mrow><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mfrac><mn>4</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac></mrow><mspace width="1em"></mspace><mo stretchy="false">⟹</mo></mrow></mrow><mspace width="1em"></mspace><mrow><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac></mrow><mo>=</mo><mfrac><msup><mi>π</mi><mn>2</mn></msup><mn>6</mn></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">It tells us that the infinite series involving the inverse of the
+square of all natural numbers, unlike the infamous harmonic series <math id="Ch0.Sx1.SSx3.p3.m1" class="ltx_Math" alttext="1+\frac{1}{2}+\frac{1}{3}+\cdots" display="inline"><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>+</mo><mi mathvariant="normal">⋯</mi></mrow></math>,
+actually converges, to a very special number: <math id="Ch0.Sx1.SSx3.p3.m2" class="ltx_Math" alttext="\frac{\pi^{2}}{6}" display="inline"><mfrac><msup><mi>π</mi><mn>2</mn></msup><mn>6</mn></mfrac></math>!</p>
+</div>
+</section>
+<section id="Ch0.Sx1.SSx4" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">4. Gibbs phenomena<sup class="ltx_sup">∗</sup>
+</h3>
+<span id="Ch0.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup>
+          <span class="ltx_tag ltx_tag_note">1</span>
+          
+          
+          
+        Starred sections are
+recommended but not required readings.</span></span></span>
+<div id="Ch0.Sx1.SSx4.p1" class="ltx_para">
+<p class="ltx_p">We begin with an example. The function</p>
+<table id="Ch0.Ex203" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex203.m1" class="ltx_Math" alttext="f(t)=\begin{cases}-1,&amp;-\pi&lt;t\leq 0,\\
+1,&amp;0&lt;t\leq\pi.\end{cases}" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mo>−</mo><mi>π</mi></mrow><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>1</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mn>0</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mi>π</mi></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">has Fourier series</p>
+<table id="Ch0.Ex204" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex204.m1" class="ltx_Math" alttext="f(t)=\frac{4}{\pi}\sum_{m=1}^{\infty}\frac{\sin[(2m-1)t]}{2m-1}." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>4</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>m</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>m</mi></mrow><mo>−</mo><mn>1</mn></mrow></mfrac></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">As we have done before, we plot a few finite sums of this series
+(Figure <a href="#Ch0.F13" title="Figure 13 ‣ 4. Gibbs phenomena∗ ‣ Fourier coefficients over a general interval ‣ Numerical Methods for Engineers" class="ltx_ref"><span class="ltx_text ltx_ref_tag">13</span></a>), and
+observe their convergence to the underlying function. As the number of
+terms included increases, the finite sum does converge to the underlying
+function in most places. The only troublesome spots are places where
+the underlying functions have jumps (discontinuities), and the graphs
+of the finite sums exhibit some humps. What’s worrisome is that
+the magnitudes of those humps appear to persist, even as the number of
+terms in
+the finite sum increases; the only change, as the number goes up, is
+that the humps appear to move closer to the discontinuous points.
+Given that the magnitudes of those humps appear to persist,
+is the convergence conclusion of the Dirichlet theorem still valid?</p>
+</div>
+<div id="Ch0.Sx1.SSx4.p2" class="ltx_para">
+<p class="ltx_p">What’s just observed on the graphs of Fourier series around the
+discontinuity points are called <span class="ltx_text ltx_font_italic">Gibbs phenomenon</span>. In this
+section, we want
+to perform an analysis on the Fourier series in order to gain some
+understanding of what is happening here.</p>
+</div>
+<figure id="Ch0.F13" class="ltx_figure"><img src="figures/chapter02_gibbs_square_wave_partial_sums.png" id="Ch0.F13.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="509" height="399" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 13: </span>Gibbs phenomenon in Fourier series approximations of
+discontinuous functions. </figcaption>
+</figure>
+<div id="Ch0.Sx1.SSx4.p3" class="ltx_para">
+<p class="ltx_p">Let <math id="Ch0.Sx1.SSx4.p3.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> be a function on <math id="Ch0.Sx1.SSx4.p3.m2" class="ltx_Math" alttext="[0,2\pi]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow><mo stretchy="false">]</mo></mrow></math> with Fourier series</p>
+<table id="Ch0.Ex205" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex205.m1" class="ltx_Math" alttext="f(t)=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left(a_{n}\cos(nt)+b_{n}\sin(nt)%
+\right)." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac><mo rspace="0.055em">+</mo><mrow><munderover><mo movablelimits="false" rspace="0em">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mo>(</mo><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>b</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The coefficients are given by</p>
+<table id="Ch0.Ex206" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex206.m1" class="ltx_Math" alttext="a_{0}=\frac{1}{\pi}\int_{0}^{2\pi}f(t)dt," display="block"><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mrow><mfrac><mn>1</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch0.Ex207" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex207.m1" class="ltx_Math" alttext="a_{n}=\frac{1}{\pi}\int_{0}^{2\pi}f(t)\cos(nt)dt," display="block"><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mrow><mfrac><mn>1</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch0.Ex208" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex208.m1" class="ltx_Math" alttext="b_{n}=\frac{1}{\pi}\int_{0}^{2\pi}f(t)\sin(nt)dt." display="block"><mrow><mrow><msub><mi>b</mi><mi>n</mi></msub><mo>=</mo><mrow><mfrac><mn>1</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The Fourier series (1) is infinite, but in practice we can only deal with finite numbers of terms. Let <math id="Ch0.Sx1.SSx4.p3.m3" class="ltx_Math" alttext="S_{N}" display="inline"><msub><mi>S</mi><mi>N</mi></msub></math> be a partial sum of the first <math id="Ch0.Sx1.SSx4.p3.m4" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> terms from the Fourier series,</p>
+<table id="Ch0.Ex209" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex209.m1" class="ltx_Math" alttext="S_{N}(t)=\frac{a_{0}}{2}+\sum_{n=1}^{N}\left(a_{n}\cos(nt)+b_{n}\sin(nt)\right)." display="block"><mrow><mrow><mrow><msub><mi>S</mi><mi>N</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac><mo rspace="0.055em">+</mo><mrow><munderover><mo movablelimits="false" rspace="0em">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><mrow><mo>(</mo><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>b</mi><mi>n</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Then, substituting the formulas for <math id="Ch0.Sx1.SSx4.p3.m5" class="ltx_Math" alttext="a_{0}" display="inline"><msub><mi>a</mi><mn>0</mn></msub></math>, <math id="Ch0.Sx1.SSx4.p3.m6" class="ltx_Math" alttext="a_{n}" display="inline"><msub><mi>a</mi><mi>n</mi></msub></math>, and <math id="Ch0.Sx1.SSx4.p3.m7" class="ltx_Math" alttext="b_{n}" display="inline"><msub><mi>b</mi><mi>n</mi></msub></math> into the
+right-hand side, we have</p>
+<table id="Ch0.Ex210" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex210X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex210X.m2" class="ltx_Math" alttext="\displaystyle S_{N}(t)" display="inline"><mrow><msub><mi>S</mi><mi>N</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex210X.m3" class="ltx_Math" alttext="\displaystyle=\frac{1}{2\pi}\int_{0}^{2\pi}f(x)dx+\sum_{n=1}^{N}\left[\frac{1}%
+{\pi}\int_{0}^{2\pi}f(x)\cos(nx)dx\cos(nt)+\frac{1}{\pi}\int_{0}^{2\pi}f(x)%
+\sin(nx)dx\sin(nt)\right]" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover></mstyle><mrow><mo>[</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>π</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>π</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex210Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex210Xa.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{\pi}\int_{0}^{2\pi}f(x)\left(\frac{1}{2}+\sum_{n=1}^{N}%
+\left(\cos(nx)\cos(nt)+\sin(nx)\sin(nt)\right)\right)dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>π</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>+</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover></mstyle><mrow><mo>(</mo><mrow><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex210Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex210Xb.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{\pi}\int_{0}^{2\pi}f(x)\left(\frac{1}{2}+\sum_{n=1}^{N}%
+\cos n(x-t)\right)dx." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>π</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>+</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover></mstyle><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>n</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">To reach the last line, of course the sum-difference formula for
+<math id="Ch0.Sx1.SSx4.p3.m8" class="ltx_Math" alttext="\cos(n(x-t))" display="inline"><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> has been used.
+We also note that</p>
+<table id="Ch0.Ex211" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex211.m1" class="ltx_Math" alttext="\frac{1}{2}+\sum_{n=1}^{N}\cos n(x-t)=\frac{\sin\left((N+\frac{1}{2})(x-t)%
+\right)}{2\sin\left(\frac{1}{2}(x-t)\right)}." display="block"><mrow><mrow><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo rspace="0.055em">+</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>n</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>=</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>N</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Hence, the <math id="Ch0.Sx1.SSx4.p3.m9" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>-term partial sum <math id="Ch0.Sx1.SSx4.p3.m10" class="ltx_Math" alttext="S_{N}(t)" display="inline"><mrow><msub><mi>S</mi><mi>N</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> can be expressed by a single integral,</p>
+<table id="Ch0.Ex212" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex212.m1" class="ltx_Math" alttext="S_{N}(t)=\frac{1}{2\pi}\int_{0}^{2\pi}f(x)\frac{\sin\left((N+\frac{1}{2})(x-t)%
+\right)}{\sin\left(\frac{1}{2}(x-t)\right)}dx." display="block"><mrow><mrow><mrow><msub><mi>S</mi><mi>N</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>N</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mfrac><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The factor other than <math id="Ch0.Sx1.SSx4.p3.m11" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> in the integrand is the scanning
+function, and the partial sums behave the way they do because of this
+function. We note that, for <math id="Ch0.Sx1.SSx4.p3.m12" class="ltx_Math" alttext="|x-t|\ll 1" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">|</mo></mrow><mo>≪</mo><mn>1</mn></mrow></math>,</p>
+<table id="Ch0.Ex213" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex213.m1" class="ltx_Math" alttext="\frac{\sin\left((N+\frac{1}{2})(x-t)\right)}{\sin\left(\frac{1}{2}(x-t)\right)%
+}\sim\frac{(N+\frac{1}{2})(x-t)}{\frac{1}{2}(x-t)}=2N+1." display="block"><mrow><mrow><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>N</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mfrac><mo>∼</mo><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>N</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>N</mi></mrow><mo>+</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This is also the maximum value for the scanning function over
+<math id="Ch0.Sx1.SSx4.p3.m13" class="ltx_Math" alttext="-\pi\leq x-t\leq\pi" display="inline"><mrow><mrow><mo>−</mo><mi>π</mi></mrow><mo>≤</mo><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><mo>≤</mo><mi>π</mi></mrow></math>.</p>
+</div>
+<figure id="Ch0.F14" class="ltx_figure"><img src="figures/chapter02_scanning_function_plots.png" id="Ch0.F14.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="568" height="431" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 14: </span>The Scanning functions</figcaption>
+</figure>
+<div id="Ch0.Sx1.SSx4.p4" class="ltx_para">
+<p class="ltx_p">To have a direct visual of the this function, we plot it, for <math id="Ch0.Sx1.SSx4.p4.m1" class="ltx_Math" alttext="N=1,\,2,\,4,\,8" display="inline"><mrow><mi>N</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mn> 2</mn><mo>,</mo><mn> 4</mn><mo>,</mo><mn> 8</mn></mrow></mrow></math>, and <math id="Ch0.Sx1.SSx4.p4.m2" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math>, in Figure <a href="#Ch0.F14" title="Figure 14 ‣ 4. Gibbs phenomena∗ ‣ Fourier coefficients over a general interval ‣ Numerical Methods for Engineers" class="ltx_ref"><span class="ltx_text ltx_ref_tag">14</span></a>. The plottings confirm
+that the function does peak at <math id="Ch0.Sx1.SSx4.p4.m3" class="ltx_Math" alttext="2N+1" display="inline"><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>N</mi></mrow><mo>+</mo><mn>1</mn></mrow></math>, just as the analysis
+predicted. What stands out, as <math id="Ch0.Sx1.SSx4.p4.m4" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> increases, is that there are
+ripples below zero, and the ripples move closer towards the center,
+but do not diminish. In fact, the magnitudes of these ripples only
+increase as <math id="Ch0.Sx1.SSx4.p4.m5" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> increases. This observation is confirmed by examining
+the areas of various regions under the graph (Figure
+<a href="#Ch0.F15" title="Figure 15 ‣ 4. Gibbs phenomena∗ ‣ Fourier coefficients over a general interval ‣ Numerical Methods for Engineers" class="ltx_ref"><span class="ltx_text ltx_ref_tag">15</span></a>). The area under the graph
+over the entire interval is <math id="Ch0.Sx1.SSx4.p4.m6" class="ltx_Math" alttext="2\pi" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></math>, as expected; the area under the
+center peak region is about 7.4, always greater than <math id="Ch0.Sx1.SSx4.p4.m7" class="ltx_Math" alttext="2\pi" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></math>, which
+means that area enclosed by the curve below the <math id="Ch0.Sx1.SSx4.p4.m8" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>-axis remains
+strictly positive, regardless of the value of <math id="Ch0.Sx1.SSx4.p4.m9" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>.</p>
+</div>
+<figure id="Ch0.F15" class="ltx_figure"><img src="figures/chapter02_gibbs_area_convergence.png" id="Ch0.F15.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="467" height="370" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 15: </span>Areas of regions under the scanning function curve.</figcaption>
+</figure>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_logical-block">
+        
+<div id="Ch0.Sx1.SSx4.p5" class="ltx_para">
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Mon Aug 24 14:25:17 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
