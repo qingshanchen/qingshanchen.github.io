@@ -1,0 +1,461 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Lecture 8</title>
+<!--Generated on Sun Sep 27 15:36:35 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on September 27, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">Lecture 8</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold" style="font-size:207%;">Nonlinear equations and the bisection method</span></p>
+</div>
+      
+</div>
+</section>
+<section id="Ch0.Sx4.SSx2" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Examples of NL equations</h4>
+
+<div id="Ch0.Sx4.SSx2.p1" class="ltx_para ltx_noindent">
+<ol id="Ch0.Sx4.I17" class="ltx_enumerate">
+<li id="Ch0.Sx4.I17.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch0.Sx4.I17.i1.p1" class="ltx_para ltx_noindent">
+<table id="Ch0.Ex135" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex135.m1" class="ltx_Math" alttext="x^{2}-2x-1=0." display="block"><mrow><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A general quadratic equation
+<math id="Ch0.Sx4.I17.i1.p1.m1" class="ltx_Math" alttext="ax^{2}+bx+c=0" display="inline"><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>c</mi></mrow><mo>=</mo><mn>0</mn></mrow></math>
+has solutions in the form of</p>
+<table id="Ch0.Ex136" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex136.m1" class="ltx_Math" alttext="\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}." display="block"><mrow><mfrac><mrow><mrow><mo>−</mo><mi>b</mi></mrow><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>c</mi></mrow></mrow></msqrt></mrow><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+<li id="Ch0.Sx4.I17.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch0.Sx4.I17.i2.p1" class="ltx_para ltx_noindent">
+<table id="Ch0.Ex137" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex137.m1" class="ltx_Math" alttext="\underbrace{x^{6}-3x^{5}+7x^{4}-3x^{3}+x^{2}+1}_{\text{Degree 6 polynomial}}=0" display="block"><mrow><munder><munder accentunder="true"><mrow><mrow><mrow><mrow><msup><mi>x</mi><mn>6</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>5</mn></msup></mrow></mrow><mo>+</mo><mrow><mn>7</mn><mo>⁢</mo><msup><mi>x</mi><mn>4</mn></msup></mrow></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></mrow><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>⏟</mo></munder><mtext>Degree 6 polynomial</mtext></munder><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">In general, no solution formula for polynomial of degree <math id="Ch0.Sx4.I17.i2.p1.m1" class="ltx_Math" alttext="&gt;5" display="inline"><mrow><mi></mi><mo>&gt;</mo><mn>5</mn></mrow></math>..</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I17.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="Ch0.Sx4.I17.i3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><math id="Ch0.Sx4.I17.i3.p1.m1" class="ltx_Math" alttext="10\cosh(x/4)-x=0" display="inline"><mrow><mrow><mrow><mn>10</mn><mo lspace="0.167em">⁢</mo><mrow><mi>cosh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>/</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>−</mo><mi>x</mi></mrow><mo>=</mo><mn>0</mn></mrow></math></p>
+</div>
+<div id="Ch0.Sx4.I17.i3.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Certainly, it is nonlinear. The equation is equivalent to</p>
+<table id="Ch0.Ex138" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex138.m1" class="ltx_Math" alttext="10\cosh(x/4)=x." display="block"><mrow><mrow><mrow><mn>10</mn><mo lspace="0.167em">⁢</mo><mrow><mi>cosh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>/</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mi>x</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">As the graph below shows, this equation
+can never hold, because the two sides can never be equal to each
+other. No solution!</p>
+<svg id="Ch0.Sx4.I17.i3.p2.pic1" class="ltx_picture ltx_centering" height="149.31" overflow="visible" version="1.1" width="239.34"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,149.31) matrix(1 0 0 -1 0 0) translate(69.57,0) translate(0,23.9)"><path d="M -69.29 0 L 118.49 0" style="fill:none"></path><g transform="matrix(1.0 0.0 0.0 1.0 118.49 0)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 126.15 -2.98)"><foreignObject height="5.96" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="7.91"><math id="Ch0.Sx4.I17.i3.p2.pic1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math></foreignObject></g><path d="M 0 -23.62 L 0 111.41" style="fill:none"></path><g transform="matrix(0.0 1.0 -1.0 0.0 0 111.41)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><path d="M -43.31 -19.69 L 103.94 47.24" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 108.83 45.61)"><foreignObject height="8.65" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="33.64"><math id="Ch0.Sx4.I17.i3.p2.pic1.m2" class="ltx_Math" alttext="y=x" display="inline"><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow></math></foreignObject></g><g stroke-width="0.8pt"><path d="M -56.3 103.85 C -56.3 103.85 -55.76 102.35 -55.55 101.79 C -55.34 101.22 -55.01 100.33 -54.8 99.78 C -54.59 99.23 -54.26 98.35 -54.05 97.81 C -53.84 97.28 -53.5 96.42 -53.3 95.9 C -53.09 95.37 -52.75 94.54 -52.55 94.02 C -52.34 93.51 -52 92.7 -51.8 92.2 C -51.59 91.69 -51.25 90.9 -51.04 90.41 C -50.84 89.92 -50.5 89.15 -50.29 88.67 C -50.09 88.19 -49.75 87.43 -49.54 86.97 C -49.33 86.5 -49 85.76 -48.79 85.31 C -48.58 84.85 -48.25 84.13 -48.04 83.69 C -47.83 83.24 -47.5 82.54 -47.29 82.11 C -47.08 81.67 -46.75 80.99 -46.54 80.57 C -46.33 80.14 -46 79.47 -45.79 79.06 C -45.58 78.65 -45.25 78 -45.04 77.59 C -44.83 77.19 -44.5 76.56 -44.29 76.16 C -44.08 75.77 -43.75 75.15 -43.54 74.77 C -43.33 74.39 -43 73.78 -42.79 73.41 C -42.58 73.04 -42.24 72.45 -42.04 72.08 C -41.83 71.72 -41.49 71.15 -41.29 70.79 C -41.08 70.44 -40.74 69.88 -40.53 69.53 C -40.33 69.19 -39.99 68.64 -39.78 68.31 C -39.58 67.97 -39.24 67.44 -39.03 67.11 C -38.83 66.79 -38.49 66.27 -38.28 65.95 C -38.07 65.63 -37.74 65.13 -37.53 64.82 C -37.32 64.51 -36.99 64.02 -36.78 63.72 C -36.57 63.42 -36.24 62.94 -36.03 62.65 C -35.82 62.36 -35.49 61.89 -35.28 61.61 C -35.07 61.32 -34.74 60.87 -34.53 60.6 C -34.32 60.32 -33.99 59.88 -33.78 59.61 C -33.57 59.34 -33.24 58.92 -33.03 58.66 C -32.82 58.39 -32.49 57.98 -32.28 57.73 C -32.07 57.47 -31.73 57.07 -31.53 56.83 C -31.32 56.58 -30.98 56.19 -30.78 55.95 C -30.57 55.71 -30.23 55.34 -30.03 55.1 C -29.82 54.87 -29.48 54.51 -29.27 54.28 C -29.07 54.06 -28.73 53.7 -28.52 53.48 C -28.32 53.27 -27.98 52.92 -27.77 52.71 C -27.56 52.5 -27.23 52.17 -27.02 51.97 C -26.81 51.76 -26.48 51.44 -26.27 51.24 C -26.06 51.05 -25.73 50.73 -25.52 50.54 C -25.31 50.35 -24.98 50.05 -24.77 49.87 C -24.56 49.68 -24.23 49.39 -24.02 49.22 C -23.81 49.04 -23.48 48.76 -23.27 48.59 C -23.06 48.42 -22.73 48.15 -22.52 47.98 C -22.31 47.82 -21.98 47.56 -21.77 47.4 C -21.56 47.24 -21.23 46.99 -21.02 46.84 C -20.81 46.69 -20.47 46.45 -20.27 46.3 C -20.06 46.15 -19.72 45.92 -19.52 45.78 C -19.31 45.64 -18.97 45.42 -18.76 45.29 C -18.56 45.15 -18.22 44.94 -18.01 44.81 C -17.81 44.68 -17.47 44.48 -17.26 44.36 C -17.06 44.24 -16.72 44.04 -16.51 43.93 C -16.3 43.81 -15.97 43.63 -15.76 43.52 C -15.55 43.4 -15.22 43.23 -15.01 43.12 C -14.8 43.02 -14.47 42.85 -14.26 42.75 C -14.05 42.65 -13.72 42.5 -13.51 42.4 C -13.3 42.31 -12.97 42.16 -12.76 42.07 C -12.55 41.98 -12.22 41.84 -12.01 41.76 C -11.8 41.68 -11.47 41.55 -11.26 41.47 C -11.05 41.39 -10.72 41.27 -10.51 41.19 C -10.3 41.12 -9.97 41.01 -9.76 40.94 C -9.55 40.87 -9.21 40.77 -9.01 40.71 C -8.8 40.65 -8.46 40.55 -8.26 40.49 C -8.05 40.44 -7.71 40.35 -7.5 40.3 C -7.3 40.25 -6.96 40.17 -6.75 40.12 C -6.55 40.07 -6.21 40 -6 39.96 C -5.8 39.92 -5.46 39.86 -5.25 39.82 C -5.04 39.79 -4.71 39.73 -4.5 39.7 C -4.29 39.67 -3.96 39.63 -3.75 39.6 C -3.54 39.58 -3.21 39.54 -3 39.52 C -2.79 39.5 -2.46 39.47 -2.25 39.45 C -2.04 39.44 -1.71 39.42 -1.5 39.41 C -1.29 39.4 -0.96 39.38 -0.75 39.38 C -0.54 39.37 -0.21 39.37 0 39.37 C 0.21 39.37 0.54 39.37 0.75 39.38 C 0.96 39.38 1.3 39.4 1.5 39.41 C 1.71 39.42 2.05 39.44 2.25 39.45 C 2.46 39.47 2.8 39.5 3 39.52 C 3.21 39.54 3.55 39.58 3.76 39.6 C 3.96 39.63 4.3 39.67 4.51 39.7 C 4.71 39.73 5.05 39.79 5.26 39.82 C 5.47 39.86 5.8 39.92 6.01 39.96 C 6.22 40 6.55 40.08 6.76 40.12 C 6.97 40.17 7.3 40.25 7.51 40.3 C 7.72 40.35 8.05 40.44 8.26 40.49 C 8.47 40.55 8.8 40.65 9.01 40.71 C 9.22 40.77 9.55 40.88 9.76 40.94 C 9.97 41.01 10.3 41.12 10.51 41.2 C 10.72 41.27 11.05 41.39 11.26 41.47 C 11.47 41.55 11.8 41.68 12.01 41.76 C 12.22 41.84 12.56 41.98 12.76 42.07 C 12.97 42.16 13.31 42.31 13.51 42.4 C 13.72 42.5 14.06 42.65 14.27 42.75 C 14.47 42.85 14.81 43.02 15.02 43.13 C 15.22 43.23 15.56 43.41 15.77 43.52 C 15.97 43.63 16.31 43.81 16.52 43.93 C 16.73 44.05 17.06 44.24 17.27 44.36 C 17.48 44.49 17.81 44.69 18.02 44.82 C 18.23 44.94 18.56 45.16 18.77 45.29 C 18.98 45.42 19.31 45.65 19.52 45.79 C 19.73 45.93 20.06 46.16 20.27 46.3 C 20.48 46.45 20.81 46.69 21.02 46.84 C 21.23 46.99 21.56 47.24 21.77 47.4 C 21.98 47.56 22.31 47.82 22.52 47.99 C 22.73 48.15 23.07 48.42 23.27 48.59 C 23.48 48.76 23.82 49.04 24.02 49.22 C 24.23 49.4 24.57 49.69 24.77 49.87 C 24.98 50.06 25.32 50.36 25.53 50.55 C 25.73 50.74 26.07 51.05 26.28 51.25 C 26.48 51.44 26.82 51.77 27.03 51.97 C 27.24 52.17 27.57 52.51 27.78 52.72 C 27.99 52.93 28.32 53.27 28.53 53.49 C 28.74 53.71 29.07 54.06 29.28 54.29 C 29.49 54.51 29.82 54.88 30.03 55.11 C 30.24 55.34 30.57 55.72 30.78 55.96 C 30.99 56.2 31.32 56.59 31.53 56.83 C 31.74 57.08 32.07 57.48 32.28 57.73 C 32.49 57.99 32.82 58.4 33.03 58.66 C 33.24 58.92 33.57 59.35 33.78 59.62 C 33.99 59.89 34.33 60.32 34.53 60.6 C 34.74 60.88 35.08 61.33 35.28 61.61 C 35.49 61.9 35.83 62.36 36.04 62.66 C 36.24 62.95 36.58 63.43 36.79 63.73 C 36.99 64.03 37.33 64.52 37.54 64.83 C 37.74 65.14 38.08 65.64 38.29 65.96 C 38.5 66.28 38.83 66.79 39.04 67.12 C 39.25 67.45 39.58 67.98 39.79 68.31 C 40 68.65 40.33 69.2 40.54 69.54 C 40.75 69.89 41.08 70.45 41.29 70.8 C 41.5 71.15 41.83 71.73 42.04 72.09 C 42.25 72.45 42.58 73.04 42.79 73.42 C 43 73.79 43.33 74.39 43.54 74.78 C 43.75 75.16 44.08 75.78 44.29 76.17 C 44.5 76.56 44.83 77.2 45.04 77.6 C 45.25 78 45.59 78.66 45.79 79.07 C 46 79.48 46.34 80.15 46.54 80.57 C 46.75 81 47.09 81.68 47.3 82.12 C 47.5 82.55 47.84 83.25 48.05 83.7 C 48.25 84.14 48.59 84.86 48.8 85.32 C 49 85.77 49.34 86.51 49.55 86.98 C 49.76 87.44 50.09 88.2 50.3 88.68 C 50.51 89.16 50.84 89.93 51.05 90.42 C 51.26 90.91 51.59 91.7 51.8 92.21 C 52.01 92.71 52.34 93.52 52.55 94.03 C 52.76 94.55 53.09 95.38 53.3 95.91 C 53.51 96.43 53.84 97.29 54.05 97.82 C 54.26 98.36 54.59 99.24 54.8 99.79 C 55.01 100.34 55.55 101.8 55.55 101.8" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 60.72 110.42)"><foreignObject height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="104.44"><math id="Ch0.Sx4.I17.i3.p2.pic1.m3" class="ltx_Math" alttext="y=10\cosh(x/4)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>10</mn><mo lspace="0.167em">⁢</mo><mrow><mi>cosh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>/</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></foreignObject></g></g><path d="M -2.6 39.37 L 2.6 39.37" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -21.66 34.91)"><foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="13.84"><math id="Ch0.Sx4.I17.i3.p2.pic1.m4" class="ltx_Math" alttext="10" display="inline"><mn>10</mn></math></foreignObject></g></g></svg>
+</div>
+</li>
+<li id="Ch0.Sx4.I17.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.</span> 
+<div id="Ch0.Sx4.I17.i4.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">System of equations for multiple variables</p>
+<table id="Ch0.Ex139" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex139.m1" class="ltx_math_unparsed" alttext="\left\{\begin{aligned} w_{1}+w_{2}&amp;=2\\
+w_{1}x_{1}+w_{2}x_{2}&amp;=0\\
+w_{1}x_{1}^{2}+w_{2}x_{2}^{2}&amp;=\frac{2}{3}\\
+w_{1}x_{1}^{3}+w_{2}x_{2}^{3}&amp;=0\end{aligned}\right." display="block"><mrow><mo>{</mo><mtable columnspacing="0pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>+</mo><msub><mi>w</mi><mn>2</mn></msub></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mi></mi><mo>=</mo><mn>2</mn></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><msub><mi>w</mi><mn>2</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mi></mi><mo>=</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>⁢</mo><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup></mrow><mo>+</mo><mrow><msub><mi>w</mi><mn>2</mn></msub><mo>⁢</mo><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mi></mi><mo>=</mo><mfrac><mn>2</mn><mn>3</mn></mfrac></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>⁢</mo><msubsup><mi>x</mi><mn>1</mn><mn>3</mn></msubsup></mrow><mo>+</mo><mrow><msub><mi>w</mi><mn>2</mn></msub><mo>⁢</mo><msubsup><mi>x</mi><mn>2</mn><mn>3</mn></msubsup></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mi></mi><mo>=</mo><mn>0</mn></mrow></mtd></mtr></mtable></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This is a system of 4 eqns for 4 unknowns. It is often difficult to
+know, <span class="ltx_text ltx_font_italic">a priori</span>, what the situation is like for a system of
+nonlinear equations. Solution formulas are usually out of question,
+and numerical methods are often the only available means for solving
+these equations.</p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<section id="Ch0.Sx4.SSx3" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">General form</h4>
+
+<div id="Ch0.Sx4.SSx3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">We write a general scalar nonlinear equation as</p>
+<table id="Ch0.Ex140" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex140.m1" class="ltx_Math" alttext="f(x)=0," display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">or a system of nonlinear equations as</p>
+<table id="Ch0.Ex141" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex141.m1" class="ltx_Math" alttext="\vec{f}(\vec{x})=0\qquad\text{system}" display="block"><mrow><mrow><mover accent="true"><mi>f</mi><mo stretchy="false">→</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo stretchy="false">→</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>0</mn><mspace width="2em"></mspace><mtext>system</mtext></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">with</p>
+<table id="Chx1.Sx4.EGx13" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex142"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex142.m1" class="ltx_Math" alttext="\displaystyle\vec{x}" display="inline"><mover accent="true"><mi>x</mi><mo stretchy="false">→</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex142.m2" class="ltx_Math" alttext="\displaystyle=(x_{1},x_{2},\ldots,x_{n})," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex143"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex143.m1" class="ltx_Math" alttext="\displaystyle\vec{f}" display="inline"><mover accent="true"><mi>f</mi><mo stretchy="false">→</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex143.m2" class="ltx_Math" alttext="\displaystyle=(f_{1},f_{2},\ldots,f_{n}),\qquad\text{a set of functions.}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><msub><mi>f</mi><mn>1</mn></msub><mo>,</mo><msub><mi>f</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>f</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow><mo rspace="2.167em">,</mo><mtext>a set of functions.</mtext></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch0.Sx4.SSx4" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">The bisection method for scalar equations</h4>
+
+<div id="Ch0.Sx4.SSx4.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">We consider a general scalar equation,</p>
+<table id="Ch0.Ex144" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex144.m1" class="ltx_Math" alttext="f(x)=0." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We need to find <math id="Ch0.Sx4.SSx4.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> satisfying this equation</p>
+</div>
+<div id="Ch0.Sx4.SSx4.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Suppose an interval <math id="Ch0.Sx4.SSx4.p2.m1" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math> is given, and function <math id="Ch0.Sx4.SSx4.p2.m2" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> is continuous
+on the interval, and has opposite signs at <math id="Ch0.Sx4.SSx4.p2.m3" class="ltx_Math" alttext="x=a" display="inline"><mrow><mi>x</mi><mo>=</mo><mi>a</mi></mrow></math> and <math id="Ch0.Sx4.SSx4.p2.m4" class="ltx_Math" alttext="x=b" display="inline"><mrow><mi>x</mi><mo>=</mo><mi>b</mi></mrow></math>.
+The graph of <math id="Ch0.Sx4.SSx4.p2.m5" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>, being continuous from <math id="Ch0.Sx4.SSx4.p2.m6" class="ltx_Math" alttext="x=a" display="inline"><mrow><mi>x</mi><mo>=</mo><mi>a</mi></mrow></math> to <math id="Ch0.Sx4.SSx4.p2.m7" class="ltx_Math" alttext="x=b" display="inline"><mrow><mi>x</mi><mo>=</mo><mi>b</mi></mrow></math>, must cross
+the <math id="Ch0.Sx4.SSx4.p2.m8" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>-axis at some point, which then is a root of <math id="Ch0.Sx4.SSx4.p2.m9" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>.
+Not knowing
+where exactly is the root, we simply take the middle point between <math id="Ch0.Sx4.SSx4.p2.m10" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> &amp; <math id="Ch0.Sx4.SSx4.p2.m11" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math>,
+call it <math id="Ch0.Sx4.SSx4.p2.m12" class="ltx_Math" alttext="x_{1}" display="inline"><msub><mi>x</mi><mn>1</mn></msub></math>, and take it as our first approximation to the root. Since it is
+unlikely that this point is exactly a root of <math id="Ch0.Sx4.SSx4.p2.m13" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>, we check the sign of
+the function at this point. Based on the sign, we can use the
+continuity argument again
+to further determine whether a root is to be found to the left or to the
+right of this point. Repeating this process, we can narrow down the interval that a
+root of <math id="Ch0.Sx4.SSx4.p2.m14" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> exists in, and a sequence of points that converges to the root.
+The method is called the bisection method.</p>
+<svg id="Ch0.Sx4.SSx4.p2.pic1" class="ltx_picture ltx_centering" height="113.38" overflow="visible" version="1.1" width="228.71"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,113.38) matrix(1 0 0 -1 0 0) translate(22.32,0) translate(0,34.92)"><path d="M -22.05 0 L 186.21 0" style="fill:none"></path><g transform="matrix(1.0 0.0 0.0 1.0 186.21 0)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 193.87 -2.98)"><foreignObject height="5.96" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="7.91"><math id="Ch0.Sx4.SSx4.p2.pic1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math></foreignObject></g><path d="M 0 -31.5 L 0 60.23" style="fill:none"></path><g transform="matrix(0.0 1.0 -1.0 0.0 0 60.23)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -11.81 -13.81)"><foreignObject height="8.92" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="6.92"><math id="Ch0.Sx4.SSx4.p2.pic1.m2" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math></foreignObject></g><path d="M 18.9 -34.65 C 53.54 20.47 113.39 50.39 173.23 55.12" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 141.41 63.47)"><foreignObject height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="26.93"><math id="Ch0.Sx4.SSx4.p2.pic1.m3" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math></foreignObject></g><path d="M 47.87 0 M 50.09 0 C 50.09 1.22 49.1 2.21 47.87 2.21 C 46.65 2.21 45.66 1.22 45.66 0 C 45.66 -1.22 46.65 -2.21 47.87 -2.21 C 49.1 -2.21 50.09 -1.22 50.09 0 Z M 47.87 0" style="stroke:none"></path><path d="M 94.49 32.44 M 96.7 32.44 C 96.7 33.66 95.71 34.65 94.49 34.65 C 93.27 34.65 92.27 33.66 92.27 32.44 C 92.27 31.22 93.27 30.23 94.49 30.23 C 95.71 30.23 96.7 31.22 96.7 32.44 Z M 94.49 32.44" style="stroke:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 88.6 -10.85)"><foreignObject height="8.45" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="11.78"><math id="Ch0.Sx4.SSx4.p2.pic1.m4" class="ltx_Math" alttext="x_{1}" display="inline"><msub><mi>x</mi><mn>1</mn></msub></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 15.24 4.89)"><foreignObject height="5.96" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="7.31"><math id="Ch0.Sx4.SSx4.p2.pic1.m5" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 170.26 4.89)"><foreignObject height="9.61" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="5.94"><math id="Ch0.Sx4.SSx4.p2.pic1.m6" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math></foreignObject></g><path d="M 18.9 -2.52 L 18.9 2.52" style="fill:none"></path><path d="M 94.49 -2.52 L 94.49 2.52" style="fill:none"></path><path d="M 173.23 -2.52 L 173.23 2.52" style="fill:none"></path></g></svg>
+</div>
+<div id="Ch0.Sx4.SSx4.p3" class="ltx_para">
+<p class="ltx_p">The continuity of the function, and hence its graph, is essential in
+the construction of the approximating sequence. It guarantees that, if
+a continuous function has opposite signs at two end points, then it
+must vanish at some point in the middle. This “obvious” fact is the
+claim of a fundamental Theorem in calculus,</p>
+</div>
+<div id="lecture8.Thmtheorem1" class="ltx_theorem ltx_theorem_theorem">
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Theorem 8.1</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="lecture8.Thmtheorem1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Suppose a function <math id="lecture8.Thmtheorem1.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is continuous on <math id="lecture8.Thmtheorem1.p1.m2" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>, and <math id="lecture8.Thmtheorem1.p1.m3" class="ltx_Math" alttext="f(a)\cdot f(b)&lt;0" display="inline"><mrow><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math>.
+Then there exists a number <math id="lecture8.Thmtheorem1.p1.m4" class="ltx_Math" alttext="c\in(a,b)" display="inline"><mrow><mi>c</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> such that <math id="lecture8.Thmtheorem1.p1.m5" class="ltx_Math" alttext="f(c)=0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>.</span></p>
+</div>
+</div>
+<figure id="Ch0.Sx4.SSx4.fig1" class="ltx_figure"><svg id="Ch0.Sx4.SSx4.pic1" class="ltx_picture" height="128.74" overflow="visible" version="1.1" width="458.15"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,128.74) matrix(1 0 0 -1 0 0) translate(16.02,0) translate(0,66.36)"><path d="M -15.75 0 L 195.66 0" style="fill:none"></path><g transform="matrix(1.0 0.0 0.0 1.0 195.66 0)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><g stroke-width="0.8pt"><path d="M 25.2 -26.77 C 56.69 -33.07 94.49 -11.02 100.79 0 C 119.69 53.54 113.39 40.95 166.93 29.92" style="fill:none"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 98.77 48.52)"><foreignObject height="11.93" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="61.11">continuity</foreignObject></g><path d="M 25.2 -1.89 L 25.2 1.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 21.54 -15)"><foreignObject height="5.96" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="7.31"><math id="Ch0.Sx4.SSx4.pic1.m1" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math></foreignObject></g><path d="M 100.79 -1.89 L 100.79 1.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 97.79 -15)"><foreignObject height="5.96" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="5.99"><math id="Ch0.Sx4.SSx4.pic1.m2" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math></foreignObject></g><path d="M 166.93 -1.89 L 166.93 1.89" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 163.96 -18.65)"><foreignObject height="9.61" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="5.94"><math id="Ch0.Sx4.SSx4.pic1.m3" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math></foreignObject></g><path d="M 100.79 0 M 103 0 C 103 1.22 102.01 2.21 100.79 2.21 C 99.56 2.21 98.57 1.22 98.57 0 C 98.57 -1.22 99.56 -2.21 100.79 -2.21 C 102.01 -2.21 103 -1.22 103 0 Z M 100.79 0" style="stroke:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -6.03 -30.23)"><foreignObject height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="26.34"><math id="Ch0.Sx4.SSx4.pic1.m4" class="ltx_Math" alttext="f(a)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math></foreignObject></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 171.82 26.46)"><foreignObject height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="24.96"><math id="Ch0.Sx4.SSx4.pic1.m5" class="ltx_Math" alttext="f(b)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math></foreignObject></g><path d="M 308.66 0 L 435.03 0" style="fill:none"></path><g transform="matrix(1.0 0.0 0.0 1.0 435.03 0)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><path d="M 324.41 -31.5 L 324.41 50.78" style="fill:none"></path><g transform="matrix(0.0 1.0 -1.0 0.0 324.41 50.78)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><g stroke-width="0.8pt"><path d="M 343.31 -20.47 C 355.91 -22.05 362.21 -18.9 371.65 -12.6" style="fill:none"></path></g><path d="M 343.31 -20.47 M 345.52 -20.47 C 345.52 -19.25 344.53 -18.26 343.31 -18.26 C 342.09 -18.26 341.09 -19.25 341.09 -20.47 C 341.09 -21.7 342.09 -22.69 343.31 -22.69 C 344.53 -22.69 345.52 -21.7 345.52 -20.47 Z M 343.31 -20.47" style="stroke:none"></path><g fill="#FFFFFF"><path d="M 371.65 -12.6 M 373.87 -12.6 C 373.87 -11.38 372.88 -10.38 371.65 -10.38 C 370.43 -10.38 369.44 -11.38 369.44 -12.6 C 369.44 -13.82 370.43 -14.81 371.65 -14.81 C 372.88 -14.81 373.87 -13.82 373.87 -12.6 Z M 371.65 -12.6"></path></g><g stroke-width="0.8pt"><path d="M 371.65 31.5 C 387.4 42.52 400 44.09 415.75 44.09" style="fill:none"></path></g><path d="M 371.65 31.5 M 373.87 31.5 C 373.87 32.72 372.88 33.71 371.65 33.71 C 370.43 33.71 369.44 32.72 369.44 31.5 C 369.44 30.27 370.43 29.28 371.65 29.28 C 372.88 29.28 373.87 30.27 373.87 31.5 Z M 371.65 31.5" style="stroke:none"></path><path d="M 415.75 44.09 M 417.96 44.09 C 417.96 45.32 416.97 46.31 415.75 46.31 C 414.53 46.31 413.54 45.32 413.54 44.09 C 413.54 42.87 414.53 41.88 415.75 41.88 C 416.97 41.88 417.96 42.87 417.96 44.09 Z M 415.75 44.09" style="stroke:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 308.95 -61.75)"><g class="ltx_tikzmatrix" transform="matrix(1 0 0 -1 0 14.33)"><g class="ltx_tikzmatrix_row" transform="matrix(1 0 0 1 0 9.61)"><g class="ltx_tikzmatrix_col ltx_nopad_l ltx_nopad_r" transform="matrix(1 0 0 -1 15.97 0)"><g class="ltx_tikzmatrix" transform="matrix(1 0 0 -1 0 4.805)"><g class="ltx_tikzmatrix_row" transform="matrix(1 0 0 1 0 9.61)"><g class="ltx_tikzmatrix_col ltx_nopad_l ltx_nopad_r" transform="matrix(1 0 0 -1 0 0)"><text transform="matrix(1 0 0 -1 0 0)">A discontinuous</text></g></g></g></g></g><g class="ltx_tikzmatrix_row" transform="matrix(1 0 0 1 0 19.07)"><g class="ltx_tikzmatrix_col ltx_nopad_l ltx_nopad_r" transform="matrix(1 0 0 -1 0 0)"><text transform="matrix(1 0 0 -1 0 0)">case. No intersection.</text></g></g></g></g></g></svg>
+</figure>
+<div id="Ch0.Sx4.SSx4.p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">The claim above is not true when the function is not continuous, as
+the graphs above show.</p>
+</div>
+</section>
+<section id="Ch0.Sx4.SSx5" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Algorithm ( bisection)</h4>
+
+<div id="Ch0.Sx4.SSx5.p1" class="ltx_para">
+<svg id="Ch0.Sx4.SSx5.pic1" class="ltx_picture ltx_centering" height="120.3" overflow="visible" version="1.1" width="254.89"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,120.3) matrix(1 0 0 -1 0 0) translate(20.36,0) translate(0,60.15)"><path d="M -20.08 0 L 231.49 0" style="fill:none"></path><g transform="matrix(1.0 0.0 0.0 1.0 231.49 0)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><g stroke-dasharray="3.0pt,3.0pt" stroke-dashoffset="0.0pt" stroke-width="0.8pt"><path d="M 23.43 36.81 C 83.66 36.81 117.13 31.79 143.9 0 C 167.32 -26.77 184.06 -36.81 200.79 -36.81" style="fill:none"></path></g><path d="M 23.43 36.81 M 25.78 36.81 C 25.78 38.11 24.72 39.16 23.43 39.16 C 22.13 39.16 21.07 38.11 21.07 36.81 C 21.07 35.51 22.13 34.46 23.43 34.46 C 24.72 34.46 25.78 35.51 25.78 36.81 Z M 23.43 36.81" style="stroke:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 10.26 45.16)"><foreignObject height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="26.34"><math id="Ch0.Sx4.SSx5.pic1.m1" class="ltx_Math" alttext="f(a)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math></foreignObject></g><path d="M 200.79 -36.81 M 203.14 -36.81 C 203.14 -35.51 202.09 -34.46 200.79 -34.46 C 199.49 -34.46 198.44 -35.51 198.44 -36.81 C 198.44 -38.11 199.49 -39.16 200.79 -39.16 C 202.09 -39.16 203.14 -38.11 203.14 -36.81 Z M 200.79 -36.81" style="stroke:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 188.31 -52.08)"><foreignObject height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="24.96"><math id="Ch0.Sx4.SSx5.pic1.m2" class="ltx_Math" alttext="f(b)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math></foreignObject></g><path d="M 143.9 0 M 146.25 0 C 146.25 1.3 145.2 2.35 143.9 2.35 C 142.6 2.35 141.55 1.3 141.55 0 C 141.55 -1.3 142.6 -2.35 143.9 -2.35 C 145.2 -2.35 146.25 -1.3 146.25 0 Z M 143.9 0" style="stroke:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 140.9 4.89)"><foreignObject height="5.96" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="5.99"><math id="Ch0.Sx4.SSx5.pic1.m3" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math></foreignObject></g><path d="M 23.43 -2.34 L 23.43 2.34" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 19.77 -15.42)"><foreignObject height="5.96" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="7.31"><math id="Ch0.Sx4.SSx5.pic1.m4" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math></foreignObject></g><path d="M 200.79 -2.34 L 200.79 2.34" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 197.82 12.77)"><foreignObject height="9.61" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="5.94"><math id="Ch0.Sx4.SSx5.pic1.m5" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math></foreignObject></g><path d="M 112.11 -3.35 L 112.11 3.35" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 106.03 -15.8)"><foreignObject height="5.96" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="12.15"><math id="Ch0.Sx4.SSx5.pic1.m6" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math></foreignObject></g></g></svg>
+</div>
+<div id="Ch0.Sx4.SSx5.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Assume that <math id="Ch0.Sx4.SSx5.p2.m1" class="ltx_Math" alttext="f(a)\cdot f(b)&lt;0" display="inline"><mrow><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math></p>
+<table id="Ch0.Ex145" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex145.m1" class="ltx_Math" alttext="\begin{array}[]{ll}\text{While }|b-a|&gt;\mathrm{TOL}&amp;\\[3.00003pt]
+\quad m=\frac{1}{2}(a+b)&amp;\\[3.00003pt]
+\quad\text{If }f(a)\cdot f(m)\leq 0&amp;\\
+\qquad b=m&amp;\\
+\quad\text{else}&amp;\text{\# that is, }f(b)\cdot f(m)\leq 0\\
+\qquad a=m&amp;\\[6.00006pt]
+\text{Return }m=\frac{1}{2}(a+b)&amp;\text{\# As the final solution}\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="3.0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext>While </mtext><mo>⁢</mo><mrow><mo stretchy="false">|</mo><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow><mo stretchy="false">|</mo></mrow></mrow><mo>&gt;</mo><mi>TOL</mi></mrow></mtd><mtd></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi>m</mi><mo>=</mo><mrow><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mtd><mtd></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mrow><mtext>If </mtext><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mn>0</mn></mrow></mtd><mtd></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi>b</mi><mo>=</mo><mi>m</mi></mrow></mtd><mtd></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mtext>else</mtext></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mrow><mtext># that is, </mtext><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi>a</mi><mo>=</mo><mi>m</mi></mrow></mtd><mtd></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext>Return </mtext><mo>⁢</mo><mi>m</mi></mrow><mo>=</mo><mrow><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mtext># As the final solution</mtext></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<section id="Ch0.Sx4.SSx5.SSS0.Px1" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Example 1.</h5>
+
+<div id="Ch0.Sx4.SSx5.SSS0.Px1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Use the bisection method to solve <math id="Ch0.Sx4.SSx5.SSS0.Px1.p1.m1" class="ltx_Math" alttext="\cos x-e^{x}=0" display="inline"><mrow><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo>−</mo><msup><mi>e</mi><mi>x</mi></msup></mrow><mo>=</mo><mn>0</mn></mrow></math> on <math id="Ch0.Sx4.SSx5.SSS0.Px1.p1.m2" class="ltx_Math" alttext="[-2,-.5]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>.5</mn></mrow><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</section>
+</section>
+<section id="Ch0.Sx4.SSx6" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">A Matlab implementation</h4>
+
+<div id="Ch0.Sx4.SSx6.p1" class="ltx_para ltx_noindent">
+<div class="ltx_listing ltx_lstlisting ltx_framed ltx_framed_rectangle ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnVuY3Rpb24gW3ksZGF0YV0gPSBiaXNlY3QoYSxiLGZ1bmMsdG9sKQolIGJpc2VjdChhLGIsZnVuYyx0b2wpLCB1c2VzIHRoZSBiaXNlY3Rpb24gbWV0aG9kIHRvIGZpbmQgYSByb290IG9mIGZ1bmMKJSBpbiAoYSxiKSB3aXRoaW4gdG9sZXJhbmNlIHRvbAoKJSBldmFsdWF0ZSB0aGUgZnVuY3Rpb24gYXQgdGhlIGVuZCBwb2ludHMKZmEgPSBmdW5jKGEpOwpmYiA9IGZ1bmMoYik7CgolIENoZWNrIHRoYXQgZmEgYW5kIGZiIGhhdmUgb3Bwb3NpdGUgc2lnbnMgKHNpbmNlIHdlIGltcGxpY2l0bHkgYXNzdW1lIHRoaXMpCmlmIGZhKmZiID49IDAKZXJyb3IoJ1RoZSBmdW5jdGlvbiBmYWlscyB0byBzYXRpc2Z5IGYoYSkqZihiKTwwIGZvciBpbnB1dHMgYSBhbmQgYicpCmVuZAoKJSBrZWVwIHRyYWNrIG9mIHByb2dyZXNzIG9mIGFsZ29yaXRobQpkYXRhID0gWzAgYSBiIGZhIGZiIGItYV07CgolIG5vdyB3ZSBjYW4gcnVuIHRoZSBhbGdvcml0aG0KaXRfY291bnQgPSAwOwoKd2hpbGUgKGItYSkgPiB0b2wKICAgIGl0X2NvdW50ID0gaXRfY291bnQrMTsKCiAgICAlIEdldCB0aGUgbWlkcG9pbnQgYW5kIGV2YWx1YXRlIGl0CgogICAgeG5ldyA9IChhK2IpLzI7CgogICAgZm5ldyA9IGZ1bmMoeG5ldyk7CgogICAgJSBkZXRlcm1pbmUgd2hpY2ggaW50ZXJ2YWwgdG8ga2VlcAoKICAgIGlmIGZhICogZm5ldyA8PSAwCiAgICAgICAgYiA9IHhuZXc7CiAgICAgICAgZmIgPSBmbmV3OwogICAgZWxzZQogICAgICAgIGEgPSB4bmV3OwogICAgICAgIGZhID0gZm5ldzsKICAgIGVuZAogICAgZGF0YW5ldyA9IFtpdF9jb3VudCBhIGIgZmEgZmIgYi1hXTsKICAgIGRhdGEgPSBbZGF0YTsgZGF0YW5ld107CmVuZAoKJSBUaGUgc29sdXRpb24gbmVlZHMgdG8gYmUgYSBudW1iZXIgLSBjaG9vc2UgdGhlIG1pZHBvaW50IG9mIHRoZSBmaW5hbCBpbnRlcnZhbAp5ID0gKGErYikvMjsKZW5k" download="">⬇</a></div>
+<div id="lstnumberx48" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">data</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bisect</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">func</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx49" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">%</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bisect</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">func</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">uses</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">the</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bisection</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">method</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">to</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">find</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">root</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">of</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">func</span>
+</div>
+<div id="lstnumberx50" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">%</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">in</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">within</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tolerance</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tol</span>
+</div>
+<div id="lstnumberx51" class="ltx_listingline">
+</div>
+<div id="lstnumberx52" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">%</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">evaluate</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">the</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">at</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">the</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">points</span>
+</div>
+<div id="lstnumberx53" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fa</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">func</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">);</span>
+</div>
+<div id="lstnumberx54" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fb</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">func</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">);</span>
+</div>
+<div id="lstnumberx55" class="ltx_listingline">
+</div>
+<div id="lstnumberx56" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">%</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Check</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">that</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fa</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">and</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fb</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">have</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">opposite</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">signs</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">since</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">we</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">implicitly</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">assume</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">this</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx57" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fa</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fb</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0</span>
+</div>
+<div id="lstnumberx58" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">error</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(’</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">The</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fails</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">to</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">satisfy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)&lt;0</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">inputs</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">and</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">’)</span>
+</div>
+<div id="lstnumberx59" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">end</span>
+</div>
+<div id="lstnumberx60" class="ltx_listingline">
+</div>
+<div id="lstnumberx61" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">%</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">keep</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">track</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">of</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">progress</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">of</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">algorithm</span>
+</div>
+<div id="lstnumberx62" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">data</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[0</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fa</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fb</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">];</span>
+</div>
+<div id="lstnumberx63" class="ltx_listingline">
+</div>
+<div id="lstnumberx64" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">%</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">now</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">we</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">can</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">run</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">the</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">algorithm</span>
+</div>
+<div id="lstnumberx65" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">it_count</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0;</span>
+</div>
+<div id="lstnumberx66" class="ltx_listingline">
+</div>
+<div id="lstnumberx67" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">while</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tol</span>
+</div>
+<div id="lstnumberx68" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">it_count</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">it_count</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1;</span>
+</div>
+<div id="lstnumberx69" class="ltx_listingline">
+</div>
+<div id="lstnumberx70" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">%</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Get</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">the</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">midpoint</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">and</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">evaluate</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">it</span>
+</div>
+<div id="lstnumberx71" class="ltx_listingline">
+</div>
+<div id="lstnumberx72" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xnew</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)/2;</span>
+</div>
+<div id="lstnumberx73" class="ltx_listingline">
+</div>
+<div id="lstnumberx74" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fnew</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">func</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xnew</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">);</span>
+</div>
+<div id="lstnumberx75" class="ltx_listingline">
+</div>
+<div id="lstnumberx76" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">%</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">determine</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">which</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">interval</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">to</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">keep</span>
+</div>
+<div id="lstnumberx77" class="ltx_listingline">
+</div>
+<div id="lstnumberx78" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fa</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fnew</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0</span>
+</div>
+<div id="lstnumberx79" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xnew</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx80" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fb</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fnew</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx81" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">else</span>
+</div>
+<div id="lstnumberx82" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xnew</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx83" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fa</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fnew</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx84" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">end</span>
+</div>
+<div id="lstnumberx85" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">datanew</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">it_count</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fa</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fb</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">];</span>
+</div>
+<div id="lstnumberx86" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">data</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">data</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">datanew</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">];</span>
+</div>
+<div id="lstnumberx87" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">end</span>
+</div>
+<div id="lstnumberx88" class="ltx_listingline">
+</div>
+<div id="lstnumberx89" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">%</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">The</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">solution</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">needs</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">to</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">be</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">number</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">choose</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">the</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">midpoint</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">of</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">the</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">final</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">interval</span>
+</div>
+<div id="lstnumberx90" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)/2;</span>
+</div>
+<div id="lstnumberx91" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">end</span>
+</div>
+</div>
+</div>
+</section>
+<section id="Ch0.Sx4.SSx7" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Main attributes of the Bisection method:</h4>
+
+<div id="Ch0.Sx4.SSx7.p1" class="ltx_para ltx_noindent">
+<ol id="Ch0.Sx4.I18" class="ltx_enumerate">
+<li id="Ch0.Sx4.I18.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch0.Sx4.I18.i1.p1" class="ltx_para">
+<p class="ltx_p">Assume <math id="Ch0.Sx4.I18.i1.p1.m1" class="ltx_Math" alttext="f(a)\cdot f(b)\leq 0" display="inline"><mrow><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mn>0</mn></mrow></math>, and <math id="Ch0.Sx4.I18.i1.p1.m2" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> continuous, then bisection will always return a solution.</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I18.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch0.Sx4.I18.i2.p1" class="ltx_para">
+<p class="ltx_p">In the case multiple roots, bisection will only return one.</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I18.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="Ch0.Sx4.I18.i3.p1" class="ltx_para">
+<p class="ltx_p">The error is always cut in half by each iteration.</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I18.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.</span> 
+<div id="Ch0.Sx4.I18.i4.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Each iteration involves only 1 function evaluation.</p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<section id="Ch0.Sx4.SSx8" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Coding exercise</h4>
+
+<div id="Ch0.Sx4.SSx8.p1" class="ltx_para ltx_noindent">
+<ul id="Ch0.Sx4.I19" class="ltx_itemize">
+<li id="Ch0.Sx4.I19.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.Sx4.I19.i1.p1" class="ltx_para">
+<p class="ltx_p">Solve the equation <math id="Ch0.Sx4.I19.i1.p1.m1" class="ltx_Math" alttext="\cos x=x^{2}" display="inline"><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math> using the provided bisection
+code.</p>
+<ul id="Ch0.Sx4.I19.i1.I1" class="ltx_itemize">
+<li id="Ch0.Sx4.I19.i1.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch0.Sx4.I19.i1.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Identify an interval in which the equation has a solution.</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I19.i1.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch0.Sx4.I19.i1.I1.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Apply the <span class="ltx_text ltx_font_typewriter">bisect</span> method.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="Ch0.Sx4.I19.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.Sx4.I19.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Implement a different stop criterion.</p>
+<ul id="Ch0.Sx4.I19.i2.I1" class="ltx_itemize">
+<li id="Ch0.Sx4.I19.i2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch0.Sx4.I19.i2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Calculate the total number of iterations required to reach
+the tolerance.</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I19.i2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch0.Sx4.I19.i2.I1.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Use a <span class="ltx_text ltx_font_typewriter">for</span> loop instead of a <span class="ltx_text ltx_font_typewriter">while</span> loop.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_logical-block">
+        
+<div id="Ch0.Sx4.SSx8.p2" class="ltx_para">
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sun Sep 27 15:36:35 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
