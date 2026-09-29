@@ -1,0 +1,483 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Lecture 10</title>
+<!--Generated on Tue Sep 29 14:25:32 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on September 29, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">Lecture 10</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold" style="font-size:207%;">The Secant Method</span></p>
+</div>
+      
+</div>
+<div id="Ch0.Sx4.SSx13.p5" class="ltx_para ltx_noindent">
+<p class="ltx_p">The Newton method locate the next approximation to the root by
+drawing a tangent line through a known point on the function
+curve; see below.</p>
+<table id="Ch0.Ex153" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex153.m1" class="ltx_Math" alttext="f(x)=0" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch0.Ex154" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex154.m1" class="ltx_Math" alttext="x_{k+1}=x_{k}-\frac{f(x)}{f^{\prime}(x_{k})},\qquad k\geq 0." display="block"><mrow><mrow><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><mfrac><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mfrac></mrow></mrow><mo rspace="2.167em">,</mo><mrow><mi>k</mi><mo>≥</mo><mn>0</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<svg id="Ch0.Sx4.SSx13.p5.pic1" class="ltx_picture ltx_centering" height="156.46" overflow="visible" version="1.1" width="308.82"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,156.46) matrix(1 0 0 -1 0 0) translate(53.43,0) translate(0,39.25)"><path d="M -53.15 0 L 252.35 0" style="fill:none"></path><g transform="matrix(1.0 0.0 0.0 1.0 252.35 0)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><path d="M 0 -38.98 L 0 114.16" style="fill:none"></path><g transform="matrix(0.0 1.0 -1.0 0.0 0 114.16)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><g stroke-width="0.8pt"><path d="M 0 -34.65 L 2.13 -34.63 L 4.25 -34.59 L 6.38 -34.52 L 8.5 -34.42 L 10.63 -34.3 L 12.75 -34.15 L 14.88 -33.97 L 17.01 -33.76 L 19.13 -33.52 L 21.26 -33.26 L 23.38 -32.97 L 25.51 -32.65 L 27.63 -32.3 L 29.76 -31.93 L 31.88 -31.53 L 34.01 -31.1 L 36.14 -30.64 L 38.26 -30.16 L 40.39 -29.64 L 42.51 -29.1 L 44.64 -28.54 L 46.76 -27.94 L 48.89 -27.32 L 51.02 -26.67 L 53.14 -25.99 L 55.27 -25.28 L 57.39 -24.55 L 59.52 -23.78 L 61.64 -22.99 L 63.77 -22.18 L 65.89 -21.33 L 68.02 -20.46 L 70.15 -19.56 L 72.27 -18.63 L 74.4 -17.67 L 76.52 -16.69 L 78.65 -15.68 L 80.77 -14.64 L 82.9 -13.57 L 85.03 -12.48 L 87.15 -11.36 L 89.28 -10.21 L 91.4 -9.03 L 93.53 -7.83 L 95.65 -6.59 L 97.78 -5.33 L 99.9 -4.04 L 102.03 -2.73 L 104.16 -1.38 L 106.28 -0.01 L 108.41 1.39 L 110.53 2.81 L 112.66 4.27 L 114.78 5.75 L 116.91 7.26 L 119.04 8.8 L 121.16 10.36 L 123.29 11.96 L 125.41 13.58 L 127.54 15.23 L 129.66 16.9 L 131.79 18.61 L 133.91 20.34 L 136.04 22.1 L 138.17 23.89 L 140.29 25.7 L 142.42 27.54 L 144.54 29.41 L 146.67 31.31 L 148.79 33.24 L 150.92 35.19 L 153.05 37.17 L 155.17 39.18 L 157.3 41.22 L 159.42 43.28 L 161.55 45.37 L 163.67 47.49 L 165.8 49.64 L 167.92 51.82 L 170.05 54.02 L 172.18 56.25 L 174.3 58.51 L 176.43 60.79 L 178.55 63.11 L 180.68 65.45 L 182.8 67.82 L 184.93 70.21 L 187.06 72.64 L 189.18 75.09 L 191.31 77.57 L 193.43 80.08 L 195.56 82.61 L 197.68 85.17 L 199.81 87.76 L 201.93 90.38 L 204.06 93.03 L 206.19 95.7 L 208.31 98.4 L 210.44 101.13 L 212.56 103.89" style="fill:none"></path></g><path d="M 98.33 -16.46 L 212.6 95.28" style="fill:none"></path><path d="M 159.45 43.31 M 162.22 43.31 C 162.22 44.84 160.98 46.07 159.45 46.07 C 157.92 46.07 156.68 44.84 156.68 43.31 C 156.68 41.78 157.92 40.54 159.45 40.54 C 160.98 40.54 162.22 41.78 162.22 43.31 Z M 159.45 43.31" style="stroke:none"></path><path d="M 106.3 0 M 109.07 0 C 109.07 1.53 107.83 2.77 106.3 2.77 C 104.77 2.77 103.53 1.53 103.53 0 C 103.53 -1.53 104.77 -2.77 106.3 -2.77 C 107.83 -2.77 109.07 -1.53 109.07 0 Z M 106.3 0" style="stroke:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 86.69 7.82)"><foreignObject height="7.76" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="11.78"><math id="Ch0.Sx4.SSx13.p5.pic1.m1" class="ltx_Math" alttext="x^{\ast}" display="inline"><msup><mi>x</mi><mo>∗</mo></msup></math></foreignObject></g><path d="M 115.16 0 M 117.93 0 C 117.93 1.53 116.69 2.77 115.16 2.77 C 113.63 2.77 112.39 1.53 112.39 0 C 112.39 -1.53 113.63 -2.77 115.16 -2.77 C 116.69 -2.77 117.93 -1.53 117.93 0 Z M 115.16 0" style="stroke:none"></path><path d="M 159.45 -2.17 L 159.45 2.17" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 153.36 -14.22)"><foreignObject height="8.65" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="12.19"><math id="Ch0.Sx4.SSx13.p5.pic1.m2" class="ltx_Math" alttext="x_{k}" display="inline"><msub><mi>x</mi><mi>k</mi></msub></math></foreignObject></g><g fill="#FFFFFF"><path d="M 102.73 -28.94 h 24.85 v 12.06 h -24.85 Z" style="stroke:none"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 104.11 -24.22)"><foreignObject height="9.29" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="22.09"><math id="Ch0.Sx4.SSx13.p5.pic1.m3" class="ltx_Math" alttext="x_{k+1}" display="inline"><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub></math></foreignObject></g></g></svg>
+<p class="ltx_p">The slope of the function curve, or derivative of the function,
+is required for this purpose, which is a main drawback of the Newton
+method. What if the derivative is not available? This can indeed
+happen in reality when the function is either not available
+analytically, or is just too complex to differentiate. In the absence
+of the exact slope, one may draw a secant line
+through two adjacent points on the function curve. provided that the
+two points used for the drawing are not too far apar, the secant line
+provides a decent approximation of the function curve in the nearby
+region, and thus can be used to locate the next approximation of the
+root of the function (see below).</p>
+<svg id="Ch0.Sx4.SSx13.p5.pic2" class="ltx_picture ltx_centering" height="180.28" overflow="visible" version="1.1" width="323.09"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,180.28) matrix(1 0 0 -1 0 0) translate(53.43,0) translate(0,45.75)"><path d="M -53.15 0 L 262.98 0" style="fill:none"></path><g transform="matrix(1.0 0.0 0.0 1.0 262.98 0)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><path d="M 0 -45.47 L 0 131.48" style="fill:none"></path><g transform="matrix(0.0 1.0 -1.0 0.0 0 131.48)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><g stroke-width="0.8pt"><path d="M 21.26 -33.26 L 23.28 -32.98 L 25.3 -32.68 L 27.32 -32.36 L 29.34 -32.01 L 31.36 -31.63 L 33.38 -31.23 L 35.4 -30.8 L 37.42 -30.35 L 39.44 -29.88 L 41.46 -29.37 L 43.48 -28.85 L 45.5 -28.3 L 47.52 -27.72 L 49.54 -27.12 L 51.56 -26.49 L 53.58 -25.84 L 55.6 -25.17 L 57.62 -24.47 L 59.64 -23.74 L 61.66 -22.99 L 63.68 -22.21 L 65.7 -21.41 L 67.72 -20.58 L 69.74 -19.73 L 71.76 -18.85 L 73.78 -17.95 L 75.8 -17.03 L 77.83 -16.07 L 79.85 -15.1 L 81.87 -14.1 L 83.89 -13.07 L 85.91 -12.02 L 87.93 -10.94 L 89.95 -9.84 L 91.97 -8.71 L 93.99 -7.56 L 96.01 -6.38 L 98.03 -5.18 L 100.05 -3.96 L 102.07 -2.7 L 104.09 -1.43 L 106.11 -0.12 L 108.13 1.2 L 110.15 2.55 L 112.17 3.93 L 114.19 5.33 L 116.21 6.76 L 118.23 8.21 L 120.25 9.69 L 122.27 11.19 L 124.29 12.72 L 126.31 14.27 L 128.33 15.85 L 130.35 17.45 L 132.37 19.08 L 134.39 20.73 L 136.41 22.41 L 138.43 24.11 L 140.45 25.84 L 142.47 27.59 L 144.49 29.37 L 146.51 31.17 L 148.53 33 L 150.55 34.85 L 152.57 36.73 L 154.59 38.63 L 156.61 40.56 L 158.63 42.51 L 160.65 44.49 L 162.67 46.49 L 164.69 48.52 L 166.71 50.57 L 168.73 52.65 L 170.75 54.75 L 172.77 56.88 L 174.79 59.03 L 176.81 61.21 L 178.83 63.41 L 180.86 65.64 L 182.88 67.9 L 184.9 70.17 L 186.92 72.48 L 188.94 74.81 L 190.96 77.16 L 192.98 79.54 L 195 81.94 L 197.02 84.37 L 199.04 86.82 L 201.06 89.3 L 203.08 91.8 L 205.1 94.33 L 207.12 96.88 L 209.14 99.46 L 211.16 102.07 L 213.18 104.69 L 215.2 107.35 L 217.22 110.03 L 219.24 112.73 L 221.26 115.46" style="fill:none"></path></g><path d="M 98.33 -23.43 L 220.57 110.04" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 225.46 114.93)"><foreignObject height="9.46" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="39.59">Secant</foreignObject></g><path d="M 159.45 43.31 M 162.22 43.31 C 162.22 44.84 160.98 46.07 159.45 46.07 C 157.92 46.07 156.68 44.84 156.68 43.31 C 156.68 41.78 157.92 40.54 159.45 40.54 C 160.98 40.54 162.22 41.78 162.22 43.31 Z M 159.45 43.31" style="stroke:none"></path><path d="M 196.65 83.93 M 199.42 83.93 C 199.42 85.46 198.18 86.7 196.65 86.7 C 195.12 86.7 193.89 85.46 193.89 83.93 C 193.89 82.4 195.12 81.16 196.65 81.16 C 198.18 81.16 199.42 82.4 199.42 83.93 Z M 196.65 83.93" style="stroke:none"></path><path d="M 106.3 0 M 109.07 0 C 109.07 1.53 107.83 2.77 106.3 2.77 C 104.77 2.77 103.53 1.53 103.53 0 C 103.53 -1.53 104.77 -2.77 106.3 -2.77 C 107.83 -2.77 109.07 -1.53 109.07 0 Z M 106.3 0" style="stroke:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 86.69 7.82)"><foreignObject height="7.76" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="11.78"><math id="Ch0.Sx4.SSx13.p5.pic2.m1" class="ltx_Math" alttext="x^{\ast}" display="inline"><msup><mi>x</mi><mo>∗</mo></msup></math></foreignObject></g><path d="M 119.79 0 M 122.55 0 C 122.55 1.53 121.31 2.77 119.79 2.77 C 118.26 2.77 117.02 1.53 117.02 0 C 117.02 -1.53 118.26 -2.77 119.79 -2.77 C 121.31 -2.77 122.55 -1.53 122.55 0 Z M 119.79 0" style="stroke:none"></path><g fill="#FFFFFF"><path d="M 107.36 -26.17 h 24.85 v 12.06 h -24.85 Z" style="stroke:none"></path></g><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 108.74 -21.46)"><foreignObject height="9.29" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="22.09"><math id="Ch0.Sx4.SSx13.p5.pic2.m2" class="ltx_Math" alttext="x_{k+1}" display="inline"><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub></math></foreignObject></g><path d="M 159.45 -2.17 L 159.45 2.17" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 153.36 -14.22)"><foreignObject height="8.65" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="12.19"><math id="Ch0.Sx4.SSx13.p5.pic2.m3" class="ltx_Math" alttext="x_{k}" display="inline"><msub><mi>x</mi><mi>k</mi></msub></math></foreignObject></g><path d="M 196.65 -2.17 L 196.65 2.17" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 187.33 -14.22)"><foreignObject height="8.65" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="18.64"><math id="Ch0.Sx4.SSx13.p5.pic2.m4" class="ltx_Math" alttext="x_{k-1}" display="inline"><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></math></foreignObject></g></g></svg>
+<p class="ltx_p">The resulting method, as a modification to the
+Newton’s Method, is called the Secant Method. It bypasses the
+requirement of the slope or the function derivative.</p>
+</div>
+<div id="Ch0.Sx4.SSx13.p6" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let’s now work out the mechanics of the Secant Method.
+Assume <math id="Ch0.Sx4.SSx13.p6.m1" class="ltx_Math" alttext="x_{k-1}" display="inline"><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></math> &amp; <math id="Ch0.Sx4.SSx13.p6.m2" class="ltx_Math" alttext="x_{k}" display="inline"><msub><mi>x</mi><mi>k</mi></msub></math> are available, but the derivative <math id="Ch0.Sx4.SSx13.p6.m3" class="ltx_Math" alttext="f^{\prime}" display="inline"><msup><mi>f</mi><mo>′</mo></msup></math> is
+NOT available. We can approximate derivative at <math id="Ch0.Sx4.SSx13.p6.m4" class="ltx_Math" alttext="x_{k}" display="inline"><msub><mi>x</mi><mi>k</mi></msub></math> by the slope of
+the secant line passing through <math id="Ch0.Sx4.SSx13.p6.m5" class="ltx_Math" alttext="(x_{k-1},f(x_{k-1}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math> and <math id="Ch0.Sx4.SSx13.p6.m6" class="ltx_Math" alttext="(x_{k},f(x_{k}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math>,</p>
+<table id="Ch0.Ex155" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex155.m1" class="ltx_Math" alttext="f^{\prime}(x_{k})\approx\frac{f(x_{k-1})-f(x_{k})}{x_{k-1}-x_{k}}" display="block"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mfrac><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>x</mi><mi>k</mi></msub></mrow></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Now we replace <math id="Ch0.Sx4.SSx13.p6.m7" class="ltx_Math" alttext="f^{\prime}(x_{k})" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math> by the slope of the secant line in Newton’s
+formula,</p>
+<table id="Chx1.Sx4.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex156"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex156.m1" class="ltx_Math" alttext="\displaystyle x_{k+1}" display="inline"><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex156.m2" class="ltx_Math" alttext="\displaystyle=x_{k}-\frac{f(x_{k})}{\dfrac{f(x_{k-1})-f(x_{k})}{x_{k-1}-x_{k}}}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>x</mi><mi>k</mi></msub></mrow></mfrac></mstyle></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex157"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex157.m1" class="ltx_Math" alttext="\displaystyle=x_{k}-\frac{(x_{k-1}-x_{k})f(x_{k})}{f(x_{k-1})-f(x_{k})}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>x</mi><mi>k</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex158"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex158.m1" class="ltx_Math" alttext="\displaystyle=\frac{x_{k}f(x_{k-1})-\cancel{x_{k}f(x_{k})}-x_{k-1}f(x_{k})+%
+\cancel{x_{k}f(x_{k})}}{f(x_{k-1})-f(x_{k})}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><menclose notation="updiagonalstrike"><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></menclose><mo>−</mo><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><menclose notation="updiagonalstrike"><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></menclose></mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex159"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex159.m1" class="ltx_Math" alttext="\displaystyle=\frac{x_{k}f(x_{k-1})-x_{k-1}f(x_{k})}{f(x_{k-1})-f(x_{k})}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This iterative formula embodies the Secant Method. It yieds the next
+approximation <math id="Ch0.Sx4.SSx13.p6.m8" class="ltx_Math" alttext="x_{k+1}" display="inline"><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub></math> to the true root <math id="Ch0.Sx4.SSx13.p6.m9" class="ltx_Math" alttext="x^{\ast}" display="inline"><msup><mi>x</mi><mo>∗</mo></msup></math>, from two previous
+approximations <math id="Ch0.Sx4.SSx13.p6.m10" class="ltx_Math" alttext="x_{k-1}" display="inline"><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></math> and <math id="Ch0.Sx4.SSx13.p6.m11" class="ltx_Math" alttext="x_{k}" display="inline"><msub><mi>x</mi><mi>k</mi></msub></math>.</p>
+</div>
+</section>
+<section id="Ch0.Sx4.SSx14" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Algorithm (The secant method)</h4>
+
+<div id="Ch0.Sx4.SSx14.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Given <math id="Ch0.Sx4.SSx14.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>, tol, <math id="Ch0.Sx4.SSx14.p1.m2" class="ltx_Math" alttext="x_{0}" display="inline"><msub><mi>x</mi><mn>0</mn></msub></math>, <math id="Ch0.Sx4.SSx14.p1.m3" class="ltx_Math" alttext="x_{1}" display="inline"><msub><mi>x</mi><mn>1</mn></msub></math></p>
+<table id="Ch0.Ex160" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex160X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex160X.m2" class="ltx_Math" alttext="\displaystyle\text{while }\bigl{(}|x_{k}-x_{k-1}|&gt;\mathrm{tol}\bigr{)}:" display="inline"><mrow><mrow><mtext>while </mtext><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mrow><mrow><mo stretchy="false">|</mo><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mo stretchy="false">|</mo></mrow><mo>&gt;</mo><mi>tol</mi></mrow><mo maxsize="120%" minsize="120%" rspace="0.278em">)</mo></mrow></mrow><mo rspace="0.278em">:</mo><mi></mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex160Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex160Xa.m2" class="ltx_Math" alttext="\displaystyle\quad x_{k+1}=\frac{x_{k-1}f(x_{k})-x_{k}f(x_{k-1})}{f(x_{k})-f(x%
+_{k-1})}" display="inline"><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx4.SSx14.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_rule" style="width:100%;height:1px;background:black;display:inline-block;"> </span></p>
+</div>
+<div id="Ch0.Sx4.SSx14.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">Comments:</p>
+<ol id="Ch0.Sx4.I22" class="ltx_enumerate">
+<li id="Ch0.Sx4.I22.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch0.Sx4.I22.i1.p1" class="ltx_para">
+<p class="ltx_p">No function derivative required</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I22.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch0.Sx4.I22.i2.p1" class="ltx_para">
+<p class="ltx_p">Two initial guesses required to get started.</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I22.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="Ch0.Sx4.I22.i3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">One function eval at each step, if implemented properly.</p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<section id="Ch0.Sx4.SSx15" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Coding exercise</h4>
+
+<div id="Ch0.Sx4.SSx15.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Implement the Secant method by adapting Newton’s.</p>
+</div>
+<div id="Ch0.Sx4.SSx15.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Test cases:</p>
+<ol id="Ch0.Sx4.I23" class="ltx_enumerate">
+<li id="Ch0.Sx4.I23.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch0.Sx4.I23.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="Ch0.Sx4.I23.i1.p1.m1" class="ltx_Math" alttext="e^{x}-x^{2}=0\qquad x_{0}=0,\quad x_{1}=1" display="inline"><mrow><mrow><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>=</mo><mn>0</mn></mrow><mspace width="2em"></mspace><mrow><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><mo rspace="1.167em">,</mo><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow></mrow></mrow></math></p>
+</div>
+</li>
+<li id="Ch0.Sx4.I23.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch0.Sx4.I23.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><math id="Ch0.Sx4.I23.i2.p1.m1" class="ltx_Math" alttext="x^{3}-2x+2=0" display="inline"><mrow><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>2</mn></mrow><mo>=</mo><mn>0</mn></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+<div id="Ch0.Sx4.SSx15.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">General instructions on the implementation:</p>
+<ol id="Ch0.Sx4.I24" class="ltx_enumerate">
+<li id="Ch0.Sx4.I24.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch0.Sx4.I24.i1.p1" class="ltx_para">
+<p class="ltx_p">Remove <span class="ltx_text ltx_font_typewriter">funderiv</span></p>
+</div>
+</li>
+<li id="Ch0.Sx4.I24.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch0.Sx4.I24.i2.p1" class="ltx_para">
+<p class="ltx_p">Add extra starting pt <math id="Ch0.Sx4.I24.i2.p1.m1" class="ltx_Math" alttext="x_{1}" display="inline"><msub><mi>x</mi><mn>1</mn></msub></math></p>
+</div>
+</li>
+<li id="Ch0.Sx4.I24.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="Ch0.Sx4.I24.i3.p1" class="ltx_para">
+<p class="ltx_p">Replace the derivative by Secant formula</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I24.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.</span> 
+<div id="Ch0.Sx4.I24.i4.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Keep track of pts &amp; function values.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="ltx_sectional-block ltx_minipage">
+        
+<section id="Ch0.Sx4.SSx16" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Comparison of bisection, Newton, and Secant methods</h4>
+
+<div id="lecture10.Thmtheorem1" class="ltx_theorem ltx_theorem_definition">
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Definition 10.1</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="lecture10.Thmtheorem1.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="lecture10.Thmtheorem1.p1.m1" class="ltx_Math" alttext="e_{n}" display="inline"><msub><mi>e</mi><mi>n</mi></msub></math> be the error in step <math id="lecture10.Thmtheorem1.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> of an algorithm.
+We say an iteration converges with order <math id="lecture10.Thmtheorem1.p1.m3" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> if</p>
+<table id="Ch0.Ex161" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex161.m1" class="ltx_Math" alttext="\lim_{k\to\infty}\frac{|e_{n+1}|}{|e_{n}|^{k}}=C&lt;\infty," display="block"><mrow><mrow><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>k</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></munder><mfrac><mrow><mo stretchy="false">|</mo><msub><mi>e</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">|</mo></mrow><msup><mrow><mo stretchy="false">|</mo><msub><mi>e</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow><mi>k</mi></msup></mfrac></mrow><mo>=</mo><mi>C</mi><mo>&lt;</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">where <math id="lecture10.Thmtheorem1.p1.m4" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> is a constant that does not depend on <math id="lecture10.Thmtheorem1.p1.m5" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>. If <math id="lecture10.Thmtheorem1.p1.m6" class="ltx_Math" alttext="k=1" display="inline"><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow></math> we call the
+convergence “linear”, if <math id="lecture10.Thmtheorem1.p1.m7" class="ltx_Math" alttext="k=2" display="inline"><mrow><mi>k</mi><mo>=</mo><mn>2</mn></mrow></math> “quadratic”.</span></p>
+</div>
+</div>
+<div id="Ch0.Sx4.SSx16.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Applying this definition to the few methods we have learned so far, we
+find that</p>
+<table id="Chx1.Sx4.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex162"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath">Bisection:</span></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex162.m2" class="ltx_Math" alttext="\displaystyle|e_{n+1}|\approx\frac{1}{2}|e_{n}|,\quad k=1,\quad\text{$1^{%
+\mathrm{st}}$-order (linear) convergence}" display="inline"><mrow><mrow><mrow><mo stretchy="false">|</mo><msub><mi>e</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">|</mo></mrow><mo>≈</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">|</mo><msub><mi>e</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mi>k</mi><mo>=</mo><mrow><mn>1</mn><mo rspace="1.167em">,</mo><mrow><msup><mn>1</mn><mi>st</mi></msup><mtext>-order (linear) convergence</mtext></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex163"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath">Newton:</span></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex163.m2" class="ltx_Math" alttext="\displaystyle|e_{n+1}|\approx C\cdot|e_{n}|^{2},\quad k=2,\quad\text{$2^{%
+\mathrm{nd}}$-order (quadratic) convergence}" display="inline"><mrow><mrow><mrow><mo stretchy="false">|</mo><msub><mi>e</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">|</mo></mrow><mo>≈</mo><mrow><mi>C</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mrow><mo stretchy="false">|</mo><msub><mi>e</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow><mn>2</mn></msup></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mi>k</mi><mo>=</mo><mrow><mn>2</mn><mo rspace="1.167em">,</mo><mrow><msup><mn>2</mn><mi>nd</mi></msup><mtext>-order (quadratic) convergence</mtext></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex164"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath">Secant:</span></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex164.m2" class="ltx_Math" alttext="\displaystyle|e_{n+1}|\approx C|e_{n}|^{k},\quad k=\frac{1+\sqrt{5}}{2}\approx
+1%
+.6,\text{superlinear convergence}." display="inline"><mrow><mrow><mrow><mrow><mrow><mo stretchy="false">|</mo><msub><mi>e</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">|</mo></mrow><mo>≈</mo><mrow><mi>C</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">|</mo><msub><mi>e</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow><mi>k</mi></msup></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mi>k</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>+</mo><msqrt><mn>5</mn></msqrt></mrow><mn>2</mn></mfrac></mstyle><mo>≈</mo><mn>1.6</mn></mrow></mrow><mo>,</mo><mtext>superlinear convergence</mtext></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx4.SSx16.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Below is a comparison table on all three methods we have learned so far,</p>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_top ltx_th ltx_th_column ltx_th_row ltx_border_r" style="padding-top:2.25pt;padding-bottom:2.25pt;"></th>
+<th class="ltx_td ltx_align_justify ltx_th ltx_th_column" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">Bisection</span></span>
+</span>
+</th>
+<th class="ltx_td ltx_align_justify ltx_th ltx_th_column" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">Newton</span></span>
+</span>
+</th>
+<th class="ltx_td ltx_nopad_r ltx_align_justify ltx_th ltx_th_column" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">Secant</span></span>
+</span>
+</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_r ltx_border_t" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:108.1pt;"><span class="ltx_text" style="font-size:90%;">requirements on </span><math id="Ch0.Sx4.SSx16.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi mathsize="90%">f</mi></math><span class="ltx_text" style="font-size:90%;">?</span></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_border_t" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">continuous, sign change in </span><math id="Ch0.Sx4.SSx16.p2.m2" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo maxsize="90%" minsize="90%">[</mo><mi mathsize="90%">a</mi><mo mathsize="90%">,</mo><mi mathsize="90%">b</mi><mo maxsize="90%" minsize="90%">]</mo></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_border_t" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">continuous, differentiable</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_nopad_r ltx_align_justify ltx_border_t" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">continuous, differentiable</span></span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_r" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:108.1pt;"><span class="ltx_text" style="font-size:90%;">needs</span></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">interval </span><math id="Ch0.Sx4.SSx16.p2.m3" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo maxsize="90%" minsize="90%">[</mo><mi mathsize="90%">a</mi><mo mathsize="90%">,</mo><mi mathsize="90%">b</mi><mo maxsize="90%" minsize="90%">]</mo></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">point </span><math id="Ch0.Sx4.SSx16.p2.m4" class="ltx_Math" alttext="x_{0}" display="inline"><msub><mi mathsize="90%">x</mi><mn mathsize="90%">0</mn></msub></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_nopad_r ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">points </span><math id="Ch0.Sx4.SSx16.p2.m5" class="ltx_Math" alttext="x_{0}" display="inline"><msub><mi mathsize="90%">x</mi><mn mathsize="90%">0</mn></msub></math><span class="ltx_text" style="font-size:90%;"> and </span><math id="Ch0.Sx4.SSx16.p2.m6" class="ltx_Math" alttext="x_{1}" display="inline"><msub><mi mathsize="90%">x</mi><mn mathsize="90%">1</mn></msub></math></span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_r" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:108.1pt;"><span class="ltx_text" style="font-size:90%;">always converges?</span></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">yes</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">no, only if “close”</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_nopad_r ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">no, only if “close”</span></span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_r" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:108.1pt;"><span class="ltx_text" style="font-size:90%;">higher dimensions?</span></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">no</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">yes</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_nopad_r ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">yes</span><sup class="ltx_sup"><span class="ltx_text ltx_font_italic" style="font-size:90%;">(1)</span></sup></span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_r" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:108.1pt;"><span class="ltx_text" style="font-size:90%;">work per step</span></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">1 function</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">1 function, 1 derivative</span><sup class="ltx_sup"><span class="ltx_text ltx_font_italic" style="font-size:90%;">(2)</span></sup></span>
+</span>
+</td>
+<td class="ltx_td ltx_nopad_r ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">1 function</span></span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_r" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:108.1pt;"><span class="ltx_text" style="font-size:90%;">convergence rate</span><sup class="ltx_sup"><span class="ltx_text ltx_font_italic" style="font-size:90%;">(3)</span></sup></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">1</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><span class="ltx_text" style="font-size:90%;">2</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_nopad_r ltx_align_justify" style="padding-top:2.25pt;padding-bottom:2.25pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p"><math id="Ch0.Sx4.SSx16.p2.m10" class="ltx_Math" alttext="\sim 1.6" display="inline"><mrow><mi></mi><mo mathsize="90%">∼</mo><mn mathsize="90%">1.6</mn></mrow></math></span>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="Ch0.Sx4.SSx16.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">To see the differences that different convergence rates can make, we
+take <math id="Ch0.Sx4.SSx16.p3.m1" class="ltx_Math" alttext="C=1" display="inline"><mrow><mi>C</mi><mo>=</mo><mn>1</mn></mrow></math>, and an initial error <math id="Ch0.Sx4.SSx16.p3.m2" class="ltx_Math" alttext="e_{0}=\frac{1}{2}" display="inline"><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math>,</p>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_th ltx_th_row" style="padding-top:2.5pt;padding-bottom:2.5pt;"></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m3" class="ltx_Math" alttext="e_{0}" display="inline"><msub><mi>e</mi><mn>0</mn></msub></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m4" class="ltx_Math" alttext="e_{1}" display="inline"><msub><mi>e</mi><mn>1</mn></msub></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m5" class="ltx_Math" alttext="e_{2}" display="inline"><msub><mi>e</mi><mn>2</mn></msub></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m6" class="ltx_Math" alttext="e_{3}" display="inline"><msub><mi>e</mi><mn>3</mn></msub></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m7" class="ltx_Math" alttext="e_{4}" display="inline"><msub><mi>e</mi><mn>4</mn></msub></math></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;">Bisection</th>
+<td class="ltx_td ltx_align_center ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m8" class="ltx_Math" alttext="\frac{1}{2}" display="inline"><mfrac><mn>1</mn><mn>2</mn></mfrac></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m9" class="ltx_Math" alttext=".25" display="inline"><mn>.25</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m10" class="ltx_Math" alttext=".125" display="inline"><mn>.125</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m11" class="ltx_Math" alttext=".0625" display="inline"><mn>.0625</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m12" class="ltx_Math" alttext=".03125" display="inline"><mn>.03125</mn></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;">Newton</th>
+<td class="ltx_td ltx_align_center ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m13" class="ltx_Math" alttext="\frac{1}{2}" display="inline"><mfrac><mn>1</mn><mn>2</mn></mfrac></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m14" class="ltx_Math" alttext=".25" display="inline"><mn>.25</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m15" class="ltx_Math" alttext=".0625" display="inline"><mn>.0625</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m16" class="ltx_Math" alttext=".0039" display="inline"><mn>.0039</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m17" class="ltx_Math" alttext="1.521\times 10^{-5}" display="inline"><mrow><mn>1.521</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>5</mn></mrow></msup></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;">Secant</th>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m18" class="ltx_Math" alttext="\frac{1}{2}" display="inline"><mfrac><mn>1</mn><mn>2</mn></mfrac></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m19" class="ltx_Math" alttext=".3299" display="inline"><mn>.3299</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m20" class="ltx_Math" alttext=".1696" display="inline"><mn>.1696</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m21" class="ltx_Math" alttext=".05849" display="inline"><mn>.05849</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_t" style="padding-top:2.5pt;padding-bottom:2.5pt;"><math id="Ch0.Sx4.SSx16.p3.m22" class="ltx_Math" alttext=".01065" display="inline"><mn>.01065</mn></math></td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p">As a second order accurate iterative algorithm, the Newton’s method pulls far
+ahead in terms of accuracy, followed by the Secant Method. However,
+the Newton’s method is not an option when the functions are not available
+in differentiable analytic forms.
+In the real world, people use a combination of bisection (for reliability)
+and secant (for performance) methods.</p>
+</div>
+</section>
+      
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_logical-block">
+        
+<div id="Ch0.Sx4.SSx15.p4" class="ltx_para">
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Tue Sep 29 14:25:32 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
