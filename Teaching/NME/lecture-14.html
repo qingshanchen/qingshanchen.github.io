@@ -1,0 +1,321 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Lecture 14</title>
+<!--Generated on Sun Nov  1 14:17:15 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on November 1, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="lectures.css" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">Lecture 14</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold" style="font-size:207%;">Line of best fitting</span></p>
+<p class="ltx_p">When lots of potentially noisy data are present, it can be hopeless/pointless to try to interpolate all the data pts exactly. In this case, one can instead try to find a low-order curve that best fits the data in a certain sense.</p>
+<svg id="Ch0.Sx4.SSx29.p1.pic1" class="ltx_picture ltx_centering" height="151.19" overflow="visible" version="1.1" width="320"><g fill="#000000" stroke="#000000" stroke-width="0.8pt" transform="translate(0,151.19) matrix(1 0 0 -1 0 0) translate(161.97,0) translate(0,42.37)"><path d="M -161.42 -29.53 C -62.99 -7.09 62.99 33.46 157.48 108.27" style="fill:none"></path><path d="M -145.67 -21.65 M -143.46 -21.65 C -143.46 -20.43 -144.45 -19.44 -145.67 -19.44 C -146.89 -19.44 -147.88 -20.43 -147.88 -21.65 C -147.88 -22.88 -146.89 -23.87 -145.67 -23.87 C -144.45 -23.87 -143.46 -22.88 -143.46 -21.65 Z M -145.67 -21.65" style="stroke:none"></path><path d="M -131.89 -13.78 M -129.68 -13.78 C -129.68 -12.56 -130.67 -11.57 -131.89 -11.57 C -133.11 -11.57 -134.1 -12.56 -134.1 -13.78 C -134.1 -15 -133.11 -15.99 -131.89 -15.99 C -130.67 -15.99 -129.68 -15 -129.68 -13.78 Z M -131.89 -13.78" style="stroke:none"></path><path d="M -120.08 -40.16 M -117.86 -40.16 C -117.86 -38.93 -118.86 -37.94 -120.08 -37.94 C -121.3 -37.94 -122.29 -38.93 -122.29 -40.16 C -122.29 -41.38 -121.3 -42.37 -120.08 -42.37 C -118.86 -42.37 -117.86 -41.38 -117.86 -40.16 Z M -120.08 -40.16" style="stroke:none"></path><path d="M -114.17 -1.97 M -111.96 -1.97 C -111.96 -0.75 -112.95 0.25 -114.17 0.25 C -115.4 0.25 -116.39 -0.75 -116.39 -1.97 C -116.39 -3.19 -115.4 -4.18 -114.17 -4.18 C -112.95 -4.18 -111.96 -3.19 -111.96 -1.97 Z M -114.17 -1.97" style="stroke:none"></path><path d="M -100.39 -7.87 M -98.18 -7.87 C -98.18 -6.65 -99.17 -5.66 -100.39 -5.66 C -101.62 -5.66 -102.61 -6.65 -102.61 -7.87 C -102.61 -9.1 -101.62 -10.09 -100.39 -10.09 C -99.17 -10.09 -98.18 -9.1 -98.18 -7.87 Z M -100.39 -7.87" style="stroke:none"></path><path d="M -92.52 -28.35 M -90.31 -28.35 C -90.31 -27.12 -91.3 -26.13 -92.52 -26.13 C -93.74 -26.13 -94.73 -27.12 -94.73 -28.35 C -94.73 -29.57 -93.74 -30.56 -92.52 -30.56 C -91.3 -30.56 -90.31 -29.57 -90.31 -28.35 Z M -92.52 -28.35" style="stroke:none"></path><path d="M -82.68 5.91 M -80.46 5.91 C -80.46 7.13 -81.45 8.12 -82.68 8.12 C -83.9 8.12 -84.89 7.13 -84.89 5.91 C -84.89 4.68 -83.9 3.69 -82.68 3.69 C -81.45 3.69 -80.46 4.68 -80.46 5.91 Z M -82.68 5.91" style="stroke:none"></path><path d="M -72.83 -14.96 M -70.62 -14.96 C -70.62 -13.74 -71.61 -12.75 -72.83 -12.75 C -74.06 -12.75 -75.05 -13.74 -75.05 -14.96 C -75.05 -16.18 -74.06 -17.17 -72.83 -17.17 C -71.61 -17.17 -70.62 -16.18 -70.62 -14.96 Z M -72.83 -14.96" style="stroke:none"></path><path d="M -59.06 8.66 M -56.84 8.66 C -56.84 9.88 -57.83 10.88 -59.06 10.88 C -60.28 10.88 -61.27 9.88 -61.27 8.66 C -61.27 7.44 -60.28 6.45 -59.06 6.45 C -57.83 6.45 -56.84 7.44 -56.84 8.66 Z M -59.06 8.66" style="stroke:none"></path><path d="M -49.21 -7.09 M -47 -7.09 C -47 -5.86 -47.99 -4.87 -49.21 -4.87 C -50.44 -4.87 -51.43 -5.86 -51.43 -7.09 C -51.43 -8.31 -50.44 -9.3 -49.21 -9.3 C -47.99 -9.3 -47 -8.31 -47 -7.09 Z M -49.21 -7.09" style="stroke:none"></path><path d="M -39.37 21.65 M -37.16 21.65 C -37.16 22.88 -38.15 23.87 -39.37 23.87 C -40.59 23.87 -41.58 22.88 -41.58 21.65 C -41.58 20.43 -40.59 19.44 -39.37 19.44 C -38.15 19.44 -37.16 20.43 -37.16 21.65 Z M -39.37 21.65" style="stroke:none"></path><path d="M -25.59 -6.69 M -23.38 -6.69 C -23.38 -5.47 -24.37 -4.48 -25.59 -4.48 C -26.81 -4.48 -27.8 -5.47 -27.8 -6.69 C -27.8 -7.92 -26.81 -8.91 -25.59 -8.91 C -24.37 -8.91 -23.38 -7.92 -23.38 -6.69 Z M -25.59 -6.69" style="stroke:none"></path><path d="M -11.81 16.14 M -9.6 16.14 C -9.6 17.36 -10.59 18.36 -11.81 18.36 C -13.03 18.36 -14.03 17.36 -14.03 16.14 C -14.03 14.92 -13.03 13.93 -11.81 13.93 C -10.59 13.93 -9.6 14.92 -9.6 16.14 Z M -11.81 16.14" style="stroke:none"></path><path d="M 0.79 31.5 M 3 31.5 C 3 32.72 2.01 33.71 0.79 33.71 C -0.44 33.71 -1.43 32.72 -1.43 31.5 C -1.43 30.27 -0.44 29.28 0.79 29.28 C 2.01 29.28 3 30.27 3 31.5 Z M 0.79 31.5" style="stroke:none"></path><path d="M 9.84 17.72 M 12.06 17.72 C 12.06 18.94 11.07 19.93 9.84 19.93 C 8.62 19.93 7.63 18.94 7.63 17.72 C 7.63 16.49 8.62 15.5 9.84 15.5 C 11.07 15.5 12.06 16.49 12.06 17.72 Z M 9.84 17.72" style="stroke:none"></path><path d="M 21.65 40.94 M 23.87 40.94 C 23.87 42.17 22.88 43.16 21.65 43.16 C 20.43 43.16 19.44 42.17 19.44 40.94 C 19.44 39.72 20.43 38.73 21.65 38.73 C 22.88 38.73 23.87 39.72 23.87 40.94 Z M 21.65 40.94" style="stroke:none"></path><path d="M 33.46 19.69 M 35.68 19.69 C 35.68 20.91 34.69 21.9 33.46 21.9 C 32.24 21.9 31.25 20.91 31.25 19.69 C 31.25 18.46 32.24 17.47 33.46 17.47 C 34.69 17.47 35.68 18.46 35.68 19.69 Z M 33.46 19.69" style="stroke:none"></path><path d="M 43.31 50.39 M 45.52 50.39 C 45.52 51.62 44.53 52.61 43.31 52.61 C 42.08 52.61 41.09 51.62 41.09 50.39 C 41.09 49.17 42.08 48.18 43.31 48.18 C 44.53 48.18 45.52 49.17 45.52 50.39 Z M 43.31 50.39" style="stroke:none"></path><path d="M 55.12 35.43 M 57.33 35.43 C 57.33 36.66 56.34 37.65 55.12 37.65 C 53.9 37.65 52.9 36.66 52.9 35.43 C 52.9 34.21 53.9 33.22 55.12 33.22 C 56.34 33.22 57.33 34.21 57.33 35.43 Z M 55.12 35.43" style="stroke:none"></path><path d="M 66.14 66.93 M 68.36 66.93 C 68.36 68.15 67.36 69.14 66.14 69.14 C 64.92 69.14 63.93 68.15 63.93 66.93 C 63.93 65.71 64.92 64.72 66.14 64.72 C 67.36 64.72 68.36 65.71 68.36 66.93 Z M 66.14 66.93" style="stroke:none"></path><path d="M 80.71 45.28 M 82.92 45.28 C 82.92 46.5 81.93 47.49 80.71 47.49 C 79.49 47.49 78.49 46.5 78.49 45.28 C 78.49 44.05 79.49 43.06 80.71 43.06 C 81.93 43.06 82.92 44.05 82.92 45.28 Z M 80.71 45.28" style="stroke:none"></path><path d="M 90.55 70.87 M 92.77 70.87 C 92.77 72.09 91.77 73.08 90.55 73.08 C 89.33 73.08 88.34 72.09 88.34 70.87 C 88.34 69.64 89.33 68.65 90.55 68.65 C 91.77 68.65 92.77 69.64 92.77 70.87 Z M 90.55 70.87" style="stroke:none"></path><path d="M 100.39 60.24 M 102.61 60.24 C 102.61 61.46 101.62 62.45 100.39 62.45 C 99.17 62.45 98.18 61.46 98.18 60.24 C 98.18 59.01 99.17 58.02 100.39 58.02 C 101.62 58.02 102.61 59.01 102.61 60.24 Z M 100.39 60.24" style="stroke:none"></path><path d="M 108.27 83.86 M 110.48 83.86 C 110.48 85.08 109.49 86.07 108.27 86.07 C 107.04 86.07 106.05 85.08 106.05 83.86 C 106.05 82.64 107.04 81.64 108.27 81.64 C 109.49 81.64 110.48 82.64 110.48 83.86 Z M 108.27 83.86" style="stroke:none"></path><path d="M 120.08 80.71 M 122.29 80.71 C 122.29 81.93 121.3 82.92 120.08 82.92 C 118.86 82.92 117.86 81.93 117.86 80.71 C 117.86 79.49 118.86 78.49 120.08 78.49 C 121.3 78.49 122.29 79.49 122.29 80.71 Z M 120.08 80.71" style="stroke:none"></path><path d="M 131.89 98.43 M 134.1 98.43 C 134.1 99.65 133.11 100.64 131.89 100.64 C 130.67 100.64 129.68 99.65 129.68 98.43 C 129.68 97.2 130.67 96.21 131.89 96.21 C 133.11 96.21 134.1 97.2 134.1 98.43 Z M 131.89 98.43" style="stroke:none"></path><path d="M 143.7 92.52 M 145.91 92.52 C 145.91 93.74 144.92 94.73 143.7 94.73 C 142.48 94.73 141.49 93.74 141.49 92.52 C 141.49 91.3 142.48 90.31 143.7 90.31 C 144.92 90.31 145.91 91.3 145.91 92.52 Z M 143.7 92.52" style="stroke:none"></path></g></svg>
+</div>
+<div id="Ch0.Sx4.SSx29.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">The first technique we will learn is a simple but popular one: line of best fitting, <span class="ltx_text" style="font-size:90%;">a.k.a</span> linear
+regression.</p>
+</div>
+<section id="Ch0.Sx4.SSx29.SSS0.Px1" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Problem statement: </h5>
+
+<div id="Ch0.Sx4.SSx29.SSS0.Px1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Given <math id="Ch0.Sx4.SSx29.SSS0.Px1.p1.m1" class="ltx_Math" alttext="(x_{i},y_{i})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>,</mo><msub><mi>y</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></math>, <math id="Ch0.Sx4.SSx29.SSS0.Px1.p1.m2" class="ltx_Math" alttext="1\leq i\leq n" display="inline"><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow></math> (large), find a line</p>
+<table id="Ch0.Ex205" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex205.m1" class="ltx_Math" alttext="y=a_{1}x+a_{0}" display="block"><mrow><mi>y</mi><mo>=</mo><mrow><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><msub><mi>a</mi><mn>0</mn></msub></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">which best fits the data in a certain sense.</p>
+<svg id="Ch0.Sx4.SSx29.SSS0.Px1.p1.pic1" class="ltx_picture ltx_centering" height="143.01" overflow="visible" version="1.1" width="320"><g fill="#000000" stroke="#000000" stroke-width="0.8pt" transform="translate(0,143.01) matrix(1 0 0 -1 0 0) translate(161.97,0) translate(0,42.37)"><path d="M -161.42 -33.46 L 157.48 92.52" style="fill:none"></path><path d="M -145.67 -21.65 M -143.46 -21.65 C -143.46 -20.43 -144.45 -19.44 -145.67 -19.44 C -146.89 -19.44 -147.88 -20.43 -147.88 -21.65 C -147.88 -22.88 -146.89 -23.87 -145.67 -23.87 C -144.45 -23.87 -143.46 -22.88 -143.46 -21.65 Z M -145.67 -21.65" style="stroke:none"></path><path d="M -131.89 -13.78 M -129.68 -13.78 C -129.68 -12.56 -130.67 -11.57 -131.89 -11.57 C -133.11 -11.57 -134.1 -12.56 -134.1 -13.78 C -134.1 -15 -133.11 -15.99 -131.89 -15.99 C -130.67 -15.99 -129.68 -15 -129.68 -13.78 Z M -131.89 -13.78" style="stroke:none"></path><path d="M -120.08 -40.16 M -117.86 -40.16 C -117.86 -38.93 -118.86 -37.94 -120.08 -37.94 C -121.3 -37.94 -122.29 -38.93 -122.29 -40.16 C -122.29 -41.38 -121.3 -42.37 -120.08 -42.37 C -118.86 -42.37 -117.86 -41.38 -117.86 -40.16 Z M -120.08 -40.16" style="stroke:none"></path><path d="M -114.17 -1.97 M -111.96 -1.97 C -111.96 -0.75 -112.95 0.25 -114.17 0.25 C -115.4 0.25 -116.39 -0.75 -116.39 -1.97 C -116.39 -3.19 -115.4 -4.18 -114.17 -4.18 C -112.95 -4.18 -111.96 -3.19 -111.96 -1.97 Z M -114.17 -1.97" style="stroke:none"></path><path d="M -100.39 -7.87 M -98.18 -7.87 C -98.18 -6.65 -99.17 -5.66 -100.39 -5.66 C -101.62 -5.66 -102.61 -6.65 -102.61 -7.87 C -102.61 -9.1 -101.62 -10.09 -100.39 -10.09 C -99.17 -10.09 -98.18 -9.1 -98.18 -7.87 Z M -100.39 -7.87" style="stroke:none"></path><path d="M -92.52 -28.35 M -90.31 -28.35 C -90.31 -27.12 -91.3 -26.13 -92.52 -26.13 C -93.74 -26.13 -94.73 -27.12 -94.73 -28.35 C -94.73 -29.57 -93.74 -30.56 -92.52 -30.56 C -91.3 -30.56 -90.31 -29.57 -90.31 -28.35 Z M -92.52 -28.35" style="stroke:none"></path><path d="M -82.68 5.91 M -80.46 5.91 C -80.46 7.13 -81.45 8.12 -82.68 8.12 C -83.9 8.12 -84.89 7.13 -84.89 5.91 C -84.89 4.68 -83.9 3.69 -82.68 3.69 C -81.45 3.69 -80.46 4.68 -80.46 5.91 Z M -82.68 5.91" style="stroke:none"></path><path d="M -72.83 -14.96 M -70.62 -14.96 C -70.62 -13.74 -71.61 -12.75 -72.83 -12.75 C -74.06 -12.75 -75.05 -13.74 -75.05 -14.96 C -75.05 -16.18 -74.06 -17.17 -72.83 -17.17 C -71.61 -17.17 -70.62 -16.18 -70.62 -14.96 Z M -72.83 -14.96" style="stroke:none"></path><path d="M -59.06 8.66 M -56.84 8.66 C -56.84 9.88 -57.83 10.88 -59.06 10.88 C -60.28 10.88 -61.27 9.88 -61.27 8.66 C -61.27 7.44 -60.28 6.45 -59.06 6.45 C -57.83 6.45 -56.84 7.44 -56.84 8.66 Z M -59.06 8.66" style="stroke:none"></path><path d="M -49.21 -7.09 M -47 -7.09 C -47 -5.86 -47.99 -4.87 -49.21 -4.87 C -50.44 -4.87 -51.43 -5.86 -51.43 -7.09 C -51.43 -8.31 -50.44 -9.3 -49.21 -9.3 C -47.99 -9.3 -47 -8.31 -47 -7.09 Z M -49.21 -7.09" style="stroke:none"></path><path d="M -39.37 21.65 M -37.16 21.65 C -37.16 22.88 -38.15 23.87 -39.37 23.87 C -40.59 23.87 -41.58 22.88 -41.58 21.65 C -41.58 20.43 -40.59 19.44 -39.37 19.44 C -38.15 19.44 -37.16 20.43 -37.16 21.65 Z M -39.37 21.65" style="stroke:none"></path><path d="M -25.59 -6.69 M -23.38 -6.69 C -23.38 -5.47 -24.37 -4.48 -25.59 -4.48 C -26.81 -4.48 -27.8 -5.47 -27.8 -6.69 C -27.8 -7.92 -26.81 -8.91 -25.59 -8.91 C -24.37 -8.91 -23.38 -7.92 -23.38 -6.69 Z M -25.59 -6.69" style="stroke:none"></path><path d="M -11.81 16.14 M -9.6 16.14 C -9.6 17.36 -10.59 18.36 -11.81 18.36 C -13.03 18.36 -14.03 17.36 -14.03 16.14 C -14.03 14.92 -13.03 13.93 -11.81 13.93 C -10.59 13.93 -9.6 14.92 -9.6 16.14 Z M -11.81 16.14" style="stroke:none"></path><path d="M 0.79 31.5 M 3 31.5 C 3 32.72 2.01 33.71 0.79 33.71 C -0.44 33.71 -1.43 32.72 -1.43 31.5 C -1.43 30.27 -0.44 29.28 0.79 29.28 C 2.01 29.28 3 30.27 3 31.5 Z M 0.79 31.5" style="stroke:none"></path><path d="M 9.84 17.72 M 12.06 17.72 C 12.06 18.94 11.07 19.93 9.84 19.93 C 8.62 19.93 7.63 18.94 7.63 17.72 C 7.63 16.49 8.62 15.5 9.84 15.5 C 11.07 15.5 12.06 16.49 12.06 17.72 Z M 9.84 17.72" style="stroke:none"></path><path d="M 21.65 40.94 M 23.87 40.94 C 23.87 42.17 22.88 43.16 21.65 43.16 C 20.43 43.16 19.44 42.17 19.44 40.94 C 19.44 39.72 20.43 38.73 21.65 38.73 C 22.88 38.73 23.87 39.72 23.87 40.94 Z M 21.65 40.94" style="stroke:none"></path><path d="M 33.46 19.69 M 35.68 19.69 C 35.68 20.91 34.69 21.9 33.46 21.9 C 32.24 21.9 31.25 20.91 31.25 19.69 C 31.25 18.46 32.24 17.47 33.46 17.47 C 34.69 17.47 35.68 18.46 35.68 19.69 Z M 33.46 19.69" style="stroke:none"></path><path d="M 43.31 50.39 M 45.52 50.39 C 45.52 51.62 44.53 52.61 43.31 52.61 C 42.08 52.61 41.09 51.62 41.09 50.39 C 41.09 49.17 42.08 48.18 43.31 48.18 C 44.53 48.18 45.52 49.17 45.52 50.39 Z M 43.31 50.39" style="stroke:none"></path><path d="M 55.12 35.43 M 57.33 35.43 C 57.33 36.66 56.34 37.65 55.12 37.65 C 53.9 37.65 52.9 36.66 52.9 35.43 C 52.9 34.21 53.9 33.22 55.12 33.22 C 56.34 33.22 57.33 34.21 57.33 35.43 Z M 55.12 35.43" style="stroke:none"></path><path d="M 66.14 66.93 M 68.36 66.93 C 68.36 68.15 67.36 69.14 66.14 69.14 C 64.92 69.14 63.93 68.15 63.93 66.93 C 63.93 65.71 64.92 64.72 66.14 64.72 C 67.36 64.72 68.36 65.71 68.36 66.93 Z M 66.14 66.93" style="stroke:none"></path><path d="M 80.71 45.28 M 82.92 45.28 C 82.92 46.5 81.93 47.49 80.71 47.49 C 79.49 47.49 78.49 46.5 78.49 45.28 C 78.49 44.05 79.49 43.06 80.71 43.06 C 81.93 43.06 82.92 44.05 82.92 45.28 Z M 80.71 45.28" style="stroke:none"></path><path d="M 90.55 70.87 M 92.77 70.87 C 92.77 72.09 91.77 73.08 90.55 73.08 C 89.33 73.08 88.34 72.09 88.34 70.87 C 88.34 69.64 89.33 68.65 90.55 68.65 C 91.77 68.65 92.77 69.64 92.77 70.87 Z M 90.55 70.87" style="stroke:none"></path><path d="M 100.39 60.24 M 102.61 60.24 C 102.61 61.46 101.62 62.45 100.39 62.45 C 99.17 62.45 98.18 61.46 98.18 60.24 C 98.18 59.01 99.17 58.02 100.39 58.02 C 101.62 58.02 102.61 59.01 102.61 60.24 Z M 100.39 60.24" style="stroke:none"></path><path d="M 108.27 83.86 M 110.48 83.86 C 110.48 85.08 109.49 86.07 108.27 86.07 C 107.04 86.07 106.05 85.08 106.05 83.86 C 106.05 82.64 107.04 81.64 108.27 81.64 C 109.49 81.64 110.48 82.64 110.48 83.86 Z M 108.27 83.86" style="stroke:none"></path><path d="M 120.08 80.71 M 122.29 80.71 C 122.29 81.93 121.3 82.92 120.08 82.92 C 118.86 82.92 117.86 81.93 117.86 80.71 C 117.86 79.49 118.86 78.49 120.08 78.49 C 121.3 78.49 122.29 79.49 122.29 80.71 Z M 120.08 80.71" style="stroke:none"></path><path d="M 131.89 98.43 M 134.1 98.43 C 134.1 99.65 133.11 100.64 131.89 100.64 C 130.67 100.64 129.68 99.65 129.68 98.43 C 129.68 97.2 130.67 96.21 131.89 96.21 C 133.11 96.21 134.1 97.2 134.1 98.43 Z M 131.89 98.43" style="stroke:none"></path><path d="M 143.7 92.52 M 145.91 92.52 C 145.91 93.74 144.92 94.73 143.7 94.73 C 142.48 94.73 141.49 93.74 141.49 92.52 C 141.49 91.3 142.48 90.31 143.7 90.31 C 144.92 90.31 145.91 91.3 145.91 92.52 Z M 143.7 92.52" style="stroke:none"></path></g></svg>
+</div>
+<div id="Ch0.Sx4.SSx29.SSS0.Px1.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Substitute the data points, <math id="Ch0.Sx4.SSx29.SSS0.Px1.p2.m1" class="ltx_Math" alttext="(x_{i},y_{i})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>,</mo><msub><mi>y</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></math>, <math id="Ch0.Sx4.SSx29.SSS0.Px1.p2.m2" class="ltx_Math" alttext="1\leq i\leq n" display="inline"><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow></math>, into this
+equation. Regardless the values of <math id="Ch0.Sx4.SSx29.SSS0.Px1.p2.m3" class="ltx_Math" alttext="a_{0}" display="inline"><msub><mi>a</mi><mn>0</mn></msub></math> and <math id="Ch0.Sx4.SSx29.SSS0.Px1.p2.m4" class="ltx_Math" alttext="a_{1}" display="inline"><msub><mi>a</mi><mn>1</mn></msub></math>, for most if not
+all of these points, the equation will not hold, that is,</p>
+<table id="Ch0.Ex207" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex207X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex207X.m2" class="ltx_Math" alttext="\displaystyle a_{1}x_{1}+" display="inline"><mrow><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex207X.m3" class="ltx_Math" alttext="\displaystyle a_{0}-y_{1}\neq 0,\qquad\textrm{most likely}," display="inline"><mrow><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>−</mo><msub><mi>y</mi><mn>1</mn></msub></mrow><mo>≠</mo><mrow><mn>0</mn><mo rspace="2.167em">,</mo><mtext>most likely</mtext></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex207Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex207Xa.m2" class="ltx_Math" alttext="\displaystyle a_{1}x_{2}+" display="inline"><mrow><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>+</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex207Xa.m3" class="ltx_Math" alttext="\displaystyle a_{0}-y_{2}\neq 0,\qquad\cdots" display="inline"><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>−</mo><msub><mi>y</mi><mn>2</mn></msub></mrow><mo>≠</mo><mrow><mn>0</mn><mo rspace="2.167em">,</mo><mi mathvariant="normal">⋯</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex207Xb"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex207Xb.m2" class="ltx_Math" alttext="\displaystyle\vdots" display="inline"><mi mathvariant="normal">⋮</mi></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex207Xc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex207Xc.m2" class="ltx_Math" alttext="\displaystyle a_{1}x_{n}+" display="inline"><mrow><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><mo>+</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex207Xc.m3" class="ltx_Math" alttext="\displaystyle a_{0}-y_{n}\neq 0,\qquad\cdots" display="inline"><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>−</mo><msub><mi>y</mi><mi>n</mi></msub></mrow><mo>≠</mo><mrow><mn>0</mn><mo rspace="2.167em">,</mo><mi mathvariant="normal">⋯</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Each of these non-zero values represents the fitting error; it is the
+mismatch between the data point and the line.</p>
+</div>
+</section>
+</section>
+<section id="Ch0.Sx4.SSx30" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Sketch of the general strategy</h4>
+
+<div id="Ch0.Sx4.SSx30.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">In order for determining a line of best fitting:</p>
+</div>
+<div id="Ch0.Sx4.SSx30.p2" class="ltx_para ltx_noindent">
+<ul id="Ch0.Sx4.I28" class="ltx_itemize">
+<li id="Ch0.Sx4.I28.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.Sx4.I28.i1.p1" class="ltx_para">
+<p class="ltx_p">Define an error out of the mis-matches.</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I28.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch0.Sx4.I28.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Find <math id="Ch0.Sx4.I28.i2.p1.m1" class="ltx_Math" alttext="a_{0}" display="inline"><msub><mi>a</mi><mn>0</mn></msub></math> and <math id="Ch0.Sx4.I28.i2.p1.m2" class="ltx_Math" alttext="a_{1}" display="inline"><msub><mi>a</mi><mn>1</mn></msub></math> s.t. the error is the smallest possible.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">We define the error as the sum of the squares of the fitting errors at
+all the data points,</p>
+<table id="Chx1.Sx5.EGx16" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex208"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex208.m1" class="ltx_Math" alttext="\displaystyle E" display="inline"><mi>E</mi></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex208.m2" class="ltx_Math" alttext="\displaystyle=\sum_{i=1}^{n}(a_{0}+a_{1}x_{i}-y_{i})^{2}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><msup><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>+</mo><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mi>i</mi></msub></mrow></mrow><mo>−</mo><msub><mi>y</mi><mi>i</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex209"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex209.m1" class="ltx_Math" alttext="\displaystyle=\sum_{i=1}^{n}\bigl{(}a_{0}^{2}+a_{1}^{2}x_{i}^{2}+y_{i}^{2}+2a_%
+{0}a_{1}x_{i}-2a_{0}y_{i}-2a_{1}x_{i}y_{i}\bigr{)}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><mrow><mo maxsize="120%" minsize="120%">(</mo><mrow><mrow><msubsup><mi>a</mi><mn>0</mn><mn>2</mn></msubsup><mo>+</mo><mrow><msubsup><mi>a</mi><mn>1</mn><mn>2</mn></msubsup><mo>⁢</mo><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup></mrow><mo>+</mo><msubsup><mi>y</mi><mi>i</mi><mn>2</mn></msubsup><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mi>i</mi></msub></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>y</mi><mi>i</mi></msub></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mi>i</mi></msub><mo>⁢</mo><msub><mi>y</mi><mi>i</mi></msub></mrow></mrow><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex210"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex210.m1" class="ltx_Math" alttext="\displaystyle=na_{0}^{2}+a_{1}^{2}\sum_{i=1}^{n}x_{i}^{2}+\sum_{i=1}^{n}y_{i}^%
+{2}+2a_{0}a_{1}\sum_{i=1}^{n}x_{i}-2a_{0}\sum_{i=1}^{n}y_{i}-2a_{1}\sum_{i=1}^%
+{n}x_{i}y_{i}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mi>n</mi><mo>⁢</mo><msubsup><mi>a</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mo>+</mo><mrow><msubsup><mi>a</mi><mn>1</mn><mn>2</mn></msubsup><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><msubsup><mi>y</mi><mi>i</mi><mn>2</mn></msubsup></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><msub><mi>x</mi><mi>i</mi></msub></mrow></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><msub><mi>y</mi><mi>i</mi></msub></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>⁢</mo><msub><mi>y</mi><mi>i</mi></msub></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex211"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex211.m1" class="ltx_Math" alttext="\displaystyle=na_{0}^{2}+2a_{0}a_{1}\underbrace{\sum_{i=1}^{n}x_{i}}_{X}+a_{1}%
+^{2}\underbrace{\sum_{i=1}^{n}x_{i}^{2}}_{Q}-2a_{0}\underbrace{\sum_{i=1}^{n}y%
+_{i}}_{Y}-2a_{1}\underbrace{\sum_{i=1}^{n}x_{i}y_{i}}_{W}+\underbrace{\sum_{i=%
+1}^{n}y_{i}^{2}}_{Z}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mrow><mi>n</mi><mo>⁢</mo><msubsup><mi>a</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><munder><munder accentunder="true"><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><msub><mi>x</mi><mi>i</mi></msub></mrow><mo>⏟</mo></munder><mi>X</mi></munder></mrow><mo>+</mo><mrow><msubsup><mi>a</mi><mn>1</mn><mn>2</mn></msubsup><mo>⁢</mo><munder><munder accentunder="true"><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup></mrow><mo>⏟</mo></munder><mi>Q</mi></munder></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><munder><munder accentunder="true"><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><msub><mi>y</mi><mi>i</mi></msub></mrow><mo>⏟</mo></munder><mi>Y</mi></munder></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><munder><munder accentunder="true"><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>⁢</mo><msub><mi>y</mi><mi>i</mi></msub></mrow></mrow><mo>⏟</mo></munder><mi>W</mi></munder></mrow></mrow><mo>+</mo><munder><munder accentunder="true"><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><msubsup><mi>y</mi><mi>i</mi><mn>2</mn></msubsup></mrow><mo>⏟</mo></munder><mi>Z</mi></munder></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">With <math id="Ch0.Sx4.SSx30.p2.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>, <math id="Ch0.Sx4.SSx30.p2.m2" class="ltx_Math" alttext="Q" display="inline"><mi>Q</mi></math>, <math id="Ch0.Sx4.SSx30.p2.m3" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math>, <math id="Ch0.Sx4.SSx30.p2.m4" class="ltx_Math" alttext="W" display="inline"><mi>W</mi></math>, and <math id="Ch0.Sx4.SSx30.p2.m5" class="ltx_Math" alttext="Z" display="inline"><mi>Z</mi></math> calculated from the data, the error
+<math id="Ch0.Sx4.SSx30.p2.m6" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> can be expressed more succinctly,</p>
+<table id="Ch0.Ex212" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex212.m1" class="ltx_Math" alttext="E=na_{0}^{2}+2Xa_{0}a_{1}+Qa_{1}^{2}-2Ya_{0}-2Wa_{1}+Z." display="block"><mrow><mrow><mi>E</mi><mo>=</mo><mrow><mrow><mrow><mrow><mi>n</mi><mo>⁢</mo><msubsup><mi>a</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>X</mi><mo>⁢</mo><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>a</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><mi>Q</mi><mo>⁢</mo><msubsup><mi>a</mi><mn>1</mn><mn>2</mn></msubsup></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>Y</mi><mo>⁢</mo><msub><mi>a</mi><mn>0</mn></msub></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>W</mi><mo>⁢</mo><msub><mi>a</mi><mn>1</mn></msub></mrow></mrow><mo>+</mo><mi>Z</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Written in this form, it is clear that the error <math id="Ch0.Sx4.SSx30.p2.m7" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> is a quadratic
+function of the coefficients <math id="Ch0.Sx4.SSx30.p2.m8" class="ltx_Math" alttext="a_{1}" display="inline"><msub><mi>a</mi><mn>1</mn></msub></math> and <math id="Ch0.Sx4.SSx30.p2.m9" class="ltx_Math" alttext="a_{0}" display="inline"><msub><mi>a</mi><mn>0</mn></msub></math>.</p>
+</div>
+<div id="Ch0.Sx4.SSx30.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">Next, we need to find <math id="Ch0.Sx4.SSx30.p3.m1" class="ltx_Math" alttext="a_{0}" display="inline"><msub><mi>a</mi><mn>0</mn></msub></math> and <math id="Ch0.Sx4.SSx30.p3.m2" class="ltx_Math" alttext="a_{1}" display="inline"><msub><mi>a</mi><mn>1</mn></msub></math> s.t. <math id="Ch0.Sx4.SSx30.p3.m3" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> is the smallest
+possible. From calculus, we know that a functions achieves its minimum
+or maximum values at the critical points, where the first derivatives
+vanish.</p>
+<svg id="Ch0.Sx4.SSx30.p3.pic1" class="ltx_picture ltx_centering" height="80.12" overflow="visible" version="1.1" width="138.35"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,80.12) matrix(1 0 0 -1 0 0) translate(67.21,0) translate(0,30.63)"><path d="M -66.93 0 L 68.1 0" style="fill:none"></path><g transform="matrix(1.0 0.0 0.0 1.0 68.1 0)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g><path d="M -55.12 49.21 C -48.92 39.47 -27.56 5.91 0 5.91 C 27.56 5.91 48.92 39.47 55.12 49.21" style="fill:none"></path><path d="M 0 5.91 M 2.49 5.91 C 2.49 7.28 1.38 8.4 0 8.4 C -1.38 8.4 -2.49 7.28 -2.49 5.91 C -2.49 4.53 -1.38 3.41 0 3.41 C 1.38 3.41 2.49 4.53 2.49 5.91 Z M 0 5.91" style="stroke:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -27.22 -22.56)"><foreignObject height="15.22" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="54.43"><math id="Ch0.Sx4.SSx30.p3.pic1.m1" class="ltx_Math" alttext="f^{\prime}(x)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></foreignObject></g></g></svg>
+<p class="ltx_p">We differentiate <math id="Ch0.Sx4.SSx30.p3.m4" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> against <math id="Ch0.Sx4.SSx30.p3.m5" class="ltx_Math" alttext="a_{1}" display="inline"><msub><mi>a</mi><mn>1</mn></msub></math> and <math id="Ch0.Sx4.SSx30.p3.m6" class="ltx_Math" alttext="a_{0}" display="inline"><msub><mi>a</mi><mn>0</mn></msub></math>, and set the
+derivatives to zero,</p>
+<table id="Chx1.Sx5.EGx17" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch0.Ex213"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex213.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial E}{\partial a_{1}}" display="inline"><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>E</mi></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>a</mi><mn>1</mn></msub></mrow></mfrac></mstyle></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex213.m2" class="ltx_Math" alttext="\displaystyle=2Qa_{1}+2Xa_{0}-2W=0," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>Q</mi><mo>⁢</mo><msub><mi>a</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>X</mi><mo>⁢</mo><msub><mi>a</mi><mn>0</mn></msub></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>W</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex214"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex214.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial E}{\partial a_{0}}" display="inline"><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>E</mi></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>a</mi><mn>0</mn></msub></mrow></mfrac></mstyle></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex214.m2" class="ltx_Math" alttext="\displaystyle=2Xa_{1}+2na_{0}-2Y=0." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>X</mi><mo>⁢</mo><msub><mi>a</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msub><mi>a</mi><mn>0</mn></msub></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>Y</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We now have a system of two equations, from which we can solve for
+<math id="Ch0.Sx4.SSx30.p3.m7" class="ltx_Math" alttext="a_{1}" display="inline"><msub><mi>a</mi><mn>1</mn></msub></math> and <math id="Ch0.Sx4.SSx30.p3.m8" class="ltx_Math" alttext="a_{0}" display="inline"><msub><mi>a</mi><mn>0</mn></msub></math>. To do so, we can write the system in the
+matrix-vector form,</p>
+<table id="Ch0.Ex215" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex215.m1" class="ltx_Math" alttext="\begin{pmatrix}Q&amp;X\\
+X&amp;n\end{pmatrix}\begin{pmatrix}a_{1}\\
+a_{0}\end{pmatrix}=\begin{pmatrix}W\\
+Y\end{pmatrix}." display="block"><mrow><mrow><mrow><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mi>Q</mi></mtd><mtd><mi>X</mi></mtd></mtr><mtr><mtd><mi>X</mi></mtd><mtd><mi>n</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mn>0</mn></msub></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><mi>W</mi></mtd></mtr><mtr><mtd><mi>Y</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">which can then be easily solved, e.g. in Matlab using the backslash command,</p>
+<table id="Ch0.Ex216" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex216.m1" class="ltx_Math" alttext="\begin{pmatrix}a_{1}\\
+a_{0}\end{pmatrix}=\begin{pmatrix}Q&amp;X\\
+X&amp;n\end{pmatrix}\mathbin{\backslash}\begin{pmatrix}W\\
+Y\end{pmatrix}." display="block"><mrow><mrow><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mn>0</mn></msub></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mrow><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mi>Q</mi></mtd><mtd><mi>X</mi></mtd></mtr><mtr><mtd><mi>X</mi></mtd><mtd><mi>n</mi></mtd></mtr></mtable><mo rspace="0.222em">)</mo></mrow><mo rspace="0.222em">\</mo><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><mi>W</mi></mtd></mtr><mtr><mtd><mi>Y</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx4.SSx30.p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">The coefficients <math id="Ch0.Sx4.SSx30.p4.m1" class="ltx_Math" alttext="(a_{1},\,a_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>a</mi><mn>1</mn></msub><mo rspace="0.337em">,</mo><msub><mi>a</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math> found this way is a critical point of
+the quadratic function <math id="Ch0.Sx4.SSx30.p4.m2" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math>; it minimizes the error <math id="Ch0.Sx4.SSx30.p4.m3" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> because it is a
+convex function with only a minimum value or no maxes.
+With <math id="Ch0.Sx4.SSx30.p4.m4" class="ltx_Math" alttext="a_{1}" display="inline"><msub><mi>a</mi><mn>1</mn></msub></math> and <math id="Ch0.Sx4.SSx30.p4.m5" class="ltx_Math" alttext="a_{0}" display="inline"><msub><mi>a</mi><mn>0</mn></msub></math>, the line of best fitting is given by (1). Due to
+the form of the errors (sum of squares), the technique is usually
+referred to as the <span class="ltx_text ltx_font_italic">least square method</span>.</p>
+</div>
+</section>
+<section id="Ch0.Sx4.SSx31" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example</h4>
+
+<div id="Ch0.Sx4.SSx31.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Find the line of best fit for the data points</p>
+<table id="Ch0.Ex217" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex217.m1" class="ltx_Math" alttext="\begin{array}[]{c|r@{\qquad}r}&amp;x&amp;y\\
+\hline\cr&amp;0&amp;0\\
+&amp;1.0000&amp;0.5000\\
+&amp;1.9000&amp;1.0000\\
+&amp;2.5000&amp;1.1000\\
+&amp;3.0000&amp;1.6000\\
+&amp;4.0000&amp;2.0000\\
+&amp;7.0000&amp;3.4500\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_border_r"></mtd><mtd class="ltx_align_right" columnalign="right"><mrow><mi>x</mi><mspace width="2em"></mspace></mrow></mtd><mtd class="ltx_align_right" columnalign="right"><mi>y</mi></mtd></mtr><mtr><mtd class="ltx_border_t"></mtd><mtd class="ltx_border_t"></mtd><mtd class="ltx_border_t"></mtd></mtr><mtr><mtd class="ltx_border_r"></mtd><mtd class="ltx_align_right" columnalign="right"><mrow><mn>0</mn><mspace width="2em"></mspace></mrow></mtd><mtd class="ltx_align_right" columnalign="right"><mn>0</mn></mtd></mtr><mtr><mtd class="ltx_border_r"></mtd><mtd class="ltx_align_right" columnalign="right"><mrow><mn>1.0000</mn><mspace width="2em"></mspace></mrow></mtd><mtd class="ltx_align_right" columnalign="right"><mn>0.5000</mn></mtd></mtr><mtr><mtd class="ltx_border_r"></mtd><mtd class="ltx_align_right" columnalign="right"><mrow><mn>1.9000</mn><mspace width="2em"></mspace></mrow></mtd><mtd class="ltx_align_right" columnalign="right"><mn>1.0000</mn></mtd></mtr><mtr><mtd class="ltx_border_r"></mtd><mtd class="ltx_align_right" columnalign="right"><mrow><mn>2.5000</mn><mspace width="2em"></mspace></mrow></mtd><mtd class="ltx_align_right" columnalign="right"><mn>1.1000</mn></mtd></mtr><mtr><mtd class="ltx_border_r"></mtd><mtd class="ltx_align_right" columnalign="right"><mrow><mn>3.0000</mn><mspace width="2em"></mspace></mrow></mtd><mtd class="ltx_align_right" columnalign="right"><mn>1.6000</mn></mtd></mtr><mtr><mtd class="ltx_border_r"></mtd><mtd class="ltx_align_right" columnalign="right"><mrow><mn>4.0000</mn><mspace width="2em"></mspace></mrow></mtd><mtd class="ltx_align_right" columnalign="right"><mn>2.0000</mn></mtd></mtr><mtr><mtd class="ltx_border_r"></mtd><mtd class="ltx_align_right" columnalign="right"><mrow><mn>7.0000</mn><mspace width="2em"></mspace></mrow></mtd><mtd class="ltx_align_right" columnalign="right"><mn>3.4500</mn></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch0.Sx4.SSx32" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Another approach (same underlying technique though)</h4>
+
+<div id="Ch0.Sx4.SSx32.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">One can attempt to fit all the data points with a simple line by
+requiring that all the <math id="Ch0.Sx4.SSx32.p1.m1" class="ltx_Math" alttext="(x_{i},\,y_{i})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo rspace="0.337em">,</mo><msub><mi>y</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></math> satisfy the equation (1). In
+doing so, one forms a system of equations,</p>
+<table id="Ch0.Ex218" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex218.m1" class="ltx_math_unparsed" alttext="\left\{\begin{aligned} a_{1}x_{1}+a_{0}&amp;=y_{1},\\
+a_{1}x_{2}+a_{0}&amp;=y_{2},\\
+&amp;\ \vdots\\
+a_{1}x_{n}+a_{0}&amp;=y_{n}.\end{aligned}\right." display="block"><mrow><mo>{</mo><mtable columnspacing="0pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><msub><mi>a</mi><mn>0</mn></msub></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><msub><mi>y</mi><mn>1</mn></msub></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>+</mo><msub><mi>a</mi><mn>0</mn></msub></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><msub><mi>y</mi><mn>2</mn></msub></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd class="ltx_align_left" columnalign="left"><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd class="ltx_align_right" columnalign="right"><mrow><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><mo>+</mo><msub><mi>a</mi><mn>0</mn></msub></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi></mi><mo>=</mo><msub><mi>y</mi><mi>n</mi></msub></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This system has only 2 unknowns, but <math id="Ch0.Sx4.SSx32.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> equations. With <math id="Ch0.Sx4.SSx32.p1.m3" class="ltx_Math" alttext="n&gt;2" display="inline"><mrow><mi>n</mi><mo>&gt;</mo><mn>2</mn></mrow></math>, the
+system is over-determined. Hence, in general, an exact solution can
+not be found. Many software packages implement solvers that solve the
+system using the least square method, i.e. by finding <math id="Ch0.Sx4.SSx32.p1.m4" class="ltx_Math" alttext="(a_{1},a_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>a</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>
+that minimizes the error defined in (2). In Matlab, this can be done
+by again invoking the same backslash command,</p>
+<table id="Ch0.Ex219" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex219.m1" class="ltx_Math" alttext="\underbrace{\begin{pmatrix}x_{1}&amp;1\\
+x_{2}&amp;1\\
+\vdots&amp;\vdots\\
+x_{n}&amp;1\end{pmatrix}}_{A}\underbrace{\begin{pmatrix}a_{1}\\
+a_{0}\end{pmatrix}}_{\vec{x}}=\underbrace{\begin{pmatrix}y_{1}\\
+y_{2}\\
+\vdots\\
+y_{n}\end{pmatrix}}_{\vec{b}}." display="block"><mrow><mrow><mrow><munder><munder accentunder="true"><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd><msub><mi>x</mi><mi>n</mi></msub></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>⏟</mo></munder><mi>A</mi></munder><mo>⁢</mo><munder><munder accentunder="true"><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mn>0</mn></msub></mtd></mtr></mtable><mo>)</mo></mrow><mo>⏟</mo></munder><mover accent="true"><mi>x</mi><mo stretchy="false">→</mo></mover></munder></mrow><mo>=</mo><munder><munder accentunder="true"><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>y</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>y</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd><msub><mi>y</mi><mi>n</mi></msub></mtd></mtr></mtable><mo>)</mo></mrow><mo>⏟</mo></munder><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></munder></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<table id="Ch0.Ex220" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex220.m1" class="ltx_Math" alttext="A\vec{x}=\vec{b},\qquad\vec{x}=A\mathbin{\backslash}\vec{b}." display="block"><mrow><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mover accent="true"><mi>x</mi><mo stretchy="false">→</mo></mover></mrow><mo>=</mo><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></mrow><mo rspace="2.167em">,</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mi>A</mi><mo lspace="0.222em" rspace="0.222em">\</mo><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch0.Sx4.SSx33" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Exercise</h4>
+
+<div id="Ch0.Sx4.SSx33.p1" class="ltx_para ltx_noindent">
+<table id="Ch0.Ex221" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex221X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex221X.m2" class="ltx_Math" alttext="\displaystyle x" display="inline"><mi>x</mi></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex221X.m3" class="ltx_Math" alttext="\displaystyle=0.2,\ 0.35,\ 0.5,\ 1.0,\ 1.6,\ 2.9,\ 3.5," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mn>0.2</mn><mo>,</mo><mn> 0.35</mn><mo>,</mo><mn> 0.5</mn><mo>,</mo><mn> 1.0</mn><mo>,</mo><mn> 1.6</mn><mo>,</mo><mn> 2.9</mn><mo>,</mo><mn> 3.5</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex221Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex221Xa.m2" class="ltx_Math" alttext="\displaystyle y" display="inline"><mi>y</mi></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex221Xa.m3" class="ltx_Math" alttext="\displaystyle=1.59,\ 1.86,\ 2.00,\ 1.82,\ 1.70,\ 2.33,\ 2.72." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mn>1.59</mn><mo>,</mo><mn> 1.86</mn><mo>,</mo><mn> 2.00</mn><mo>,</mo><mn> 1.82</mn><mo>,</mo><mn> 1.70</mn><mo>,</mo><mn> 2.33</mn><mo>,</mo><mn> 2.72</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Find the best line fitting</p>
+<ol id="Ch0.Sx4.I29" class="ltx_enumerate">
+<li id="Ch0.Sx4.I29.ix1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(a)</span> 
+<div id="Ch0.Sx4.I29.ix1.p1" class="ltx_para">
+<p class="ltx_p">by constructing and solving a <math id="Ch0.Sx4.I29.ix1.p1.m1" class="ltx_Math" alttext="2\times 2" display="inline"><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>2</mn></mrow></math> system;</p>
+</div>
+</li>
+<li id="Ch0.Sx4.I29.ix2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(b)</span> 
+<div id="Ch0.Sx4.I29.ix2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">by solving a tall linear system using Matlab’s <code class="ltx_verbatim ltx_font_typewriter">\</code> command.</p>
+</div>
+</li>
+</ol>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sun Nov  1 14:17:15 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
