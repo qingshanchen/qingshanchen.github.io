@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Lecture 17</title>
+<!--Generated on Mon Nov  9 14:42:54 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on November 9, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="lectures.css" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line"><section id="Ch0.Sx7" class="ltx_section"><div class="ltx_logical-block"><div id="Ch0.Sx7.p6" class="ltx_para"><p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">Lecture 17</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold" style="font-size:207%;">Approximation of second order derivatives</span></p>
+</div>
+    
+</div>
+<div id="Ch0.Sx7.p7" class="ltx_para ltx_noindent">
+<p class="ltx_p">Suppose the function <math id="Ch0.Sx7.p7.m1" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> represents the position of a particle on a line at time <math id="Ch0.Sx7.p7.m2" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>. Then
+the first derivative <math id="Ch0.Sx7.p7.m3" class="ltx_Math" alttext="f^{\prime}(t)" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> represents the changing rate of the position <math id="Ch0.Sx7.p7.m4" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> at time <math id="Ch0.Sx7.p7.m5" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>,
+which is physically referred to as the velocity of the particle. The second derivative, which is the changing rate
+of the chaning rate <math id="Ch0.Sx7.p7.m6" class="ltx_Math" alttext="f^{\prime}(t)" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>, is physically referred to as the acceleration.</p>
+</div>
+<div id="Ch0.Sx7.p8" class="ltx_para">
+<svg id="Ch0.Sx7.pic2" class="ltx_picture ltx_centering" height="100.46" overflow="visible" version="1.1" width="266.3"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,100.46) matrix(1 0 0 -1 0 0) translate(128.23,0) translate(0,22.1)"><path d="M -127.95 0 L 137.24 0" style="fill:none"></path><g stroke-dasharray="none" stroke-dashoffset="0.0pt" stroke-linecap="round" stroke-linejoin="round" transform="matrix(1.0 0.0 0.0 1.0 137.52 0)"><path d="M -2.88 3.32 C -2.35 1.33 -1.18 0.39 0 0 C -1.18 -0.39 -2.35 -1.33 -2.88 -3.32" style="fill:none"></path></g><g stroke-width="0.8pt"><path d="M -98.43 31.99 C -98.43 31.99 -68.33 52.91 -49.21 61.52 C -30.09 70.12 -19.12 74.85 0 76.28 C 19.12 77.71 30.09 75.11 49.21 68.9 C 68.33 62.68 98.43 44.29 98.43 44.29" style="fill:none"></path></g><path d="M -98.43 31.99 M -96.35 31.99 C -96.35 33.13 -97.28 34.06 -98.43 34.06 C -99.57 34.06 -100.5 33.13 -100.5 31.99 C -100.5 30.84 -99.57 29.91 -98.43 29.91 C -97.28 29.91 -96.35 30.84 -96.35 31.99 Z M -98.43 31.99" style="stroke:none"></path><path d="M -49.21 61.52 M -47.14 61.52 C -47.14 62.66 -48.07 63.59 -49.21 63.59 C -50.36 63.59 -51.29 62.66 -51.29 61.52 C -51.29 60.37 -50.36 59.44 -49.21 59.44 C -48.07 59.44 -47.14 60.37 -47.14 61.52 Z M -49.21 61.52" style="stroke:none"></path><path d="M 0 76.28 M 2.08 76.28 C 2.08 77.43 1.15 78.36 0 78.36 C -1.15 78.36 -2.08 77.43 -2.08 76.28 C -2.08 75.13 -1.15 74.2 0 74.2 C 1.15 74.2 2.08 75.13 2.08 76.28 Z M 0 76.28" style="stroke:none"></path><path d="M 49.21 68.9 M 51.29 68.9 C 51.29 70.04 50.36 70.97 49.21 70.97 C 48.07 70.97 47.14 70.04 47.14 68.9 C 47.14 67.75 48.07 66.82 49.21 66.82 C 50.36 66.82 51.29 67.75 51.29 68.9 Z M 49.21 68.9" style="stroke:none"></path><path d="M 98.43 44.29 M 100.5 44.29 C 100.5 45.44 99.57 46.37 98.43 46.37 C 97.28 46.37 96.35 45.44 96.35 44.29 C 96.35 43.14 97.28 42.22 98.43 42.22 C 99.57 42.22 100.5 43.14 100.5 44.29 Z M 98.43 44.29" style="stroke:none"></path><path d="M -98.43 3.45 L -98.43 -3.45" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -106.94 -14.29)"><foreignObject height="8.51" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="17.04"><math id="Ch0.Sx7.pic2.m1" class="ltx_Math" alttext="x_{i-2}" display="inline"><msub><mi>x</mi><mrow><mi>i</mi><mo>−</mo><mn>2</mn></mrow></msub></math></foreignobject></g><path d="M -49.21 3.45 L -49.21 -3.45" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -57.73 -14.29)"><foreignObject height="8.51" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="17.04"><math id="Ch0.Sx7.pic2.m2" class="ltx_Math" alttext="x_{i-1}" display="inline"><msub><mi>x</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub></math></foreignobject></g><path d="M 0 3.45 L 0 -3.45" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -5.29 -14.29)"><foreignObject height="8.51" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="10.58"><math id="Ch0.Sx7.pic2.m3" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math></foreignobject></g><path d="M 49.21 3.45 L 49.21 -3.45" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 38.97 -14.29)"><foreignObject height="9.16" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="20.48"><math id="Ch0.Sx7.pic2.m4" class="ltx_Math" alttext="x_{i+1}" display="inline"><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></math></foreignobject></g><path d="M 98.43 3.45 L 98.43 -3.45" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 88.19 -14.29)"><foreignObject height="9.16" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="20.48"><math id="Ch0.Sx7.pic2.m5" class="ltx_Math" alttext="x_{i+2}" display="inline"><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>2</mn></mrow></msub></math></foreignobject></g></g></svg>
+</div>
+<div id="Ch0.Sx7.p9" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="Ch0.Sx7.p9.m1" class="ltx_Math" alttext="(x_{i},\,f(x_{i}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo rspace="0.337em">,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math>, <math id="Ch0.Sx7.p9.m2" class="ltx_Math" alttext="1\leq i\leq n" display="inline"><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow></math>, be given, and <math id="Ch0.Sx7.p9.m3" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> is the
+otherwise unknown underlying function for this data set. How can we
+approximate the second derivative of this unknown function at, say
+<math id="Ch0.Sx7.p9.m4" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math>, using the given data set? We assume that the data points are
+uniformly distributed, with spacing <math id="Ch0.Sx7.p9.m5" class="ltx_Math" alttext="{}=h" display="inline"><mrow><mi></mi><mo>=</mo><mi>h</mi></mrow></math>.
+We proceed by expanding <math id="Ch0.Sx7.p9.m6" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> at <math id="Ch0.Sx7.p9.m7" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math>:</p>
+<table id="Ch0.Ex253" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex253X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex253X.m2" class="ltx_Math" alttext="\displaystyle f(x)={}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi></mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex253X.m3" class="ltx_Math" alttext="\displaystyle f(x_{i})+f^{\prime}(x_{i})(x-x_{i})+\frac{1}{2}f^{\prime\prime}(%
+x_{i})(x-x_{i})^{2}+\frac{1}{6}f^{\prime\prime\prime}(x_{i})(x-x_{i})^{3}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mi>i</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mi>i</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>6</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mo>′′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mi>i</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex253Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex253Xa.m2" class="ltx_Math" alttext="\displaystyle+\frac{1}{24}f^{(4)}(c)(x-x_{i})^{4},\qquad\textrm{$c$ between $x%
+$ and $x_{i}$.}" display="inline"><mrow><mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>24</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mi>i</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup></mrow></mrow><mo rspace="2.167em">,</mo><mrow><mi>c</mi><mtext> between </mtext><mi>x</mi><mtext> and </mtext><msub><mi>x</mi><mi>i</mi></msub><mtext>.</mtext></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx7.p10" class="ltx_para ltx_noindent">
+<p class="ltx_p">Set <math id="Ch0.Sx7.p10.m1" class="ltx_Math" alttext="x=x_{i-1}" display="inline"><mrow><mi>x</mi><mo>=</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></math> and <math id="Ch0.Sx7.p10.m2" class="ltx_Math" alttext="x_{i+1}" display="inline"><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></math>:</p>
+<table id="Ch0.Ex254" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex254X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex254X.m2" class="ltx_Math" alttext="\displaystyle f(x_{i-1})={}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi></mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex254X.m3" class="ltx_Math" alttext="\displaystyle f(x_{i})-f^{\prime}(x_{i})h+\frac{1}{2}f^{\prime\prime}(x_{i})h^%
+{2}-\frac{1}{6}f^{\prime\prime\prime}(x_{i})h^{3}+\frac{1}{24}f^{(4)}(c_{1})h^%
+{4}," display="inline"><mrow><mrow><mrow><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>h</mi></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>h</mi><mn>2</mn></msup></mrow></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>6</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mo>′′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>h</mi><mn>3</mn></msup></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>24</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>c</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>h</mi><mn>4</mn></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex254X.m5" class="ltx_Math" alttext="\displaystyle c_{1}\in[x_{i-1},x_{i}]," display="inline"><mrow><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>∈</mo><mrow><mo stretchy="false">[</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">]</mo></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex254Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex254Xa.m2" class="ltx_Math" alttext="\displaystyle f(x_{i+1})={}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi></mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex254Xa.m3" class="ltx_Math" alttext="\displaystyle f(x_{i})+f^{\prime}(x_{i})h+\frac{1}{2}f^{\prime\prime}(x_{i})h^%
+{2}+\frac{1}{6}f^{\prime\prime\prime}(x_{i})h^{3}+\frac{1}{24}f^{(4)}(c_{2})h^%
+{4}," display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>h</mi></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>h</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>6</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mo>′′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>h</mi><mn>3</mn></msup></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>24</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>c</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>h</mi><mn>4</mn></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex254Xa.m5" class="ltx_Math" alttext="\displaystyle c_{2}\in[x_{i},x_{i+1}]." display="inline"><mrow><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>∈</mo><mrow><mo stretchy="false">[</mo><msub><mi>x</mi><mi>i</mi></msub><mo>,</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Add these two equations:</p>
+<table id="Ch0.Ex255" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex255X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex255X.m2" class="ltx_Math" alttext="\displaystyle f(x_{i-1})+f(x_{i+1})" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex255X.m3" class="ltx_Math" alttext="\displaystyle=2f(x_{i})+f^{\prime\prime}(x_{i})h^{2}+\frac{1}{12}\times\frac{1%
+}{2}\bigl{(}f^{(4)}(c_{1})+f^{(4)}(c_{2})\bigr{)}h^{4}," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>h</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>12</mn></mfrac></mstyle><mo lspace="0.222em" rspace="0.222em">×</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mrow><mrow><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>c</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>c</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo maxsize="120%" minsize="120%">)</mo></mrow><mo>⁢</mo><msup><mi>h</mi><mn>4</mn></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex255Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch0.Ex255Xa.m2" class="ltx_Math" alttext="\displaystyle f(x_{i-1})+f(x_{i+1})" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex255Xa.m3" class="ltx_Math" alttext="\displaystyle=2f(x_{i})+f^{\prime\prime}(x_{i})h^{2}+\frac{1}{12}f^{(4)}(c)h^{%
+4},\qquad c\in[x_{i-1},x_{i+1}]." display="inline"><mrow><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>h</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>12</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>h</mi><mn>4</mn></msup></mrow></mrow></mrow><mo rspace="2.167em">,</mo><mrow><mi>c</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">]</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Therefore,</p>
+<table id="Ch0.Ex256" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex256.m1" class="ltx_Math" alttext="\frac{f(x_{i-1})-2f(x_{i})+f(x_{i+1})}{h^{2}}=f^{\prime\prime}(x_{i})+%
+\underbrace{\frac{1}{12}f^{(4)}(c)h^{2}}_{\text{Error}}." display="block"><mrow><mrow><mfrac><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><msup><mi>h</mi><mn>2</mn></msup></mfrac><mo>=</mo><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><munder><munder accentunder="true"><mrow><mfrac><mn>1</mn><mn>12</mn></mfrac><mo>⁢</mo><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>h</mi><mn>2</mn></msup></mrow><mo>⏟</mo></munder><mtext>Error</mtext></munder></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Provided that <math id="Ch0.Sx7.p10.m3" class="ltx_Math" alttext="f^{(4)}" display="inline"><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></msup></math> remains bounded, we have</p>
+<table id="Ch0.Ex257" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex257.m1" class="ltx_Math" alttext="\text{Error}=O(h^{2})," display="block"><mrow><mrow><mtext>Error</mtext><mo>=</mo><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="lecture17.Thmtheorem1" class="ltx_theorem ltx_theorem_theorem">
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Theorem 17.1</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="lecture17.Thmtheorem1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Assume <math id="lecture17.Thmtheorem1.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is four times differentiable in an interval containing <math id="lecture17.Thmtheorem1.p1.m2" class="ltx_Math" alttext="x_{n}" display="inline"><msub><mi>x</mi><mi>n</mi></msub></math>. Then</span></p>
+<table id="Ch0.Ex258" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex258.m1" class="ltx_Math" alttext="\left|f^{\prime\prime}(x_{n})-\frac{f(x_{n+1})-2f(x_{n})+f(x_{n-1})}{h^{2}}%
+\right|=O(h^{2})." display="block"><mrow><mrow><mrow><mo>|</mo><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mfrac><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><msup><mi>h</mi><mn>2</mn></msup></mfrac></mrow><mo>|</mo></mrow><mo>=</mo><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<section id="Ch0.Sx7.SSx1" class="ltx_subsection">
+<h4 class="ltx_title ltx_title_subsection">Example 1</h4>
+
+<div id="Ch0.Sx7.SSx1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Approximate <math id="Ch0.Sx7.SSx1.p1.m1" class="ltx_Math" alttext="f^{\prime\prime}(1)" display="inline"><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></math>, with <math id="Ch0.Sx7.SSx1.p1.m2" class="ltx_Math" alttext="f(x)=\frac{1}{2}x^{4}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><msup><mi>x</mi><mn>4</mn></msup></mrow></mrow></math>, using the finite difference method. Approximate <math id="Ch0.Sx7.SSx1.p1.m3" class="ltx_Math" alttext="f^{\prime\prime}(1)" display="inline"><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></math> using the finite difference formula</p>
+<table id="Ch0.Ex259" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex259.m1" class="ltx_Math" alttext="\frac{f(x_{i-1})-2f(x_{i})+f(x_{i+1})}{h^{2}}," display="block"><mrow><mfrac><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><msup><mi>h</mi><mn>2</mn></msup></mfrac><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">with <math id="Ch0.Sx7.SSx1.p1.m4" class="ltx_Math" alttext="h=1" display="inline"><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow></math>, <math id="Ch0.Sx7.SSx1.p1.m5" class="ltx_Math" alttext="0.5" display="inline"><mn>0.5</mn></math>, <math id="Ch0.Sx7.SSx1.p1.m6" class="ltx_Math" alttext="0.25" display="inline"><mn>0.25</mn></math>, and verify the convergence rate.</p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_logical-block">
+        
+<div id="Ch0.Sx7.SSx1.p2" class="ltx_para">
+</div></div></section></section></article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Mon Nov  9 14:42:54 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
