@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Lecture 16</title>
+<!--Generated on Tue Nov 10 14:05:35 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on November 10, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="lectures.css" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">Lecture 16</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold" style="font-size:207%;">The Poisson Equations: the 1D case</span></p>
+</div>
+      
+</div>
+<div id="Ch0.Sx2.SSx36.p10" class="ltx_para">
+<p class="ltx_p">We switch the gear in this section, and deal with the Poisson
+equations, which are basically the Laplace equations but with non-zero
+right-hand sides. The right-hand side reprsents an external forcing or
+source, which balances the diffusion process that is represented by
+the Laplacian term on the left-hand side. To keep
+things simple at first, we consider the one-dimensional Poisson
+equation on a line, with homogeneous Dirichlet boundary conditions.</p>
+</div>
+</section>
+<section id="Ch0.Sx2.SSx37" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">Example. The one-dimensional Poisson equation with
+homogeneous Dirichlet boundary conditions</h3>
+
+<div id="Ch0.Sx2.SSx37.p1" class="ltx_para">
+<p class="ltx_p">Solve the boundary value problem</p>
+<table id="Ch0.Ex565" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex565.m1" class="ltx_Math" alttext="\begin{cases}u^{\prime\prime}(x)=f(x),&amp;0&lt;x&lt;L,\\
+u(0)=u(L)=0.\end{cases}" display="block"><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mi>L</mi></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd></mtd></mtr></mtable></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Solution.</h6>
+<div id="Ch0.Sx2.SSx37.p2" class="ltx_para">
+<p class="ltx_p">The basic idea is to find the eigenvalues and eigenfunctions for the
+associated Sturm-Liouville problem,</p>
+<table id="Ch0.Ex567" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex567.m1" class="ltx_Math" alttext="\begin{cases}u^{\prime\prime}+\lambda u=0,&amp;0&lt;x&lt;L,\\
+u(0)=u(L)=0,\end{cases}" display="block"><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>+</mo><mrow><mi>λ</mi><mo>⁢</mo><mi>u</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mi>L</mi></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></mtd><mtd></mtd></mtr></mtable></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">and then use these eigenfunctions as building blocks to construct the
+solution to the original problem (1). Thus the this boundary value
+problem (1) for Poisson equation can be solved in just two steps.</p>
+</div>
+</div>
+<section id="Ch0.Sx2.SSx37.SSS0.Px1" class="ltx_paragraph">
+<h4 class="ltx_title ltx_title_paragraph">Step 1. Solve the Sturm–Liouville problem for <math id="Ch0.Sx2.SSx37.SSS0.Px1.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>.</h4>
+
+<div id="Ch0.Sx2.SSx37.SSS0.Px1.p1" class="ltx_para">
+<p class="ltx_p">Using the methods we learned in the last chapter, we find the
+eigenvalues and corresponding eigenfunctions of the S-L problem (2) to
+be</p>
+<table id="Ch0.Ex569" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex569.m1" class="ltx_Math" alttext="\lambda_{m}=\left(\frac{m\pi}{L}\right)^{2},\qquad u_{m}(x)=\sin\left(\frac{m%
+\pi x}{L}\right),\qquad m\geq 1." display="block"><mrow><mrow><mrow><msub><mi>λ</mi><mi>m</mi></msub><mo>=</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow><mn>2</mn></msup></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mrow><msub><mi>u</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow></mrow><mo rspace="2.167em">,</mo><mrow><mi>m</mi><mo>≥</mo><mn>1</mn></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch0.Sx2.SSx37.SSS0.Px2" class="ltx_paragraph">
+<h4 class="ltx_title ltx_title_paragraph">Step 2. Assemble the solution to the Poisson equation (1).</h4>
+
+<div id="Ch0.Sx2.SSx37.SSS0.Px2.p1" class="ltx_para">
+<p class="ltx_p">We write the solution as a series,</p>
+<table id="Ch0.Ex570" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex570.m1" class="ltx_Math" alttext="u(x)=\sum_{m=1}^{\infty}A_{m}u_{m}(x)=\sum_{m=1}^{\infty}A_{m}\sin\left(\frac{%
+m\pi x}{L}\right)." display="block"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>A</mi><mi>m</mi></msub><mo>⁢</mo><msub><mi>u</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>A</mi><mi>m</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Every term satisfies the homogeneous boundary conditions. Substituting this series into (1), and using the eigenvalue equation, we obtain</p>
+<table id="Ch0.Ex572" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex572.m1" class="ltx_Math" alttext="-\sum_{m=1}^{\infty}\lambda_{m}A_{m}\sin\left(\frac{m\pi x}{L}\right)=f(x)." display="block"><mrow><mrow><mrow><mo>−</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>λ</mi><mi>m</mi></msub><mo>⁢</mo><msub><mi>A</mi><mi>m</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">To determine the coefficients <math id="Ch0.Sx2.SSx37.SSS0.Px2.p1.m1" class="ltx_Math" alttext="A_{m}" display="inline"><msub><mi>A</mi><mi>m</mi></msub></math>, we first set</p>
+<table id="Ch0.Ex573" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex573.m1" class="ltx_Math" alttext="f_{m}=-\lambda_{m}A_{m},\qquad m\geq 1." display="block"><mrow><mrow><mrow><msub><mi>f</mi><mi>m</mi></msub><mo>=</mo><mrow><mo>−</mo><mrow><msub><mi>λ</mi><mi>m</mi></msub><mo>⁢</mo><msub><mi>A</mi><mi>m</mi></msub></mrow></mrow></mrow><mo rspace="2.167em">,</mo><mrow><mi>m</mi><mo>≥</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Then</p>
+<table id="Ch0.Ex574" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex574.m1" class="ltx_Math" alttext="\sum_{m=1}^{\infty}f_{m}\sin\left(\frac{m\pi x}{L}\right)=f(x)." display="block"><mrow><mrow><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>f</mi><mi>m</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This is just a Fourier sine series expansion for the source term <math id="Ch0.Sx2.SSx37.SSS0.Px2.p1.m2" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Its coefficients are</p>
+<table id="Ch0.Ex575" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex575.m1" class="ltx_Math" alttext="f_{m}=\frac{2}{L}\int_{0}^{L}f(x)\sin\left(\frac{m\pi x}{L}\right)\,dx,\qquad m%
+\geq 1." display="block"><mrow><mrow><mrow><msub><mi>f</mi><mi>m</mi></msub><mo>=</mo><mrow><mfrac><mn>2</mn><mi>L</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>L</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo rspace="2.167em">,</mo><mrow><mi>m</mi><mo>≥</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Consequently,</p>
+<table id="Ch0.Ex576" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex576.m1" class="ltx_math_unparsed" alttext="\boxed{A_{m}=-\frac{f_{m}}{\lambda_{m}}=-\frac{2L}{m^{2}\pi^{2}}\int_{0}^{L}f(%
+x)\sin\left(\frac{m\pi x}{L}\right)\,dx,\qquad m\geq 1.}" display="block"><menclose notation="box"><mrow><msub><mi>A</mi><mi>m</mi></msub><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mfrac><msub><mi>f</mi><mi>m</mi></msub><msub><mi>λ</mi><mi>m</mi></msub></mfrac><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>π</mi><mn>2</mn></msup></mrow></mfrac><msubsup><mo>∫</mo><mn>0</mn><mi>L</mi></msubsup><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="0.167em" stretchy="false">)</mo></mrow><mi>sin</mi><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo rspace="0.170em">)</mo></mrow><mi>d</mi><mi>x</mi><mo rspace="2.167em">,</mo><mi>m</mi><mo>≥</mo><mn>1</mn><mo lspace="0em">.</mo></mrow></menclose></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx2.SSx37.SSS0.Px2.p2" class="ltx_para">
+<p class="ltx_p">The solution is therefore given by (3), with <math id="Ch0.Sx2.SSx37.SSS0.Px2.p2.m1" class="ltx_Math" alttext="A_{m}" display="inline"><msub><mi>A</mi><mi>m</mi></msub></math> given by (4). Equivalently,</p>
+<table id="Ch0.Ex578" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex578.m1" class="ltx_math_unparsed" alttext="\boxed{u(x)=-\frac{2L}{\pi^{2}}\sum_{m=1}^{\infty}\frac{1}{m^{2}}\left[\int_{0%
+}^{L}f(\xi)\sin\left(\frac{m\pi\xi}{L}\right)\,d\xi\right]\sin\left(\frac{m\pi
+x%
+}{L}\right).}" display="block"><menclose notation="box"><mrow><mi>u</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi></mrow><msup><mi>π</mi><mn>2</mn></msup></mfrac><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mfrac><mn>1</mn><msup><mi>m</mi><mn>2</mn></msup></mfrac><mrow><mo>[</mo><msubsup><mo lspace="0em">∫</mo><mn>0</mn><mi>L</mi></msubsup><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>ξ</mi><mo rspace="0.167em" stretchy="false">)</mo></mrow><mi>sin</mi><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>ξ</mi></mrow><mi>L</mi></mfrac><mo rspace="0.170em">)</mo></mrow><mi>d</mi><mi>ξ</mi><mo rspace="0.167em">]</mo></mrow><mi>sin</mi><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow><mo lspace="0em">.</mo></mrow></menclose></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Ch0.Sx2.SSx37.SSS0.Px2.p3" class="ltx_para">
+<p class="ltx_p">∎</p>
+</div>
+</section>
+</section>
+<section id="Ch0.Sx2.SSx38" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">Case 1: <math id="Ch0.Sx2.SSx38.m1" class="ltx_Math" alttext="f(x)=\sin(2\pi x/L)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo>/</mo><mi>L</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>
+</h3>
+
+<div id="Ch0.Sx2.SSx38.p1" class="ltx_para">
+<p class="ltx_p">By orthogonality,</p>
+<table id="Ch0.Ex579" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex579.m1" class="ltx_Math" alttext="\int_{0}^{L}\sin\left(\frac{2\pi x}{L}\right)\sin\left(\frac{m\pi x}{L}\right)%
+\,dx=\begin{cases}L/2,&amp;m=2,\\
+0,&amp;m\neq 2.\end{cases}" display="block"><mrow><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>L</mi></msubsup><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>L</mi><mo>/</mo><mn>2</mn></mrow><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>=</mo><mn>2</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>≠</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus,</p>
+<table id="Ch0.Ex580" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex580.m1" class="ltx_Math" alttext="f_{2}=1,\,A_{2}=-\frac{1}{\lambda_{2}}=-\frac{L^{2}}{4\pi^{2}},\qquad\textrm{%
+and }A_{m}=f_{m}=0\quad(m\neq 2)." display="block"><mrow><mrow><mrow><mrow><msub><mi>f</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><mo rspace="0.337em">,</mo><mrow><msub><mi>A</mi><mn>2</mn></msub><mo>=</mo><mrow><mo>−</mo><mfrac><mn>1</mn><msub><mi>λ</mi><mn>2</mn></msub></mfrac></mrow><mo>=</mo><mrow><mo>−</mo><mfrac><msup><mi>L</mi><mn>2</mn></msup><mrow><mn>4</mn><mo>⁢</mo><msup><mi>π</mi><mn>2</mn></msup></mrow></mfrac></mrow></mrow></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mtext>and </mtext><mo>⁢</mo><msub><mi>A</mi><mi>m</mi></msub></mrow><mo>=</mo><msub><mi>f</mi><mi>m</mi></msub><mo>=</mo><mn>0</mn></mrow><mspace width="1em"></mspace><mrow><mo stretchy="false">(</mo><mrow><mi>m</mi><mo>≠</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The solution is</p>
+<table id="Ch0.Ex581" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex581.m1" class="ltx_math_unparsed" alttext="\boxed{u(x)=-\frac{L^{2}}{4\pi^{2}}\sin\left(\frac{2\pi x}{L}\right).}" display="block"><menclose notation="box"><mrow><mi>u</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mfrac><msup><mi>L</mi><mn>2</mn></msup><mrow><mn>4</mn><mo>⁢</mo><msup><mi>π</mi><mn>2</mn></msup></mrow></mfrac><mi>sin</mi><mrow><mo>(</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow><mo lspace="0em">.</mo></mrow></menclose></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch0.Sx2.SSx39" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">Case 2: <math id="Ch0.Sx2.SSx39.m1" class="ltx_Math" alttext="f(x)=\cos(\pi x/L)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo>/</mo><mi>L</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>
+</h3>
+
+<div id="Ch0.Sx2.SSx39.p1" class="ltx_para">
+<p class="ltx_p">Using the product-to-sum identity,</p>
+<table id="Ch0.Ex582" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex582X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex582X.m2" class="ltx_Math" alttext="\displaystyle\sin\left(\frac{m\pi x}{L}\right)\cos\left(\frac{\pi x}{L}\right)" display="inline"><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex582Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex582Xa.m2" class="ltx_Math" alttext="\displaystyle\qquad=\frac{1}{2}\left[\sin\left(\frac{(m+1)\pi x}{L}\right)+%
+\sin\left(\frac{(m-1)\pi x}{L}\right)\right]," display="inline"><mrow><mrow><mi></mi><mo lspace="2.278em">=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">we obtain</p>
+<table id="Ch0.Ex583" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex583.m1" class="ltx_Math" alttext="\int_{0}^{L}\cos\left(\frac{\pi x}{L}\right)\sin\left(\frac{m\pi x}{L}\right)%
+\,dx=\begin{cases}\dfrac{2Lm}{\pi(m^{2}-1)},&amp;m\text{ even},\\[6.0pt]
+0,&amp;m\text{ odd}.\end{cases}" display="block"><mrow><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>L</mi></msubsup><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mi>m</mi></mrow><mrow><mi>π</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> even</mtext></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> odd</mtext></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Consequently,</p>
+<table id="Ch0.Ex584" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex584.m1" class="ltx_Math" alttext="\int_{0}^{L}f_{m}=\begin{cases}\dfrac{4m}{\pi(m^{2}-1)},&amp;m\text{ even},\\[6.0%
+pt]
+0,&amp;m\text{ odd},\end{cases}" display="block"><mrow><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>L</mi></msubsup><msub><mi>f</mi><mi>m</mi></msub></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mfrac><mrow><mn>4</mn><mo>⁢</mo><mi>m</mi></mrow><mrow><mi>π</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> even</mtext></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> odd</mtext></mrow><mo>,</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">and</p>
+<table id="Ch0.Ex585" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex585.m1" class="ltx_Math" alttext="A_{m}=\begin{cases}-\dfrac{4L^{2}}{\pi^{3}m(m^{2}-1)},&amp;m\text{ even},\\[6.0pt]
+0,&amp;m\text{ odd}.\end{cases}" display="block"><mrow><msub><mi>A</mi><mi>m</mi></msub><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mo>−</mo><mfrac><mrow><mn>4</mn><mo>⁢</mo><msup><mi>L</mi><mn>2</mn></msup></mrow><mrow><msup><mi>π</mi><mn>3</mn></msup><mo>⁢</mo><mi>m</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mrow><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> even</mtext></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> odd</mtext></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The eigenfunction expansion is</p>
+<table id="Ch0.Ex586" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex586.m1" class="ltx_math_unparsed" alttext="\boxed{u(x)=-\frac{4L^{2}}{\pi^{3}}\sum_{\begin{subarray}{c}m\geq 1\\
+m\ \mathrm{even}\end{subarray}}\frac{\sin(m\pi x/L)}{m(m^{2}-1)}.}" display="block"><menclose notation="box"><mrow><mi>u</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mfrac><mrow><mn>4</mn><mo>⁢</mo><msup><mi>L</mi><mn>2</mn></msup></mrow><msup><mi>π</mi><mn>3</mn></msup></mfrac><munder><mo movablelimits="false">∑</mo><mtable rowspacing="0pt"><mtr><mtd><mrow><mi>m</mi><mo>≥</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>m</mi><mo lspace="0.350em">⁢</mo><mi>even</mi></mrow></mtd></mtr></mtable></munder><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo>/</mo><mi>L</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>m</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo lspace="0em">.</mo></mrow></menclose></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This series represents the elementary function, which, in case, can be
+obtained by directly integrating the differential equation twice and
+then applying the two boundary conditions,</p>
+<table id="Ch0.Ex587" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex587.m1" class="ltx_math_unparsed" alttext="\boxed{u(x)=\frac{L^{2}}{\pi^{2}}\left[1-\cos\left(\frac{\pi x}{L}\right)-%
+\frac{2x}{L}\right].}" display="block"><menclose notation="box"><mrow><mi>u</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mfrac><msup><mi>L</mi><mn>2</mn></msup><msup><mi>π</mi><mn>2</mn></msup></mfrac><mrow><mo>[</mo><mn>1</mn><mo>−</mo><mi>cos</mi><mrow><mo>(</mo><mfrac><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow><mo>−</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>]</mo></mrow><mo lspace="0em">.</mo></mrow></menclose></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="Ch0.Sx2.SSx40" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">Case 3: <math id="Ch0.Sx2.SSx40.m1" class="ltx_Math" alttext="f(x)=\sin^{2}(\pi x/L)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo>/</mo><mi>L</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>
+</h3>
+
+<div id="Ch0.Sx2.SSx40.p1" class="ltx_para">
+<p class="ltx_p">Using</p>
+<table id="Ch0.Ex588" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="Ch0.Ex588X"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex588X.m2" class="ltx_Math" alttext="\displaystyle\sin^{2}\left(\frac{\pi x}{L}\right)\sin\left(\frac{m\pi x}{L}\right)" display="inline"><mrow><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch0.Ex588Xa"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch0.Ex588Xa.m2" class="ltx_Math" alttext="\displaystyle\qquad=\frac{1}{2}\sin\left(\frac{m\pi x}{L}\right)-\frac{1}{4}%
+\sin\left(\frac{(m+2)\pi x}{L}\right)-\frac{1}{4}\sin\left(\frac{(m-2)\pi x}{L%
+}\right)," display="inline"><mrow><mrow><mi></mi><mo lspace="2.278em">=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>m</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>m</mi><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">we find</p>
+<table id="Ch0.Ex589" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex589.m1" class="ltx_Math" alttext="\int_{0}^{L}\sin^{2}\left(\frac{\pi x}{L}\right)\sin\left(\frac{m\pi x}{L}%
+\right)\,dx=\begin{cases}\dfrac{4L}{\pi m(4-m^{2})},&amp;m\text{ odd},\\[6.0pt]
+0,&amp;m\text{ even}.\end{cases}" display="block"><mrow><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>L</mi></msubsup><mrow><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mfrac><mrow><mn>4</mn><mo>⁢</mo><mi>L</mi></mrow><mrow><mi>π</mi><mo>⁢</mo><mi>m</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>4</mn><mo>−</mo><msup><mi>m</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> odd</mtext></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> even</mtext></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Therefore,</p>
+<table id="Ch0.Ex590" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex590.m1" class="ltx_Math" alttext="f_{m}=\begin{cases}\dfrac{8}{\pi m(4-m^{2})},&amp;m\text{ odd},\\[6.0pt]
+0,&amp;m\text{ even},\end{cases}" display="block"><mrow><msub><mi>f</mi><mi>m</mi></msub><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mfrac><mn>8</mn><mrow><mi>π</mi><mo>⁢</mo><mi>m</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>4</mn><mo>−</mo><msup><mi>m</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> odd</mtext></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> even</mtext></mrow><mo>,</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">and</p>
+<table id="Ch0.Ex591" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex591.m1" class="ltx_Math" alttext="A_{m}=\begin{cases}\dfrac{8L^{2}}{\pi^{3}m^{3}(m^{2}-4)},&amp;m\text{ odd},\\[6.0%
+pt]
+0,&amp;m\text{ even}.\end{cases}" display="block"><mrow><msub><mi>A</mi><mi>m</mi></msub><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mfrac><mrow><mn>8</mn><mo>⁢</mo><msup><mi>L</mi><mn>2</mn></msup></mrow><mrow><msup><mi>π</mi><mn>3</mn></msup><mo>⁢</mo><msup><mi>m</mi><mn>3</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> odd</mtext></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>m</mi><mo>⁢</mo><mtext> even</mtext></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The eigenfunction expansion is</p>
+<table id="Ch0.Ex592" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex592.m1" class="ltx_math_unparsed" alttext="\boxed{u(x)=\frac{8L^{2}}{\pi^{3}}\sum_{\begin{subarray}{c}m\geq 1\\
+m\ \mathrm{odd}\end{subarray}}\frac{\sin(m\pi x/L)}{m^{3}(m^{2}-4)}.}" display="block"><menclose notation="box"><mrow><mi>u</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mfrac><mrow><mn>8</mn><mo>⁢</mo><msup><mi>L</mi><mn>2</mn></msup></mrow><msup><mi>π</mi><mn>3</mn></msup></mfrac><munder><mo movablelimits="false">∑</mo><mtable rowspacing="0pt"><mtr><mtd><mrow><mi>m</mi><mo>≥</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>m</mi><mo lspace="0.350em">⁢</mo><mi>odd</mi></mrow></mtd></mtr></mtable></munder><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo>/</mo><mi>L</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><msup><mi>m</mi><mn>3</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo lspace="0em">.</mo></mrow></menclose></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This series represents the elementary function</p>
+<table id="Ch0.Ex593" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch0.Ex593.m1" class="ltx_math_unparsed" alttext="\boxed{u(x)=\frac{x(x-L)}{4}+\frac{L^{2}}{8\pi^{2}}\left[\cos\left(\frac{2\pi x%
+}{L}\right)-1\right].}" display="block"><menclose notation="box"><mrow><mi>u</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>L</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mn>4</mn></mfrac><mo>+</mo><mfrac><msup><mi>L</mi><mn>2</mn></msup><mrow><mn>8</mn><mo>⁢</mo><msup><mi>π</mi><mn>2</mn></msup></mrow></mfrac><mrow><mo>[</mo><mi>cos</mi><mrow><mo>(</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>L</mi></mfrac><mo>)</mo></mrow><mo>−</mo><mn>1</mn><mo>]</mo></mrow><mo lspace="0em">.</mo></mrow></menclose></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_logical-block">
+        
+<div id="Ch0.Sx2.SSx40.p2" class="ltx_para">
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Tue Nov 10 14:05:35 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
